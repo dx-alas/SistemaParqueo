@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="SistemaParqueo.BusinessLogic/SistemaParqueo.BusinessLogic.csproj" />
+  <Project Path="SistemaParqueo.DataAccess/SistemaParqueo.DataAccess.csproj" />
+  <Project Path="SistemaParqueo.Desktop/SistemaParqueo.Desktop.csproj" />
+  <Project Path="SistemaParqueo.Entities/SistemaParqueo.Entities.csproj" />
+</Solution>
