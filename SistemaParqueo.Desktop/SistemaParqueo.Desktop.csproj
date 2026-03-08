@@ -76,5 +76,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SistemaParqueo.BusinessLogic\SistemaParqueo.BusinessLogic.csproj">
+      <Project>{f9857a69-ead8-4472-b970-917619ab1d48}</Project>
+      <Name>SistemaParqueo.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SistemaParqueo.Entities\SistemaParqueo.Entities.csproj">
+      <Project>{786756ce-3f9a-4969-9b90-6b7f46d6576c}</Project>
+      <Name>SistemaParqueo.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
