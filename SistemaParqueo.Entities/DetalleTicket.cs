@@ -13,30 +13,27 @@ namespace SistemaParqueo.Entities
         public int ConceptoId { get; set; }
         public int Cantidad { get; set; }
         public decimal Subtotal { get; set; }
-        public decimal Total { get; set; }
 
         public DetalleTicket()
         {
 
         }
 
-        public DetalleTicket(int ticketId, int conceptoId, int cantidad, decimal subtotal, decimal total)
+        public DetalleTicket(int ticketId, int conceptoId, int cantidad, decimal subtotal)
         {
             TicketId = ticketId;
             ConceptoId = conceptoId;
             Cantidad = cantidad;
             Subtotal = subtotal;
-            Total = total;
         }
 
-        public DetalleTicket(int detalleTicketId, int ticketId, int conceptoId, int cantidad, decimal subtotal, decimal total)
+        public DetalleTicket(int detalleTicketId, int ticketId, int conceptoId, int cantidad, decimal subtotal)
         {
             DetalleTicketId = detalleTicketId;
             TicketId = ticketId;
             ConceptoId = conceptoId;
             Cantidad = cantidad;
             Subtotal = subtotal;
-            Total = total;
         }
     }
 }
