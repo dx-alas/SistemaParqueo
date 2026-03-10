@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+/*Hola*/
 namespace SistemaParqueo.Entities
 {
     public class DetalleTicket
