@@ -15,7 +15,7 @@ namespace SistemaParqueo.Entities
         public string DUI { get; set; }
         public int TipoClienteId { get; set; }
 
-        public Cliente()
+        public Cliente() // Constructor vacio
         {
 
         }
