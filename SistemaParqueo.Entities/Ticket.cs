@@ -9,8 +9,8 @@ namespace SistemaParqueo.Entities
     public class Ticket
     {
         public int TicketId { get; set; }
-        public string Fecha { get; set; }
-        public string HoraEntrada { get; set; }
+        public DateTime Fecha { get; set; }
+        public DateTime HoraEntrada { get; set; }
         public decimal Total { get; set; }
         public int VehiculoId { get; set; }
         public int CorteId { get; set; }
@@ -23,7 +23,7 @@ namespace SistemaParqueo.Entities
 
         }
 
-        public Ticket(string fecha, string horaEntrada, decimal total, int vehiculoId, int corteId, int parqueoId, int estadoTicketId, int usuarioId)
+        public Ticket(DateTime fecha, DateTime horaEntrada, decimal total, int vehiculoId, int corteId, int parqueoId, int estadoTicketId, int usuarioId)
         {
             Fecha = fecha;
             HoraEntrada = horaEntrada;
@@ -35,7 +35,7 @@ namespace SistemaParqueo.Entities
             UsuarioId = usuarioId;
         }
 
-        public Ticket(int ticketId, string fecha, string horaEntrada, decimal total, int vehiculoId, int corteId, int parqueoId, int estadoTicketId, int usuarioId)
+        public Ticket(int ticketId, DateTime fecha, DateTime horaEntrada, decimal total, int vehiculoId, int corteId, int parqueoId, int estadoTicketId, int usuarioId)
         {
             TicketId = ticketId;
             Fecha = fecha;
