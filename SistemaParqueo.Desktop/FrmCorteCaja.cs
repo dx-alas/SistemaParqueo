@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SistemaParqueo.Desktop
 {
-    public partial class Form1 : Form
+    public partial class FrmCorteCaja : Form
     {
-        public Form1()
+        public FrmCorteCaja()
         {
             InitializeComponent();
         }
