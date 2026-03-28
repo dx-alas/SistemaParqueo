@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,7 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="EstadoTarjetaDAL.cs" />
+    <Compile Include="EstadoTicketDAL.cs" />
+    <Compile Include="EstadoUsuarioDAL.cs" />
+    <Compile Include="RolDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipoClienteDAL.cs" />
+    <Compile Include="TipoVehiculoDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SistemaParqueo.Entities\SistemaParqueo.Entities.csproj">
