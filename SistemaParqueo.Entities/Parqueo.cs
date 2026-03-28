@@ -9,7 +9,6 @@ namespace SistemaParqueo.Entities
     public class Parqueo
     {
         public int ParqueoId { get; set; }
-        public int EspaciosDisponibles { get; set; }
         public int CapacidadTotal { get; set; }
 
         public Parqueo()
@@ -17,16 +16,14 @@ namespace SistemaParqueo.Entities
 
         }
 
-        public Parqueo(int espaciosDisponibles, int capacidadTotal)
+        public Parqueo(int capacidadTotal)
         {
-            EspaciosDisponibles = espaciosDisponibles;
             CapacidadTotal = capacidadTotal;
         }
 
-        public Parqueo(int parqueoId, int espaciosDisponibles, int capacidadTotal)
+        public Parqueo(int parqueoId, int capacidadTotal)
         {
             ParqueoId = parqueoId;
-            EspaciosDisponibles = espaciosDisponibles;
             CapacidadTotal = capacidadTotal;
         }
     }

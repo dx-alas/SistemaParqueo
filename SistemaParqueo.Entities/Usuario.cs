@@ -10,7 +10,9 @@ namespace SistemaParqueo.Entities
     {
         public int UsuarioId { get; set; }
         public int EmpleadoId { get; set; }
-        public string UsuarioNombre { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Correo { get; set; }
         public string Clave { get; set; }
         public int RolId { get; set; }
         public int EstadoUsuarioId { get; set; }
@@ -20,20 +22,24 @@ namespace SistemaParqueo.Entities
 
         }
 
-        public Usuario(int empleadoId, string usuarioNombre, string clave, int rolId, int estadoUsuarioId)
+        public Usuario(int empleadoId, string nombre, string apellido, string correo, string clave, int rolId, int estadoUsuarioId)
         {
             EmpleadoId = empleadoId;
-            UsuarioNombre = usuarioNombre;
+            Nombre = nombre;
+            Apellido = apellido;
+            Correo = correo;
             Clave = clave;
             RolId = rolId;
             EstadoUsuarioId = estadoUsuarioId;
         }
 
-        public Usuario(int usuarioId, int empleadoId, string usuarioNombre, string clave, int rolId, int estadoUsuarioId)
+        public Usuario(int usuarioId, int empleadoId, string nombre, string apellido, string correo, string clave, int rolId, int estadoUsuarioId)
         {
             UsuarioId = usuarioId;
             EmpleadoId = empleadoId;
-            UsuarioNombre = usuarioNombre;
+            Nombre = nombre;
+            Apellido = apellido;
+            Correo = correo;
             Clave = clave;
             RolId = rolId;
             EstadoUsuarioId = estadoUsuarioId;

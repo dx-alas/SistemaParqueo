@@ -13,7 +13,9 @@ namespace SistemaParqueo.Entities
         public DateTime HoraInicio { get; set; }
         public DateTime HoraEntrega { get; set; }
         public decimal MontoInicial { get; set; }
-        public decimal Total { get; set; }
+        public decimal MontoTotal { get; set; }
+        public string ObservacionInicial { get; set; }
+        public string ObservacionFinal { get; set; }
         public int UsuarioId { get; set; }
 
         public CorteCaja()
@@ -21,24 +23,28 @@ namespace SistemaParqueo.Entities
 
         }
 
-        public CorteCaja(DateTime fecha, DateTime horaInicio, DateTime horaEntrega, decimal montoInicial, decimal total, int usuarioId)
+        public CorteCaja(DateTime fecha, DateTime horaInicio, DateTime horaEntrega, decimal montoInicial, decimal montoTotal, string observacionInicial, string observacionFinal, int usuarioId)
         {
             Fecha = fecha;
             HoraInicio = horaInicio;
             HoraEntrega = horaEntrega;
             MontoInicial = montoInicial;
-            Total = total;
+            MontoTotal = montoTotal;
+            ObservacionInicial = observacionInicial;
+            ObservacionFinal = observacionFinal;
             UsuarioId = usuarioId;
         }
 
-        public CorteCaja(int corteId, DateTime fecha, DateTime horaInicio, DateTime horaEntrega, decimal montoInicial, decimal total, int usuarioId)
+        public CorteCaja(int corteId, DateTime fecha, DateTime horaInicio, DateTime horaEntrega, decimal montoInicial, decimal montoTotal, string observacionInicial, string observacionFinal, int usuarioId)
         {
             CorteId = corteId;
             Fecha = fecha;
             HoraInicio = horaInicio;
             HoraEntrega = horaEntrega;
             MontoInicial = montoInicial;
-            Total = total;
+            MontoTotal = montoTotal;
+            ObservacionInicial = observacionInicial;
+            ObservacionFinal = observacionFinal;
             UsuarioId = usuarioId;
         }
     }
