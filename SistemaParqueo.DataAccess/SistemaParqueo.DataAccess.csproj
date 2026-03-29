@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Connection.cs" />
+    <Compile Include="EmpleadoDAL.cs" />
     <Compile Include="EstadoTarjetaDAL.cs" />
     <Compile Include="EstadoTicketDAL.cs" />
     <Compile Include="EstadoUsuarioDAL.cs" />
