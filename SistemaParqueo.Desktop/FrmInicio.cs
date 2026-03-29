@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SistemaParqueo.Desktop
 {
-    public partial class FrmUsuario : Form
+    public partial class FrmInicio : Form
     {
-        public FrmUsuario()
+        public FrmInicio()
         {
             InitializeComponent();
         }
