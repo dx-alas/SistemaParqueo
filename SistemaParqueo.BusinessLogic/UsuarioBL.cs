@@ -1,0 +1,68 @@
+﻿using SistemaParqueo.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SistemaParqueo.BusinessLogic
+{
+    internal class UsuarioBL
+    {
+        private static UsuarioBL _instance;
+        public static UsuarioBL Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new UsuarioBL();
+                return _instance;
+            }
+        }
+
+        public bool Insert(Usuario entity)
+        {
+            bool result = false;
+
+            try
+            {
+                result = UsuarioBL.Instance.Insert(entity);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return result;
+        }
+
+        public bool Update(Usuario entity)
+        {
+            bool result = false;
+
+            try
+            {
+                result = UsuarioBL.Instance.Update(entity);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return result;
+        }
+
+        public bool Delete(int usuarioId)
+        {
+            bool result = false;
+
+            try
+            {
+                result = UsuarioBL.Instance.Delete(usuarioId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return result;
+        }
+    }
+}

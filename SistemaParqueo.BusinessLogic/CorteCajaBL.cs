@@ -1,0 +1,69 @@
+﻿using SistemaParqueo.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SistemaParqueo.BusinessLogic
+{
+    internal class CorteCajaBL
+    {
+        private static CorteCajaBL _instance;
+        public static CorteCajaBL Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new CorteCajaBL();
+                return _instance;
+            }
+        }
+
+        public bool Insert(CorteCaja entity)
+        {
+            bool result = false;
+
+            try
+            {
+                result = CorteCajaBL.Instance.Insert(entity);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return result;
+        }
+
+        public bool Update(CorteCaja entity)
+        {
+            bool result = false;
+
+            try
+            {
+                result = CorteCajaBL.Instance.Update(entity);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return result;
+        }
+
+        public bool Delete(int corteId)
+        {
+            bool result = false;
+
+            try
+            {
+                result = CorteCajaBL.Instance.Delete(corteId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return result;
+        }
+    }
+}
+
