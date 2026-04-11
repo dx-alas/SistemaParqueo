@@ -14,7 +14,7 @@ namespace SistemaParqueo.Entities
         public string DUI { get; set; }
         public string Correo { get; set; }
         public string Telefono { get; set; }
-
+        public string Direccion {  get; set; }
         public int EstadoEmpleadoId { get; set; }
 
         public Empleado()
@@ -22,17 +22,18 @@ namespace SistemaParqueo.Entities
 
         }
 
-        public Empleado(string nombre, string apellido, string dui, string correo, string telefono, int estadoEmpleadoId)
+        public Empleado(string nombre, string apellido, string dui, string correo, string telefono, string direccion, int estadoEmpleadoId)
         {
             Nombre = nombre;
             Apellido = apellido;
             DUI = dui;
             Correo = correo;
             Telefono = telefono;
+            Direccion = direccion;
             EstadoEmpleadoId = estadoEmpleadoId;
         }
 
-        public Empleado(int empleadoId, string nombre, string apellido, string dui, string correo, string telefono, int estadoEmpleadoId)
+        public Empleado(int empleadoId, string nombre, string apellido, string dui, string correo, string telefono, string direccion, int estadoEmpleadoId)
         {
             EmpleadoId = empleadoId;
             Nombre = nombre;
@@ -40,6 +41,7 @@ namespace SistemaParqueo.Entities
             DUI = dui;
             Correo = correo;
             Telefono = telefono;
+            Direccion = direccion;
             EstadoEmpleadoId = estadoEmpleadoId;
         }
     }

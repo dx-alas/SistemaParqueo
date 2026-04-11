@@ -16,14 +16,15 @@ namespace SistemaParqueo.Entities
         public decimal MontoTotal { get; set; }
         public string ObservacionInicial { get; set; }
         public string ObservacionFinal { get; set; }
-        public int UsuarioId { get; set; }
+        public int UsuarioAperturaId { get; set; }
+        public int UsuarioCierreId { get; set; }
 
         public CorteCaja()
         {
 
         }
 
-        public CorteCaja(DateTime fecha, DateTime horaInicio, DateTime horaEntrega, decimal montoInicial, decimal montoTotal, string observacionInicial, string observacionFinal, int usuarioId)
+        public CorteCaja(DateTime fecha, DateTime horaInicio, DateTime horaEntrega, decimal montoInicial, decimal montoTotal, string observacionInicial, string observacionFinal, int usuarioAperturaId, int usuarioCierreId)
         {
             Fecha = fecha;
             HoraInicio = horaInicio;
@@ -32,10 +33,11 @@ namespace SistemaParqueo.Entities
             MontoTotal = montoTotal;
             ObservacionInicial = observacionInicial;
             ObservacionFinal = observacionFinal;
-            UsuarioId = usuarioId;
+            UsuarioAperturaId = usuarioAperturaId;
+            UsuarioCierreId = usuarioCierreId;
         }
 
-        public CorteCaja(int corteId, DateTime fecha, DateTime horaInicio, DateTime horaEntrega, decimal montoInicial, decimal montoTotal, string observacionInicial, string observacionFinal, int usuarioId)
+        public CorteCaja(int corteId, DateTime fecha, DateTime horaInicio, DateTime horaEntrega, decimal montoInicial, decimal montoTotal, string observacionInicial, string observacionFinal, int usuarioAperturaId, int usuarioCierreId)
         {
             CorteId = corteId;
             Fecha = fecha;
@@ -45,7 +47,8 @@ namespace SistemaParqueo.Entities
             MontoTotal = montoTotal;
             ObservacionInicial = observacionInicial;
             ObservacionFinal = observacionFinal;
-            UsuarioId = usuarioId;
+            UsuarioId = usuarioAperturaId;
+            UsuarioCierreId= usuarioCierreId;
         }
     }
 }

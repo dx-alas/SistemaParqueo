@@ -12,25 +12,28 @@ namespace SistemaParqueo.Entities
         public int ClienteId { get; set; }
         public string Placa { get; set; }
         public int TipoVehiculoId { get; set; }
+        public int EstadoVehiculoId { get; set; }
 
         public Vehiculo()
         {
 
         }
 
-        public Vehiculo(int clienteId, string placa, int tipoVehiculoId)
+        public Vehiculo(int clienteId, string placa, int tipoVehiculoId, int estadoVehiculoId)
         {
             ClienteId = clienteId;
             Placa = placa;
             TipoVehiculoId = tipoVehiculoId;
+            EstadoVehiculoId = estadoVehiculoId;
         }
 
-        public Vehiculo(int vehiculoId, int clienteId, string placa, int tipoVehiculoId)
+        public Vehiculo(int vehiculoId, int clienteId, string placa, int tipoVehiculoId, int estadoVehiculoId)
         {
             VehiculoId = vehiculoId;
             ClienteId = clienteId;
             Placa = placa;
             TipoVehiculoId = tipoVehiculoId;
+            EstadoVehiculoId= estadoVehiculoId;
         }
     }
 }
