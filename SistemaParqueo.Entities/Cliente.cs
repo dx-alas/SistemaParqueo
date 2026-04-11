@@ -24,7 +24,7 @@ namespace SistemaParqueo.Entities
 
         }
 
-        public Cliente(string nombre, string apellido, string telefono, string tipoDocumento string dui, string carnetExtranjero, int tarjetaId, int tipoClienteId, int estadoClienteId)
+        public Cliente(string nombre, string apellido, string telefono, string tipoDocumento, string dui, string carnetExtranjero, int tarjetaId, int tipoClienteId, int estadoClienteId)
         {
             Nombre = nombre;
             Apellido = apellido;
