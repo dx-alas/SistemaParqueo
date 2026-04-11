@@ -11,13 +11,13 @@ namespace SistemaParqueo.Entities
         public int TicketId { get; set; }
         public DateTime Fecha { get; set; }
         public DateTime HoraEntrada { get; set; }
-        public DateTime HoraSalida { get; set; }
-        public decimal Total { get; set; }
+        public DateTime? HoraSalida { get; set; }
+        public decimal? Total { get; set; }
         public int TarjetaId { get; set; }
         public int CorteId { get; set; }
         public int EstadoTicketId { get; set; }
         public int UsuarioId { get; set; }
-        public int MultaId { get; set; }
+        public int? MultaId { get; set; }
         public int EstadoPermanenciaId { get; set; }
 
         public Ticket()
@@ -25,7 +25,7 @@ namespace SistemaParqueo.Entities
 
         }
 
-        public Ticket(DateTime fecha, DateTime horaEntrada, DateTime horaSalida, decimal total, int tarjetaId, int corteId, int estadoTicketId, int usuarioId, int multaId, int estadoPermanenciaId)
+        public Ticket(DateTime fecha, DateTime horaEntrada, DateTime? horaSalida, decimal? total, int tarjetaId, int corteId, int estadoTicketId, int usuarioId, int? multaId, int estadoPermanenciaId)
         {
             Fecha = fecha;
             HoraEntrada = horaEntrada;
@@ -39,7 +39,7 @@ namespace SistemaParqueo.Entities
             EstadoPermanenciaId = estadoPermanenciaId;
         }
 
-        public Ticket(int ticketId, DateTime fecha, DateTime horaEntrada, DateTime horaSalida, decimal total, int tarjetaId, int corteId, int estadoTicketId, int usuarioId, int multaId, int estadoPermanenciaId)
+        public Ticket(int ticketId, DateTime fecha, DateTime horaEntrada, DateTime? horaSalida, decimal? total, int tarjetaId, int corteId, int estadoTicketId, int usuarioId, int? multaId, int estadoPermanenciaId)
         {
             TicketId = ticketId;
             Fecha = fecha;
