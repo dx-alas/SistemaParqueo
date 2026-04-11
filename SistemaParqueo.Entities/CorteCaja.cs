@@ -47,7 +47,7 @@ namespace SistemaParqueo.Entities
             MontoTotal = montoTotal;
             ObservacionInicial = observacionInicial;
             ObservacionFinal = observacionFinal;
-            UsuarioId = usuarioAperturaId;
+            UsuarioAperturaId = usuarioAperturaId;
             UsuarioCierreId= usuarioCierreId;
         }
     }
