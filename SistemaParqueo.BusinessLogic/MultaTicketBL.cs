@@ -1,4 +1,5 @@
-﻿using SistemaParqueo.Entities;
+﻿using SistemaParqueo.DataAccess;
+using SistemaParqueo.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace SistemaParqueo.BusinessLogic
 
             try
             {
-                result = MultaTicketBL.Instance.Insert(entity);
+                result = MultaTicketDAL.Instance.Insert(entity);
             }
             catch (Exception ex)
             {
@@ -41,7 +42,7 @@ namespace SistemaParqueo.BusinessLogic
 
             try
             {
-                result = MultaTicketBL.Instance.Update(entity);
+                result = MultaTicketDAL.Instance.Update(entity);
             }
             catch (Exception ex)
             {
@@ -56,7 +57,7 @@ namespace SistemaParqueo.BusinessLogic
 
             try
             {
-                result = MultaTicketBL.Instance.Delete(multaId);
+                result = MultaTicketDAL.Instance.Delete(multaId);
             }
             catch (Exception ex)
             {

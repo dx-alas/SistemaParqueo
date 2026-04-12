@@ -8,26 +8,26 @@ using System.Threading.Tasks;
 
 namespace SistemaParqueo.BusinessLogic
 {
-    internal class VehiculoBL
+    internal class EstadoEmpleadoBL
     {
-        private static VehiculoBL _instance;
-        public static VehiculoBL Instance
+        private static EstadoEmpleadoBL _instance;
+        public static EstadoEmpleadoBL Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new VehiculoBL();
+                    _instance = new EstadoEmpleadoBL();
                 return _instance;
             }
         }
 
-        public bool Insert(Vehiculo entity)
+        public bool Insert(EstadoEmpleado entity)
         {
             bool result = false;
 
             try
             {
-                result = VehiculoDAL.Instance.Insert(entity);
+                result = EstadoEmpleadoDAL.Instance.Insert(entity);
             }
             catch (Exception ex)
             {
@@ -36,13 +36,13 @@ namespace SistemaParqueo.BusinessLogic
             return result;
         }
 
-        public bool Update(Vehiculo entity)
+        public bool Update(EstadoEmpleado entity)
         {
             bool result = false;
 
             try
             {
-                result = VehiculoDAL.Instance.Update(entity);
+                result = EstadoEmpleadoDAL.Instance.Update(entity);
             }
             catch (Exception ex)
             {
@@ -51,13 +51,13 @@ namespace SistemaParqueo.BusinessLogic
             return result;
         }
 
-        public bool Delete(int vehiculoId)
+        public bool Delete(int empleadoId)
         {
             bool result = false;
 
             try
             {
-                result = VehiculoDAL.Instance.Delete(vehiculoId);
+                result = EstadoEmpleadoDAL.Instance.Delete(empleadoId);
             }
             catch (Exception ex)
             {
@@ -67,3 +67,4 @@ namespace SistemaParqueo.BusinessLogic
         }
     }
 }
+
