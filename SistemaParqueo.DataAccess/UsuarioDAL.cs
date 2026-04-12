@@ -25,59 +25,69 @@ namespace SistemaParqueo.DataAccess
         public bool Insert(Usuario entity)
         {
             bool result = false;
+
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("spInsertUsuario", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+
                     cmd.Parameters.AddWithValue("@Nombre", entity.Nombre);
-                    cmd.Parameters.AddWithValue("@Apellido", entity.Apellido);
-                    cmd.Parameters.AddWithValue("@Correo", (object)entity.Correo ?? DBNull.Value);
-                    cmd.Parameters.AddWithValue("@Clave", (object)entity.Clave ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Clave", entity.Clave);
+                    cmd.Parameters.AddWithValue("@EmpleadoId", entity.EmpleadoId);
                     cmd.Parameters.AddWithValue("@RolId", entity.RolId);
                     cmd.Parameters.AddWithValue("@EstadoUsuarioId", entity.EstadoUsuarioId);
+
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
                 }
             }
+
             return result;
         }
 
         public bool Update(Usuario entity)
         {
             bool result = false;
+
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("spUpdateUsuario", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Id", entity.UsuarioId);
+
+                    cmd.Parameters.AddWithValue("@UsuarioId", entity.UsuarioId);
                     cmd.Parameters.AddWithValue("@Nombre", entity.Nombre);
-                    cmd.Parameters.AddWithValue("@Apellido", entity.Apellido);
-                    cmd.Parameters.AddWithValue("@Correo", (object)entity.Correo ?? DBNull.Value);
-                    cmd.Parameters.AddWithValue("@Clave", (object)entity.Clave ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Clave", entity.Clave);
+                    cmd.Parameters.AddWithValue("@EmpleadoId", entity.EmpleadoId);
                     cmd.Parameters.AddWithValue("@RolId", entity.RolId);
                     cmd.Parameters.AddWithValue("@EstadoUsuarioId", entity.EstadoUsuarioId);
+
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
                 }
             }
+
             return result;
         }
 
         public bool Delete(int usuarioId)
         {
             bool result = false;
+
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("spDeleteUsuario", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Id", usuarioId);
+
+                    cmd.Parameters.AddWithValue("@UsuarioId", usuarioId);
+
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
                 }
             }
+
             return result;
         }
     }

@@ -1,73 +1,87 @@
-﻿using System;
+﻿using SistemaParqueo.Entities;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SistemaParqueo.Entities;
-using System.Data;
 
 namespace SistemaParqueo.DataAccess
 {
-    public class UsuarioAutorizaDAL : Connection
+    public class EstadoEmpleadoDAL : Connection
     {
-        private static UsuarioAutorizaDAL _instance;
-        public static UsuarioAutorizaDAL Instance
+        private static EstadoEmpleadoDAL _instance;
+
+        public static EstadoEmpleadoDAL Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new UsuarioAutorizaDAL();
+                    _instance = new EstadoEmpleadoDAL();
+
                 return _instance;
             }
         }
 
-        public bool Insert(UsuarioAutoriza entity)
+        public bool Insert(EstadoEmpleado entity)
         {
             bool result = false;
+
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("spInsertUsuarioAutoriza", conn))
+                using (SqlCommand cmd = new SqlCommand("spInsertEstadoEmpleado", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@UsuarioId", entity.UsuarioId);
+
+                    cmd.Parameters.AddWithValue("@Nombre", entity.Nombre);
+
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
                 }
             }
+
             return result;
         }
 
-        public bool Update(UsuarioAutoriza entity)
+        public bool Update(EstadoEmpleado entity)
         {
             bool result = false;
+
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("spUpdateUsuarioAutoriza", conn))
+                using (SqlCommand cmd = new SqlCommand("spUpdateEstadoEmpleado", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Id", entity.UsuarioAutorizaId);
-                    cmd.Parameters.AddWithValue("@UsuarioId", entity.UsuarioId);
+
+                    cmd.Parameters.AddWithValue("@EstadoEmpleadoId", entity.EstadoEmpleadoId);
+                    cmd.Parameters.AddWithValue("@Nombre", entity.Nombre);
+
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
                 }
             }
+
             return result;
         }
 
-        public bool Delete(int usuarioAutorizaId)
+        public bool Delete(int estadoEmpleadoId)
         {
             bool result = false;
+
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("spDeleteUsuarioAutoriza", conn))
+                using (SqlCommand cmd = new SqlCommand("spDeleteEstadoEmpleado", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Id", usuarioAutorizaId);
+
+                    cmd.Parameters.AddWithValue("@EstadoEmpleadoId", estadoEmpleadoId);
+
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
                 }
             }
+
             return result;
         }
     }

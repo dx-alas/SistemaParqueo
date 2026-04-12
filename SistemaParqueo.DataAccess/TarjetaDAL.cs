@@ -30,7 +30,7 @@ namespace SistemaParqueo.DataAccess
                 using (SqlCommand cmd = new SqlCommand("spInsertTarjeta", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Codigo", (object)entity.Codigo ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Codigo", entity.Codigo);
                     cmd.Parameters.AddWithValue("@EstadoTarjetaId", entity.EstadoTarjetaId);
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
@@ -47,8 +47,8 @@ namespace SistemaParqueo.DataAccess
                 using (SqlCommand cmd = new SqlCommand("spUpdateTarjeta", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Id", entity.TarjetaId);
-                    cmd.Parameters.AddWithValue("@Codigo", (object)entity.Codigo ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@TarjetaId", entity.TarjetaId);
+                    cmd.Parameters.AddWithValue("@Codigo", entity.Codigo);
                     cmd.Parameters.AddWithValue("@EstadoTarjetaId", entity.EstadoTarjetaId);
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
@@ -65,7 +65,7 @@ namespace SistemaParqueo.DataAccess
                 using (SqlCommand cmd = new SqlCommand("spDeleteTarjeta", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Id", tarjetaId);
+                    cmd.Parameters.AddWithValue("@TarjetaId", tarjetaId);
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
                 }

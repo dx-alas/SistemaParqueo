@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SistemaParqueo.Entities;
-using System.Data.SqlClient;
 using System.Data;
 
 namespace SistemaParqueo.DataAccess

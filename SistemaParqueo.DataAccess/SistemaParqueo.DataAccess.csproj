@@ -42,15 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="ClienteDAL.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="CorteCajaDAL.cs" />
     <Compile Include="EmpleadoDAL.cs" />
+    <Compile Include="EstadoClienteDAL.cs" />
+    <Compile Include="EstadoEmpleadoDAL.cs" />
     <Compile Include="EstadoPermanenciaDAL.cs" />
     <Compile Include="EstadoTarjetaDAL.cs" />
     <Compile Include="EstadoTicketDAL.cs" />
     <Compile Include="EstadoUsuarioDAL.cs" />
+    <Compile Include="EstadoVehiculoDAL.cs" />
     <Compile Include="MultaTicketDAL.cs" />
     <Compile Include="ParqueoDAL.cs" />
     <Compile Include="RolDAL.cs" />
@@ -59,7 +61,6 @@
     <Compile Include="TicketDAL.cs" />
     <Compile Include="TipoClienteDAL.cs" />
     <Compile Include="TipoVehiculoDAL.cs" />
-    <Compile Include="UsuarioAutorizaDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
     <Compile Include="VehiculoDAL.cs" />
   </ItemGroup>

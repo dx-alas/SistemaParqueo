@@ -25,37 +25,47 @@ namespace SistemaParqueo.DataAccess
         public bool Insert(Vehiculo entity)
         {
             bool result = false;
+
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("spInsertVehiculo", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@ClienteId", entity.ClienteId);
+
                     cmd.Parameters.AddWithValue("@Placa", entity.Placa);
-                    cmd.Parameters.AddWithValue("@TipoVehiculoId", (object)entity.TipoVehiculoId ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@ClienteId", entity.ClienteId);
+                    cmd.Parameters.AddWithValue("@TipoVehiculoId", entity.TipoVehiculoId);
+                    cmd.Parameters.AddWithValue("@EstadoVehiculoId", entity.EstadoVehiculoId);
+
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
                 }
             }
+
             return result;
         }
 
         public bool Update(Vehiculo entity)
         {
             bool result = false;
+
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("spUpdateVehiculo", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Id", entity.VehiculoId);
-                    cmd.Parameters.AddWithValue("@ClienteId", entity.ClienteId);
+
+                    cmd.Parameters.AddWithValue("@VehiculoId", entity.VehiculoId);
                     cmd.Parameters.AddWithValue("@Placa", entity.Placa);
-                    cmd.Parameters.AddWithValue("@TipoVehiculoId", (object)entity.TipoVehiculoId ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@ClienteId", entity.ClienteId);
+                    cmd.Parameters.AddWithValue("@TipoVehiculoId", entity.TipoVehiculoId);
+                    cmd.Parameters.AddWithValue("@EstadoVehiculoId", entity.EstadoVehiculoId);
+
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
                 }
             }
+
             return result;
         }
 
@@ -67,7 +77,7 @@ namespace SistemaParqueo.DataAccess
                 using (SqlCommand cmd = new SqlCommand("spDeleteVehiculo", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Id", vehiculoId);
+                    cmd.Parameters.AddWithValue("@VehiculoId", vehiculoId);
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
                 }

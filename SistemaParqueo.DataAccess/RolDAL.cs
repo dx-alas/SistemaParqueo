@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SistemaParqueo.Entities;
-using System.Data.SqlClient;
 using System.Data;
 
 namespace SistemaParqueo.DataAccess
@@ -66,7 +65,7 @@ namespace SistemaParqueo.DataAccess
             bool result = false;
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("SpDeleteRol", conn))
+                using (SqlCommand cmd = new SqlCommand("spDeleteRol", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@RolId", rolId);

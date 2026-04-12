@@ -47,7 +47,7 @@ namespace SistemaParqueo.DataAccess
                 using (SqlCommand cmd = new SqlCommand("spUpdateMultaTicket", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Id", entity.MultaId);
+                    cmd.Parameters.AddWithValue("@MultaId", entity.MultaId);
                     cmd.Parameters.AddWithValue("@Concepto", entity.Concepto);
                     cmd.Parameters.AddWithValue("@Precio", entity.Precio);
                     conn.Open();
@@ -65,7 +65,7 @@ namespace SistemaParqueo.DataAccess
                 using (SqlCommand cmd = new SqlCommand("spDeleteMultaTicket", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Id", multaId);
+                    cmd.Parameters.AddWithValue("@MultaId", multaId);
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
                 }

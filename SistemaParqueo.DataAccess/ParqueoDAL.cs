@@ -46,7 +46,7 @@ namespace SistemaParqueo.DataAccess
                 using (SqlCommand cmd = new SqlCommand("spUpdateParqueo", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Id", entity.ParqueoId);
+                    cmd.Parameters.AddWithValue("@ParqueoId", entity.ParqueoId);
                     cmd.Parameters.AddWithValue("@CapacidadTotal", entity.CapacidadTotal);
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
@@ -63,7 +63,7 @@ namespace SistemaParqueo.DataAccess
                 using (SqlCommand cmd = new SqlCommand("spDeleteParqueo", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Id", parqueoId);
+                    cmd.Parameters.AddWithValue("@ParqueoId", parqueoId);
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
                 }

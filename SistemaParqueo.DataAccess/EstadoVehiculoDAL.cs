@@ -9,73 +9,80 @@ using System.Data;
 
 namespace SistemaParqueo.DataAccess
 {
-    public class EstadoUsuarioDAL : Connection
+    public class EstadoVehiculoDAL : Connection
     {
+        private static EstadoVehiculoDAL _instance;
 
-        private static EstadoUsuarioDAL _instance;
-        public static EstadoUsuarioDAL Instance
+        public static EstadoVehiculoDAL Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new EstadoUsuarioDAL();
+                    _instance = new EstadoVehiculoDAL();
+
                 return _instance;
             }
         }
 
-        public bool Insert(EstadoUsuario entity)
+        public bool Insert(EstadoVehiculo entity)
         {
             bool result = false;
+
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("spInsertEstadoUsuario", conn))
+                using (SqlCommand cmd = new SqlCommand("spInsertEstadoVehiculo", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+
                     cmd.Parameters.AddWithValue("@Nombre", entity.Nombre);
+
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
-
                 }
             }
 
             return result;
         }
 
-        public bool Update(EstadoUsuario entity)
+        public bool Update(EstadoVehiculo entity)
         {
             bool result = false;
+
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("spUpdateEstadoUsuario", conn))
+                using (SqlCommand cmd = new SqlCommand("spUpdateEstadoVehiculo", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@EstadoUsuarioId", entity.EstadoUsuarioId);
+
+                    cmd.Parameters.AddWithValue("@EstadoVehiculoId", entity.EstadoVehiculoId);
                     cmd.Parameters.AddWithValue("@Nombre", entity.Nombre);
+
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
-
                 }
             }
 
             return result;
         }
 
-        public bool Delete(int estadoUsuarioId)
+        public bool Delete(int estadoVehiculoId)
         {
             bool result = false;
+
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("spDeleteEstadoUsuario", conn))
+                using (SqlCommand cmd = new SqlCommand("spDeleteEstadoVehiculo", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@EstadoUsuarioId", estadoUsuarioId);
+
+                    cmd.Parameters.AddWithValue("@EstadoVehiculoId", estadoVehiculoId);
 
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
                 }
             }
+
             return result;
         }
-
     }
 }
