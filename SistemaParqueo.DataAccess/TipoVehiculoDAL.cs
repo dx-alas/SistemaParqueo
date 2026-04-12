@@ -79,5 +79,73 @@ namespace SistemaParqueo.DataAccess
             return result;
         }
 
+        public TipoVehiculo SelectById(int tipoVehiculoId)
+        {
+            TipoVehiculo result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectTipoVehiculoById", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@TipoVehiculoId", tipoVehiculoId);
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            while (dr.Read())
+                            {
+                                result = new TipoVehiculo();
+
+                                result.TipoVehiculoId = dr.GetInt32(0);
+                                result.Nombre = dr.GetString(1);
+                                result.Precio = dr.GetDecimal(2);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public List<TipoVehiculo> SelectAll()
+        {
+            List<TipoVehiculo> result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectAllTipoVehiculo", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            result = new List<TipoVehiculo>();
+
+                            while (dr.Read())
+                            {
+                                TipoVehiculo entity = new TipoVehiculo();
+
+                                entity.TipoVehiculoId = dr.GetInt32(0);
+                                entity.Nombre = dr.GetString(1);
+                                entity.Precio = dr.GetDecimal(2);
+
+                                result.Add(entity);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }

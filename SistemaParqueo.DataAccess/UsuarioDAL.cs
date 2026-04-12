@@ -90,5 +90,78 @@ namespace SistemaParqueo.DataAccess
 
             return result;
         }
+
+        public Usuario SelectById(int usuarioId)
+        {
+            Usuario result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectUsuarioById", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@UsuarioId", usuarioId);
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr.Read())
+                        {
+                            result = new Usuario
+                            {
+                                UsuarioId = dr.GetInt32(0),
+                                Nombre = dr.GetString(1),
+                                Clave = dr.GetString(2),
+                                EmpleadoId = dr.GetInt32(3),
+                                RolId = dr.GetInt32(4),
+                                EstadoUsuarioId = dr.GetInt32(5),
+                                Rol = dr.IsDBNull(6) ? null : dr.GetString(6),
+                                EstadoUsuario = dr.IsDBNull(7) ? null : dr.GetString(7)
+                            };
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public List<Usuario> SelectAll()
+        {
+            List<Usuario> result = new List<Usuario>();
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectAllUsuario", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        while (dr.Read())
+                        {
+                            Usuario entity = new Usuario
+                            {
+                                UsuarioId = dr.GetInt32(0),
+                                Nombre = dr.GetString(1),
+                                Clave = dr.GetString(2),
+                                EmpleadoId = dr.GetInt32(3),
+                                RolId = dr.GetInt32(4),
+                                EstadoUsuarioId = dr.GetInt32(5),
+                                Rol = dr.IsDBNull(6) ? null : dr.GetString(6),
+                                EstadoUsuario = dr.IsDBNull(7) ? null : dr.GetString(7)
+                            };
+
+                            result.Add(entity);
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }

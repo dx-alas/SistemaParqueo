@@ -77,5 +77,72 @@ namespace SistemaParqueo.DataAccess
             return result;
         }
 
+        public Rol SelectById(int rolId)
+        {
+            Rol result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectRolById", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@RolId", rolId);
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            while (dr.Read())
+                            {
+                                result = new Rol();
+
+                                result.RolId = dr.GetInt32(0);
+                                result.Nombre = dr.GetString(1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public List<Rol> SelectAll()
+        {
+            List<Rol> result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectAllRol", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            result = new List<Rol>();
+
+                            while (dr.Read())
+                            {
+                                Rol entity = new Rol();
+
+                                entity.RolId = dr.GetInt32(0);
+                                entity.Nombre = dr.GetString(1);
+
+                                result.Add(entity);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
     }
 }

@@ -77,5 +77,72 @@ namespace SistemaParqueo.DataAccess
             return result;
         }
 
+        public EstadoTarjeta SelectById(int estadoTarjetaId)
+        {
+            EstadoTarjeta result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectEstadoTarjetaById", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@EstadoTarjetaId", estadoTarjetaId);
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            while (dr.Read())
+                            {
+                                result = new EstadoTarjeta();
+
+                                result.EstadoTarjetaId = dr.GetInt32(0);
+                                result.Nombre = dr.GetString(1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public List<EstadoTarjeta> SelectAll()
+        {
+            List<EstadoTarjeta> result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectAllEstadoTarjeta", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            result = new List<EstadoTarjeta>();
+
+                            while (dr.Read())
+                            {
+                                EstadoTarjeta entity = new EstadoTarjeta();
+
+                                entity.EstadoTarjetaId = dr.GetInt32(0);
+                                entity.Nombre = dr.GetString(1);
+
+                                result.Add(entity);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
     }
 }

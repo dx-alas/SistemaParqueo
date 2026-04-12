@@ -77,5 +77,72 @@ namespace SistemaParqueo.DataAccess
             return result;
         }
 
+        public EstadoTicket SelectById(int estadoTicketId)
+        {
+            EstadoTicket result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectEstadoTicketById", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@EstadoTicketId", estadoTicketId);
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            while (dr.Read())
+                            {
+                                result = new EstadoTicket();
+
+                                result.EstadoTicketId = dr.GetInt32(0);
+                                result.Nombre = dr.GetString(1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public List<EstadoTicket> SelectAll()
+        {
+            List<EstadoTicket> result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectAllEstadoTicket", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            result = new List<EstadoTicket>();
+
+                            while (dr.Read())
+                            {
+                                EstadoTicket entity = new EstadoTicket();
+
+                                entity.EstadoTicketId = dr.GetInt32(0);
+                                entity.Nombre = dr.GetString(1);
+
+                                result.Add(entity);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
     }
 }

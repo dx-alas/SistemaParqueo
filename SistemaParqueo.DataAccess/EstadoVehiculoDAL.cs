@@ -84,5 +84,72 @@ namespace SistemaParqueo.DataAccess
 
             return result;
         }
+
+        public EstadoVehiculo SelectById(int estadoVehiculoId)
+        {
+            EstadoVehiculo result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectEstadoVehiculoById", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@EstadoVehiculoId", estadoVehiculoId);
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            while (dr.Read())
+                            {
+                                result = new EstadoVehiculo();
+
+                                result.EstadoVehiculoId = dr.GetInt32(0);
+                                result.Nombre = dr.GetString(1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public List<EstadoVehiculo> SelectAll()
+        {
+            List<EstadoVehiculo> result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectAllEstadoVehiculo", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            result = new List<EstadoVehiculo>();
+
+                            while (dr.Read())
+                            {
+                                EstadoVehiculo entity = new EstadoVehiculo();
+
+                                entity.EstadoVehiculoId = dr.GetInt32(0);
+                                entity.Nombre = dr.GetString(1);
+
+                                result.Add(entity);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }

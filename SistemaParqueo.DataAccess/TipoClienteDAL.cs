@@ -77,5 +77,71 @@ namespace SistemaParqueo.DataAccess
             return result;
         }
 
+        public TipoCliente SelectById(int tipoClienteId)
+        {
+            TipoCliente result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectTipoClienteById", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@TipoClienteId", tipoClienteId);
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            while (dr.Read())
+                            {
+                                result = new TipoCliente();
+
+                                result.TipoClienteId = dr.GetInt32(0);
+                                result.Nombre = dr.GetString(1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public List<TipoCliente> SelectAll()
+        {
+            List<TipoCliente> result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectAllTipoCliente", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            result = new List<TipoCliente>();
+
+                            while (dr.Read())
+                            {
+                                TipoCliente entity = new TipoCliente();
+
+                                entity.TipoClienteId = dr.GetInt32(0);
+                                entity.Nombre = dr.GetString(1);
+
+                                result.Add(entity);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }

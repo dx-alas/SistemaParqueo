@@ -84,5 +84,72 @@ namespace SistemaParqueo.DataAccess
             }
             return result;
         }
+
+        public Vehiculo SelectById(int vehiculoId)
+        {
+            Vehiculo result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectVehiculoById", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@VehiculoId", vehiculoId);
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            result = new Vehiculo
+                            {
+                                VehiculoId = dr.GetInt32(0),
+                                Cliente = dr.GetString(1),
+                                Placa = dr.GetString(2),
+                                TipoVehiculo = dr.GetString(3),
+                                EstadoVehiculo = dr.GetString(4)
+                            };
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public List<Vehiculo> SelectAll()
+        {
+            List<Vehiculo> result = new List<Vehiculo>();
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectAllVehiculo", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            Vehiculo entity = new Vehiculo
+                            {
+                                VehiculoId = dr.GetInt32(0),
+                                Cliente = dr.GetString(1),
+                                Placa = dr.GetString(2),
+                                TipoVehiculo = dr.GetString(3),
+                                EstadoVehiculo = dr.GetString(4)
+                            };
+
+                            result.Add(entity);
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }

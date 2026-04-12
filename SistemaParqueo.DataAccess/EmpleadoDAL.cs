@@ -96,5 +96,85 @@ namespace SistemaParqueo.DataAccess
 
             return result;
         }
+
+        public Empleado SelectById(int empleadoId)
+        {
+            Empleado result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectEmpleadoById", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@EmpleadoId", empleadoId);
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            while (dr.Read())
+                            {
+                                result = new Empleado();
+
+                                result.EmpleadoId = dr.GetInt32(0);
+                                result.Nombre = dr.GetString(1);
+                                result.Apellido = dr.GetString(2);
+                                result.DUI = dr.GetString(3);
+                                result.Correo = dr.IsDBNull(4) ? null : dr.GetString(4);
+                                result.Telefono = dr.GetString(5);
+                                result.Direccion = dr.GetString(6);
+                                result.EstadoEmpleadoId = dr.GetInt32(7);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public List<Empleado> SelectAll()
+        {
+            List<Empleado> result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectAllEmpleado", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            result = new List<Empleado>();
+
+                            while (dr.Read())
+                            {
+                                Empleado entity = new Empleado();
+
+                                entity.EmpleadoId = dr.GetInt32(0);
+                                entity.Nombre = dr.GetString(1);
+                                entity.Apellido = dr.GetString(2);
+                                entity.DUI = dr.GetString(3);
+                                entity.Correo = dr.IsDBNull(4) ? null : dr.GetString(4);
+                                entity.Telefono = dr.GetString(5);
+                                entity.Direccion = dr.GetString(6);
+                                entity.EstadoEmpleadoId = dr.GetInt32(7);
+
+                                result.Add(entity);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
     }
+}
 }

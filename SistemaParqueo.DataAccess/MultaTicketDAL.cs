@@ -72,5 +72,74 @@ namespace SistemaParqueo.DataAccess
             }
             return result;
         }
+
+        public MultaTicket SelectById(int multaId)
+        {
+            MultaTicket result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectMultaTicketById", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@MultaId", multaId);
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            while (dr.Read())
+                            {
+                                result = new MultaTicket();
+
+                                result.MultaId = dr.GetInt32(0);
+                                result.Concepto = dr.GetString(1);
+                                result.Precio = dr.GetDecimal(2);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public List<MultaTicket> SelectAll()
+        {
+            List<MultaTicket> result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectAllMultaTicket", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            result = new List<MultaTicket>();
+
+                            while (dr.Read())
+                            {
+                                MultaTicket entity = new MultaTicket();
+
+                                entity.MultaId = dr.GetInt32(0);
+                                entity.Concepto = dr.GetString(1);
+                                entity.Precio = dr.GetDecimal(2);
+
+                                result.Add(entity);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }

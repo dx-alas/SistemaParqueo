@@ -70,5 +70,72 @@ namespace SistemaParqueo.DataAccess
             }
             return result;
         }
+
+        public EstadoPermanencia SelectById(int estadoPermanenciaId)
+        {
+            EstadoPermanencia result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectEstadoPermanenciaById", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@EstadoPermanenciaId", estadoPermanenciaId);
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            while (dr.Read())
+                            {
+                                result = new EstadoPermanencia();
+
+                                result.EstadoPermanenciaId = dr.GetInt32(0);
+                                result.Estado = dr.GetString(1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public List<EstadoPermanencia> SelectAll()
+        {
+            List<EstadoPermanencia> result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectAllEstadoPermanencia", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            result = new List<EstadoPermanencia>();
+
+                            while (dr.Read())
+                            {
+                                EstadoPermanencia entity = new EstadoPermanencia();
+
+                                entity.EstadoPermanenciaId = dr.GetInt32(0);
+                                entity.Estado = dr.GetString(1);
+
+                                result.Add(entity);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }

@@ -106,5 +106,96 @@ namespace SistemaParqueo.DataAccess
 
             return result;
         }
+
+        public Ticket SelectById(int ticketId)
+        {
+            Ticket result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectTicketById", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@TicketId", ticketId);
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            while (dr.Read())
+                            {
+                                result = new Ticket();
+
+                                result.TicketId = dr.GetInt32(0);
+                                result.Fecha = dr.GetDateTime(1);
+                                result.HoraEntrada = dr.GetDateTime(2);
+
+                                result.HoraSalida = dr.IsDBNull(3) ? null : (DateTime?)dr.GetDateTime(3);
+                                result.Total = dr.IsDBNull(4) ? null : (decimal?)dr.GetDecimal(4);
+
+                                result.TarjetaId = dr.GetInt32(5);
+                                result.CorteId = dr.GetInt32(6);
+                                result.MultaId = dr.IsDBNull(7) ? null : (int?)dr.GetInt32(7);
+
+                                result.Usuario = dr.GetString(8);
+                                result.EstadoTicket = dr.GetString(9);
+                                result.EstadoPermanencia = dr.GetString(10);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public List<Ticket> SelectAll()
+        {
+            List<Ticket> result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectAllTicket", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            result = new List<Ticket>();
+
+                            while (dr.Read())
+                            {
+                                Ticket entity = new Ticket();
+
+                                entity.TicketId = dr.GetInt32(0);
+                                entity.Fecha = dr.GetDateTime(1);
+                                entity.HoraEntrada = dr.GetDateTime(2);
+
+                                entity.HoraSalida = dr.IsDBNull(3) ? null : (DateTime?)dr.GetDateTime(3);
+                                entity.Total = dr.IsDBNull(4) ? null : (decimal?)dr.GetDecimal(4);
+
+                                entity.TarjetaId = dr.GetInt32(5);
+                                entity.CorteId = dr.GetInt32(6);
+                                entity.MultaId = dr.IsDBNull(7) ? null : (int?)dr.GetInt32(7);
+
+                                entity.Usuario = dr.GetString(8);
+                                entity.EstadoTicket = dr.GetString(9);
+                                entity.EstadoPermanencia = dr.GetString(10);
+
+                                result.Add(entity);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }

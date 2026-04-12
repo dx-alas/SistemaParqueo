@@ -70,5 +70,72 @@ namespace SistemaParqueo.DataAccess
             }
             return result;
         }
+
+        public Parqueo SelectById(int parqueoId)
+        {
+            Parqueo result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectParqueoById", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ParqueoId", parqueoId);
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            while (dr.Read())
+                            {
+                                result = new Parqueo();
+
+                                result.ParqueoId = dr.GetInt32(0);
+                                result.CapacidadTotal = dr.GetInt32(1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public List<Parqueo> SelectAll()
+        {
+            List<Parqueo> result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectAllParqueo", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr != null)
+                        {
+                            result = new List<Parqueo>();
+
+                            while (dr.Read())
+                            {
+                                Parqueo entity = new Parqueo();
+
+                                entity.ParqueoId = dr.GetInt32(0);
+                                entity.CapacidadTotal = dr.GetInt32(1);
+
+                                result.Add(entity);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }
