@@ -13,12 +13,18 @@ namespace SistemaParqueo.Entities
         public DateTime HoraEntrada { get; set; }
         public DateTime? HoraSalida { get; set; }
         public decimal? Total { get; set; }
+
         public int TarjetaId { get; set; }
         public int CorteId { get; set; }
         public int EstadoTicketId { get; set; }
         public int UsuarioId { get; set; }
         public int? MultaId { get; set; }
         public int EstadoPermanenciaId { get; set; }
+
+        // CAMPOS PARA SELECT (JOIN)
+        public string Usuario { get; set; }
+        public string EstadoTicket { get; set; }
+        public string EstadoPermanencia { get; set; }
 
         public Ticket()
         {
@@ -52,6 +58,21 @@ namespace SistemaParqueo.Entities
             UsuarioId = usuarioId;
             MultaId = multaId;
             EstadoPermanenciaId = estadoPermanenciaId;
+        }
+
+        public Ticket(int ticketId, DateTime fecha, DateTime horaEntrada, DateTime? horaSalida, decimal? total, int tarjetaId, int corteId, string usuario, string estadoTicket, string estadoPermanencia)
+        {
+            TicketId = ticketId;
+            Fecha = fecha;
+            HoraEntrada = horaEntrada;
+            HoraSalida = horaSalida;
+            Total = total;
+            TarjetaId = tarjetaId;
+            CorteId = corteId;
+
+            Usuario = usuario;
+            EstadoTicket = estadoTicket;
+            EstadoPermanencia = estadoPermanencia;
         }
     }
 }

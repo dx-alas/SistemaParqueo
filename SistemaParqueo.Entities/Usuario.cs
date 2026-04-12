@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SistemaParqueo.Entities
 {
@@ -11,13 +7,17 @@ namespace SistemaParqueo.Entities
         public int UsuarioId { get; set; }
         public string Nombre { get; set; }
         public string Clave { get; set; }
+
         public int EmpleadoId { get; set; }
         public int RolId { get; set; }
         public int EstadoUsuarioId { get; set; }
 
+        // SELECT (joins)
+        public string Rol { get; set; }
+        public string EstadoUsuario { get; set; }
+
         public Usuario()
         {
-
         }
 
         public Usuario(string nombre, string clave, int empleadoId, int rolId, int estadoUsuarioId)
@@ -37,6 +37,14 @@ namespace SistemaParqueo.Entities
             EmpleadoId = empleadoId;
             RolId = rolId;
             EstadoUsuarioId = estadoUsuarioId;
+        }
+
+        public Usuario(int usuarioId, string nombre, string rol, string estadoUsuario)
+        {
+            UsuarioId = usuarioId;
+            Nombre = nombre;
+            Rol = rol;
+            EstadoUsuario = estadoUsuario;
         }
     }
 }
