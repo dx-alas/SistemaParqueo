@@ -1,4 +1,5 @@
-﻿using SistemaParqueo.Entities;
+﻿using SistemaParqueo.DataAccess;
+using SistemaParqueo.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace SistemaParqueo.BusinessLogic
 
             try
             {
-                result = EstadoUsuarioBL.Instance.Insert(entity);
+                result = EstadoUsuarioDAL.Instance.Insert(entity);
             }
             catch (Exception ex)
             {
@@ -41,7 +42,7 @@ namespace SistemaParqueo.BusinessLogic
 
             try
             {
-                result = EstadoUsuarioBL.Instance.Update(entity);
+                result = EstadoUsuarioDAL.Instance.Update(entity);
             }
             catch (Exception ex)
             {
@@ -56,7 +57,7 @@ namespace SistemaParqueo.BusinessLogic
 
             try
             {
-                result = EstadoUsuarioBL.Instance.Delete(estadoUsuarioId);
+                result = EstadoUsuarioDAL.Instance.Delete(estadoUsuarioId);
             }
             catch (Exception ex)
             {

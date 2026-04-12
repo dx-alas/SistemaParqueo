@@ -28,7 +28,7 @@ namespace SistemaParqueo.BusinessLogic
 
             try
             {
-                result = TipoVehiculoBL.Instance.Insert(entity);
+                result = TipoVehiculoDAL.Instance.Insert(entity);
             }
             catch(Exception ex) 
             {
@@ -43,7 +43,7 @@ namespace SistemaParqueo.BusinessLogic
 
             try
             {
-                result = TipoVehiculoBL.Instance.Update(entity);
+                result = TipoVehiculoDAL.Instance.Update(entity);
             }
             catch (Exception ex)
             {
@@ -58,7 +58,7 @@ namespace SistemaParqueo.BusinessLogic
 
             try
             {
-                result = TipoVehiculoBL.Instance.Delete(tipoVehiculoId);
+                result = TipoVehiculoDAL.Instance.Delete(tipoVehiculoId);
             }
             catch (Exception ex)
             {

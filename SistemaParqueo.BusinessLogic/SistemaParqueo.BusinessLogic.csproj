@@ -44,10 +44,13 @@
     <Compile Include="ClienteBL.cs" />
     <Compile Include="CorteCajaBL.cs" />
     <Compile Include="EmpleadoBL.cs" />
+    <Compile Include="EstadoClienteBL.cs" />
+    <Compile Include="EstadoEmpleadoBL.cs" />
     <Compile Include="EstadoPermanenciaBL.cs" />
     <Compile Include="EstadoTarjetaBL.cs" />
     <Compile Include="EstadoTicketBL.cs" />
     <Compile Include="EstadoUsuarioBL.cs" />
+    <Compile Include="EstadoVehiculoBL.cs" />
     <Compile Include="MultaTicketBL.cs" />
     <Compile Include="ParqueoBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
