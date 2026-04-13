@@ -97,5 +97,22 @@ namespace SistemaParqueo.BusinessLogic
 
             return result;
         }
+
+        // Metodo para LOGIN
+        public Usuario Login(string nombre, string clave)
+        {
+            Usuario result = null;
+
+            try
+            {
+                result = UsuarioDAL.Instance.Login(nombre, clave);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return result;
+        }
     }
 }

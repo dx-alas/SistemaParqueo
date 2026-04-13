@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SistemaParqueo.BusinessLogic;
+using SistemaParqueo.Entities;
+using System;
 using System.Windows.Forms;
 
 namespace SistemaParqueo.Desktop
@@ -21,19 +16,11 @@ namespace SistemaParqueo.Desktop
         {
             txtUsuario.Focus();
             txtClave.UseSystemPasswordChar = true;
-            
         }
 
         private void chkMostrarContrasena_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkMostrarContrasena.Checked)
-            {
-                txtClave.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtClave.UseSystemPasswordChar = true;
-            }
+            txtClave.UseSystemPasswordChar = !chkMostrarContrasena.Checked;
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -46,12 +33,7 @@ namespace SistemaParqueo.Desktop
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show(
-                "¿Desea salir del sistema?",
-                "Confirmación",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
+            DialogResult resultado = MessageBox.Show("¿Desea salir del sistema?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
@@ -75,20 +57,20 @@ namespace SistemaParqueo.Desktop
                 return;
             }
 
-            // PRUEBA TEMPORAL
-            if (txtUsuario.Text == "admin" && txtClave.Text == "123")
-            {
-                
-                    FrmMain frmMain = new FrmMain();
-                    this.Hide();
-                    frmMain.ShowDialog();
-                    this.Close();
+            Usuario usuario = UsuarioBL.Instance.Login(txtUsuario.Text.Trim(), txtClave.Text.Trim());
 
-                MessageBox.Show("Aquí abrirá el menú principal.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (usuario != null)
+            {
+                FrmMain frmMain = new FrmMain();
+
+                this.Hide();
+                frmMain.ShowDialog();
+                this.Close();
             }
             else
             {
-                MessageBox.Show("Usuario o clave incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Usuario o clave incorrectos.", "Error de autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 txtClave.Clear();
                 txtClave.Focus();
             }
