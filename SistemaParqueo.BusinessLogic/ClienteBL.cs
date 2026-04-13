@@ -65,6 +65,38 @@ namespace SistemaParqueo.BusinessLogic
             }
             return result;
         }
+
+        public Cliente SelectById(int clienteId)
+        {
+            Cliente result = null;
+
+            try
+            {
+                result = ClienteDAL.Instance.SelectById(clienteId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return result;
+        }
+
+        public List<Cliente> SelectAll()
+        {
+            List<Cliente> result = null;
+
+            try
+            {
+                result = ClienteDAL.Instance.SelectAll();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return result;
+        }
     }
 }
 

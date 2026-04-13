@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SistemaParqueo.BusinessLogic
 {
-    internal class TipoVehiculoBL
+    public class TipoVehiculoBL
     {
         private static TipoVehiculoBL _instance;
         public static TipoVehiculoBL Instance
@@ -64,6 +64,38 @@ namespace SistemaParqueo.BusinessLogic
             {
                 throw new Exception(ex.Message);
             }
+            return result;
+        }
+
+        public TipoVehiculo SelectById(int tipoVehiculoId)
+        {
+            TipoVehiculo result = null;
+
+            try
+            {
+                result = TipoVehiculoDAL.Instance.SelectById(tipoVehiculoId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return result;
+        }
+
+        public List<TipoVehiculo> SelectAll()
+        {
+            List<TipoVehiculo> result = null;
+
+            try
+            {
+                result = TipoVehiculoDAL.Instance.SelectAll();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
             return result;
         }
     }

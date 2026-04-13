@@ -59,7 +59,6 @@
     <Compile Include="TicketBL.cs" />
     <Compile Include="TipoClienteBL.cs" />
     <Compile Include="TipoVehiculoBL.cs" />
-    <Compile Include="UsuarioAutorizaBL.cs" />
     <Compile Include="UsuarioBL.cs" />
     <Compile Include="VehiculoBL.cs" />
   </ItemGroup>

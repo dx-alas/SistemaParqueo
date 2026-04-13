@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SistemaParqueo.BusinessLogic
 {
-    internal class EstadoEmpleadoBL
+    public class EstadoEmpleadoBL
     {
         private static EstadoEmpleadoBL _instance;
         public static EstadoEmpleadoBL Instance
@@ -51,18 +51,50 @@ namespace SistemaParqueo.BusinessLogic
             return result;
         }
 
-        public bool Delete(int empleadoId)
+        public bool Delete(int estadoEmpleadoId)
         {
             bool result = false;
 
             try
             {
-                result = EstadoEmpleadoDAL.Instance.Delete(empleadoId);
+                result = EstadoEmpleadoDAL.Instance.Delete(estadoEmpleadoId);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
+            return result;
+        }
+
+        public EstadoEmpleado SelectById(int estadoEmpleadoId)
+        {
+            EstadoEmpleado result = null;
+
+            try
+            {
+                result = EstadoEmpleadoDAL.Instance.SelectById(estadoEmpleadoId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return result;
+        }
+
+        public List<EstadoEmpleado> SelectAll()
+        {
+            List<EstadoEmpleado> result = null;
+
+            try
+            {
+                result = EstadoEmpleadoDAL.Instance.SelectAll();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
             return result;
         }
     }

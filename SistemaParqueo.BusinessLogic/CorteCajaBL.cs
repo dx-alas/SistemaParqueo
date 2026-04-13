@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SistemaParqueo.BusinessLogic
 {
-    internal class CorteCajaBL
+    public class CorteCajaBL
     {
         private static CorteCajaBL _instance;
         public static CorteCajaBL Instance
@@ -63,6 +63,38 @@ namespace SistemaParqueo.BusinessLogic
             {
                 throw new Exception(ex.Message);
             }
+            return result;
+        }
+
+        public CorteCaja SelectById(int corteId)
+        {
+            CorteCaja result = null;
+
+            try
+            {
+                result = CorteCajaDAL.Instance.SelectById(corteId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return result;
+        }
+
+        public List<CorteCaja> SelectAll()
+        {
+            List<CorteCaja> result = null;
+
+            try
+            {
+                result = CorteCajaDAL.Instance.SelectAll();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
             return result;
         }
     }

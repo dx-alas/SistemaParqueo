@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SistemaParqueo.BusinessLogic
 {
-    internal class EmpleadoBL
+    public class EmpleadoBL
     {
         private static EmpleadoBL _instance;
         public static EmpleadoBL Instance
@@ -63,6 +63,38 @@ namespace SistemaParqueo.BusinessLogic
             {
                 throw new Exception(ex.Message);
             }
+            return result;
+        }
+
+        public Empleado SelectById(int empleadoId)
+        {
+            Empleado result = null;
+
+            try
+            {
+                result = EmpleadoDAL.Instance.SelectById(empleadoId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return result;
+        }
+
+        public List<Empleado> SelectAll()
+        {
+            List<Empleado> result = null;
+
+            try
+            {
+                result = EmpleadoDAL.Instance.SelectAll();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
             return result;
         }
     }

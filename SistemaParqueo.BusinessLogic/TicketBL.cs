@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SistemaParqueo.BusinessLogic
 {
-    internal class TicketBL
+    public class TicketBL
     {
         private static TicketBL _instance;
         public static TicketBL Instance
@@ -63,6 +63,38 @@ namespace SistemaParqueo.BusinessLogic
             {
                 throw new Exception(ex.Message);
             }
+            return result;
+        }
+
+        public Ticket SelectById(int ticketId)
+        {
+            Ticket result = null;
+
+            try
+            {
+                result = TicketDAL.Instance.SelectById(ticketId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return result;
+        }
+
+        public List<Ticket> SelectAll()
+        {
+            List<Ticket> result = null;
+
+            try
+            {
+                result = TicketDAL.Instance.SelectAll();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
             return result;
         }
     }

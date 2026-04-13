@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SistemaParqueo.BusinessLogic
 {
-    internal class RolBL
+    public class RolBL
     {
         private static RolBL _instance;
         public static RolBL Instance
@@ -63,6 +63,38 @@ namespace SistemaParqueo.BusinessLogic
             {
                 throw new Exception(ex.Message);
             }
+            return result;
+        }
+
+        public Rol SelectById(int rolId)
+        {
+            Rol result = null;
+
+            try
+            {
+                result = RolDAL.Instance.SelectById(rolId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return result;
+        }
+
+        public List<Rol> SelectAll()
+        {
+            List<Rol> result = null;
+
+            try
+            {
+                result = RolDAL.Instance.SelectAll();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
             return result;
         }
     }
