@@ -18,15 +18,15 @@ El sistema requiere una base de datos SQL Server para su funcionamiento. Siga es
 1. Acceda al repositorio de la base de datos: [SistemaParqueoBD](https://github.com/dx-alas/SistemaParqueoBD/).
 2. Localice el archivo `LoginDemoSetup.sql` y copie su contenido.
 3. Abra **SQL Server Management Studio (SSMS)** y cree una nueva consulta (**New Query**).
-4. Pegue el código y ejecute el script completo. Este paso creará las tablas, cargará datos de prueba y generará los procedimientos almacenados necesarios para probar el Login.
+4. Pegue el código y ejecute el script completo. Este paso creará las tablas, cargará datos de prueba y generará los procedimientos almacenados necesarios para el inicio de sesión.
 
 ## 3. Configuración del Entorno de Desarrollo
 
-Antes de ejecutar la aplicación, es necesario vincularla con su instancia local de base de datos:
+Para asegurar la conexión entre la aplicación y su servidor local:
 
-1. En Visual Studio, abra el proyecto `SistemaParqueo.Desktop`.
-2. Busque el archivo `App.config`.
-3. Modifique la cadena de conexión (`connectionString`) ajustando el nombre del servidor o usuario según su configuración local de SQL Server.
+1. En Visual Studio, localice el archivo `App.config` dentro del proyecto **SistemaParqueo.Desktop**.
+2. **Configuración Estándar:** La cadena de conexión está establecida por defecto en `localhost\SQLEXPRESS`. Esta configuración es compatible con la mayoría de las instalaciones locales y debería funcionar correctamente sin necesidad de modificaciones adicionales.
+3. **Casos Especiales:** Únicamente si su instancia de SQL Server tiene un nombre personalizado o usa una versión diferente (como la Developer), ajuste el parámetro `Data Source` en la propiedad `connectionString`.
 4. Haga clic derecho sobre el proyecto **SistemaParqueo.Desktop** en el Explorador de Soluciones y seleccione **Establecer como proyecto de inicio**.
 5. Presione el botón **Iniciar** (o la tecla F5).
 
