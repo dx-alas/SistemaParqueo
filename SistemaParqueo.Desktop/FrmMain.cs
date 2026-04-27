@@ -50,9 +50,12 @@ namespace SistemaParqueo.Desktop
             formularioActivo = formulario;
 
             formulario.TopLevel = false;                       
-            formulario.FormBorderStyle = FormBorderStyle.None; 
-            formulario.Dock = DockStyle.Fill;             
-
+            formulario.FormBorderStyle = FormBorderStyle.None;
+            formulario.Dock = DockStyle.None;
+            formulario.Location = new Point(
+    (panelContenedor.Width - formulario.Width) / 2,
+    (panelContenedor.Height - formulario.Height) / 2
+);
             panelContenedor.Controls.Clear();              
             panelContenedor.Controls.Add(formulario);        
             panelContenedor.Tag = formulario;            
@@ -162,6 +165,11 @@ namespace SistemaParqueo.Desktop
         }
 
         private void lblTituloSistema_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
         {
 
         }

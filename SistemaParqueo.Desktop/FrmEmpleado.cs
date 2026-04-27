@@ -52,24 +52,29 @@ namespace SistemaParqueo.Desktop
         }
 
         //Registrar
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            string nombre = txtNombre.Text;
-            string apellido = txtApellido.Text;
-            string dui = txtDUI.Text;
-            string correo = txtCorreo.Text;
-            string telefono = txtTelefono.Text;
+        //private void btnRegistrar_Click(object sender, EventArgs e)
+        //{
+        //    string nombre = txtNombre.Text;
+        //    string apellido = txtApellido.Text;
+        //    string dui = txtDUI.Text;
+        //    string correo = txtCorreo.Text;
+        //    string telefono = txtTelefono.Text;
 
-            lblDatos.Text = Environment.NewLine +
-                              "Nombres del empleado: " + nombre + Environment.NewLine +
-                              Environment.NewLine +
-                              "Apellidos del empleado: " + apellido + Environment.NewLine +
-                              Environment.NewLine +
-                              "DUI: " + dui + Environment.NewLine +
-                              Environment.NewLine +
-                              "Correo electrónico: " + correo + Environment.NewLine +
-                              Environment.NewLine +
-                              "Telefono: " + telefono + Environment.NewLine ;
+        //    lblDatos.Text = Environment.NewLine +
+        //                      "Nombres del empleado: " + nombre + Environment.NewLine +
+        //                      Environment.NewLine +
+        //                      "Apellidos del empleado: " + apellido + Environment.NewLine +
+        //                      Environment.NewLine +
+        //                      "DUI: " + dui + Environment.NewLine +
+        //                      Environment.NewLine +
+        //                      "Correo electrónico: " + correo + Environment.NewLine +
+        //                      Environment.NewLine +
+        //                      "Telefono: " + telefono + Environment.NewLine ;
+        //}
+
+        private void lblTelefono_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

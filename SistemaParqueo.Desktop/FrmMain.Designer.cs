@@ -78,8 +78,9 @@
             this.panelMenu.Controls.Add(this.btnInicio);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 695);
+            this.panelMenu.Size = new System.Drawing.Size(293, 855);
             this.panelMenu.TabIndex = 0;
             // 
             // btnSalir
@@ -89,9 +90,10 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(10, 650);
+            this.btnSalir.Location = new System.Drawing.Point(13, 800);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(200, 30);
+            this.btnSalir.Size = new System.Drawing.Size(267, 37);
             this.btnSalir.TabIndex = 6;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -103,9 +105,10 @@
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(10, 610);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(13, 751);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(200, 30);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(267, 37);
             this.btnCerrarSesion.TabIndex = 7;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
@@ -117,9 +120,10 @@
             this.btnTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTicket.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTicket.ForeColor = System.Drawing.Color.White;
-            this.btnTicket.Location = new System.Drawing.Point(10, 570);
+            this.btnTicket.Location = new System.Drawing.Point(13, 702);
+            this.btnTicket.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTicket.Name = "btnTicket";
-            this.btnTicket.Size = new System.Drawing.Size(200, 30);
+            this.btnTicket.Size = new System.Drawing.Size(267, 37);
             this.btnTicket.TabIndex = 14;
             this.btnTicket.Text = "Ticket";
             this.btnTicket.UseVisualStyleBackColor = false;
@@ -131,9 +135,10 @@
             this.btnTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTarjeta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTarjeta.ForeColor = System.Drawing.Color.White;
-            this.btnTarjeta.Location = new System.Drawing.Point(10, 530);
+            this.btnTarjeta.Location = new System.Drawing.Point(13, 652);
+            this.btnTarjeta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTarjeta.Name = "btnTarjeta";
-            this.btnTarjeta.Size = new System.Drawing.Size(200, 30);
+            this.btnTarjeta.Size = new System.Drawing.Size(267, 37);
             this.btnTarjeta.TabIndex = 13;
             this.btnTarjeta.Text = "Tarjeta";
             this.btnTarjeta.UseVisualStyleBackColor = false;
@@ -145,9 +150,10 @@
             this.btnVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVehiculo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVehiculo.ForeColor = System.Drawing.Color.White;
-            this.btnVehiculo.Location = new System.Drawing.Point(10, 410);
+            this.btnVehiculo.Location = new System.Drawing.Point(13, 505);
+            this.btnVehiculo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVehiculo.Name = "btnVehiculo";
-            this.btnVehiculo.Size = new System.Drawing.Size(200, 30);
+            this.btnVehiculo.Size = new System.Drawing.Size(267, 37);
             this.btnVehiculo.TabIndex = 9;
             this.btnVehiculo.Text = "Vehiculo";
             this.btnVehiculo.UseVisualStyleBackColor = false;
@@ -159,9 +165,10 @@
             this.btnCorteCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCorteCaja.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCorteCaja.ForeColor = System.Drawing.Color.White;
-            this.btnCorteCaja.Location = new System.Drawing.Point(10, 450);
+            this.btnCorteCaja.Location = new System.Drawing.Point(13, 554);
+            this.btnCorteCaja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCorteCaja.Name = "btnCorteCaja";
-            this.btnCorteCaja.Size = new System.Drawing.Size(200, 30);
+            this.btnCorteCaja.Size = new System.Drawing.Size(267, 37);
             this.btnCorteCaja.TabIndex = 12;
             this.btnCorteCaja.Text = "CorteCaja";
             this.btnCorteCaja.UseVisualStyleBackColor = false;
@@ -173,9 +180,10 @@
             this.btnEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmpleado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmpleado.ForeColor = System.Drawing.Color.White;
-            this.btnEmpleado.Location = new System.Drawing.Point(10, 290);
+            this.btnEmpleado.Location = new System.Drawing.Point(13, 357);
+            this.btnEmpleado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEmpleado.Name = "btnEmpleado";
-            this.btnEmpleado.Size = new System.Drawing.Size(200, 30);
+            this.btnEmpleado.Size = new System.Drawing.Size(267, 37);
             this.btnEmpleado.TabIndex = 7;
             this.btnEmpleado.Text = "Empleado";
             this.btnEmpleado.UseVisualStyleBackColor = false;
@@ -187,9 +195,10 @@
             this.btnMultaTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMultaTicket.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMultaTicket.ForeColor = System.Drawing.Color.White;
-            this.btnMultaTicket.Location = new System.Drawing.Point(10, 490);
+            this.btnMultaTicket.Location = new System.Drawing.Point(13, 603);
+            this.btnMultaTicket.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMultaTicket.Name = "btnMultaTicket";
-            this.btnMultaTicket.Size = new System.Drawing.Size(200, 30);
+            this.btnMultaTicket.Size = new System.Drawing.Size(267, 37);
             this.btnMultaTicket.TabIndex = 11;
             this.btnMultaTicket.Text = "MultaTicket";
             this.btnMultaTicket.UseVisualStyleBackColor = false;
@@ -201,9 +210,10 @@
             this.btnEstadoTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstadoTicket.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstadoTicket.ForeColor = System.Drawing.Color.White;
-            this.btnEstadoTicket.Location = new System.Drawing.Point(10, 250);
+            this.btnEstadoTicket.Location = new System.Drawing.Point(13, 308);
+            this.btnEstadoTicket.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEstadoTicket.Name = "btnEstadoTicket";
-            this.btnEstadoTicket.Size = new System.Drawing.Size(200, 30);
+            this.btnEstadoTicket.Size = new System.Drawing.Size(267, 37);
             this.btnEstadoTicket.TabIndex = 6;
             this.btnEstadoTicket.Text = "EstadoTicket";
             this.btnEstadoTicket.UseVisualStyleBackColor = false;
@@ -215,9 +225,10 @@
             this.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCliente.ForeColor = System.Drawing.Color.White;
-            this.btnCliente.Location = new System.Drawing.Point(10, 370);
+            this.btnCliente.Location = new System.Drawing.Point(13, 455);
+            this.btnCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Size = new System.Drawing.Size(200, 30);
+            this.btnCliente.Size = new System.Drawing.Size(267, 37);
             this.btnCliente.TabIndex = 10;
             this.btnCliente.Text = "Cliente";
             this.btnCliente.UseVisualStyleBackColor = false;
@@ -229,9 +240,10 @@
             this.btnEstadoTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstadoTarjeta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstadoTarjeta.ForeColor = System.Drawing.Color.White;
-            this.btnEstadoTarjeta.Location = new System.Drawing.Point(10, 210);
+            this.btnEstadoTarjeta.Location = new System.Drawing.Point(13, 258);
+            this.btnEstadoTarjeta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEstadoTarjeta.Name = "btnEstadoTarjeta";
-            this.btnEstadoTarjeta.Size = new System.Drawing.Size(200, 30);
+            this.btnEstadoTarjeta.Size = new System.Drawing.Size(267, 37);
             this.btnEstadoTarjeta.TabIndex = 5;
             this.btnEstadoTarjeta.Text = "EstadoTarjeta";
             this.btnEstadoTarjeta.UseVisualStyleBackColor = false;
@@ -243,9 +255,10 @@
             this.btnRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRol.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRol.ForeColor = System.Drawing.Color.White;
-            this.btnRol.Location = new System.Drawing.Point(10, 170);
+            this.btnRol.Location = new System.Drawing.Point(13, 209);
+            this.btnRol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRol.Name = "btnRol";
-            this.btnRol.Size = new System.Drawing.Size(200, 30);
+            this.btnRol.Size = new System.Drawing.Size(267, 37);
             this.btnRol.TabIndex = 4;
             this.btnRol.Text = "Rol";
             this.btnRol.UseVisualStyleBackColor = false;
@@ -257,9 +270,10 @@
             this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnUsuario.Location = new System.Drawing.Point(10, 330);
+            this.btnUsuario.Location = new System.Drawing.Point(13, 406);
+            this.btnUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(200, 30);
+            this.btnUsuario.Size = new System.Drawing.Size(267, 37);
             this.btnUsuario.TabIndex = 8;
             this.btnUsuario.Text = "Usuario";
             this.btnUsuario.UseVisualStyleBackColor = false;
@@ -271,9 +285,10 @@
             this.btnEstadoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstadoUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstadoUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnEstadoUsuario.Location = new System.Drawing.Point(10, 130);
+            this.btnEstadoUsuario.Location = new System.Drawing.Point(13, 160);
+            this.btnEstadoUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEstadoUsuario.Name = "btnEstadoUsuario";
-            this.btnEstadoUsuario.Size = new System.Drawing.Size(200, 30);
+            this.btnEstadoUsuario.Size = new System.Drawing.Size(267, 37);
             this.btnEstadoUsuario.TabIndex = 3;
             this.btnEstadoUsuario.Text = "EstadoUsuario";
             this.btnEstadoUsuario.UseVisualStyleBackColor = false;
@@ -285,9 +300,10 @@
             this.btnTipoVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTipoVehiculo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTipoVehiculo.ForeColor = System.Drawing.Color.White;
-            this.btnTipoVehiculo.Location = new System.Drawing.Point(10, 90);
+            this.btnTipoVehiculo.Location = new System.Drawing.Point(13, 111);
+            this.btnTipoVehiculo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTipoVehiculo.Name = "btnTipoVehiculo";
-            this.btnTipoVehiculo.Size = new System.Drawing.Size(200, 30);
+            this.btnTipoVehiculo.Size = new System.Drawing.Size(267, 37);
             this.btnTipoVehiculo.TabIndex = 2;
             this.btnTipoVehiculo.Text = "TipoVehiculo";
             this.btnTipoVehiculo.UseVisualStyleBackColor = false;
@@ -299,9 +315,10 @@
             this.btnTipoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTipoCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTipoCliente.ForeColor = System.Drawing.Color.White;
-            this.btnTipoCliente.Location = new System.Drawing.Point(10, 50);
+            this.btnTipoCliente.Location = new System.Drawing.Point(13, 62);
+            this.btnTipoCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTipoCliente.Name = "btnTipoCliente";
-            this.btnTipoCliente.Size = new System.Drawing.Size(200, 30);
+            this.btnTipoCliente.Size = new System.Drawing.Size(267, 37);
             this.btnTipoCliente.TabIndex = 1;
             this.btnTipoCliente.Text = "TipoCliente";
             this.btnTipoCliente.UseVisualStyleBackColor = false;
@@ -313,9 +330,10 @@
             this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInicio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInicio.ForeColor = System.Drawing.Color.White;
-            this.btnInicio.Location = new System.Drawing.Point(10, 10);
+            this.btnInicio.Location = new System.Drawing.Point(13, 12);
+            this.btnInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Size = new System.Drawing.Size(200, 30);
+            this.btnInicio.Size = new System.Drawing.Size(267, 37);
             this.btnInicio.TabIndex = 0;
             this.btnInicio.Text = "Inicio";
             this.btnInicio.UseVisualStyleBackColor = false;
@@ -327,9 +345,10 @@
             this.panelTop.Controls.Add(this.lblUsuario);
             this.panelTop.Controls.Add(this.lblTituloSistema);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(220, 0);
+            this.panelTop.Location = new System.Drawing.Point(293, 0);
+            this.panelTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1022, 70);
+            this.panelTop.Size = new System.Drawing.Size(1363, 86);
             this.panelTop.TabIndex = 1;
             // 
             // lblRol
@@ -337,9 +356,10 @@
             this.lblRol.AutoSize = true;
             this.lblRol.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRol.ForeColor = System.Drawing.Color.White;
-            this.lblRol.Location = new System.Drawing.Point(758, 33);
+            this.lblRol.Location = new System.Drawing.Point(1011, 41);
+            this.lblRol.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(125, 17);
+            this.lblRol.Size = new System.Drawing.Size(163, 23);
             this.lblRol.TabIndex = 1;
             this.lblRol.Text = "Rol: Administrador";
             // 
@@ -348,9 +368,10 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblUsuario.Location = new System.Drawing.Point(758, 10);
+            this.lblUsuario.Location = new System.Drawing.Point(1011, 12);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(104, 17);
+            this.lblUsuario.Size = new System.Drawing.Size(134, 23);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario: Admin";
             // 
@@ -359,32 +380,36 @@
             this.lblTituloSistema.AutoSize = true;
             this.lblTituloSistema.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloSistema.ForeColor = System.Drawing.Color.White;
-            this.lblTituloSistema.Location = new System.Drawing.Point(15, 18);
+            this.lblTituloSistema.Location = new System.Drawing.Point(20, 22);
+            this.lblTituloSistema.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTituloSistema.Name = "lblTituloSistema";
-            this.lblTituloSistema.Size = new System.Drawing.Size(273, 32);
+            this.lblTituloSistema.Size = new System.Drawing.Size(341, 41);
             this.lblTituloSistema.TabIndex = 0;
             this.lblTituloSistema.Text = "SISTEMA DE PARQUEO";
             this.lblTituloSistema.Click += new System.EventHandler(this.lblTituloSistema_Click);
             // 
             // panelContenedor
             // 
-            this.panelContenedor.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelContenedor.BackColor = System.Drawing.Color.White;
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(220, 70);
+            this.panelContenedor.Location = new System.Drawing.Point(293, 86);
+            this.panelContenedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1022, 625);
+            this.panelContenedor.Size = new System.Drawing.Size(1363, 769);
             this.panelContenedor.TabIndex = 2;
+            this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1242, 695);
+            this.ClientSize = new System.Drawing.Size(1656, 855);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de parqueo - Menú principal";
