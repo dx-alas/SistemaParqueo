@@ -30,7 +30,7 @@ namespace SistemaParqueo.DataAccess
                 using (SqlCommand cmd = new SqlCommand("spInsertEstadoPermanencia", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Estado", entity.Estado);
+                    cmd.Parameters.AddWithValue("@Nombre", entity.Nombre);
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
                 }
@@ -47,7 +47,7 @@ namespace SistemaParqueo.DataAccess
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@EstadoPermanenciaId", entity.EstadoPermanenciaId);
-                    cmd.Parameters.AddWithValue("@Estado", entity.Estado);
+                    cmd.Parameters.AddWithValue("@Nombre", entity.Nombre);
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
                 }
@@ -93,7 +93,7 @@ namespace SistemaParqueo.DataAccess
                                 result = new EstadoPermanencia();
 
                                 result.EstadoPermanenciaId = dr.GetInt32(0);
-                                result.Estado = dr.GetString(1);
+                                result.Nombre = dr.GetString(1);
                             }
                         }
                     }
@@ -126,7 +126,7 @@ namespace SistemaParqueo.DataAccess
                                 EstadoPermanencia entity = new EstadoPermanencia();
 
                                 entity.EstadoPermanenciaId = dr.GetInt32(0);
-                                entity.Estado = dr.GetString(1);
+                                entity.Nombre = dr.GetString(1);
 
                                 result.Add(entity);
                             }
