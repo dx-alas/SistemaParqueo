@@ -9,22 +9,22 @@ namespace SistemaParqueo.Entities
     public class EstadoPermanencia
     {
         public int EstadoPermanenciaId { get; set; }
-        public string Estado {  get; set; }
+        public string Nombre {  get; set; }
 
         public EstadoPermanencia()
         {
 
         }
 
-        public EstadoPermanencia(string estado)
+        public EstadoPermanencia(string nombre)
         {
-            Estado = estado;
+            Nombre = nombre;
         }
 
-        public EstadoPermanencia(int estadoPermanenciaId, string estado)
+        public EstadoPermanencia(int estadoPermanenciaId, string nombre)
         {
             EstadoPermanenciaId = estadoPermanenciaId;
-            Estado = estado;
+            Nombre = nombre;
         }
     }
 }
