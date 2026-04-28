@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmEstadoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEstadoCliente.Designer.cs">
+      <DependentUpon>FrmEstadoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEstadoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEstadoEmpleado.Designer.cs">
+      <DependentUpon>FrmEstadoEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +75,36 @@
     </Compile>
     <Compile Include="FrmEmpleado.Designer.cs">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEstadoPermanencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEstadoPermanencia.Designer.cs">
+      <DependentUpon>FrmEstadoPermanencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEstadoTarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEstadoTarjeta.Designer.cs">
+      <DependentUpon>FrmEstadoTarjeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEstadoTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEstadoTicket.Designer.cs">
+      <DependentUpon>FrmEstadoTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEstadoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEstadoUsuario.Designer.cs">
+      <DependentUpon>FrmEstadoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEstadoVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEstadoVehiculo.Designer.cs">
+      <DependentUpon>FrmEstadoVehiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmInicio.cs">
       <SubType>Form</SubType>
@@ -92,6 +134,27 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmEmpleado.resx">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEstadoCliente.resx">
+      <DependentUpon>FrmEstadoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEstadoEmpleado.resx">
+      <DependentUpon>FrmEstadoEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEstadoPermanencia.resx">
+      <DependentUpon>FrmEstadoPermanencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEstadoTarjeta.resx">
+      <DependentUpon>FrmEstadoTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEstadoTicket.resx">
+      <DependentUpon>FrmEstadoTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEstadoUsuario.resx">
+      <DependentUpon>FrmEstadoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEstadoVehiculo.resx">
+      <DependentUpon>FrmEstadoVehiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>

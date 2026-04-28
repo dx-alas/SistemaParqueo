@@ -82,7 +82,8 @@ namespace SistemaParqueo.Desktop
 
         private void BtnEstadoUsuario_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("El formulario 'EstadoUsuario' será desarrollado luego.", "Información");
+           FrmEstadoUsuario frmEstadoUsuario = new FrmEstadoUsuario();
+            AbrirFormularioEnPanel(frmEstadoUsuario);
         }
 
         private void BtnRol_Click(object sender, EventArgs e)
