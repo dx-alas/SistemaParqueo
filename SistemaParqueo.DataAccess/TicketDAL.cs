@@ -131,17 +131,11 @@ namespace SistemaParqueo.DataAccess
                                 result.TicketId = dr.GetInt32(0);
                                 result.Fecha = dr.GetDateTime(1);
                                 result.HoraEntrada = dr.GetDateTime(2);
-
                                 result.HoraSalida = dr.IsDBNull(3) ? null : (DateTime?)dr.GetDateTime(3);
                                 result.Total = dr.IsDBNull(4) ? null : (decimal?)dr.GetDecimal(4);
-
                                 result.TarjetaId = dr.GetInt32(5);
                                 result.CorteId = dr.GetInt32(6);
                                 result.MultaId = dr.IsDBNull(7) ? null : (int?)dr.GetInt32(7);
-
-                                result.Usuario = dr.GetString(8);
-                                result.EstadoTicket = dr.GetString(9);
-                                result.EstadoPermanencia = dr.GetString(10);
                             }
                         }
                     }
@@ -183,10 +177,6 @@ namespace SistemaParqueo.DataAccess
                                 entity.TarjetaId = dr.GetInt32(5);
                                 entity.CorteId = dr.GetInt32(6);
                                 entity.MultaId = dr.IsDBNull(7) ? null : (int?)dr.GetInt32(7);
-
-                                entity.Usuario = dr.GetString(8);
-                                entity.EstadoTicket = dr.GetString(9);
-                                entity.EstadoPermanencia = dr.GetString(10);
 
                                 result.Add(entity);
                             }

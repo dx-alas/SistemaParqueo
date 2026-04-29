@@ -125,13 +125,9 @@ namespace SistemaParqueo.DataAccess
                             result.TipoDocumento = dr.GetString(4);
                             result.DUI = dr.IsDBNull(5) ? null : dr.GetString(5);
                             result.CarnetExtranjero = dr.IsDBNull(6) ? null : dr.GetString(6);
-
-                            result.TipoCliente = dr.IsDBNull(7) ? null : dr.GetString(7);
-                            result.TarjetaId = dr.GetInt32(8);
-                            result.EstadoCliente = dr.IsDBNull(9) ? null : dr.GetString(9);
-
-                            result.TipoClienteId = 0;
-                            result.EstadoClienteId = 0;
+                            result.TarjetaId = dr.GetInt32(7);
+                            result.TipoClienteId = dr.GetInt32(8);
+                            result.EstadoClienteId = dr.GetInt32(9);
                         }
                     }
                 }
@@ -165,10 +161,9 @@ namespace SistemaParqueo.DataAccess
                             entity.TipoDocumento = dr.GetString(4);
                             entity.DUI = dr.IsDBNull(5) ? null : dr.GetString(5);
                             entity.CarnetExtranjero = dr.IsDBNull(6) ? null : dr.GetString(6);
-
-                            entity.TipoCliente = dr.IsDBNull(7) ? null : dr.GetString(7);
-                            entity.TarjetaId = dr.GetInt32(8);
-                            entity.EstadoCliente = dr.IsDBNull(9) ? null : dr.GetString(9);
+                            entity.TarjetaId = dr.GetInt32(7);
+                            entity.TipoClienteId = dr.GetInt32(8);
+                            entity.EstadoClienteId = dr.GetInt32(9);
 
                             result.Add(entity);
                         }

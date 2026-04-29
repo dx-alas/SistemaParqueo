@@ -105,10 +105,10 @@ namespace SistemaParqueo.DataAccess
                             result = new Vehiculo
                             {
                                 VehiculoId = dr.GetInt32(0),
-                                Cliente = dr.GetString(1),
-                                Placa = dr.GetString(2),
-                                TipoVehiculo = dr.GetString(3),
-                                EstadoVehiculo = dr.GetString(4)
+                                Placa = dr.GetString(1),
+                                ClienteId = dr.GetInt32(2),
+                                TipoVehiculoId = dr.GetInt32(3),
+                                EstadoVehiculoId = dr.GetInt32(4)
                             };
                         }
                     }
@@ -137,10 +137,10 @@ namespace SistemaParqueo.DataAccess
                             Vehiculo entity = new Vehiculo
                             {
                                 VehiculoId = dr.GetInt32(0),
-                                Cliente = dr.GetString(1),
-                                Placa = dr.GetString(2),
-                                TipoVehiculo = dr.GetString(3),
-                                EstadoVehiculo = dr.GetString(4)
+                                Placa = dr.GetString(1),
+                                ClienteId = dr.GetInt32(2),
+                                TipoVehiculoId = dr.GetInt32(3),
+                                EstadoVehiculoId = dr.GetInt32(4)
                             };
 
                             result.Add(entity);

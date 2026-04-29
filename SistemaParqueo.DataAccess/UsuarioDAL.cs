@@ -115,9 +115,7 @@ namespace SistemaParqueo.DataAccess
                                 Clave = dr.GetString(2),
                                 EmpleadoId = dr.GetInt32(3),
                                 RolId = dr.GetInt32(4),
-                                EstadoUsuarioId = dr.GetInt32(5),
-                                Rol = dr.IsDBNull(6) ? null : dr.GetString(6),
-                                EstadoUsuario = dr.IsDBNull(7) ? null : dr.GetString(7)
+                                EstadoUsuarioId = dr.GetInt32(5)
                             };
                         }
                     }
@@ -150,9 +148,7 @@ namespace SistemaParqueo.DataAccess
                                 Clave = dr.GetString(2),
                                 EmpleadoId = dr.GetInt32(3),
                                 RolId = dr.GetInt32(4),
-                                EstadoUsuarioId = dr.GetInt32(5),
-                                Rol = dr.IsDBNull(6) ? null : dr.GetString(6),
-                                EstadoUsuario = dr.IsDBNull(7) ? null : dr.GetString(7)
+                                EstadoUsuarioId = dr.GetInt32(5)
                             };
 
                             result.Add(entity);
