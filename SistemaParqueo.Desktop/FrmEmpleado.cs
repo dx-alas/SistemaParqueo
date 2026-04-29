@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemaParqueo.BusinessLogic;
+using SistemaParqueo.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,69 +14,224 @@ namespace SistemaParqueo.Desktop
 {
     public partial class FrmEmpleado : Form
     {
-
-
         public FrmEmpleado()
         {
             InitializeComponent();
+            this.Load += FrmEmpleado_Load;
+            dgvEmpleado.CellClick += dgvEmpleado_CellClick;
         }
 
         private void FrmEmpleado_Load(object sender, EventArgs e)
         {
-
+            txtId.ReadOnly = true;
+            ConfigurarGrid();
+            CargarCombos();
+            CargarDatos();
         }
 
-        //Salir
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void ConfigurarGrid()
         {
-            DialogResult resultado = MessageBox.Show(
-                "¿Desea salir del sistema?",
-                "Confirmación",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
+            dgvEmpleado.AutoGenerateColumns = false;
+            dgvEmpleado.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvEmpleado.MultiSelect = false;
+            dgvEmpleado.ReadOnly = true;
+        }
 
-            if (resultado == DialogResult.Yes)
+        private void CargarCombos()
+        {
+            try
             {
-                Application.Exit();
+                cbEstado.DataSource = EstadoEmpleadoBL.Instance.SelectAll();
+                cbEstado.DisplayMember = "Nombre";
+                cbEstado.ValueMember = "EstadoEmpleadoId";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar estados: " + ex.Message);
             }
         }
 
-        //Limpiar
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void CargarDatos()
         {
+            try
+            {
+                var _empleados = EmpleadoBL.Instance.SelectAll();
+                var _estados = EstadoEmpleadoBL.Instance.SelectAll();
+
+                var query = (from e in _empleados
+                             select new
+                             {
+                                 EmpleadoId = e.EmpleadoId,
+                                 Nombre = e.Nombre,
+                                 Apellido = e.Apellido,
+                                 DUI = e.DUI,
+                                 Correo = e.Correo,
+                                 Telefono = e.Telefono,
+                                 Direccion = e.Direccion,
+                                 EstadoId = e.EstadoEmpleadoId,
+                                 Estado = _estados.FirstOrDefault(x => x.EstadoEmpleadoId.Equals(e.EstadoEmpleadoId))?.Nombre
+                             });
+
+                dgvEmpleado.DataSource = null;
+                dgvEmpleado.DataSource = query.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar datos: " + ex.Message);
+            }
+        }
+
+        private void Limpiar()
+        {
+            txtId.Clear();
             txtNombre.Clear();
             txtApellido.Clear();
             txtDUI.Clear();
             txtCorreo.Clear();
             txtTelefono.Clear();
+            txtDireccion.Clear();
+            if (cbEstado.Items.Count > 0) cbEstado.SelectedIndex = 0;
             txtNombre.Focus();
         }
 
-        //Registrar
-        //private void btnRegistrar_Click(object sender, EventArgs e)
-        //{
-        //    string nombre = txtNombre.Text;
-        //    string apellido = txtApellido.Text;
-        //    string dui = txtDUI.Text;
-        //    string correo = txtCorreo.Text;
-        //    string telefono = txtTelefono.Text;
-
-        //    lblDatos.Text = Environment.NewLine +
-        //                      "Nombres del empleado: " + nombre + Environment.NewLine +
-        //                      Environment.NewLine +
-        //                      "Apellidos del empleado: " + apellido + Environment.NewLine +
-        //                      Environment.NewLine +
-        //                      "DUI: " + dui + Environment.NewLine +
-        //                      Environment.NewLine +
-        //                      "Correo electrónico: " + correo + Environment.NewLine +
-        //                      Environment.NewLine +
-        //                      "Telefono: " + telefono + Environment.NewLine ;
-        //}
-
-        private void lblTelefono_Click(object sender, EventArgs e)
+        private bool Validar()
         {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtApellido.Text) ||
+                string.IsNullOrWhiteSpace(txtDUI.Text))
+            {
+                MessageBox.Show("Nombre, Apellido y DUI son campos obligatorios");
+                return false;
+            }
+            return true;
+        }
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (!Validar()) return;
+
+            DialogResult confirm = MessageBox.Show("¿Desea guardar este empleado?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm != DialogResult.Yes) return;
+
+            try
+            {
+                Empleado entity = new Empleado
+                {
+                    Nombre = txtNombre.Text.Trim(),
+                    Apellido = txtApellido.Text.Trim(),
+                    DUI = txtDUI.Text.Trim(),
+                    Correo = string.IsNullOrWhiteSpace(txtCorreo.Text) ? null : txtCorreo.Text.Trim(),
+                    Telefono = txtTelefono.Text.Trim(),
+                    Direccion = txtDireccion.Text.Trim(),
+                    EstadoEmpleadoId = Convert.ToInt32(cbEstado.SelectedValue)
+                };
+
+                bool ok = EmpleadoBL.Instance.Insert(entity);
+                if (ok)
+                {
+                    MessageBox.Show("Guardado correctamente");
+                    Limpiar();
+                    CargarDatos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if (!Validar()) return;
+            if (string.IsNullOrEmpty(txtId.Text))
+            {
+                MessageBox.Show("Seleccione un empleado de la lista");
+                return;
+            }
+
+            DialogResult confirm = MessageBox.Show("¿Desea actualizar este registro?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (confirm != DialogResult.Yes) return;
+
+            try
+            {
+                Empleado entity = new Empleado
+                {
+                    EmpleadoId = Convert.ToInt32(txtId.Text),
+                    Nombre = txtNombre.Text.Trim(),
+                    Apellido = txtApellido.Text.Trim(),
+                    DUI = txtDUI.Text.Trim(),
+                    Correo = string.IsNullOrWhiteSpace(txtCorreo.Text) ? null : txtCorreo.Text.Trim(),
+                    Telefono = txtTelefono.Text.Trim(),
+                    Direccion = txtDireccion.Text.Trim(),
+                    EstadoEmpleadoId = Convert.ToInt32(cbEstado.SelectedValue)
+                };
+
+                bool ok = EmpleadoBL.Instance.Update(entity);
+                if (ok)
+                {
+                    MessageBox.Show("Actualizado correctamente");
+                    Limpiar();
+                    CargarDatos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtId.Text))
+            {
+                MessageBox.Show("Seleccione un registro");
+                return;
+            }
+
+            DialogResult confirm = MessageBox.Show("¿Seguro que desea eliminar este empleado?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (confirm != DialogResult.Yes) return;
+
+            try
+            {
+                int id = Convert.ToInt32(txtId.Text);
+                if (EmpleadoBL.Instance.Delete(id))
+                {
+                    MessageBox.Show("Eliminado correctamente");
+                    Limpiar();
+                    CargarDatos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void dgvEmpleado_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvEmpleado.Rows[e.RowIndex];
+
+                txtId.Text = row.Cells[0].Value?.ToString();
+                txtNombre.Text = row.Cells[1].Value?.ToString();
+                txtApellido.Text = row.Cells[2].Value?.ToString();
+                txtDUI.Text = row.Cells[3].Value?.ToString();
+                txtCorreo.Text = row.Cells[4].Value?.ToString();
+                txtTelefono.Text = row.Cells[5].Value?.ToString();
+                txtDireccion.Text = row.Cells[6].Value?.ToString();
+
+                var item = row.DataBoundItem;
+                if (item != null)
+                {
+                    cbEstado.SelectedValue = ((dynamic)item).EstadoId;
+                }
+            }
         }
     }
 }
