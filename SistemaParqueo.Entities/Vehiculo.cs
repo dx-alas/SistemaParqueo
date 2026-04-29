@@ -11,11 +11,6 @@ namespace SistemaParqueo.Entities
         public int TipoVehiculoId { get; set; }
         public int EstadoVehiculoId { get; set; }
 
-        // CAMPOS PARA SELECT (JOIN)
-        public string Cliente { get; set; }
-        public string TipoVehiculo { get; set; }
-        public string EstadoVehiculo { get; set; }
-
         public Vehiculo()
         {
 
@@ -36,15 +31,6 @@ namespace SistemaParqueo.Entities
             ClienteId = clienteId;
             TipoVehiculoId = tipoVehiculoId;
             EstadoVehiculoId = estadoVehiculoId;
-        }
-
-        public Vehiculo(int vehiculoId, string cliente, string placa, string tipoVehiculo, string estadoVehiculo)
-        {
-            VehiculoId = vehiculoId;
-            Cliente = cliente;
-            Placa = placa;
-            TipoVehiculo = tipoVehiculo;
-            EstadoVehiculo = estadoVehiculo;
         }
     }
 }

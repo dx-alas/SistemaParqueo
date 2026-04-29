@@ -4,9 +4,6 @@ namespace SistemaParqueo.Entities
 {
     public class Cliente
     {
-        // ========================
-        // CAMPOS CRUD (BASE)
-        // ========================
         public int ClienteId { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
@@ -18,12 +15,9 @@ namespace SistemaParqueo.Entities
         public int TipoClienteId { get; set; }
         public int EstadoClienteId { get; set; }
 
-        // CAMPOS PARA SELECT (JOIN)
-        public string TipoCliente { get; set; }
-        public string EstadoCliente { get; set; }
-
         public Cliente()
         {
+
         }
 
         public Cliente(string nombre, string apellido, string telefono, string tipoDocumento, string dui, string carnetExtranjero, int tarjetaId, int tipoClienteId, int estadoClienteId)
@@ -51,21 +45,6 @@ namespace SistemaParqueo.Entities
             TarjetaId = tarjetaId;
             TipoClienteId = tipoClienteId;
             EstadoClienteId = estadoClienteId;
-        }
-
-        public Cliente(int clienteId, string nombre, string apellido, string telefono, string tipoDocumento, string dui, string carnetExtranjero, int tarjetaId, string tipoCliente, string estadoCliente)
-        {
-            ClienteId = clienteId;
-            Nombre = nombre;
-            Apellido = apellido;
-            Telefono = telefono;
-            TipoDocumento = tipoDocumento;
-            DUI = dui;
-            CarnetExtranjero = carnetExtranjero;
-            TarjetaId = tarjetaId;
-
-            TipoCliente = tipoCliente;
-            EstadoCliente = estadoCliente;
         }
     }
 }
