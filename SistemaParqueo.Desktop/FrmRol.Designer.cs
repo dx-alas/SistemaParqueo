@@ -1,6 +1,6 @@
 ﻿namespace SistemaParqueo.Desktop
 {
-    partial class FrmTipoCliente
+    partial class FrmRol
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.dgvTipoCliente = new System.Windows.Forms.DataGridView();
-            this.TipoClienteId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvRol = new System.Windows.Forms.DataGridView();
             this.lblListaEstado = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -42,18 +40,19 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoCliente)).BeginInit();
+            this.RolId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRol)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(298, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(487, 50);
-            this.label1.TabIndex = 46;
-            this.label1.Text = "GESTIÓN DE TIPO CLIENTE";
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.Location = new System.Drawing.Point(360, 24);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(344, 54);
+            this.lblTitulo.TabIndex = 15;
+            this.lblTitulo.Text = "GESTIÓN DE ROL";
             // 
             // label2
             // 
@@ -74,41 +73,25 @@
             this.txtId.Size = new System.Drawing.Size(210, 29);
             this.txtId.TabIndex = 66;
             // 
-            // dgvTipoCliente
+            // dgvRol
             // 
-            this.dgvTipoCliente.AllowUserToAddRows = false;
-            this.dgvTipoCliente.AllowUserToDeleteRows = false;
-            this.dgvTipoCliente.AllowUserToOrderColumns = true;
-            this.dgvTipoCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTipoCliente.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvTipoCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvTipoCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTipoCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TipoClienteId,
+            this.dgvRol.AllowUserToAddRows = false;
+            this.dgvRol.AllowUserToDeleteRows = false;
+            this.dgvRol.AllowUserToOrderColumns = true;
+            this.dgvRol.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRol.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvRol.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvRol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRol.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.RolId,
             this.Nombre});
-            this.dgvTipoCliente.Location = new System.Drawing.Point(86, 431);
-            this.dgvTipoCliente.Name = "dgvTipoCliente";
-            this.dgvTipoCliente.ReadOnly = true;
-            this.dgvTipoCliente.RowHeadersWidth = 51;
-            this.dgvTipoCliente.RowTemplate.Height = 24;
-            this.dgvTipoCliente.Size = new System.Drawing.Size(884, 247);
-            this.dgvTipoCliente.TabIndex = 65;
-            // 
-            // TipoClienteId
-            // 
-            this.TipoClienteId.DataPropertyName = "TipoClienteId";
-            this.TipoClienteId.HeaderText = "Id Tipo Cliente";
-            this.TipoClienteId.MinimumWidth = 6;
-            this.TipoClienteId.Name = "TipoClienteId";
-            this.TipoClienteId.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre de tipo cliente";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
+            this.dgvRol.Location = new System.Drawing.Point(86, 431);
+            this.dgvRol.Name = "dgvRol";
+            this.dgvRol.ReadOnly = true;
+            this.dgvRol.RowHeadersWidth = 51;
+            this.dgvRol.RowTemplate.Height = 24;
+            this.dgvRol.Size = new System.Drawing.Size(884, 247);
+            this.dgvRol.TabIndex = 65;
             // 
             // lblListaEstado
             // 
@@ -116,9 +99,9 @@
             this.lblListaEstado.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.lblListaEstado.Location = new System.Drawing.Point(80, 380);
             this.lblListaEstado.Name = "lblListaEstado";
-            this.lblListaEstado.Size = new System.Drawing.Size(275, 32);
+            this.lblListaEstado.Size = new System.Drawing.Size(191, 32);
             this.lblListaEstado.TabIndex = 64;
-            this.lblListaEstado.Text = "LISTADO TIPO CLIENTE";
+            this.lblListaEstado.Text = "LISTADO ROLES";
             // 
             // label4
             // 
@@ -126,9 +109,9 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(77, 93);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(254, 32);
+            this.label4.Size = new System.Drawing.Size(144, 32);
             this.label4.TabIndex = 63;
-            this.label4.Text = "DATOS TIPO CLIENTE";
+            this.label4.Text = "DATOS ROL";
             // 
             // btnEliminar
             // 
@@ -168,7 +151,6 @@
             this.btnLimpiar.TabIndex = 60;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnGuardar
             // 
@@ -202,7 +184,23 @@
             this.label3.TabIndex = 57;
             this.label3.Text = "Nombre:";
             // 
-            // FrmTipoCliente
+            // RolId
+            // 
+            this.RolId.DataPropertyName = "RolId";
+            this.RolId.HeaderText = "Id Rol";
+            this.RolId.MinimumWidth = 6;
+            this.RolId.Name = "RolId";
+            this.RolId.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre del rol";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // FrmRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -210,7 +208,7 @@
             this.ClientSize = new System.Drawing.Size(1047, 770);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtId);
-            this.Controls.Add(this.dgvTipoCliente);
+            this.Controls.Add(this.dgvRol);
             this.Controls.Add(this.lblListaEstado);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnEliminar);
@@ -219,10 +217,10 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Name = "FrmTipoCliente";
-            this.Text = "Gestión de Tipo Cliente";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoCliente)).EndInit();
+            this.Controls.Add(this.lblTitulo);
+            this.Name = "FrmRol";
+            this.Text = "Gestión Rol";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRol)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,10 +228,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.DataGridView dgvTipoCliente;
+        private System.Windows.Forms.DataGridView dgvRol;
         private System.Windows.Forms.Label lblListaEstado;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnEliminar;
@@ -242,7 +240,7 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoClienteId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RolId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     }
 }

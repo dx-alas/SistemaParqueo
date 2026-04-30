@@ -1,6 +1,6 @@
 ﻿namespace SistemaParqueo.Desktop
 {
-    partial class FrmTipoCliente
+    partial class FrmTipoVehiculo
     {
         /// <summary>
         /// Required designer variable.
@@ -31,9 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.dgvTipoCliente = new System.Windows.Forms.DataGridView();
-            this.TipoClienteId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTipoVehiculo = new System.Windows.Forms.DataGridView();
             this.lblListaEstado = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -42,18 +40,23 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoCliente)).BeginInit();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TipoVehiculoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoVehiculo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(298, 27);
+            this.label1.Location = new System.Drawing.Point(265, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(487, 50);
-            this.label1.TabIndex = 46;
-            this.label1.Text = "GESTIÓN DE TIPO CLIENTE";
+            this.label1.Size = new System.Drawing.Size(523, 50);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "GESTIÓN DE TIPO VEHICULO";
             // 
             // label2
             // 
@@ -62,7 +65,7 @@
             this.label2.Location = new System.Drawing.Point(81, 148);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 28);
-            this.label2.TabIndex = 67;
+            this.label2.TabIndex = 78;
             this.label2.Text = "Id:";
             // 
             // txtId
@@ -72,43 +75,28 @@
             this.txtId.Location = new System.Drawing.Point(274, 151);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(210, 29);
-            this.txtId.TabIndex = 66;
+            this.txtId.TabIndex = 77;
             // 
-            // dgvTipoCliente
+            // dgvTipoVehiculo
             // 
-            this.dgvTipoCliente.AllowUserToAddRows = false;
-            this.dgvTipoCliente.AllowUserToDeleteRows = false;
-            this.dgvTipoCliente.AllowUserToOrderColumns = true;
-            this.dgvTipoCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTipoCliente.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvTipoCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvTipoCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTipoCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TipoClienteId,
-            this.Nombre});
-            this.dgvTipoCliente.Location = new System.Drawing.Point(86, 431);
-            this.dgvTipoCliente.Name = "dgvTipoCliente";
-            this.dgvTipoCliente.ReadOnly = true;
-            this.dgvTipoCliente.RowHeadersWidth = 51;
-            this.dgvTipoCliente.RowTemplate.Height = 24;
-            this.dgvTipoCliente.Size = new System.Drawing.Size(884, 247);
-            this.dgvTipoCliente.TabIndex = 65;
-            // 
-            // TipoClienteId
-            // 
-            this.TipoClienteId.DataPropertyName = "TipoClienteId";
-            this.TipoClienteId.HeaderText = "Id Tipo Cliente";
-            this.TipoClienteId.MinimumWidth = 6;
-            this.TipoClienteId.Name = "TipoClienteId";
-            this.TipoClienteId.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre de tipo cliente";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
+            this.dgvTipoVehiculo.AllowUserToAddRows = false;
+            this.dgvTipoVehiculo.AllowUserToDeleteRows = false;
+            this.dgvTipoVehiculo.AllowUserToOrderColumns = true;
+            this.dgvTipoVehiculo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTipoVehiculo.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvTipoVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTipoVehiculo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTipoVehiculo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TipoVehiculoId,
+            this.Nombre,
+            this.Precio});
+            this.dgvTipoVehiculo.Location = new System.Drawing.Point(86, 431);
+            this.dgvTipoVehiculo.Name = "dgvTipoVehiculo";
+            this.dgvTipoVehiculo.ReadOnly = true;
+            this.dgvTipoVehiculo.RowHeadersWidth = 51;
+            this.dgvTipoVehiculo.RowTemplate.Height = 24;
+            this.dgvTipoVehiculo.Size = new System.Drawing.Size(884, 247);
+            this.dgvTipoVehiculo.TabIndex = 76;
             // 
             // lblListaEstado
             // 
@@ -116,9 +104,9 @@
             this.lblListaEstado.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.lblListaEstado.Location = new System.Drawing.Point(80, 380);
             this.lblListaEstado.Name = "lblListaEstado";
-            this.lblListaEstado.Size = new System.Drawing.Size(275, 32);
-            this.lblListaEstado.TabIndex = 64;
-            this.lblListaEstado.Text = "LISTADO TIPO CLIENTE";
+            this.lblListaEstado.Size = new System.Drawing.Size(21, 32);
+            this.lblListaEstado.TabIndex = 75;
+            this.lblListaEstado.Text = " ";
             // 
             // label4
             // 
@@ -126,9 +114,9 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(77, 93);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(254, 32);
-            this.label4.TabIndex = 63;
-            this.label4.Text = "DATOS TIPO CLIENTE";
+            this.label4.Size = new System.Drawing.Size(276, 32);
+            this.label4.TabIndex = 74;
+            this.label4.Text = "DATOS TIPO VEHICULO";
             // 
             // btnEliminar
             // 
@@ -136,10 +124,10 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(357, 284);
+            this.btnEliminar.Location = new System.Drawing.Point(356, 314);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 39);
-            this.btnEliminar.TabIndex = 62;
+            this.btnEliminar.TabIndex = 73;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
@@ -149,10 +137,10 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(213, 284);
+            this.btnActualizar.Location = new System.Drawing.Point(212, 314);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(125, 39);
-            this.btnActualizar.TabIndex = 61;
+            this.btnActualizar.TabIndex = 72;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
             // 
@@ -162,13 +150,12 @@
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(493, 284);
+            this.btnLimpiar.Location = new System.Drawing.Point(492, 314);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(112, 39);
-            this.btnLimpiar.TabIndex = 60;
+            this.btnLimpiar.TabIndex = 71;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnGuardar
             // 
@@ -176,41 +163,84 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(83, 284);
+            this.btnGuardar.Location = new System.Drawing.Point(82, 314);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(0);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(112, 39);
-            this.btnGuardar.TabIndex = 59;
+            this.btnGuardar.TabIndex = 70;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             // 
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.txtNombre.Location = new System.Drawing.Point(274, 218);
+            this.txtNombre.Location = new System.Drawing.Point(274, 207);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(210, 29);
-            this.txtNombre.TabIndex = 58;
+            this.txtNombre.TabIndex = 69;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(81, 219);
+            this.label3.Location = new System.Drawing.Point(81, 207);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 28);
-            this.label3.TabIndex = 57;
+            this.label3.TabIndex = 68;
             this.label3.Text = "Nombre:";
             // 
-            // FrmTipoCliente
+            // txtPrecio
+            // 
+            this.txtPrecio.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtPrecio.Location = new System.Drawing.Point(274, 262);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(210, 29);
+            this.txtPrecio.TabIndex = 80;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(81, 262);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 28);
+            this.label5.TabIndex = 79;
+            this.label5.Text = "Precio:";
+            // 
+            // TipoVehiculoId
+            // 
+            this.TipoVehiculoId.DataPropertyName = "TipoVehiculoId";
+            this.TipoVehiculoId.HeaderText = "Id Tipo Vehiculo";
+            this.TipoVehiculoId.MinimumWidth = 6;
+            this.TipoVehiculoId.Name = "TipoVehiculoId";
+            this.TipoVehiculoId.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre de tipo vehiculo";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 6;
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // FrmTipoVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1047, 770);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtId);
-            this.Controls.Add(this.dgvTipoCliente);
+            this.Controls.Add(this.dgvTipoVehiculo);
             this.Controls.Add(this.lblListaEstado);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnEliminar);
@@ -220,9 +250,9 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Name = "FrmTipoCliente";
-            this.Text = "Gestión de Tipo Cliente";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoCliente)).EndInit();
+            this.Name = "FrmTipoVehiculo";
+            this.Text = "Gestion de Tipo Vehiculo";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoVehiculo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,7 +263,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.DataGridView dgvTipoCliente;
+        private System.Windows.Forms.DataGridView dgvTipoVehiculo;
         private System.Windows.Forms.Label lblListaEstado;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnEliminar;
@@ -242,7 +272,10 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoClienteId;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoVehiculoId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
     }
 }
