@@ -131,7 +131,7 @@ namespace SistemaParqueo.Desktop
                     Apellido = txtApellido.Text.Trim(),
                     Telefono = txtTelefono.Text.Trim(),
                     TipoDocumento = string.IsNullOrWhiteSpace(cbTipoDoc.Text) ? null : cbTipoDoc.Text.Trim(),
-                    DUI = txtTelefono.Text.Trim(),
+                    DUI = txtDUI.Text.Trim(),
                     CarnetExtranjero = txtCarnet.Text.Trim(),
                     TarjetaId = Convert.ToInt32(cbCodigo.SelectedValue),
                     TipoClienteId = Convert.ToInt32(cbTipo.SelectedValue),
@@ -168,11 +168,12 @@ namespace SistemaParqueo.Desktop
             {
                 Cliente entity = new Cliente
                 {
+                    ClienteId = Convert.ToInt32(txtId.Text),
                     Nombre = txtNombre.Text.Trim(),
                     Apellido = txtApellido.Text.Trim(),
                     Telefono = txtTelefono.Text.Trim(),
                     TipoDocumento = string.IsNullOrWhiteSpace(cbTipoDoc.Text) ? null : cbTipoDoc.Text.Trim(),
-                    DUI = txtTelefono.Text.Trim(),
+                    DUI = txtDUI.Text.Trim(),
                     CarnetExtranjero = txtCarnet.Text.Trim(),
                     TarjetaId = Convert.ToInt32(cbCodigo.SelectedValue),
                     TipoClienteId = Convert.ToInt32(cbTipo.SelectedValue),
@@ -242,8 +243,8 @@ namespace SistemaParqueo.Desktop
                 var item = row.DataBoundItem;
                 if (item != null)
                 {
-                    cbTipo.SelectedValue = ((dynamic)item).EstadoId;
-                    cbEstado.SelectedValue = ((dynamic)item).EstadoId;
+                    cbTipo.SelectedValue = ((dynamic)item).TipoClienteId;
+                    cbEstado.SelectedValue = ((dynamic)item).EstadoClienteId;
                 }
             }
         }
