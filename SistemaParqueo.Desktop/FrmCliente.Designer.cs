@@ -100,6 +100,7 @@
             this.btnEliminar.TabIndex = 43;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
@@ -113,6 +114,7 @@
             this.btnActualizar.TabIndex = 42;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // cbTipo
             // 
@@ -204,6 +206,7 @@
             this.btnLimpiar.TabIndex = 37;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // txtApellido
             // 
@@ -236,6 +239,7 @@
             this.btnGuardar.TabIndex = 36;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblCarnet
             // 
@@ -449,6 +453,9 @@
             this.cbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoDoc.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.cbTipoDoc.FormattingEnabled = true;
+            this.cbTipoDoc.Items.AddRange(new object[] {
+            "DUI",
+            "CR"});
             this.cbTipoDoc.Location = new System.Drawing.Point(697, 201);
             this.cbTipoDoc.Name = "cbTipoDoc";
             this.cbTipoDoc.Size = new System.Drawing.Size(162, 25);

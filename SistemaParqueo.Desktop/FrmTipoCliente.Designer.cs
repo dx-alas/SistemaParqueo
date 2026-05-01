@@ -142,6 +142,7 @@
             this.btnEliminar.TabIndex = 62;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
@@ -155,6 +156,7 @@
             this.btnActualizar.TabIndex = 61;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnLimpiar
             // 
@@ -183,6 +185,7 @@
             this.btnGuardar.TabIndex = 59;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtNombre
             // 
@@ -222,6 +225,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmTipoCliente";
             this.Text = "Gestión de Tipo Cliente";
+            this.Load += new System.EventHandler(this.FrmTipoCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
