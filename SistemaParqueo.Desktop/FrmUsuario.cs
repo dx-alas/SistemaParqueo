@@ -72,6 +72,7 @@ namespace SistemaParqueo.Desktop
                              select new
                              {
                                  UsuarioId = e.UsuarioId,
+                                 Nombre = e.Nombre,
                                  EmpleadoId = e.EmpleadoId,
                                  RolId = e.RolId,
                                  EstadoUsuarioId = e.EstadoUsuarioId,

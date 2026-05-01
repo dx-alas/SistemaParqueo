@@ -32,9 +32,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.dgvTipoVehiculo = new System.Windows.Forms.DataGridView();
-            this.TipoVehiculoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblListaEstado = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -46,6 +43,9 @@
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblListadoTarjeta = new System.Windows.Forms.Label();
+            this.TipoVehiculoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoVehiculo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,29 +98,6 @@
             this.dgvTipoVehiculo.RowTemplate.Height = 24;
             this.dgvTipoVehiculo.Size = new System.Drawing.Size(884, 247);
             this.dgvTipoVehiculo.TabIndex = 76;
-            // 
-            // TipoVehiculoId
-            // 
-            this.TipoVehiculoId.DataPropertyName = "TipoVehiculoId";
-            this.TipoVehiculoId.HeaderText = "Id Tipo Vehículo";
-            this.TipoVehiculoId.MinimumWidth = 6;
-            this.TipoVehiculoId.Name = "TipoVehiculoId";
-            this.TipoVehiculoId.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre de Tipo Vehículo";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio Estancia";
-            this.Precio.MinimumWidth = 6;
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
             // 
             // lblListaEstado
             // 
@@ -245,6 +222,30 @@
             this.lblListadoTarjeta.Size = new System.Drawing.Size(310, 32);
             this.lblListadoTarjeta.TabIndex = 114;
             this.lblListadoTarjeta.Text = "LISTADO TIPO VEHICULOS";
+            // 
+            // TipoVehiculoId
+            // 
+            this.TipoVehiculoId.DataPropertyName = "TipoVehiculoId";
+            this.TipoVehiculoId.HeaderText = "Id Tipo Vehículo";
+            this.TipoVehiculoId.MinimumWidth = 6;
+            this.TipoVehiculoId.Name = "TipoVehiculoId";
+            this.TipoVehiculoId.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre de Tipo Vehículo";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.DataPropertyName = "Precio";
+            this.Precio.HeaderText = "Precio Estancia";
+            this.Precio.MinimumWidth = 6;
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
             // 
             // FrmTipoVehiculo
             // 

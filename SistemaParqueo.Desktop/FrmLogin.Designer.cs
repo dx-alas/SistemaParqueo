@@ -58,7 +58,7 @@
             this.txtClave.Margin = new System.Windows.Forms.Padding(4);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(159, 29);
-            this.txtClave.TabIndex = 1;
+            this.txtClave.TabIndex = 2;
             // 
             // txtUsuario
             // 
@@ -66,7 +66,7 @@
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(159, 29);
-            this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.TabIndex = 1;
             // 
             // btnSalir
             // 

@@ -248,7 +248,7 @@
             this.txtClienteId.Enabled = false;
             this.txtClienteId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClienteId.Location = new System.Drawing.Point(715, 367);
-            this.txtClienteId.MaxLength = 50;
+            this.txtClienteId.MaxLength = 3890;
             this.txtClienteId.Name = "txtClienteId";
             this.txtClienteId.Size = new System.Drawing.Size(243, 29);
             this.txtClienteId.TabIndex = 87;
@@ -376,7 +376,7 @@
             // 
             this.txtApellido.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellido.Location = new System.Drawing.Point(232, 226);
-            this.txtApellido.MaxLength = 9;
+            this.txtApellido.MaxLength = 50;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(243, 29);
             this.txtApellido.TabIndex = 80;
@@ -423,7 +423,7 @@
             // 
             this.txtCarnetExtranjero.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCarnetExtranjero.Location = new System.Drawing.Point(715, 176);
-            this.txtCarnetExtranjero.MaxLength = 9;
+            this.txtCarnetExtranjero.MaxLength = 15;
             this.txtCarnetExtranjero.Name = "txtCarnetExtranjero";
             this.txtCarnetExtranjero.Size = new System.Drawing.Size(243, 29);
             this.txtCarnetExtranjero.TabIndex = 95;

@@ -17,25 +17,6 @@ namespace SistemaParqueo.Desktop
         public FrmMain()
         {
             InitializeComponent();
-
-         
-            //btnInicio.Click += BtnInicio_Click;
-            //btnTipoCliente.Click += BtnTipoCliente_Click;
-            //btnTipoVehiculo.Click += BtnTipoVehiculo_Click;
-            //btnEstadoUsuario.Click += BtnEstadoUsuario_Click;
-            //btnRol.Click += BtnRol_Click;
-            //btnEstadoTarjeta.Click += BtnEstadoTarjeta_Click;
-            //btnEstadoTicket.Click += BtnEstadoTicket_Click;
-            //btnEmpleado.Click += BtnEmpleado_Click; 
-            //btnEstadoEmpleado.Click += BtnEstadoEmpleado_Click;
-            //btnVehiculo.Click += BtnVehiculo_Click;
-            //btnEstadoPermanencia.Click += BtnEstadoPermanencia_Click;
-            //btnMultaTicket.Click += BtnMultaTicket_Click;
-            //btnEstadoVehiculo.Click += BtnEstadoVehiculo_Click;
-            //btnEstadoCliente.Click += BtnEstadoCliente_Click;
-            //btnTicket.Click += BtnTicket_Click;
-            //btnCerrarSesion.Click += BtnCerrarSesion_Click;
-            //btnSalir.Click += BtnSalir_Click;
         }
 
 
@@ -118,7 +99,8 @@ namespace SistemaParqueo.Desktop
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("El formulario 'Cliente' será desarrollado luego.", "Información");
+            FrmCliente frmCliente = new FrmCliente();
+            AbrirFormularioEnPanel(frmCliente);
         }
 
         private void btnMultaTicket_Click(object sender, EventArgs e)
@@ -140,7 +122,8 @@ namespace SistemaParqueo.Desktop
 
         private void btnTarjeta_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("El formulario 'Tarjeta' será desarrollado luego.", "Información");
+            FrmTarjeta frmTarjeta = new FrmTarjeta();
+            AbrirFormularioEnPanel(frmTarjeta);
         }
 
         private void btnEstadoEmpleado_Click(object sender, EventArgs e)

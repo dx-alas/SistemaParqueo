@@ -46,15 +46,14 @@
             this.txtClave = new System.Windows.Forms.TextBox();
             this.lblClave = new System.Windows.Forms.Label();
             this.dgvUsuario = new System.Windows.Forms.DataGridView();
-            this.UsuarioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.cbRolId = new System.Windows.Forms.ComboBox();
             this.cbEstadoUsuarioId = new System.Windows.Forms.ComboBox();
+            this.UsuarioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +92,7 @@
             this.txtUsuarioId.Enabled = false;
             this.txtUsuarioId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuarioId.Location = new System.Drawing.Point(650, 252);
-            this.txtUsuarioId.MaxLength = 50;
+            this.txtUsuarioId.MaxLength = 3890;
             this.txtUsuarioId.Name = "txtUsuarioId";
             this.txtUsuarioId.Size = new System.Drawing.Size(243, 29);
             this.txtUsuarioId.TabIndex = 67;
@@ -218,7 +217,7 @@
             // 
             this.txtClave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClave.Location = new System.Drawing.Point(182, 207);
-            this.txtClave.MaxLength = 9;
+            this.txtClave.MaxLength = 255;
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(243, 29);
             this.txtClave.TabIndex = 55;
@@ -246,7 +245,6 @@
             this.dgvUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.UsuarioId,
             this.Nombre,
-            this.Clave,
             this.Empleado,
             this.Rol,
             this.EstadoUsuario});
@@ -259,54 +257,6 @@
             this.dgvUsuario.Size = new System.Drawing.Size(952, 217);
             this.dgvUsuario.TabIndex = 70;
             this.dgvUsuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuario_CellClick);
-            // 
-            // UsuarioId
-            // 
-            this.UsuarioId.DataPropertyName = "UsuarioId";
-            this.UsuarioId.HeaderText = "Id Usuario";
-            this.UsuarioId.MinimumWidth = 6;
-            this.UsuarioId.Name = "UsuarioId";
-            this.UsuarioId.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Clave
-            // 
-            this.Clave.DataPropertyName = "Clave";
-            this.Clave.HeaderText = "Clave";
-            this.Clave.MinimumWidth = 6;
-            this.Clave.Name = "Clave";
-            this.Clave.ReadOnly = true;
-            // 
-            // Empleado
-            // 
-            this.Empleado.DataPropertyName = "Empleado";
-            this.Empleado.HeaderText = "Empleado";
-            this.Empleado.MinimumWidth = 6;
-            this.Empleado.Name = "Empleado";
-            this.Empleado.ReadOnly = true;
-            // 
-            // Rol
-            // 
-            this.Rol.DataPropertyName = "Rol";
-            this.Rol.HeaderText = "Rol";
-            this.Rol.MinimumWidth = 6;
-            this.Rol.Name = "Rol";
-            this.Rol.ReadOnly = true;
-            // 
-            // EstadoUsuario
-            // 
-            this.EstadoUsuario.DataPropertyName = "EstadoUsuario";
-            this.EstadoUsuario.HeaderText = "Estado Usuario";
-            this.EstadoUsuario.MinimumWidth = 6;
-            this.EstadoUsuario.Name = "EstadoUsuario";
-            this.EstadoUsuario.ReadOnly = true;
             // 
             // label3
             // 
@@ -337,6 +287,46 @@
             this.cbEstadoUsuarioId.Name = "cbEstadoUsuarioId";
             this.cbEstadoUsuarioId.Size = new System.Drawing.Size(243, 29);
             this.cbEstadoUsuarioId.TabIndex = 73;
+            // 
+            // UsuarioId
+            // 
+            this.UsuarioId.DataPropertyName = "UsuarioId";
+            this.UsuarioId.HeaderText = "Id Usuario";
+            this.UsuarioId.MinimumWidth = 6;
+            this.UsuarioId.Name = "UsuarioId";
+            this.UsuarioId.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Empleado
+            // 
+            this.Empleado.DataPropertyName = "Empleado";
+            this.Empleado.HeaderText = "Empleado";
+            this.Empleado.MinimumWidth = 6;
+            this.Empleado.Name = "Empleado";
+            this.Empleado.ReadOnly = true;
+            // 
+            // Rol
+            // 
+            this.Rol.DataPropertyName = "Rol";
+            this.Rol.HeaderText = "Rol";
+            this.Rol.MinimumWidth = 6;
+            this.Rol.Name = "Rol";
+            this.Rol.ReadOnly = true;
+            // 
+            // EstadoUsuario
+            // 
+            this.EstadoUsuario.DataPropertyName = "EstadoUsuario";
+            this.EstadoUsuario.HeaderText = "Estado Usuario";
+            this.EstadoUsuario.MinimumWidth = 6;
+            this.EstadoUsuario.Name = "EstadoUsuario";
+            this.EstadoUsuario.ReadOnly = true;
             // 
             // FrmUsuario
             // 
@@ -401,12 +391,11 @@
         private System.Windows.Forms.DataGridView dgvUsuario;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbRolId;
+        private System.Windows.Forms.ComboBox cbEstadoUsuarioId;
         private System.Windows.Forms.DataGridViewTextBoxColumn UsuarioId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
         private System.Windows.Forms.DataGridViewTextBoxColumn Empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoUsuario;
-        private System.Windows.Forms.ComboBox cbEstadoUsuarioId;
     }
 }
