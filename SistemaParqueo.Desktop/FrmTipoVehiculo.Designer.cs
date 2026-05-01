@@ -130,6 +130,7 @@
             this.btnEliminar.TabIndex = 73;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
@@ -143,6 +144,7 @@
             this.btnActualizar.TabIndex = 72;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnLimpiar
             // 
@@ -156,6 +158,7 @@
             this.btnLimpiar.TabIndex = 71;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnGuardar
             // 
@@ -170,6 +173,7 @@
             this.btnGuardar.TabIndex = 70;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtNombre
             // 
@@ -252,6 +256,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmTipoVehiculo";
             this.Text = "Gestion de Tipo Vehiculo";
+            this.Load += new System.EventHandler(this.FrmTipoVehiculo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoVehiculo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
