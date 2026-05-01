@@ -70,6 +70,7 @@ namespace SistemaParqueo.Desktop
 
                 var query = (from e in _cliente
                              select new
+                             // Proyección de datos para mostrar en el DataGridView
                              {
                                  ClienteId = e.ClienteId,
                                  Nombre = e.Nombre,
