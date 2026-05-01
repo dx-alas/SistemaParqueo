@@ -94,10 +94,13 @@ namespace SistemaParqueo.Desktop
             txtNombre.Clear();
             txtApellido.Clear();
             txtTelefono.Clear();
-            cbTipoDoc.Clear();
+            if (cbTipoDoc.Items.Count > 0) cbTipoDoc.SelectedIndex = 0;
             txtDUI.Clear();
             txtCarnet.Clear();
+            if (cbCodigo.Items.Count > 0) cbCodigo.SelectedIndex = 0;
             if (cbTipo.Items.Count > 0) cbTipo.SelectedIndex = 0;
+            if (cbEstado.Items.Count > 0) cbEstado.SelectedIndex = 0;
+            txtId.Clear();
             txtNombre.Focus();
         }
 
@@ -105,7 +108,7 @@ namespace SistemaParqueo.Desktop
         {
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
                 string.IsNullOrWhiteSpace(txtApellido.Text) ||
-                string.IsNullOrWhiteSpace(txtTelefono.Text))
+                string.IsNullOrWhiteSpace(txtDUI.Text))
             {
                 MessageBox.Show("Nombre, Apellido y DUI son campos obligatorios");
                 return false;
@@ -117,23 +120,25 @@ namespace SistemaParqueo.Desktop
         {
             if (!Validar()) return;
 
-            DialogResult confirm = MessageBox.Show("¿Desea guardar este empleado?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult confirm = MessageBox.Show("¿Desea guardar este cliente?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm != DialogResult.Yes) return;
 
             try
             {
-                Empleado entity = new Empleado
+                Cliente entity = new Cliente
                 {
                     Nombre = txtNombre.Text.Trim(),
                     Apellido = txtApellido.Text.Trim(),
+                    Telefono = txtTelefono.Text.Trim(),
+                    TipoDocumento = string.IsNullOrWhiteSpace(cbTipoDoc.Text) ? null : cbTipoDoc.Text.Trim(),
                     DUI = txtTelefono.Text.Trim(),
-                    Correo = string.IsNullOrWhiteSpace(cbTipoDoc.Text) ? null : cbTipoDoc.Text.Trim(),
-                    Telefono = txtDUI.Text.Trim(),
-                    Direccion = txtCarnet.Text.Trim(),
-                    EstadoEmpleadoId = Convert.ToInt32(cbTipo.SelectedValue)
+                    CarnetExtranjero = txtCarnet.Text.Trim(),
+                    TarjetaId = Convert.ToInt32(cbCodigo.SelectedValue),
+                    TipoClienteId = Convert.ToInt32(cbTipo.SelectedValue),
+                    EstadoClienteId = Convert.ToInt32(cbEstado.SelectedValue)
                 };
 
-                bool ok = EmpleadoBL.Instance.Insert(entity);
+                bool ok = ClienteBL.Instance.Insert(entity);
                 if (ok)
                 {
                     MessageBox.Show("Guardado correctamente");
@@ -152,7 +157,7 @@ namespace SistemaParqueo.Desktop
             if (!Validar()) return;
             if (string.IsNullOrEmpty(txtId.Text))
             {
-                MessageBox.Show("Seleccione un empleado de la lista");
+                MessageBox.Show("Seleccione un cliente de la lista");
                 return;
             }
 
@@ -161,19 +166,20 @@ namespace SistemaParqueo.Desktop
 
             try
             {
-                Empleado entity = new Empleado
+                Cliente entity = new Cliente
                 {
-                    EmpleadoId = Convert.ToInt32(txtId.Text),
                     Nombre = txtNombre.Text.Trim(),
                     Apellido = txtApellido.Text.Trim(),
+                    Telefono = txtTelefono.Text.Trim(),
+                    TipoDocumento = string.IsNullOrWhiteSpace(cbTipoDoc.Text) ? null : cbTipoDoc.Text.Trim(),
                     DUI = txtTelefono.Text.Trim(),
-                    Correo = string.IsNullOrWhiteSpace(cbTipoDoc.Text) ? null : cbTipoDoc.Text.Trim(),
-                    Telefono = txtDUI.Text.Trim(),
-                    Direccion = txtCarnet.Text.Trim(),
-                    EstadoEmpleadoId = Convert.ToInt32(cbTipo.SelectedValue)
+                    CarnetExtranjero = txtCarnet.Text.Trim(),
+                    TarjetaId = Convert.ToInt32(cbCodigo.SelectedValue),
+                    TipoClienteId = Convert.ToInt32(cbTipo.SelectedValue),
+                    EstadoClienteId = Convert.ToInt32(cbEstado.SelectedValue)
                 };
 
-                bool ok = EmpleadoBL.Instance.Update(entity);
+                bool ok = ClienteBL.Instance.Update(entity);
                 if (ok)
                 {
                     MessageBox.Show("Actualizado correctamente");
@@ -195,13 +201,13 @@ namespace SistemaParqueo.Desktop
                 return;
             }
 
-            DialogResult confirm = MessageBox.Show("¿Seguro que desea eliminar este empleado?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult confirm = MessageBox.Show("¿Seguro que desea eliminar este cliente?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (confirm != DialogResult.Yes) return;
 
             try
             {
                 int id = Convert.ToInt32(txtId.Text);
-                if (EmpleadoBL.Instance.Delete(id))
+                if (ClienteBL.Instance.Delete(id))
                 {
                     MessageBox.Show("Eliminado correctamente");
                     Limpiar();
@@ -219,11 +225,11 @@ namespace SistemaParqueo.Desktop
             Limpiar();
         }
 
-        private void dgvEmpleado_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = dgvEmpleado.Rows[e.RowIndex];
+                DataGridViewRow row = dgvCliente.Rows[e.RowIndex];
 
                 txtId.Text = row.Cells[0].Value?.ToString();
                 txtNombre.Text = row.Cells[1].Value?.ToString();
@@ -237,6 +243,7 @@ namespace SistemaParqueo.Desktop
                 if (item != null)
                 {
                     cbTipo.SelectedValue = ((dynamic)item).EstadoId;
+                    cbEstado.SelectedValue = ((dynamic)item).EstadoId;
                 }
             }
         }
