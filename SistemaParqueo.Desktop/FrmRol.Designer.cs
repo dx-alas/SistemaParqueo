@@ -32,6 +32,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.dgvRol = new System.Windows.Forms.DataGridView();
+            this.RolId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblListaEstado = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -40,8 +42,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.RolId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRol)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.Location = new System.Drawing.Point(360, 24);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(344, 54);
+            this.lblTitulo.Size = new System.Drawing.Size(405, 54);
             this.lblTitulo.TabIndex = 15;
             this.lblTitulo.Text = "GESTIÓN DE ROL";
             // 
@@ -93,6 +93,22 @@
             this.dgvRol.Size = new System.Drawing.Size(884, 247);
             this.dgvRol.TabIndex = 65;
             // 
+            // RolId
+            // 
+            this.RolId.DataPropertyName = "RolId";
+            this.RolId.HeaderText = "Id Rol";
+            this.RolId.MinimumWidth = 6;
+            this.RolId.Name = "RolId";
+            this.RolId.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre del rol";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
             // lblListaEstado
             // 
             this.lblListaEstado.AutoSize = true;
@@ -125,6 +141,7 @@
             this.btnEliminar.TabIndex = 62;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
@@ -138,6 +155,7 @@
             this.btnActualizar.TabIndex = 61;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnLimpiar
             // 
@@ -151,6 +169,7 @@
             this.btnLimpiar.TabIndex = 60;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnGuardar
             // 
@@ -165,6 +184,7 @@
             this.btnGuardar.TabIndex = 59;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtNombre
             // 
@@ -183,22 +203,6 @@
             this.label3.Size = new System.Drawing.Size(94, 28);
             this.label3.TabIndex = 57;
             this.label3.Text = "Nombre:";
-            // 
-            // RolId
-            // 
-            this.RolId.DataPropertyName = "RolId";
-            this.RolId.HeaderText = "Id Rol";
-            this.RolId.MinimumWidth = 6;
-            this.RolId.Name = "RolId";
-            this.RolId.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre del rol";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
             // 
             // FrmRol
             // 
@@ -220,6 +224,7 @@
             this.Controls.Add(this.lblTitulo);
             this.Name = "FrmRol";
             this.Text = "Gestión Rol";
+            this.Load += new System.EventHandler(this.FrmRol_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRol)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
