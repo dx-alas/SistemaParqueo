@@ -27,13 +27,14 @@ namespace SistemaParqueo.Desktop
             btnEstadoTarjeta.Click += BtnEstadoTarjeta_Click;
             btnEstadoTicket.Click += BtnEstadoTicket_Click;
             btnEmpleado.Click += BtnEmpleado_Click; 
-            btnUsuario.Click += BtnUsuario_Click;
+            btnEstadoEmpleado.Click += BtnEstadoEmpleado_Click;
             btnVehiculo.Click += BtnVehiculo_Click;
-            btnCliente.Click += BtnCliente_Click;
+            btnEstadoPermanencia.Click += BtnEstadoPermanencia_Click;
             btnMultaTicket.Click += BtnMultaTicket_Click;
-            btnCorteCaja.Click += BtnCorteCaja_Click;
-            btnTarjeta.Click += BtnTarjeta_Click;
+            btnEstadoVehiculo.Click += BtnEstadoVehiculo_Click;
+            btnEstadoCliente.Click += BtnEstadoCliente_Click;
             btnTicket.Click += BtnTicket_Click;
+            
 
           
             btnCerrarSesion.Click += BtnCerrarSesion_Click;
@@ -72,12 +73,14 @@ namespace SistemaParqueo.Desktop
 
         private void BtnTipoCliente_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("El formulario 'TipoCliente' será desarrollado luego.", "Información");
+            FrmTipoCliente frmTipoCliente = new FrmTipoCliente();
+            AbrirFormularioEnPanel(frmTipoCliente);
         }
 
         private void BtnTipoVehiculo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("El formulario 'TipoVehiculo' será desarrollado luego.", "Información");
+            FrmTipoVehiculo frmTipoVehiculo = new FrmTipoVehiculo();
+            AbrirFormularioEnPanel(frmTipoVehiculo);
         }
 
         private void BtnEstadoUsuario_Click(object sender, EventArgs e)
@@ -88,17 +91,20 @@ namespace SistemaParqueo.Desktop
 
         private void BtnRol_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("El formulario 'Rol' será desarrollado luego.", "Información");
+            FrmRol frmRol = new FrmRol();
+            AbrirFormularioEnPanel(frmRol);
         }
 
         private void BtnEstadoTarjeta_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("El formulario 'EstadoTarjeta' será desarrollado luego.", "Información");
+            FrmEstadoTarjeta frmEstadoTarjeta = new FrmEstadoTarjeta();
+            AbrirFormularioEnPanel(frmEstadoTarjeta);
         }
 
         private void BtnEstadoTicket_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("El formulario 'EstadoTicket' será desarrollado luego.", "Información");
+            FrmEstadoTicket frmEstadoTicket = new FrmEstadoTicket();
+            AbrirFormularioEnPanel(frmEstadoTicket);
         }
 
         private void BtnUsuario_Click(object sender, EventArgs e)
@@ -118,7 +124,14 @@ namespace SistemaParqueo.Desktop
 
         private void BtnMultaTicket_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("El formulario 'MultaTicket' será desarrollado luego.", "Información");
+            FrmMultaTicket frmMultaTicket = new FrmMultaTicket();
+            AbrirFormularioEnPanel(frmMultaTicket);
+        }
+
+        private void BtnEstadoCliente_Click(object sender, EventArgs e)
+        {
+            FrmEstadoCliente frmEstadoCliente = new FrmEstadoCliente();
+            AbrirFormularioEnPanel(frmEstadoCliente);
         }
 
         private void BtnCorteCaja_Click(object sender, EventArgs e)
@@ -129,6 +142,24 @@ namespace SistemaParqueo.Desktop
         private void BtnTarjeta_Click(object sender, EventArgs e)
         {
             MessageBox.Show("El formulario 'Tarjeta' será desarrollado luego.", "Información");
+        }
+
+        private void BtnEstadoEmpleado_Click(object sender, EventArgs e)
+        {
+            FrmEstadoEmpleado frmEstadoEmpleado = new FrmEstadoEmpleado();
+            AbrirFormularioEnPanel(frmEstadoEmpleado);
+        }
+
+        private void BtnEstadoPermanencia_Click(object sender, EventArgs e)
+        {
+            FrmEstadoPermanencia frmEstadoPermanencia = new FrmEstadoPermanencia();
+            AbrirFormularioEnPanel(frmEstadoPermanencia);
+        }
+
+        private void BtnEstadoVehiculo_Click(object sender, EventArgs e)
+        {
+            FrmEstadoVehiculo frmEstadoVehiculo = new FrmEstadoVehiculo();
+            AbrirFormularioEnPanel(frmEstadoVehiculo);
         }
 
         private void BtnTicket_Click(object sender, EventArgs e)

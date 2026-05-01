@@ -102,6 +102,7 @@ namespace SistemaParqueo.Desktop
             txtNombre.Clear();
             txtApellido.Clear();
             txtTelefono.Clear();
+            cbTipoDocumento.Items.Clear();
             txtDUI.Clear();
             txtCarnetExtranjero.Clear();
             if (cbTarjetaId.Items.Count > 0) cbTarjetaId.SelectedIndex = 0;
@@ -135,6 +136,7 @@ namespace SistemaParqueo.Desktop
                     Nombre = txtNombre.Text.Trim(),
                     Apellido = txtApellido.Text.Trim(),
                     Telefono = txtTelefono.Text.Trim(),
+                    TipoDocumento = cbTipoDocumento.SelectedItem?.ToString(),
                     DUI = txtDUI.Text.Trim(),
                     CarnetExtranjero = txtCarnetExtranjero.Text.Trim(),
                     TarjetaId = Convert.ToInt32(cbTarjetaId.SelectedValue),
@@ -176,6 +178,7 @@ namespace SistemaParqueo.Desktop
                     Nombre = txtNombre.Text.Trim(),
                     Apellido = txtApellido.Text.Trim(),
                     Telefono = txtTelefono.Text.Trim(),
+                    TipoDocumento = cbTipoDocumento.SelectedItem?.ToString(),
                     DUI = txtDUI.Text.Trim(),
                     CarnetExtranjero = txtCarnetExtranjero.Text.Trim(),
                     TarjetaId = Convert.ToInt32(cbTarjetaId.SelectedValue),
@@ -244,6 +247,7 @@ namespace SistemaParqueo.Desktop
                 txtNombre.Text = row.Cells[1].Value?.ToString();
                 txtApellido.Text = row.Cells[2].Value?.ToString();
                 txtTelefono.Text = row.Cells[3].Value?.ToString();
+                cbTipoDocumento.Text = row.Cells[4].Value?.ToString();
                 txtDUI.Text = row.Cells[4].Value?.ToString();
                 txtCarnetExtranjero.Text = row.Cells[5].Value?.ToString();
                 var item = row.DataBoundItem;
