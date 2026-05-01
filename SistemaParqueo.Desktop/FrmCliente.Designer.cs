@@ -139,6 +139,7 @@
             this.dgvCliente.RowTemplate.Height = 24;
             this.dgvCliente.Size = new System.Drawing.Size(952, 217);
             this.dgvCliente.TabIndex = 89;
+            this.dgvCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellClick);
             // 
             // lblListaUsuarios
             // 
@@ -182,6 +183,7 @@
             this.btnEliminar.TabIndex = 85;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
@@ -195,12 +197,16 @@
             this.btnActualizar.TabIndex = 84;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // cbTipoDocumento
             // 
             this.cbTipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoDocumento.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.cbTipoDocumento.FormattingEnabled = true;
+            this.cbTipoDocumento.Items.AddRange(new object[] {
+            "DUI",
+            "CR"});
             this.cbTipoDocumento.Location = new System.Drawing.Point(298, 322);
             this.cbTipoDocumento.Name = "cbTipoDocumento";
             this.cbTipoDocumento.Size = new System.Drawing.Size(177, 29);
@@ -267,6 +273,7 @@
             this.btnLimpiar.TabIndex = 82;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnGuardar
             // 
@@ -281,6 +288,7 @@
             this.btnGuardar.TabIndex = 81;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtApellido
             // 
@@ -322,7 +330,6 @@
             // 
             // txtDUI
             // 
-            this.txtDUI.Enabled = false;
             this.txtDUI.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDUI.Location = new System.Drawing.Point(233, 368);
             this.txtDUI.MaxLength = 9;
@@ -332,7 +339,6 @@
             // 
             // txtCarnetExtranjero
             // 
-            this.txtCarnetExtranjero.Enabled = false;
             this.txtCarnetExtranjero.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCarnetExtranjero.Location = new System.Drawing.Point(715, 176);
             this.txtCarnetExtranjero.MaxLength = 9;
