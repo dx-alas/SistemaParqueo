@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEstadoEmpleado));
             this.txtId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvEstado = new System.Windows.Forms.DataGridView();
+            this.EstadoEmpleadoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblListaEstado = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -40,8 +43,6 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.EstadoEmpleadoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +84,22 @@
             this.dgvEstado.RowTemplate.Height = 24;
             this.dgvEstado.Size = new System.Drawing.Size(884, 247);
             this.dgvEstado.TabIndex = 54;
+            // 
+            // EstadoEmpleadoId
+            // 
+            this.EstadoEmpleadoId.DataPropertyName = "EstadoEmpleadoId";
+            this.EstadoEmpleadoId.HeaderText = "Id Estado";
+            this.EstadoEmpleadoId.MinimumWidth = 6;
+            this.EstadoEmpleadoId.Name = "EstadoEmpleadoId";
+            this.EstadoEmpleadoId.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre del estado";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // lblListaEstado
             // 
@@ -189,22 +206,6 @@
             this.label1.TabIndex = 45;
             this.label1.Text = "GESTIÓN DE ESTADO EMPLEADO";
             // 
-            // EstadoEmpleadoId
-            // 
-            this.EstadoEmpleadoId.DataPropertyName = "EstadoEmpleadoId";
-            this.EstadoEmpleadoId.HeaderText = "Id Estado";
-            this.EstadoEmpleadoId.MinimumWidth = 6;
-            this.EstadoEmpleadoId.Name = "EstadoEmpleadoId";
-            this.EstadoEmpleadoId.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre del estado";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
             // FrmEstadoEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -223,6 +224,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmEstadoEmpleado";
             this.Text = "Gestión Estado Empleado";
             this.Click += new System.EventHandler(this.FrmEstadoEmpleado_Load);

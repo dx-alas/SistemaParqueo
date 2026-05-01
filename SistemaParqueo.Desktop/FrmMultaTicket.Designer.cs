@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMultaTicket));
             this.lblMultaId = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblListadoMulta = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.dgvMulta = new System.Windows.Forms.DataGridView();
+            this.MultaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Concepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMultaId = new System.Windows.Forms.TextBox();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -42,9 +46,6 @@
             this.lblEmcabezado = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.MultaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Concepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMulta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             // 
             this.lblMultaId.AutoSize = true;
             this.lblMultaId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMultaId.Location = new System.Drawing.Point(55, 133);
+            this.lblMultaId.Location = new System.Drawing.Point(55, 161);
             this.lblMultaId.Name = "lblMultaId";
             this.lblMultaId.Size = new System.Drawing.Size(35, 28);
             this.lblMultaId.TabIndex = 130;
@@ -64,7 +65,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(321, 243);
+            this.btnEliminar.Location = new System.Drawing.Point(321, 323);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 39);
             this.btnEliminar.TabIndex = 129;
@@ -76,7 +77,7 @@
             // 
             this.lblListadoMulta.AutoSize = true;
             this.lblListadoMulta.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblListadoMulta.Location = new System.Drawing.Point(54, 315);
+            this.lblListadoMulta.Location = new System.Drawing.Point(54, 428);
             this.lblListadoMulta.Name = "lblListadoMulta";
             this.lblListadoMulta.Size = new System.Drawing.Size(211, 32);
             this.lblListadoMulta.TabIndex = 128;
@@ -88,7 +89,7 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(190, 243);
+            this.btnActualizar.Location = new System.Drawing.Point(190, 323);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(112, 39);
             this.btnActualizar.TabIndex = 127;
@@ -111,111 +112,14 @@
             this.Concepto,
             this.Precio});
             this.dgvMulta.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvMulta.Location = new System.Drawing.Point(60, 366);
+            this.dgvMulta.Location = new System.Drawing.Point(60, 479);
             this.dgvMulta.Name = "dgvMulta";
             this.dgvMulta.ReadOnly = true;
             this.dgvMulta.RowHeadersWidth = 51;
             this.dgvMulta.RowTemplate.Height = 24;
-            this.dgvMulta.Size = new System.Drawing.Size(952, 217);
+            this.dgvMulta.Size = new System.Drawing.Size(945, 217);
             this.dgvMulta.TabIndex = 120;
             this.dgvMulta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMulta_CellClick);
-            // 
-            // txtMultaId
-            // 
-            this.txtMultaId.Enabled = false;
-            this.txtMultaId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMultaId.Location = new System.Drawing.Point(190, 132);
-            this.txtMultaId.MaxLength = 50;
-            this.txtMultaId.Name = "txtMultaId";
-            this.txtMultaId.Size = new System.Drawing.Size(243, 29);
-            this.txtMultaId.TabIndex = 123;
-            // 
-            // lblPrecio
-            // 
-            this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(519, 183);
-            this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(82, 28);
-            this.lblPrecio.TabIndex = 122;
-            this.lblPrecio.Text = "Precio: ";
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.Gold;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(452, 243);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(112, 39);
-            this.btnLimpiar.TabIndex = 126;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(60, 243);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(112, 39);
-            this.btnGuardar.TabIndex = 125;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // txtConcepto
-            // 
-            this.txtConcepto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConcepto.Location = new System.Drawing.Point(190, 181);
-            this.txtConcepto.MaxLength = 0;
-            this.txtConcepto.Name = "txtConcepto";
-            this.txtConcepto.Size = new System.Drawing.Size(243, 29);
-            this.txtConcepto.TabIndex = 124;
-            // 
-            // lblConcepto
-            // 
-            this.lblConcepto.AutoSize = true;
-            this.lblConcepto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConcepto.Location = new System.Drawing.Point(55, 178);
-            this.lblConcepto.Name = "lblConcepto";
-            this.lblConcepto.Size = new System.Drawing.Size(106, 28);
-            this.lblConcepto.TabIndex = 121;
-            this.lblConcepto.Text = "Concepto:";
-            // 
-            // lblEmcabezado
-            // 
-            this.lblEmcabezado.AutoSize = true;
-            this.lblEmcabezado.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblEmcabezado.Location = new System.Drawing.Point(54, 84);
-            this.lblEmcabezado.Name = "lblEmcabezado";
-            this.lblEmcabezado.Size = new System.Drawing.Size(177, 32);
-            this.lblEmcabezado.TabIndex = 119;
-            this.lblEmcabezado.Text = "DATOS MULTA";
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(301, 28);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(434, 50);
-            this.lblTitulo.TabIndex = 118;
-            this.lblTitulo.Text = "GESTIÓN MULTATICKET";
-            // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(625, 183);
-            this.txtPrecio.MaxLength = 0;
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(243, 29);
-            this.txtPrecio.TabIndex = 131;
             // 
             // MultaId
             // 
@@ -241,11 +145,109 @@
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
             // 
+            // txtMultaId
+            // 
+            this.txtMultaId.Enabled = false;
+            this.txtMultaId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMultaId.Location = new System.Drawing.Point(190, 160);
+            this.txtMultaId.MaxLength = 50;
+            this.txtMultaId.Name = "txtMultaId";
+            this.txtMultaId.Size = new System.Drawing.Size(243, 29);
+            this.txtMultaId.TabIndex = 123;
+            // 
+            // lblPrecio
+            // 
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.Location = new System.Drawing.Point(520, 231);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(82, 28);
+            this.lblPrecio.TabIndex = 122;
+            this.lblPrecio.Text = "Precio: ";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.Gold;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(452, 323);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(112, 39);
+            this.btnLimpiar.TabIndex = 126;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(60, 323);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(112, 39);
+            this.btnGuardar.TabIndex = 125;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // txtConcepto
+            // 
+            this.txtConcepto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConcepto.Location = new System.Drawing.Point(190, 234);
+            this.txtConcepto.MaxLength = 0;
+            this.txtConcepto.Name = "txtConcepto";
+            this.txtConcepto.Size = new System.Drawing.Size(243, 29);
+            this.txtConcepto.TabIndex = 124;
+            // 
+            // lblConcepto
+            // 
+            this.lblConcepto.AutoSize = true;
+            this.lblConcepto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConcepto.Location = new System.Drawing.Point(55, 231);
+            this.lblConcepto.Name = "lblConcepto";
+            this.lblConcepto.Size = new System.Drawing.Size(106, 28);
+            this.lblConcepto.TabIndex = 121;
+            this.lblConcepto.Text = "Concepto:";
+            // 
+            // lblEmcabezado
+            // 
+            this.lblEmcabezado.AutoSize = true;
+            this.lblEmcabezado.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lblEmcabezado.Location = new System.Drawing.Point(54, 112);
+            this.lblEmcabezado.Name = "lblEmcabezado";
+            this.lblEmcabezado.Size = new System.Drawing.Size(177, 32);
+            this.lblEmcabezado.TabIndex = 119;
+            this.lblEmcabezado.Text = "DATOS MULTA";
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.Location = new System.Drawing.Point(301, 28);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(434, 50);
+            this.lblTitulo.TabIndex = 118;
+            this.lblTitulo.Text = "GESTIÓN MULTATICKET";
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.Location = new System.Drawing.Point(626, 231);
+            this.txtPrecio.MaxLength = 0;
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(243, 29);
+            this.txtPrecio.TabIndex = 131;
+            // 
             // FrmMultaTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 653);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1047, 770);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.lblMultaId);
             this.Controls.Add(this.btnEliminar);
@@ -260,8 +262,9 @@
             this.Controls.Add(this.lblConcepto);
             this.Controls.Add(this.lblEmcabezado);
             this.Controls.Add(this.lblTitulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMultaTicket";
-            this.Text = "FrmMultaTicket";
+            this.Text = "Gestión MultaTicket";
             this.Load += new System.EventHandler(this.FrmMulta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMulta)).EndInit();
             this.ResumeLayout(false);

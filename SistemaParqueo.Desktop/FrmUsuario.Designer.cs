@@ -371,7 +371,7 @@
             this.MinimumSize = new System.Drawing.Size(900, 700);
             this.Name = "FrmUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "INICIO DE SESIÓN";
+            this.Text = "Gestión Usuarios";
             this.Load += new System.EventHandler(this.FrmUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).EndInit();
             this.ResumeLayout(false);

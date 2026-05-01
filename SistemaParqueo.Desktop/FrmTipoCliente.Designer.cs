@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTipoCliente));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -223,8 +224,9 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmTipoCliente";
-            this.Text = "Gestión de Tipo Cliente";
+            this.Text = "Gestión Tipo Cliente";
             this.Load += new System.EventHandler(this.FrmTipoCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoCliente)).EndInit();
             this.ResumeLayout(false);

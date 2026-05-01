@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTarjeta));
             this.cbEstadoTarjetaId = new System.Windows.Forms.ComboBox();
             this.lblTarjetaId = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -53,7 +54,7 @@
             this.cbEstadoTarjetaId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEstadoTarjetaId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.cbEstadoTarjetaId.FormattingEnabled = true;
-            this.cbEstadoTarjetaId.Location = new System.Drawing.Point(678, 200);
+            this.cbEstadoTarjetaId.Location = new System.Drawing.Point(667, 200);
             this.cbEstadoTarjetaId.Name = "cbEstadoTarjetaId";
             this.cbEstadoTarjetaId.Size = new System.Drawing.Size(243, 29);
             this.cbEstadoTarjetaId.TabIndex = 117;
@@ -62,7 +63,7 @@
             // 
             this.lblTarjetaId.AutoSize = true;
             this.lblTarjetaId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTarjetaId.Location = new System.Drawing.Point(70, 152);
+            this.lblTarjetaId.Location = new System.Drawing.Point(59, 152);
             this.lblTarjetaId.Name = "lblTarjetaId";
             this.lblTarjetaId.Size = new System.Drawing.Size(35, 28);
             this.lblTarjetaId.TabIndex = 115;
@@ -74,7 +75,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(336, 314);
+            this.btnEliminar.Location = new System.Drawing.Point(325, 314);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 39);
             this.btnEliminar.TabIndex = 114;
@@ -86,7 +87,7 @@
             // 
             this.lblListadoTarjeta.AutoSize = true;
             this.lblListadoTarjeta.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblListadoTarjeta.Location = new System.Drawing.Point(69, 386);
+            this.lblListadoTarjeta.Location = new System.Drawing.Point(58, 397);
             this.lblListadoTarjeta.Name = "lblListadoTarjeta";
             this.lblListadoTarjeta.Size = new System.Drawing.Size(231, 32);
             this.lblListadoTarjeta.TabIndex = 113;
@@ -98,7 +99,7 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(205, 314);
+            this.btnActualizar.Location = new System.Drawing.Point(194, 314);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(112, 39);
             this.btnActualizar.TabIndex = 112;
@@ -121,7 +122,7 @@
             this.Codigo,
             this.EstadoTarjeta});
             this.dgvTarjeta.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvTarjeta.Location = new System.Drawing.Point(75, 437);
+            this.dgvTarjeta.Location = new System.Drawing.Point(64, 448);
             this.dgvTarjeta.Name = "dgvTarjeta";
             this.dgvTarjeta.ReadOnly = true;
             this.dgvTarjeta.RowHeadersWidth = 51;
@@ -158,7 +159,7 @@
             // 
             this.txtTarjetaId.Enabled = false;
             this.txtTarjetaId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTarjetaId.Location = new System.Drawing.Point(205, 151);
+            this.txtTarjetaId.Location = new System.Drawing.Point(194, 151);
             this.txtTarjetaId.MaxLength = 50;
             this.txtTarjetaId.Name = "txtTarjetaId";
             this.txtTarjetaId.Size = new System.Drawing.Size(243, 29);
@@ -168,7 +169,7 @@
             // 
             this.lblEstadoTarjetaId.AutoSize = true;
             this.lblEstadoTarjetaId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoTarjetaId.Location = new System.Drawing.Point(503, 201);
+            this.lblEstadoTarjetaId.Location = new System.Drawing.Point(492, 201);
             this.lblEstadoTarjetaId.Name = "lblEstadoTarjetaId";
             this.lblEstadoTarjetaId.Size = new System.Drawing.Size(157, 28);
             this.lblEstadoTarjetaId.TabIndex = 105;
@@ -180,7 +181,7 @@
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(467, 314);
+            this.btnLimpiar.Location = new System.Drawing.Point(456, 314);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(112, 39);
             this.btnLimpiar.TabIndex = 110;
@@ -194,7 +195,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(75, 314);
+            this.btnGuardar.Location = new System.Drawing.Point(64, 314);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(0);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(112, 39);
@@ -206,7 +207,7 @@
             // txtCodigo
             // 
             this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(205, 200);
+            this.txtCodigo.Location = new System.Drawing.Point(194, 200);
             this.txtCodigo.MaxLength = 0;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(243, 29);
@@ -216,7 +217,7 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(70, 197);
+            this.lblCodigo.Location = new System.Drawing.Point(59, 197);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(83, 28);
             this.lblCodigo.TabIndex = 104;
@@ -226,7 +227,7 @@
             // 
             this.lblEmcabezado.AutoSize = true;
             this.lblEmcabezado.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblEmcabezado.Location = new System.Drawing.Point(69, 103);
+            this.lblEmcabezado.Location = new System.Drawing.Point(58, 103);
             this.lblEmcabezado.Name = "lblEmcabezado";
             this.lblEmcabezado.Size = new System.Drawing.Size(210, 32);
             this.lblEmcabezado.TabIndex = 101;
@@ -246,7 +247,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 741);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1047, 770);
             this.Controls.Add(this.cbEstadoTarjetaId);
             this.Controls.Add(this.lblTarjetaId);
             this.Controls.Add(this.btnEliminar);
@@ -261,8 +263,9 @@
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.lblEmcabezado);
             this.Controls.Add(this.lblTitulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmTarjeta";
-            this.Text = "FrmTarjeta";
+            this.Text = "Gestión Tarjetas";
             this.Load += new System.EventHandler(this.FrmTarjeta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarjeta)).EndInit();
             this.ResumeLayout(false);

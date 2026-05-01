@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEstadoVehiculo));
             this.txtId = new System.Windows.Forms.TextBox();
             this.dgvEstado = new System.Windows.Forms.DataGridView();
             this.EstadoVehiculoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -223,6 +224,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmEstadoVehiculo";
             this.Text = "Gestión Estado Vehiculo";
             this.Load += new System.EventHandler(this.FrmEstadoVehiculo_Load);

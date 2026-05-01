@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRol));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -48,17 +49,18 @@
             // lblTitulo
             // 
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(360, 24);
+            this.lblTitulo.Location = new System.Drawing.Point(348, 38);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(405, 54);
             this.lblTitulo.TabIndex = 15;
             this.lblTitulo.Text = "GESTIÓN DE ROL";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(81, 148);
+            this.label2.Location = new System.Drawing.Point(81, 164);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 28);
             this.label2.TabIndex = 67;
@@ -68,7 +70,7 @@
             // 
             this.txtId.Enabled = false;
             this.txtId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.txtId.Location = new System.Drawing.Point(274, 151);
+            this.txtId.Location = new System.Drawing.Point(274, 167);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(210, 29);
             this.txtId.TabIndex = 66;
@@ -85,7 +87,7 @@
             this.dgvRol.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RolId,
             this.Nombre});
-            this.dgvRol.Location = new System.Drawing.Point(86, 431);
+            this.dgvRol.Location = new System.Drawing.Point(86, 447);
             this.dgvRol.Name = "dgvRol";
             this.dgvRol.ReadOnly = true;
             this.dgvRol.RowHeadersWidth = 51;
@@ -113,7 +115,7 @@
             // 
             this.lblListaEstado.AutoSize = true;
             this.lblListaEstado.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblListaEstado.Location = new System.Drawing.Point(80, 380);
+            this.lblListaEstado.Location = new System.Drawing.Point(80, 396);
             this.lblListaEstado.Name = "lblListaEstado";
             this.lblListaEstado.Size = new System.Drawing.Size(191, 32);
             this.lblListaEstado.TabIndex = 64;
@@ -123,7 +125,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(77, 93);
+            this.label4.Location = new System.Drawing.Point(77, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(144, 32);
             this.label4.TabIndex = 63;
@@ -135,7 +137,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(357, 284);
+            this.btnEliminar.Location = new System.Drawing.Point(357, 300);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 39);
             this.btnEliminar.TabIndex = 62;
@@ -149,7 +151,7 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(213, 284);
+            this.btnActualizar.Location = new System.Drawing.Point(213, 300);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(125, 39);
             this.btnActualizar.TabIndex = 61;
@@ -163,7 +165,7 @@
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(493, 284);
+            this.btnLimpiar.Location = new System.Drawing.Point(493, 300);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(112, 39);
             this.btnLimpiar.TabIndex = 60;
@@ -177,7 +179,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(83, 284);
+            this.btnGuardar.Location = new System.Drawing.Point(83, 300);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(0);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(112, 39);
@@ -189,7 +191,7 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.txtNombre.Location = new System.Drawing.Point(274, 218);
+            this.txtNombre.Location = new System.Drawing.Point(274, 234);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(210, 29);
             this.txtNombre.TabIndex = 58;
@@ -198,7 +200,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(81, 219);
+            this.label3.Location = new System.Drawing.Point(81, 235);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 28);
             this.label3.TabIndex = 57;
@@ -222,6 +224,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTitulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRol";
             this.Text = "Gestión Rol";
             this.Load += new System.EventHandler(this.FrmRol_Load);

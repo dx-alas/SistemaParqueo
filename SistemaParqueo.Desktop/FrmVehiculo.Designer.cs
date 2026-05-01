@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVehiculo));
             this.lblEmcabezado = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblVehiculoId = new System.Windows.Forms.Label();
@@ -58,7 +59,7 @@
             // 
             this.lblEmcabezado.AutoSize = true;
             this.lblEmcabezado.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblEmcabezado.Location = new System.Drawing.Point(76, 111);
+            this.lblEmcabezado.Location = new System.Drawing.Point(53, 114);
             this.lblEmcabezado.Name = "lblEmcabezado";
             this.lblEmcabezado.Size = new System.Drawing.Size(227, 32);
             this.lblEmcabezado.TabIndex = 75;
@@ -68,7 +69,7 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(297, 45);
+            this.lblTitulo.Location = new System.Drawing.Point(311, 50);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(392, 50);
             this.lblTitulo.TabIndex = 68;
@@ -78,7 +79,7 @@
             // 
             this.lblVehiculoId.AutoSize = true;
             this.lblVehiculoId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVehiculoId.Location = new System.Drawing.Point(77, 160);
+            this.lblVehiculoId.Location = new System.Drawing.Point(54, 158);
             this.lblVehiculoId.Name = "lblVehiculoId";
             this.lblVehiculoId.Size = new System.Drawing.Size(35, 28);
             this.lblVehiculoId.TabIndex = 96;
@@ -90,7 +91,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(343, 322);
+            this.btnEliminar.Location = new System.Drawing.Point(320, 362);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 39);
             this.btnEliminar.TabIndex = 95;
@@ -102,7 +103,7 @@
             // 
             this.lblListadoVehiculo.AutoSize = true;
             this.lblListadoVehiculo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblListadoVehiculo.Location = new System.Drawing.Point(76, 394);
+            this.lblListadoVehiculo.Location = new System.Drawing.Point(53, 437);
             this.lblListadoVehiculo.Name = "lblListadoVehiculo";
             this.lblListadoVehiculo.Size = new System.Drawing.Size(235, 32);
             this.lblListadoVehiculo.TabIndex = 94;
@@ -114,7 +115,7 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(212, 322);
+            this.btnActualizar.Location = new System.Drawing.Point(189, 362);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(112, 39);
             this.btnActualizar.TabIndex = 93;
@@ -127,7 +128,7 @@
             this.cbClienteId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbClienteId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.cbClienteId.FormattingEnabled = true;
-            this.cbClienteId.Location = new System.Drawing.Point(212, 254);
+            this.cbClienteId.Location = new System.Drawing.Point(189, 274);
             this.cbClienteId.Name = "cbClienteId";
             this.cbClienteId.Size = new System.Drawing.Size(243, 29);
             this.cbClienteId.TabIndex = 92;
@@ -149,7 +150,7 @@
             this.TipoVehiculo,
             this.EstadoVehiculo});
             this.dgvVehiculo.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvVehiculo.Location = new System.Drawing.Point(82, 445);
+            this.dgvVehiculo.Location = new System.Drawing.Point(59, 488);
             this.dgvVehiculo.Name = "dgvVehiculo";
             this.dgvVehiculo.ReadOnly = true;
             this.dgvVehiculo.RowHeadersWidth = 51;
@@ -202,7 +203,7 @@
             // 
             this.lblTipoVehiculo.AutoSize = true;
             this.lblTipoVehiculo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoVehiculo.Location = new System.Drawing.Point(510, 156);
+            this.lblTipoVehiculo.Location = new System.Drawing.Point(487, 159);
             this.lblTipoVehiculo.Name = "lblTipoVehiculo";
             this.lblTipoVehiculo.Size = new System.Drawing.Size(146, 28);
             this.lblTipoVehiculo.TabIndex = 78;
@@ -212,7 +213,7 @@
             // 
             this.lblClienteId.AutoSize = true;
             this.lblClienteId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClienteId.Location = new System.Drawing.Point(77, 254);
+            this.lblClienteId.Location = new System.Drawing.Point(54, 274);
             this.lblClienteId.Name = "lblClienteId";
             this.lblClienteId.Size = new System.Drawing.Size(83, 28);
             this.lblClienteId.TabIndex = 81;
@@ -222,7 +223,7 @@
             // 
             this.txtVehiculoId.Enabled = false;
             this.txtVehiculoId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVehiculoId.Location = new System.Drawing.Point(212, 159);
+            this.txtVehiculoId.Location = new System.Drawing.Point(189, 162);
             this.txtVehiculoId.MaxLength = 50;
             this.txtVehiculoId.Name = "txtVehiculoId";
             this.txtVehiculoId.Size = new System.Drawing.Size(243, 29);
@@ -232,7 +233,7 @@
             // 
             this.lblEstadoVehiculoId.AutoSize = true;
             this.lblEstadoVehiculoId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoVehiculoId.Location = new System.Drawing.Point(510, 209);
+            this.lblEstadoVehiculoId.Location = new System.Drawing.Point(487, 212);
             this.lblEstadoVehiculoId.Name = "lblEstadoVehiculoId";
             this.lblEstadoVehiculoId.Size = new System.Drawing.Size(173, 28);
             this.lblEstadoVehiculoId.TabIndex = 80;
@@ -244,7 +245,7 @@
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(474, 322);
+            this.btnLimpiar.Location = new System.Drawing.Point(451, 362);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(112, 39);
             this.btnLimpiar.TabIndex = 88;
@@ -258,7 +259,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(82, 322);
+            this.btnGuardar.Location = new System.Drawing.Point(59, 362);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(0);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(112, 39);
@@ -270,7 +271,7 @@
             // txtPlaca
             // 
             this.txtPlaca.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPlaca.Location = new System.Drawing.Point(212, 208);
+            this.txtPlaca.Location = new System.Drawing.Point(189, 218);
             this.txtPlaca.MaxLength = 9;
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(243, 29);
@@ -280,7 +281,7 @@
             // 
             this.lblPlaca.AutoSize = true;
             this.lblPlaca.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlaca.Location = new System.Drawing.Point(77, 205);
+            this.lblPlaca.Location = new System.Drawing.Point(54, 216);
             this.lblPlaca.Name = "lblPlaca";
             this.lblPlaca.Size = new System.Drawing.Size(67, 28);
             this.lblPlaca.TabIndex = 79;
@@ -291,7 +292,7 @@
             this.cbTipoVehiculoId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoVehiculoId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.cbTipoVehiculoId.FormattingEnabled = true;
-            this.cbTipoVehiculoId.Location = new System.Drawing.Point(716, 155);
+            this.cbTipoVehiculoId.Location = new System.Drawing.Point(693, 158);
             this.cbTipoVehiculoId.Name = "cbTipoVehiculoId";
             this.cbTipoVehiculoId.Size = new System.Drawing.Size(243, 29);
             this.cbTipoVehiculoId.TabIndex = 98;
@@ -301,7 +302,7 @@
             this.cbEstadoVehiculoId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEstadoVehiculoId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.cbEstadoVehiculoId.FormattingEnabled = true;
-            this.cbEstadoVehiculoId.Location = new System.Drawing.Point(716, 208);
+            this.cbEstadoVehiculoId.Location = new System.Drawing.Point(693, 211);
             this.cbEstadoVehiculoId.Name = "cbEstadoVehiculoId";
             this.cbEstadoVehiculoId.Size = new System.Drawing.Size(243, 29);
             this.cbEstadoVehiculoId.TabIndex = 99;
@@ -310,7 +311,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 741);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1047, 770);
             this.Controls.Add(this.cbEstadoVehiculoId);
             this.Controls.Add(this.cbTipoVehiculoId);
             this.Controls.Add(this.lblVehiculoId);
@@ -329,8 +331,9 @@
             this.Controls.Add(this.lblPlaca);
             this.Controls.Add(this.lblEmcabezado);
             this.Controls.Add(this.lblTitulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmVehiculo";
-            this.Text = "FrmVehiculo";
+            this.Text = "Gestión de vehiculos";
             this.Load += new System.EventHandler(this.FrmVehiculo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculo)).EndInit();
             this.ResumeLayout(false);
