@@ -21,9 +21,9 @@ namespace SistemaParqueo.Entities
             Nombre = nombre;
         }
 
-        public TipoCliente(int tipoClienteid, string nombre)
+        public TipoCliente(int tipoClienteId, string nombre)
         {
-            TipoClienteId = tipoClienteid;
+            TipoClienteId = tipoClienteId;
             Nombre = nombre;
             
         }
