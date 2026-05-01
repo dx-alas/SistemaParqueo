@@ -16,7 +16,7 @@ namespace SistemaParqueo.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmVehiculo());
+            Application.Run(new FrmTarjeta());
         }
     }
 }
