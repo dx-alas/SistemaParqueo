@@ -32,30 +32,23 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.cbEstado = new System.Windows.Forms.ComboBox();
+            this.cbTipo = new System.Windows.Forms.ComboBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblDUI = new System.Windows.Forms.Label();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtCarnet = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblTipoDoc = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.txtApellido = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtDUI = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblCarnet = new System.Windows.Forms.Label();
-            this.txtDUI = new System.Windows.Forms.TextBox();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.ClienteId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +59,13 @@
             this.TarjetaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbEstado = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.cbCodigo = new System.Windows.Forms.ComboBox();
+            this.cbTipoDoc = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,15 +114,15 @@
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
             // 
-            // cbEstado
+            // cbTipo
             // 
-            this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEstado.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Location = new System.Drawing.Point(697, 309);
-            this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(162, 25);
-            this.cbEstado.TabIndex = 41;
+            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipo.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Location = new System.Drawing.Point(697, 309);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.Size = new System.Drawing.Size(162, 25);
+            this.cbTipo.TabIndex = 41;
             // 
             // lblNombre
             // 
@@ -154,14 +154,14 @@
             this.lblDUI.TabIndex = 30;
             this.lblDUI.Text = "DUI: ";
             // 
-            // txtDireccion
+            // txtCarnet
             // 
-            this.txtDireccion.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.txtDireccion.Location = new System.Drawing.Point(697, 251);
-            this.txtDireccion.MaxLength = 255;
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(243, 25);
-            this.txtDireccion.TabIndex = 39;
+            this.txtCarnet.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtCarnet.Location = new System.Drawing.Point(697, 251);
+            this.txtCarnet.MaxLength = 255;
+            this.txtCarnet.Name = "txtCarnet";
+            this.txtCarnet.Size = new System.Drawing.Size(243, 25);
+            this.txtCarnet.TabIndex = 39;
             // 
             // txtNombre
             // 
@@ -214,14 +214,14 @@
             this.txtApellido.Size = new System.Drawing.Size(243, 25);
             this.txtApellido.TabIndex = 34;
             // 
-            // txtTelefono
+            // txtDUI
             // 
-            this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(181, 250);
-            this.txtTelefono.MaxLength = 15;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(239, 25);
-            this.txtTelefono.TabIndex = 35;
+            this.txtDUI.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDUI.Location = new System.Drawing.Point(181, 250);
+            this.txtDUI.MaxLength = 15;
+            this.txtDUI.Name = "txtDUI";
+            this.txtDUI.Size = new System.Drawing.Size(239, 25);
+            this.txtDUI.TabIndex = 35;
             // 
             // btnGuardar
             // 
@@ -247,23 +247,14 @@
             this.lblCarnet.TabIndex = 38;
             this.lblCarnet.Text = "Carnet Extranjero:";
             // 
-            // txtDUI
+            // txtTelefono
             // 
-            this.txtDUI.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDUI.Location = new System.Drawing.Point(181, 201);
-            this.txtDUI.MaxLength = 9;
-            this.txtDUI.Name = "txtDUI";
-            this.txtDUI.Size = new System.Drawing.Size(243, 25);
-            this.txtDUI.TabIndex = 33;
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(697, 202);
-            this.txtCorreo.MaxLength = 50;
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(243, 25);
-            this.txtCorreo.TabIndex = 32;
+            this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(181, 201);
+            this.txtTelefono.MaxLength = 9;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(243, 25);
+            this.txtTelefono.TabIndex = 33;
             // 
             // lblTelefono
             // 
@@ -314,67 +305,6 @@
             this.dgvCliente.RowTemplate.Height = 24;
             this.dgvCliente.Size = new System.Drawing.Size(962, 217);
             this.dgvCliente.TabIndex = 46;
-            this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellContentClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 306);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 21);
-            this.label1.TabIndex = 48;
-            this.label1.Text = "N° Tarjeta:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(181, 309);
-            this.textBox1.MaxLength = 50;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(243, 25);
-            this.textBox1.TabIndex = 49;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(181, 358);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(162, 25);
-            this.comboBox1.TabIndex = 51;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(46, 355);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 21);
-            this.label5.TabIndex = 50;
-            this.label5.Text = "Estado:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(478, 355);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 21);
-            this.label6.TabIndex = 52;
-            this.label6.Text = "Id:";
-            // 
-            // txtId
-            // 
-            this.txtId.Enabled = false;
-            this.txtId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(697, 358);
-            this.txtId.MaxLength = 50;
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(243, 25);
-            this.txtId.TabIndex = 53;
             // 
             // ClienteId
             // 
@@ -454,37 +384,107 @@
             this.EstadoCliente.Name = "EstadoCliente";
             this.EstadoCliente.ReadOnly = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(46, 306);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 21);
+            this.label1.TabIndex = 48;
+            this.label1.Text = "N° Tarjeta:";
+            // 
+            // cbEstado
+            // 
+            this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEstado.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.cbEstado.FormattingEnabled = true;
+            this.cbEstado.Location = new System.Drawing.Point(181, 358);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(162, 25);
+            this.cbEstado.TabIndex = 51;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(46, 355);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 21);
+            this.label5.TabIndex = 50;
+            this.label5.Text = "Estado:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(478, 355);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 21);
+            this.label6.TabIndex = 52;
+            this.label6.Text = "Id:";
+            // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(697, 358);
+            this.txtId.MaxLength = 50;
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(243, 25);
+            this.txtId.TabIndex = 53;
+            // 
+            // cbCodigo
+            // 
+            this.cbCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCodigo.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.cbCodigo.FormattingEnabled = true;
+            this.cbCodigo.Location = new System.Drawing.Point(181, 306);
+            this.cbCodigo.Name = "cbCodigo";
+            this.cbCodigo.Size = new System.Drawing.Size(162, 25);
+            this.cbCodigo.TabIndex = 54;
+            // 
+            // cbTipoDoc
+            // 
+            this.cbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoDoc.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.cbTipoDoc.FormattingEnabled = true;
+            this.cbTipoDoc.Location = new System.Drawing.Point(697, 201);
+            this.cbTipoDoc.Name = "cbTipoDoc";
+            this.cbTipoDoc.Size = new System.Drawing.Size(162, 25);
+            this.cbTipoDoc.TabIndex = 55;
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1059, 749);
+            this.Controls.Add(this.cbTipoDoc);
+            this.Controls.Add(this.cbCodigo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtId);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvCliente);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
-            this.Controls.Add(this.cbEstado);
+            this.Controls.Add(this.cbTipo);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblDUI);
-            this.Controls.Add(this.txtDireccion);
+            this.Controls.Add(this.txtCarnet);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblTipoDoc);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.txtApellido);
-            this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.txtDUI);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblCarnet);
-            this.Controls.Add(this.txtDUI);
-            this.Controls.Add(this.txtCorreo);
+            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTitulo);
@@ -504,27 +504,25 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.ComboBox cbEstado;
+        private System.Windows.Forms.ComboBox cbTipo;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblDUI;
-        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.TextBox txtCarnet;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblTipoDoc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.TextBox txtDUI;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblCarnet;
-        private System.Windows.Forms.TextBox txtDUI;
-        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvCliente;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtId;
@@ -538,6 +536,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TarjetaId;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCliente;
+        private System.Windows.Forms.ComboBox cbCodigo;
+        private System.Windows.Forms.ComboBox cbTipoDoc;
     }
 }
 

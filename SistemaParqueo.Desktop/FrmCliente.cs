@@ -41,9 +41,13 @@ namespace SistemaParqueo.Desktop
         {
             try
             {
-                cbEstado.DataSource = EstadoClienteBL.Instance.SelectAll();
-                cbEstado.DisplayMember = "Nombre";
-                cbEstado.ValueMember = "EstadoClienteId";
+                cbTipo.DataSource = EstadoClienteBL.Instance.SelectAll();
+                cbTipo.DisplayMember = "Nombre";
+                cbTipo.ValueMember = "EstadoClienteId";
+
+                cbCodigo.DataSource = TarjetaBL.Instance.SelectAll();
+                cbCodigo.DisplayMember = "Código";
+                cbCodigo.ValueMember = "TarjetaId";
             }
             catch (Exception ex)
             {
@@ -57,7 +61,7 @@ namespace SistemaParqueo.Desktop
             {
                 var _clientes = ClienteBL.Instance.SelectAll();
                 var _estados = EstadoClienteBL.Instance.SelectAll();
-                var _codigos =  
+                var _codigos =  TarjetaBL.Instance.SelectAll();
 
                 var query = (from e in _clientes
                              select new
@@ -71,12 +75,12 @@ namespace SistemaParqueo.Desktop
                                  CarnetExtranjero = e.CarnetExtranjero,
                                  TarjetaId = e.TarjetaId,
                                  EstadoClienteId = e.EstadoClienteId,
-                                 Codigo = _estados.FirstOrDefault(x => x.EstadoEmpleadoId.Equals(e.EstadoEmpleadoId))?.Nombre,
-                                 Estado = _estados.FirstOrDefault(x => x.EstadoEmpleadoId.Equals(e.EstadoEmpleadoId))?.Nombre
+                                 Tarjeta = _codigos.FirstOrDefault(x => x.TarjetaId.Equals(e.TarjetaId))?.Codigo,
+                                 EstadoCliente = _estados.FirstOrDefault(x => x.EstadoClienteId.Equals(e.EstadoClienteId))?.Nombre
                              });
 
-                dgvEmpleado.DataSource = null;
-                dgvEmpleado.DataSource = query.ToList();
+                dgvCliente.DataSource = null;
+                dgvCliente.DataSource = query.ToList();
             }
             catch (Exception ex)
             {
@@ -89,11 +93,11 @@ namespace SistemaParqueo.Desktop
             txtId.Clear();
             txtNombre.Clear();
             txtApellido.Clear();
-            txtDUI.Clear();
-            txtCorreo.Clear();
             txtTelefono.Clear();
-            txtDireccion.Clear();
-            if (cbEstado.Items.Count > 0) cbEstado.SelectedIndex = 0;
+            cbTipoDoc.Clear();
+            txtDUI.Clear();
+            txtCarnet.Clear();
+            if (cbTipo.Items.Count > 0) cbTipo.SelectedIndex = 0;
             txtNombre.Focus();
         }
 
@@ -101,7 +105,7 @@ namespace SistemaParqueo.Desktop
         {
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
                 string.IsNullOrWhiteSpace(txtApellido.Text) ||
-                string.IsNullOrWhiteSpace(txtDUI.Text))
+                string.IsNullOrWhiteSpace(txtTelefono.Text))
             {
                 MessageBox.Show("Nombre, Apellido y DUI son campos obligatorios");
                 return false;
@@ -122,11 +126,11 @@ namespace SistemaParqueo.Desktop
                 {
                     Nombre = txtNombre.Text.Trim(),
                     Apellido = txtApellido.Text.Trim(),
-                    DUI = txtDUI.Text.Trim(),
-                    Correo = string.IsNullOrWhiteSpace(txtCorreo.Text) ? null : txtCorreo.Text.Trim(),
-                    Telefono = txtTelefono.Text.Trim(),
-                    Direccion = txtDireccion.Text.Trim(),
-                    EstadoEmpleadoId = Convert.ToInt32(cbEstado.SelectedValue)
+                    DUI = txtTelefono.Text.Trim(),
+                    Correo = string.IsNullOrWhiteSpace(cbTipoDoc.Text) ? null : cbTipoDoc.Text.Trim(),
+                    Telefono = txtDUI.Text.Trim(),
+                    Direccion = txtCarnet.Text.Trim(),
+                    EstadoEmpleadoId = Convert.ToInt32(cbTipo.SelectedValue)
                 };
 
                 bool ok = EmpleadoBL.Instance.Insert(entity);
@@ -162,11 +166,11 @@ namespace SistemaParqueo.Desktop
                     EmpleadoId = Convert.ToInt32(txtId.Text),
                     Nombre = txtNombre.Text.Trim(),
                     Apellido = txtApellido.Text.Trim(),
-                    DUI = txtDUI.Text.Trim(),
-                    Correo = string.IsNullOrWhiteSpace(txtCorreo.Text) ? null : txtCorreo.Text.Trim(),
-                    Telefono = txtTelefono.Text.Trim(),
-                    Direccion = txtDireccion.Text.Trim(),
-                    EstadoEmpleadoId = Convert.ToInt32(cbEstado.SelectedValue)
+                    DUI = txtTelefono.Text.Trim(),
+                    Correo = string.IsNullOrWhiteSpace(cbTipoDoc.Text) ? null : cbTipoDoc.Text.Trim(),
+                    Telefono = txtDUI.Text.Trim(),
+                    Direccion = txtCarnet.Text.Trim(),
+                    EstadoEmpleadoId = Convert.ToInt32(cbTipo.SelectedValue)
                 };
 
                 bool ok = EmpleadoBL.Instance.Update(entity);
@@ -224,15 +228,15 @@ namespace SistemaParqueo.Desktop
                 txtId.Text = row.Cells[0].Value?.ToString();
                 txtNombre.Text = row.Cells[1].Value?.ToString();
                 txtApellido.Text = row.Cells[2].Value?.ToString();
-                txtDUI.Text = row.Cells[3].Value?.ToString();
-                txtCorreo.Text = row.Cells[4].Value?.ToString();
-                txtTelefono.Text = row.Cells[5].Value?.ToString();
-                txtDireccion.Text = row.Cells[6].Value?.ToString();
+                txtTelefono.Text = row.Cells[3].Value?.ToString();
+                cbTipoDoc.Text = row.Cells[4].Value?.ToString();
+                txtDUI.Text = row.Cells[5].Value?.ToString();
+                txtCarnet.Text = row.Cells[6].Value?.ToString();
 
                 var item = row.DataBoundItem;
                 if (item != null)
                 {
-                    cbEstado.SelectedValue = ((dynamic)item).EstadoId;
+                    cbTipo.SelectedValue = ((dynamic)item).EstadoId;
                 }
             }
         }
