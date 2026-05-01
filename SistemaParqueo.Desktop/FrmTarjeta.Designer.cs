@@ -34,6 +34,9 @@
             this.lblListadoTarjeta = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.dgvTarjeta = new System.Windows.Forms.DataGridView();
+            this.TarjetaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoTarjeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTarjetaId = new System.Windows.Forms.TextBox();
             this.lblEstadoTarjetaId = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -42,9 +45,6 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblEmcabezado = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.TarjetaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoTarjeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarjeta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,6 +130,30 @@
             this.dgvTarjeta.TabIndex = 102;
             this.dgvTarjeta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTarjeta_CellClick);
             // 
+            // TarjetaId
+            // 
+            this.TarjetaId.DataPropertyName = "TarjetaId";
+            this.TarjetaId.HeaderText = "Id Tarjeta";
+            this.TarjetaId.MinimumWidth = 6;
+            this.TarjetaId.Name = "TarjetaId";
+            this.TarjetaId.ReadOnly = true;
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.MinimumWidth = 6;
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // EstadoTarjeta
+            // 
+            this.EstadoTarjeta.DataPropertyName = "EstadoTarjeta";
+            this.EstadoTarjeta.HeaderText = "Estado Tarjeta";
+            this.EstadoTarjeta.MinimumWidth = 6;
+            this.EstadoTarjeta.Name = "EstadoTarjeta";
+            this.EstadoTarjeta.ReadOnly = true;
+            // 
             // txtTarjetaId
             // 
             this.txtTarjetaId.Enabled = false;
@@ -183,7 +207,7 @@
             // 
             this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(205, 200);
-            this.txtCodigo.MaxLength = 9;
+            this.txtCodigo.MaxLength = 0;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(243, 29);
             this.txtCodigo.TabIndex = 108;
@@ -217,30 +241,6 @@
             this.lblTitulo.Size = new System.Drawing.Size(362, 50);
             this.lblTitulo.TabIndex = 100;
             this.lblTitulo.Text = "GESTIÓN TARJETAS";
-            // 
-            // TarjetaId
-            // 
-            this.TarjetaId.DataPropertyName = "TarjetaId";
-            this.TarjetaId.HeaderText = "Id Tarjeta";
-            this.TarjetaId.MinimumWidth = 6;
-            this.TarjetaId.Name = "TarjetaId";
-            this.TarjetaId.ReadOnly = true;
-            // 
-            // Codigo
-            // 
-            this.Codigo.DataPropertyName = "Codigo";
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.MinimumWidth = 6;
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // EstadoTarjeta
-            // 
-            this.EstadoTarjeta.DataPropertyName = "EstadoTarjeta";
-            this.EstadoTarjeta.HeaderText = "Estado Tarjeta";
-            this.EstadoTarjeta.MinimumWidth = 6;
-            this.EstadoTarjeta.Name = "EstadoTarjeta";
-            this.EstadoTarjeta.ReadOnly = true;
             // 
             // FrmTarjeta
             // 
