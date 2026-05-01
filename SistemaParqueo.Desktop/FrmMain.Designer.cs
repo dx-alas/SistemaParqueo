@@ -97,6 +97,7 @@
             this.btnSalir.TabIndex = 6;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnCerrarSesion
             // 
@@ -112,6 +113,7 @@
             this.btnCerrarSesion.TabIndex = 7;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // btnTicket
             // 
@@ -127,6 +129,7 @@
             this.btnTicket.TabIndex = 14;
             this.btnTicket.Text = "Ticket";
             this.btnTicket.UseVisualStyleBackColor = false;
+            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
             // 
             // btnEstadoCliente
             // 
@@ -142,6 +145,7 @@
             this.btnEstadoCliente.TabIndex = 13;
             this.btnEstadoCliente.Text = "EstadoCliente";
             this.btnEstadoCliente.UseVisualStyleBackColor = false;
+            this.btnEstadoCliente.Click += new System.EventHandler(this.btnEstadoCliente_Click);
             // 
             // btnVehiculo
             // 
@@ -155,8 +159,9 @@
             this.btnVehiculo.Name = "btnVehiculo";
             this.btnVehiculo.Size = new System.Drawing.Size(267, 37);
             this.btnVehiculo.TabIndex = 9;
-            this.btnVehiculo.Text = "Vehiculo";
+            this.btnVehiculo.Text = "Vehículo";
             this.btnVehiculo.UseVisualStyleBackColor = false;
+            this.btnVehiculo.Click += new System.EventHandler(this.btnVehiculo_Click);
             // 
             // btnEstadoVehiculo
             // 
@@ -172,6 +177,7 @@
             this.btnEstadoVehiculo.TabIndex = 12;
             this.btnEstadoVehiculo.Text = "EstadoVehiculo";
             this.btnEstadoVehiculo.UseVisualStyleBackColor = false;
+            this.btnEstadoVehiculo.Click += new System.EventHandler(this.btnEstadoVehiculo_Click);
             // 
             // btnEmpleado
             // 
@@ -187,6 +193,7 @@
             this.btnEmpleado.TabIndex = 7;
             this.btnEmpleado.Text = "Empleado";
             this.btnEmpleado.UseVisualStyleBackColor = false;
+            this.btnEmpleado.Click += new System.EventHandler(this.btnEmpleado_Click);
             // 
             // btnMultaTicket
             // 
@@ -202,6 +209,7 @@
             this.btnMultaTicket.TabIndex = 11;
             this.btnMultaTicket.Text = "MultaTicket";
             this.btnMultaTicket.UseVisualStyleBackColor = false;
+            this.btnMultaTicket.Click += new System.EventHandler(this.btnMultaTicket_Click);
             // 
             // btnEstadoTicket
             // 
@@ -217,6 +225,7 @@
             this.btnEstadoTicket.TabIndex = 6;
             this.btnEstadoTicket.Text = "EstadoTicket";
             this.btnEstadoTicket.UseVisualStyleBackColor = false;
+            this.btnEstadoTicket.Click += new System.EventHandler(this.btnEstadoTicket_Click);
             // 
             // btnEstadoPermanencia
             // 
@@ -232,6 +241,7 @@
             this.btnEstadoPermanencia.TabIndex = 10;
             this.btnEstadoPermanencia.Text = "EstadoPermanencia";
             this.btnEstadoPermanencia.UseVisualStyleBackColor = false;
+            this.btnEstadoPermanencia.Click += new System.EventHandler(this.btnEstadoPermanencia_Click);
             // 
             // btnEstadoTarjeta
             // 
@@ -247,6 +257,7 @@
             this.btnEstadoTarjeta.TabIndex = 5;
             this.btnEstadoTarjeta.Text = "EstadoTarjeta";
             this.btnEstadoTarjeta.UseVisualStyleBackColor = false;
+            this.btnEstadoTarjeta.Click += new System.EventHandler(this.btnEstadoTarjeta_Click);
             // 
             // btnRol
             // 
@@ -262,6 +273,7 @@
             this.btnRol.TabIndex = 4;
             this.btnRol.Text = "Rol";
             this.btnRol.UseVisualStyleBackColor = false;
+            this.btnRol.Click += new System.EventHandler(this.btnRol_Click);
             // 
             // btnEstadoEmpleado
             // 
@@ -277,6 +289,7 @@
             this.btnEstadoEmpleado.TabIndex = 8;
             this.btnEstadoEmpleado.Text = "EstadoEmpleado";
             this.btnEstadoEmpleado.UseVisualStyleBackColor = false;
+            this.btnEstadoEmpleado.Click += new System.EventHandler(this.btnEstadoEmpleado_Click);
             // 
             // btnEstadoUsuario
             // 
@@ -292,6 +305,7 @@
             this.btnEstadoUsuario.TabIndex = 3;
             this.btnEstadoUsuario.Text = "EstadoUsuario";
             this.btnEstadoUsuario.UseVisualStyleBackColor = false;
+            this.btnEstadoUsuario.Click += new System.EventHandler(this.btnEstadoUsuario_Click);
             // 
             // btnTipoVehiculo
             // 
@@ -307,6 +321,7 @@
             this.btnTipoVehiculo.TabIndex = 2;
             this.btnTipoVehiculo.Text = "TipoVehiculo";
             this.btnTipoVehiculo.UseVisualStyleBackColor = false;
+            this.btnTipoVehiculo.Click += new System.EventHandler(this.btnTipoVehiculo_Click);
             // 
             // btnTipoCliente
             // 
@@ -322,6 +337,7 @@
             this.btnTipoCliente.TabIndex = 1;
             this.btnTipoCliente.Text = "TipoCliente";
             this.btnTipoCliente.UseVisualStyleBackColor = false;
+            this.btnTipoCliente.Click += new System.EventHandler(this.btnTipoCliente_Click);
             // 
             // btnInicio
             // 
@@ -337,6 +353,7 @@
             this.btnInicio.TabIndex = 0;
             this.btnInicio.Text = "Inicio";
             this.btnInicio.UseVisualStyleBackColor = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // panelTop
             // 
@@ -386,7 +403,6 @@
             this.lblTituloSistema.Size = new System.Drawing.Size(341, 41);
             this.lblTituloSistema.TabIndex = 0;
             this.lblTituloSistema.Text = "SISTEMA DE PARQUEO";
-            this.lblTituloSistema.Click += new System.EventHandler(this.lblTituloSistema_Click);
             // 
             // panelContenedor
             // 
@@ -397,7 +413,6 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1363, 769);
             this.panelContenedor.TabIndex = 2;
-            this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
             // FrmMain
             // 

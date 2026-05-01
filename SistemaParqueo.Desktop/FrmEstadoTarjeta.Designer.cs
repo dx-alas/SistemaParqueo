@@ -201,7 +201,7 @@
             // Nombre
             // 
             this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre del estado";
+            this.Nombre.HeaderText = "Nombre de Estado";
             this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;

@@ -205,5 +205,10 @@ namespace SistemaParqueo.Desktop
                 txtPrecio.Text = row.Cells[2].Value?.ToString();
             }
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

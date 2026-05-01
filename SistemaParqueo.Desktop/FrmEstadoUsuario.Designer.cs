@@ -39,10 +39,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblListaEstado = new System.Windows.Forms.Label();
             this.dgvEstado = new System.Windows.Forms.DataGridView();
-            this.EstadoUsuarioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.EstadoUsuarioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,22 +171,6 @@
             this.dgvEstado.Size = new System.Drawing.Size(884, 247);
             this.dgvEstado.TabIndex = 30;
             // 
-            // EstadoUsuarioId
-            // 
-            this.EstadoUsuarioId.DataPropertyName = "EstadoUsuarioId";
-            this.EstadoUsuarioId.HeaderText = "Id Estado";
-            this.EstadoUsuarioId.MinimumWidth = 6;
-            this.EstadoUsuarioId.Name = "EstadoUsuarioId";
-            this.EstadoUsuarioId.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre del estado";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -205,6 +189,22 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(210, 29);
             this.txtId.TabIndex = 32;
+            // 
+            // EstadoUsuarioId
+            // 
+            this.EstadoUsuarioId.DataPropertyName = "EstadoUsuarioId";
+            this.EstadoUsuarioId.HeaderText = "Id Estado";
+            this.EstadoUsuarioId.MinimumWidth = 6;
+            this.EstadoUsuarioId.Name = "EstadoUsuarioId";
+            this.EstadoUsuarioId.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre de Estado";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // FrmEstadoUsuario
             // 

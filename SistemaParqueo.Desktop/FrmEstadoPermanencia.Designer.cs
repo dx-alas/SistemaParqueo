@@ -154,11 +154,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(204, 47);
+            this.label1.Location = new System.Drawing.Point(204, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(665, 50);
             this.label1.TabIndex = 45;
-            this.label1.Text = "GESTIÓN DE ESTADO PERMANENCIA\r\n";
+            this.label1.Text = "GESTIÓN DE ESTADO PERMANENCÍA\r\n";
             // 
             // label2
             // 
@@ -201,7 +201,7 @@
             // Nombre
             // 
             this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre del estado";
+            this.Nombre.HeaderText = "Nombre de Estado";
             this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;

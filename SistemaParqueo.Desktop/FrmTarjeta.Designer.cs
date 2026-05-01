@@ -237,11 +237,11 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(327, 37);
+            this.lblTitulo.Location = new System.Drawing.Point(316, 42);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(362, 50);
+            this.lblTitulo.Size = new System.Drawing.Size(419, 50);
             this.lblTitulo.TabIndex = 100;
-            this.lblTitulo.Text = "GESTIÓN TARJETAS";
+            this.lblTitulo.Text = "GESTIÓN DE TARJETAS";
             // 
             // FrmTarjeta
             // 

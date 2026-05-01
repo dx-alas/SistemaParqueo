@@ -53,11 +53,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(265, 28);
+            this.label1.Location = new System.Drawing.Point(282, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(523, 50);
             this.label1.TabIndex = 47;
-            this.label1.Text = "GESTIÓN DE TIPO VEHICULO";
+            this.label1.Text = "GESTIÓN DE TIPO VEHÍCULO";
             // 
             // label2
             // 
@@ -102,7 +102,7 @@
             // TipoVehiculoId
             // 
             this.TipoVehiculoId.DataPropertyName = "TipoVehiculoId";
-            this.TipoVehiculoId.HeaderText = "Id Tipo Vehiculo";
+            this.TipoVehiculoId.HeaderText = "Id Tipo Vehículo";
             this.TipoVehiculoId.MinimumWidth = 6;
             this.TipoVehiculoId.Name = "TipoVehiculoId";
             this.TipoVehiculoId.ReadOnly = true;
@@ -110,14 +110,14 @@
             // Nombre
             // 
             this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre de tipo vehiculo";
+            this.Nombre.HeaderText = "Nombre de Tipo Vehículo";
             this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             // 
             // Precio
             // 
-            this.Precio.HeaderText = "Precio";
+            this.Precio.HeaderText = "Precio Estancia";
             this.Precio.MinimumWidth = 6;
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
@@ -140,7 +140,8 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(276, 32);
             this.label4.TabIndex = 74;
-            this.label4.Text = "DATOS TIPO VEHICULO";
+            this.label4.Text = "DATOS TIPO VEHÍCULO";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // btnEliminar
             // 
@@ -291,9 +292,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblListadoTarjeta;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoVehiculoId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.Label lblListadoTarjeta;
     }
 }

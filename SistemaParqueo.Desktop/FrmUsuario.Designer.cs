@@ -61,11 +61,12 @@
             // lblTitulo
             // 
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(279, 29);
+            this.lblTitulo.Location = new System.Drawing.Point(289, 33);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(521, 54);
             this.lblTitulo.TabIndex = 16;
             this.lblTitulo.Text = "GESTIÓN DE USUARIOS";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 

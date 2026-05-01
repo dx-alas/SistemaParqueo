@@ -227,11 +227,11 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(301, 28);
+            this.lblTitulo.Location = new System.Drawing.Point(340, 44);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(434, 50);
+            this.lblTitulo.Size = new System.Drawing.Size(392, 50);
             this.lblTitulo.TabIndex = 118;
-            this.lblTitulo.Text = "GESTIÓN MULTATICKET";
+            this.lblTitulo.Text = "GESTIÓN DE MULTAS";
             // 
             // txtPrecio
             // 

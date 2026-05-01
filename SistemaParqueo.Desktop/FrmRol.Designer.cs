@@ -33,8 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.dgvRol = new System.Windows.Forms.DataGridView();
-            this.RolId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblListaEstado = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -43,17 +41,19 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.RolId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRol)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
             // 
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(348, 38);
+            this.lblTitulo.Location = new System.Drawing.Point(275, 42);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(405, 54);
+            this.lblTitulo.Size = new System.Drawing.Size(529, 54);
             this.lblTitulo.TabIndex = 15;
-            this.lblTitulo.Text = "GESTIÓN DE ROL";
+            this.lblTitulo.Text = "GESTIÓN DE ROL USUARIO";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -94,22 +94,6 @@
             this.dgvRol.RowTemplate.Height = 24;
             this.dgvRol.Size = new System.Drawing.Size(884, 247);
             this.dgvRol.TabIndex = 65;
-            // 
-            // RolId
-            // 
-            this.RolId.DataPropertyName = "RolId";
-            this.RolId.HeaderText = "Id Rol";
-            this.RolId.MinimumWidth = 6;
-            this.RolId.Name = "RolId";
-            this.RolId.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre del rol";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
             // 
             // lblListaEstado
             // 
@@ -205,6 +189,22 @@
             this.label3.Size = new System.Drawing.Size(94, 28);
             this.label3.TabIndex = 57;
             this.label3.Text = "Nombre:";
+            // 
+            // RolId
+            // 
+            this.RolId.DataPropertyName = "RolId";
+            this.RolId.HeaderText = "Id Rol";
+            this.RolId.MinimumWidth = 6;
+            this.RolId.Name = "RolId";
+            this.RolId.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre de Rol";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // FrmRol
             // 

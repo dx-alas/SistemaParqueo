@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEstadoVehiculo));
             this.txtId = new System.Windows.Forms.TextBox();
             this.dgvEstado = new System.Windows.Forms.DataGridView();
-            this.EstadoVehiculoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblListaEstado = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -43,6 +41,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.EstadoVehiculoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,22 +74,6 @@
             this.dgvEstado.RowTemplate.Height = 24;
             this.dgvEstado.Size = new System.Drawing.Size(884, 247);
             this.dgvEstado.TabIndex = 54;
-            // 
-            // EstadoVehiculoId
-            // 
-            this.EstadoVehiculoId.DataPropertyName = "EstadoVehiculoId";
-            this.EstadoVehiculoId.HeaderText = "Id Estado";
-            this.EstadoVehiculoId.MinimumWidth = 6;
-            this.EstadoVehiculoId.Name = "EstadoVehiculoId";
-            this.EstadoVehiculoId.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre del estado";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
             // 
             // lblListaEstado
             // 
@@ -194,7 +178,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(579, 50);
             this.label1.TabIndex = 45;
-            this.label1.Text = "GESTIÓN DE ESTADO VEHICULO";
+            this.label1.Text = "GESTIÓN DE ESTADO VEHÍCULO";
             // 
             // label2
             // 
@@ -205,6 +189,22 @@
             this.label2.Size = new System.Drawing.Size(35, 28);
             this.label2.TabIndex = 56;
             this.label2.Text = "Id:";
+            // 
+            // EstadoVehiculoId
+            // 
+            this.EstadoVehiculoId.DataPropertyName = "EstadoVehiculoId";
+            this.EstadoVehiculoId.HeaderText = "Id Estado";
+            this.EstadoVehiculoId.MinimumWidth = 6;
+            this.EstadoVehiculoId.Name = "EstadoVehiculoId";
+            this.EstadoVehiculoId.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre de Estado";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // FrmEstadoVehiculo
             // 

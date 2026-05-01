@@ -23,7 +23,7 @@ namespace SistemaParqueo.Desktop
 
         private void ConfigurarGrid()
         {
-            dgvEstado.AutoGenerateColumns = true;
+            dgvEstado.AutoGenerateColumns = false;
             dgvEstado.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvEstado.MultiSelect = false;
             dgvEstado.ReadOnly = true;

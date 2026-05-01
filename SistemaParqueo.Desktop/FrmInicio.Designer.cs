@@ -37,30 +37,33 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(280, 41);
+            this.lblTitulo.Location = new System.Drawing.Point(373, 50);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(218, 30);
+            this.lblTitulo.Size = new System.Drawing.Size(276, 37);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "VENTANA DE INICIO";
             // 
             // lblSubtitulo
             // 
             this.lblSubtitulo.AutoSize = true;
-            this.lblSubtitulo.Location = new System.Drawing.Point(282, 120);
+            this.lblSubtitulo.Location = new System.Drawing.Point(376, 148);
+            this.lblSubtitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(201, 13);
+            this.lblSubtitulo.Size = new System.Drawing.Size(246, 16);
             this.lblSubtitulo.TabIndex = 1;
-            this.lblSubtitulo.Text = "Esta ventana estará proxima a desarrollar";
+            this.lblSubtitulo.Text = "Esta ventana se encuentra en desarollo.";
             // 
             // FrmInicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.lblSubtitulo);
             this.Controls.Add(this.lblTitulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmInicio";
             this.Text = "Ventana principal";
             this.ResumeLayout(false);
