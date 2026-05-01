@@ -46,15 +46,15 @@
             this.txtClave = new System.Windows.Forms.TextBox();
             this.lblClave = new System.Windows.Forms.Label();
             this.dgvUsuario = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbRolId = new System.Windows.Forms.ComboBox();
-            this.cbEstadoUsuarioId = new System.Windows.Forms.ComboBox();
             this.UsuarioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbRolId = new System.Windows.Forms.ComboBox();
+            this.cbEstadoUsuarioId = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -228,9 +228,9 @@
             this.lblClave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClave.Location = new System.Drawing.Point(47, 204);
             this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(58, 28);
+            this.lblClave.Size = new System.Drawing.Size(74, 28);
             this.lblClave.TabIndex = 50;
-            this.lblClave.Text = "DUI: ";
+            this.lblClave.Text = "Clave: ";
             // 
             // dgvUsuario
             // 
@@ -258,36 +258,6 @@
             this.dgvUsuario.Size = new System.Drawing.Size(952, 217);
             this.dgvUsuario.TabIndex = 70;
             this.dgvUsuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuario_CellClick);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(45, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(203, 32);
-            this.label3.TabIndex = 69;
-            this.label3.Text = "DATOS USUARIO";
-            // 
-            // cbRolId
-            // 
-            this.cbRolId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbRolId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.cbRolId.FormattingEnabled = true;
-            this.cbRolId.Location = new System.Drawing.Point(650, 158);
-            this.cbRolId.Name = "cbRolId";
-            this.cbRolId.Size = new System.Drawing.Size(243, 29);
-            this.cbRolId.TabIndex = 72;
-            // 
-            // cbEstadoUsuarioId
-            // 
-            this.cbEstadoUsuarioId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEstadoUsuarioId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.cbEstadoUsuarioId.FormattingEnabled = true;
-            this.cbEstadoUsuarioId.Location = new System.Drawing.Point(650, 207);
-            this.cbEstadoUsuarioId.Name = "cbEstadoUsuarioId";
-            this.cbEstadoUsuarioId.Size = new System.Drawing.Size(243, 29);
-            this.cbEstadoUsuarioId.TabIndex = 73;
             // 
             // UsuarioId
             // 
@@ -336,6 +306,36 @@
             this.EstadoUsuario.MinimumWidth = 6;
             this.EstadoUsuario.Name = "EstadoUsuario";
             this.EstadoUsuario.ReadOnly = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(45, 106);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(203, 32);
+            this.label3.TabIndex = 69;
+            this.label3.Text = "DATOS USUARIO";
+            // 
+            // cbRolId
+            // 
+            this.cbRolId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRolId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.cbRolId.FormattingEnabled = true;
+            this.cbRolId.Location = new System.Drawing.Point(650, 158);
+            this.cbRolId.Name = "cbRolId";
+            this.cbRolId.Size = new System.Drawing.Size(243, 29);
+            this.cbRolId.TabIndex = 72;
+            // 
+            // cbEstadoUsuarioId
+            // 
+            this.cbEstadoUsuarioId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEstadoUsuarioId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.cbEstadoUsuarioId.FormattingEnabled = true;
+            this.cbEstadoUsuarioId.Location = new System.Drawing.Point(650, 207);
+            this.cbEstadoUsuarioId.Name = "cbEstadoUsuarioId";
+            this.cbEstadoUsuarioId.Size = new System.Drawing.Size(243, 29);
+            this.cbEstadoUsuarioId.TabIndex = 73;
             // 
             // FrmUsuario
             // 
