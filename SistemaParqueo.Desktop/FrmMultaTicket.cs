@@ -161,7 +161,7 @@ namespace SistemaParqueo.Desktop
             {
                 int multaId = Convert.ToInt32(txtMultaId.Text);
 
-                bool ok = EstadoTarjetaBL.Instance.Delete(multaId);
+                bool ok = MultaTicketBL.Instance.Delete(multaId);
 
                 if (ok)
                 {
