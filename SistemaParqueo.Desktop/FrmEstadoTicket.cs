@@ -128,7 +128,7 @@ namespace SistemaParqueo.Desktop
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-            }
+            }   
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
