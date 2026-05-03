@@ -13,7 +13,7 @@ namespace SistemaParqueo.Entities
 
         public EstadoPermanencia()
         {
-
+            //constructor vacio
         }
 
         public EstadoPermanencia(string nombre)
