@@ -23,6 +23,12 @@ namespace SistemaParqueo.Desktop
 
         private void FrmEstadoCliente_Load(object sender, EventArgs e)
         {
+
+            //// Esto centra el panel respecto al formulario
+            //panelCentral.Location = new Point(
+            //    (this.ClientSize.Width - panelCentral.Width) / 2,
+            //    (this.ClientSize.Height - panelCentral.Height) / 2);
+
             txtId.ReadOnly = true;
             ConfigurarGrid();
             CargarDatos();
@@ -186,6 +192,16 @@ namespace SistemaParqueo.Desktop
 
                 txtId.Text = row.Cells[0].Value?.ToString();
                 txtNombre.Text = row.Cells[1].Value?.ToString();
+            }
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000; // WS_EX_COMPOSITED
+                return cp;
             }
         }
     }
