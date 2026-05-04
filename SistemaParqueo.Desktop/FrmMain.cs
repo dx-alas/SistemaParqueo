@@ -1,4 +1,4 @@
-﻿using SistemaParqueo.Desktop.SistemaParqueo.Desktop;
+﻿using SistemaParqueo.Desktop;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -178,10 +178,9 @@ namespace SistemaParqueo.Desktop
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            if (CacheUsuario.UsuarioLogueado != null)
+            if (Sesion.UsuarioActual != null)
             {
-                // Concatenamos el texto fijo con el nombre del usuario guardado en el caché
-                lblUsuario.Text = "Usuario: " + CacheUsuario.UsuarioLogueado.Nombre;
+                lblUsuario.Text = "Usuario: " + Sesion.UsuarioActual.Nombre;
             }
             else
             {

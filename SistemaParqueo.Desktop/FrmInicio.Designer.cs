@@ -323,6 +323,7 @@
             this.btnCerrarCorte.TabIndex = 7;
             this.btnCerrarCorte.Text = "Cerrar Corte de Caja";
             this.btnCerrarCorte.UseVisualStyleBackColor = true;
+            this.btnCerrarCorte.Click += new System.EventHandler(this.btnCerrarCorte_Click);
             // 
             // txtMontoInicial
             // 
@@ -401,6 +402,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmInicio";
             this.Text = "Ventana principal";
+            this.Load += new System.EventHandler(this.FrmInicio_Load);
             this.panelCentral.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();

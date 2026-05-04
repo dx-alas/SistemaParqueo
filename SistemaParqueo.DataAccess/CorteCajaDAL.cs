@@ -22,9 +22,9 @@ namespace SistemaParqueo.DataAccess
             }
         }
 
-        public bool Insert(CorteCaja entity)
+        public int Insert(CorteCaja entity)
         {
-            bool result = false;
+            int corteId = 0;
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
@@ -39,11 +39,15 @@ namespace SistemaParqueo.DataAccess
                     cmd.Parameters.AddWithValue("@UsuarioAperturaId", entity.UsuarioAperturaId);
 
                     conn.Open();
-                    result = cmd.ExecuteNonQuery() > 0;
+
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
+                        corteId = Convert.ToInt32(result);
                 }
             }
 
-            return result;
+            return corteId;
         }
 
         public bool Update(CorteCaja entity)
@@ -105,23 +109,28 @@ namespace SistemaParqueo.DataAccess
 
                     using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
                     {
-                        if (dr != null)
+                        if (dr != null && dr.Read())
                         {
-                            while (dr.Read())
+                            result = new CorteCaja
                             {
-                                result = new CorteCaja();
+                                CorteId = dr.GetInt32(0),
 
-                                result.CorteId = dr.GetInt32(0);
-                                result.Fecha = dr.GetDateTime(1);
-                                result.HoraInicio = dr.GetDateTime(2);
-                                result.HoraEntrega = dr.IsDBNull(3) ? (DateTime?)null : dr.GetDateTime(3);
+                                Fecha = dr.GetDateTime(1),
 
-                                result.MontoInicial = dr.IsDBNull(4) ? 0 : dr.GetDecimal(4);
-                                result.MontoTotal = dr.IsDBNull(5) ? 0 : dr.GetDecimal(5);
+                                HoraInicio = dr.GetTimeSpan(2),
 
-                                result.ObservacionInicial = dr.IsDBNull(6) ? null : dr.GetString(6);
-                                result.ObservacionFinal = dr.IsDBNull(7) ? null : dr.GetString(7);
-                            }
+                                HoraEntrega = dr.IsDBNull(3) ? (TimeSpan?)null : dr.GetTimeSpan(3),
+
+                                MontoInicial = dr.IsDBNull(4) ? 0 : dr.GetDecimal(4),
+                                MontoTotal = dr.IsDBNull(5) ? 0 : dr.GetDecimal(5),
+
+                                ObservacionInicial = dr.IsDBNull(6) ? null : dr.GetString(6),
+                                ObservacionFinal = dr.IsDBNull(7) ? null : dr.GetString(7),
+
+                                UsuarioAperturaId = dr.GetInt32(8),
+                                UsuarioCierreId = dr.IsDBNull(9) ? (int?)null : dr.GetInt32(9),
+                                EstadoCorteId = dr.GetInt32(10)
+                            };
                         }
                     }
                 }
@@ -132,7 +141,7 @@ namespace SistemaParqueo.DataAccess
 
         public List<CorteCaja> SelectAll()
         {
-            List<CorteCaja> result = null;
+            List<CorteCaja> result = new List<CorteCaja>();
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
@@ -144,27 +153,82 @@ namespace SistemaParqueo.DataAccess
 
                     using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
                     {
-                        if (dr != null)
+                        while (dr.Read())
                         {
-                            result = new List<CorteCaja>();
-
-                            while (dr.Read())
+                            CorteCaja entity = new CorteCaja
                             {
-                                CorteCaja entity = new CorteCaja();
+                                CorteId = dr.GetInt32(0),
 
-                                entity.CorteId = dr.GetInt32(0);
-                                entity.Fecha = dr.GetDateTime(1);
-                                entity.HoraInicio = dr.GetDateTime(2);
-                                entity.HoraEntrega = dr.IsDBNull(3) ? (DateTime?)null : dr.GetDateTime(3);
+                                Fecha = dr.GetDateTime(1),
 
-                                entity.MontoInicial = dr.IsDBNull(4) ? 0 : dr.GetDecimal(4);
-                                entity.MontoTotal = dr.IsDBNull(5) ? 0 : dr.GetDecimal(5);
+                                HoraInicio = dr.GetTimeSpan(2),
 
-                                entity.ObservacionInicial = dr.IsDBNull(6) ? null : dr.GetString(6);
-                                entity.ObservacionFinal = dr.IsDBNull(7) ? null : dr.GetString(7);
+                                HoraEntrega = dr.IsDBNull(3) ? (TimeSpan?)null : dr.GetTimeSpan(3),
 
-                                result.Add(entity);
-                            }
+                                MontoInicial = dr.IsDBNull(4) ? 0 : dr.GetDecimal(4),
+                                MontoTotal = dr.IsDBNull(5) ? 0 : dr.GetDecimal(5),
+
+                                ObservacionInicial = dr.IsDBNull(6) ? null : dr.GetString(6),
+                                ObservacionFinal = dr.IsDBNull(7) ? null : dr.GetString(7),
+
+                                UsuarioAperturaId = dr.GetInt32(8),
+                                UsuarioCierreId = dr.IsDBNull(9) ? (int?)null : dr.GetInt32(9),
+                                EstadoCorteId = dr.GetInt32(10)
+                            };
+
+                            result.Add(entity);
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public CorteCaja GetCorteCajaActivo()
+        {
+            CorteCaja result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spGetCorteCajaActivo", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            result = new CorteCaja
+                            {
+                                CorteId = Convert.ToInt32(dr["CorteId"]),
+                                Fecha = Convert.ToDateTime(dr["Fecha"]),
+                                HoraInicio = (TimeSpan)dr["HoraInicio"],
+                                HoraEntrega = dr["HoraEntrega"] == DBNull.Value
+                                    ? (TimeSpan?)null
+                                    : (TimeSpan)dr["HoraEntrega"],
+
+                                MontoInicial = dr["MontoInicial"] == DBNull.Value
+                                    ? 0
+                                    : Convert.ToDecimal(dr["MontoInicial"]),
+
+                                MontoTotal = dr["MontoTotal"] == DBNull.Value
+                                    ? 0
+                                    : Convert.ToDecimal(dr["MontoTotal"]),
+
+                                ObservacionInicial = dr["ObservacionInicial"]?.ToString(),
+                                ObservacionFinal = dr["ObservacionFinal"]?.ToString(),
+
+                                UsuarioAperturaId = Convert.ToInt32(dr["UsuarioAperturaId"]),
+
+                                UsuarioCierreId = dr["UsuarioCierreId"] == DBNull.Value
+                                    ? (int?)null
+                                    : Convert.ToInt32(dr["UsuarioCierreId"]),
+
+                                EstadoCorteId = Convert.ToInt32(dr["EstadoCorteId"])
+                            };
                         }
                     }
                 }
