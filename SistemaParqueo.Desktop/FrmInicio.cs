@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemaParqueo.BusinessLogic;
+using SistemaParqueo.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +16,7 @@ namespace SistemaParqueo.Desktop
     {
         public FrmInicio()
         {
-            InitializeComponent();
+            
         }
     }
 }
