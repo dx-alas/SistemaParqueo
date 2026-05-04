@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCliente));
             this.panelCentral = new System.Windows.Forms.Panel();
+            this.mtxtDUI = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.lblClienteId = new System.Windows.Forms.Label();
             this.cbEstadoClienteId = new System.Windows.Forms.ComboBox();
             this.lblEstadoCliente = new System.Windows.Forms.Label();
             this.lblTarjeta = new System.Windows.Forms.Label();
             this.txtCarnetExtranjero = new System.Windows.Forms.TextBox();
-            this.txtDUI = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTipoDocumento = new System.Windows.Forms.Label();
             this.cbTipoClienteId = new System.Windows.Forms.ComboBox();
             this.cbTarjetaId = new System.Windows.Forms.ComboBox();
@@ -75,13 +75,13 @@
             // panelCentral
             // 
             this.panelCentral.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelCentral.Controls.Add(this.mtxtDUI);
+            this.panelCentral.Controls.Add(this.mtxtTelefono);
             this.panelCentral.Controls.Add(this.lblClienteId);
             this.panelCentral.Controls.Add(this.cbEstadoClienteId);
             this.panelCentral.Controls.Add(this.lblEstadoCliente);
             this.panelCentral.Controls.Add(this.lblTarjeta);
             this.panelCentral.Controls.Add(this.txtCarnetExtranjero);
-            this.panelCentral.Controls.Add(this.txtDUI);
-            this.panelCentral.Controls.Add(this.txtTelefono);
             this.panelCentral.Controls.Add(this.lblTipoDocumento);
             this.panelCentral.Controls.Add(this.cbTipoClienteId);
             this.panelCentral.Controls.Add(this.cbTarjetaId);
@@ -110,6 +110,27 @@
             this.panelCentral.TabIndex = 100;
             this.panelCentral.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCentral_Paint);
             // 
+            // mtxtDUI
+            // 
+            this.mtxtDUI.HidePromptOnLeave = true;
+            this.mtxtDUI.Location = new System.Drawing.Point(164, 241);
+            this.mtxtDUI.Mask = "00000000-0";
+            this.mtxtDUI.Name = "mtxtDUI";
+            this.mtxtDUI.PromptChar = ' ';
+            this.mtxtDUI.Size = new System.Drawing.Size(243, 23);
+            this.mtxtDUI.TabIndex = 11;
+            this.mtxtDUI.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtDUI_MaskInputRejected);
+            // 
+            // mtxtTelefono
+            // 
+            this.mtxtTelefono.HidePromptOnLeave = true;
+            this.mtxtTelefono.Location = new System.Drawing.Point(164, 194);
+            this.mtxtTelefono.Mask = "0000-0000";
+            this.mtxtTelefono.Name = "mtxtTelefono";
+            this.mtxtTelefono.PromptChar = ' ';
+            this.mtxtTelefono.Size = new System.Drawing.Size(243, 23);
+            this.mtxtTelefono.TabIndex = 7;
+            // 
             // lblClienteId
             // 
             this.lblClienteId.AutoSize = true;
@@ -117,7 +138,7 @@
             this.lblClienteId.Location = new System.Drawing.Point(478, 336);
             this.lblClienteId.Name = "lblClienteId";
             this.lblClienteId.Size = new System.Drawing.Size(35, 28);
-            this.lblClienteId.TabIndex = 127;
+            this.lblClienteId.TabIndex = 20;
             this.lblClienteId.Text = "Id:";
             // 
             // cbEstadoClienteId
@@ -128,7 +149,7 @@
             this.cbEstadoClienteId.Location = new System.Drawing.Point(164, 339);
             this.cbEstadoClienteId.Name = "cbEstadoClienteId";
             this.cbEstadoClienteId.Size = new System.Drawing.Size(243, 29);
-            this.cbEstadoClienteId.TabIndex = 126;
+            this.cbEstadoClienteId.TabIndex = 19;
             // 
             // lblEstadoCliente
             // 
@@ -137,7 +158,7 @@
             this.lblEstadoCliente.Location = new System.Drawing.Point(28, 340);
             this.lblEstadoCliente.Name = "lblEstadoCliente";
             this.lblEstadoCliente.Size = new System.Drawing.Size(80, 28);
-            this.lblEstadoCliente.TabIndex = 125;
+            this.lblEstadoCliente.TabIndex = 18;
             this.lblEstadoCliente.Text = "Estado:";
             // 
             // lblTarjeta
@@ -147,7 +168,7 @@
             this.lblTarjeta.Location = new System.Drawing.Point(28, 289);
             this.lblTarjeta.Name = "lblTarjeta";
             this.lblTarjeta.Size = new System.Drawing.Size(82, 28);
-            this.lblTarjeta.TabIndex = 124;
+            this.lblTarjeta.TabIndex = 14;
             this.lblTarjeta.Text = "Tarjeta:";
             // 
             // txtCarnetExtranjero
@@ -157,25 +178,7 @@
             this.txtCarnetExtranjero.MaxLength = 15;
             this.txtCarnetExtranjero.Name = "txtCarnetExtranjero";
             this.txtCarnetExtranjero.Size = new System.Drawing.Size(243, 29);
-            this.txtCarnetExtranjero.TabIndex = 123;
-            // 
-            // txtDUI
-            // 
-            this.txtDUI.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDUI.Location = new System.Drawing.Point(164, 241);
-            this.txtDUI.MaxLength = 9;
-            this.txtDUI.Name = "txtDUI";
-            this.txtDUI.Size = new System.Drawing.Size(243, 29);
-            this.txtDUI.TabIndex = 122;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(164, 192);
-            this.txtTelefono.MaxLength = 9;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(243, 29);
-            this.txtTelefono.TabIndex = 121;
+            this.txtCarnetExtranjero.TabIndex = 13;
             // 
             // lblTipoDocumento
             // 
@@ -184,7 +187,7 @@
             this.lblTipoDocumento.Location = new System.Drawing.Point(478, 186);
             this.lblTipoDocumento.Name = "lblTipoDocumento";
             this.lblTipoDocumento.Size = new System.Drawing.Size(181, 28);
-            this.lblTipoDocumento.TabIndex = 120;
+            this.lblTipoDocumento.TabIndex = 8;
             this.lblTipoDocumento.Text = "Tipo Documento: ";
             // 
             // cbTipoClienteId
@@ -195,7 +198,7 @@
             this.cbTipoClienteId.Location = new System.Drawing.Point(648, 286);
             this.cbTipoClienteId.Name = "cbTipoClienteId";
             this.cbTipoClienteId.Size = new System.Drawing.Size(243, 29);
-            this.cbTipoClienteId.TabIndex = 119;
+            this.cbTipoClienteId.TabIndex = 17;
             // 
             // cbTarjetaId
             // 
@@ -205,7 +208,7 @@
             this.cbTarjetaId.Location = new System.Drawing.Point(164, 290);
             this.cbTarjetaId.Name = "cbTarjetaId";
             this.cbTarjetaId.Size = new System.Drawing.Size(243, 29);
-            this.cbTarjetaId.TabIndex = 118;
+            this.cbTarjetaId.TabIndex = 15;
             // 
             // dgvCliente
             // 
@@ -235,7 +238,7 @@
             this.dgvCliente.RowHeadersWidth = 51;
             this.dgvCliente.RowTemplate.Height = 24;
             this.dgvCliente.Size = new System.Drawing.Size(988, 217);
-            this.dgvCliente.TabIndex = 117;
+            this.dgvCliente.TabIndex = 27;
             // 
             // ClienteId
             // 
@@ -324,7 +327,7 @@
             this.lblListaUsuarios.Location = new System.Drawing.Point(27, 454);
             this.lblListaUsuarios.Name = "lblListaUsuarios";
             this.lblListaUsuarios.Size = new System.Drawing.Size(226, 32);
-            this.lblListaUsuarios.TabIndex = 116;
+            this.lblListaUsuarios.TabIndex = 26;
             this.lblListaUsuarios.Text = "LISTADO CLIENTES";
             // 
             // lblTipoCliente
@@ -334,7 +337,7 @@
             this.lblTipoCliente.Location = new System.Drawing.Point(478, 286);
             this.lblTipoCliente.Name = "lblTipoCliente";
             this.lblTipoCliente.Size = new System.Drawing.Size(131, 28);
-            this.lblTipoCliente.TabIndex = 114;
+            this.lblTipoCliente.TabIndex = 16;
             this.lblTipoCliente.Text = "Tipo Cliente:";
             // 
             // txtClienteId
@@ -345,7 +348,7 @@
             this.txtClienteId.MaxLength = 3890;
             this.txtClienteId.Name = "txtClienteId";
             this.txtClienteId.Size = new System.Drawing.Size(243, 29);
-            this.txtClienteId.TabIndex = 115;
+            this.txtClienteId.TabIndex = 21;
             // 
             // btnEliminar
             // 
@@ -356,7 +359,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(302, 393);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 39);
-            this.btnEliminar.TabIndex = 113;
+            this.btnEliminar.TabIndex = 24;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -370,7 +373,7 @@
             this.btnActualizar.Location = new System.Drawing.Point(165, 393);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(117, 39);
-            this.btnActualizar.TabIndex = 112;
+            this.btnActualizar.TabIndex = 23;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -386,7 +389,7 @@
             this.cbTipoDocumento.Location = new System.Drawing.Point(679, 188);
             this.cbTipoDocumento.Name = "cbTipoDocumento";
             this.cbTipoDocumento.Size = new System.Drawing.Size(212, 29);
-            this.cbTipoDocumento.TabIndex = 111;
+            this.cbTipoDocumento.TabIndex = 9;
             // 
             // lblNombre
             // 
@@ -395,7 +398,7 @@
             this.lblNombre.Location = new System.Drawing.Point(28, 136);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(109, 28);
-            this.lblNombre.TabIndex = 102;
+            this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "Nombres: ";
             // 
             // lblDUI
@@ -405,7 +408,7 @@
             this.lblDUI.Location = new System.Drawing.Point(28, 238);
             this.lblDUI.Name = "lblDUI";
             this.lblDUI.Size = new System.Drawing.Size(58, 28);
-            this.lblDUI.TabIndex = 103;
+            this.lblDUI.TabIndex = 10;
             this.lblDUI.Text = "DUI: ";
             // 
             // lblTelefono
@@ -415,7 +418,7 @@
             this.lblTelefono.Location = new System.Drawing.Point(28, 187);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(105, 28);
-            this.lblTelefono.TabIndex = 106;
+            this.lblTelefono.TabIndex = 6;
             this.lblTelefono.Text = "Telefono: ";
             // 
             // txtNombre
@@ -425,7 +428,7 @@
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(243, 29);
-            this.txtNombre.TabIndex = 107;
+            this.txtNombre.TabIndex = 3;
             // 
             // lblCarnetExtranjero
             // 
@@ -434,7 +437,7 @@
             this.lblCarnetExtranjero.Location = new System.Drawing.Point(478, 236);
             this.lblCarnetExtranjero.Name = "lblCarnetExtranjero";
             this.lblCarnetExtranjero.Size = new System.Drawing.Size(144, 28);
-            this.lblCarnetExtranjero.TabIndex = 105;
+            this.lblCarnetExtranjero.TabIndex = 12;
             this.lblCarnetExtranjero.Text = "C. Extranjero: ";
             // 
             // btnLimpiar
@@ -446,7 +449,7 @@
             this.btnLimpiar.Location = new System.Drawing.Point(434, 393);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(112, 39);
-            this.btnLimpiar.TabIndex = 110;
+            this.btnLimpiar.TabIndex = 25;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -461,7 +464,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(0);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(112, 39);
-            this.btnGuardar.TabIndex = 109;
+            this.btnGuardar.TabIndex = 22;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -473,7 +476,7 @@
             this.txtApellido.MaxLength = 50;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(256, 29);
-            this.txtApellido.TabIndex = 108;
+            this.txtApellido.TabIndex = 5;
             // 
             // lblApellido
             // 
@@ -482,7 +485,7 @@
             this.lblApellido.Location = new System.Drawing.Point(478, 136);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(111, 28);
-            this.lblApellido.TabIndex = 104;
+            this.lblApellido.TabIndex = 4;
             this.lblApellido.Text = "Apellidos: ";
             // 
             // Emcabezado
@@ -493,7 +496,7 @@
             this.Emcabezado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Emcabezado.Name = "Emcabezado";
             this.Emcabezado.Size = new System.Drawing.Size(192, 32);
-            this.Emcabezado.TabIndex = 101;
+            this.Emcabezado.TabIndex = 1;
             this.Emcabezado.Text = "DATOS CLIENTE";
             // 
             // lblTitulo
@@ -503,7 +506,7 @@
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(491, 66);
-            this.lblTitulo.TabIndex = 100;
+            this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "GESTIÓN DE CLIENTES";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -537,8 +540,6 @@
         private System.Windows.Forms.Label lblEstadoCliente;
         private System.Windows.Forms.Label lblTarjeta;
         private System.Windows.Forms.TextBox txtCarnetExtranjero;
-        private System.Windows.Forms.TextBox txtDUI;
-        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblTipoDocumento;
         private System.Windows.Forms.ComboBox cbTipoClienteId;
         private System.Windows.Forms.ComboBox cbTarjetaId;
@@ -570,6 +571,8 @@
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label Emcabezado;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.MaskedTextBox mtxtTelefono;
+        private System.Windows.Forms.MaskedTextBox mtxtDUI;
     }
 }
 

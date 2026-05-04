@@ -81,7 +81,7 @@
             this.txtPrecio.MaxLength = 0;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(243, 29);
-            this.txtPrecio.TabIndex = 145;
+            this.txtPrecio.TabIndex = 7;
             // 
             // lblMultaId
             // 
@@ -90,7 +90,7 @@
             this.lblMultaId.Location = new System.Drawing.Point(49, 185);
             this.lblMultaId.Name = "lblMultaId";
             this.lblMultaId.Size = new System.Drawing.Size(35, 28);
-            this.lblMultaId.TabIndex = 144;
+            this.lblMultaId.TabIndex = 2;
             this.lblMultaId.Text = "Id:";
             // 
             // btnEliminar
@@ -186,7 +186,7 @@
             this.txtMultaId.MaxLength = 50;
             this.txtMultaId.Name = "txtMultaId";
             this.txtMultaId.Size = new System.Drawing.Size(243, 29);
-            this.txtMultaId.TabIndex = 137;
+            this.txtMultaId.TabIndex = 3;
             // 
             // lblPrecio
             // 
@@ -195,7 +195,7 @@
             this.lblPrecio.Location = new System.Drawing.Point(514, 246);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(82, 28);
-            this.lblPrecio.TabIndex = 136;
+            this.lblPrecio.TabIndex = 6;
             this.lblPrecio.Text = "Precio: ";
             // 
             // btnLimpiar
@@ -234,7 +234,7 @@
             this.txtConcepto.MaxLength = 0;
             this.txtConcepto.Name = "txtConcepto";
             this.txtConcepto.Size = new System.Drawing.Size(243, 29);
-            this.txtConcepto.TabIndex = 138;
+            this.txtConcepto.TabIndex = 5;
             // 
             // lblConcepto
             // 
@@ -243,7 +243,7 @@
             this.lblConcepto.Location = new System.Drawing.Point(49, 245);
             this.lblConcepto.Name = "lblConcepto";
             this.lblConcepto.Size = new System.Drawing.Size(106, 28);
-            this.lblConcepto.TabIndex = 135;
+            this.lblConcepto.TabIndex = 4;
             this.lblConcepto.Text = "Concepto:";
             // 
             // lblEmcabezado
@@ -253,7 +253,7 @@
             this.lblEmcabezado.Location = new System.Drawing.Point(48, 127);
             this.lblEmcabezado.Name = "lblEmcabezado";
             this.lblEmcabezado.Size = new System.Drawing.Size(177, 32);
-            this.lblEmcabezado.TabIndex = 133;
+            this.lblEmcabezado.TabIndex = 1;
             this.lblEmcabezado.Text = "DATOS MULTA";
             // 
             // lblTitulo
@@ -263,7 +263,7 @@
             this.lblTitulo.Location = new System.Drawing.Point(334, 42);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(392, 50);
-            this.lblTitulo.TabIndex = 132;
+            this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "GESTIÓN DE MULTAS";
             // 
             // FrmMultaTicket

@@ -58,7 +58,7 @@
             this.txtClave.Margin = new System.Windows.Forms.Padding(4);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(159, 29);
-            this.txtClave.TabIndex = 2;
+            this.txtClave.TabIndex = 5;
             // 
             // txtUsuario
             // 
@@ -66,7 +66,7 @@
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(159, 29);
-            this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.TabIndex = 3;
             // 
             // btnSalir
             // 
@@ -78,7 +78,7 @@
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(106, 38);
-            this.btnSalir.TabIndex = 3;
+            this.btnSalir.TabIndex = 7;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -93,7 +93,7 @@
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(109, 38);
-            this.btnIngresar.TabIndex = 4;
+            this.btnIngresar.TabIndex = 8;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
@@ -106,7 +106,7 @@
             this.chkMostrarContrasena.Margin = new System.Windows.Forms.Padding(4);
             this.chkMostrarContrasena.Name = "chkMostrarContrasena";
             this.chkMostrarContrasena.Size = new System.Drawing.Size(158, 24);
-            this.chkMostrarContrasena.TabIndex = 5;
+            this.chkMostrarContrasena.TabIndex = 6;
             this.chkMostrarContrasena.Text = "Mostrar contraseña";
             this.chkMostrarContrasena.UseVisualStyleBackColor = true;
             this.chkMostrarContrasena.CheckedChanged += new System.EventHandler(this.chkMostrarContrasena_CheckedChanged);
@@ -118,7 +118,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 23);
-            this.label2.TabIndex = 6;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Usuario: ";
             // 
             // lblSubtitulo
@@ -128,7 +128,7 @@
             this.lblSubtitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubtitulo.Name = "lblSubtitulo";
             this.lblSubtitulo.Size = new System.Drawing.Size(147, 23);
-            this.lblSubtitulo.TabIndex = 7;
+            this.lblSubtitulo.TabIndex = 1;
             this.lblSubtitulo.Text = "Inicio de sesión";
             // 
             // label1
@@ -138,7 +138,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 23);
-            this.label1.TabIndex = 8;
+            this.label1.TabIndex = 4;
             this.label1.Text = "Clave: ";
             // 
             // btnLimpiar

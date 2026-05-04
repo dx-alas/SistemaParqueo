@@ -19,6 +19,9 @@ namespace SistemaParqueo.Desktop
             InitializeComponent();
             this.Load += FrmCliente_Load;
             dgvCliente.CellClick += dgvCliente_CellClick;
+            panelCentral.Paint += panelCentral_Paint;
+            mtxtTelefono.MaskInputRejected += mtxtTelefono_MaskInputRejected;
+            mtxtDUI.MaskInputRejected += mtxtDUI_MaskInputRejected;
         }
 
         private void FrmCliente_Load(object sender, EventArgs e)
@@ -104,9 +107,9 @@ namespace SistemaParqueo.Desktop
             txtClienteId.Clear();
             txtNombre.Clear();
             txtApellido.Clear();
-            txtTelefono.Clear();
+            mtxtTelefono.Clear();
             cbTipoDocumento.Items.Clear();
-            txtDUI.Clear();
+            mtxtDUI.Clear();
             txtCarnetExtranjero.Clear();
             if (cbTarjetaId.Items.Count > 0) cbTarjetaId.SelectedIndex = 0;
             if (cbTipoClienteId.Items.Count > 0) cbTipoClienteId.SelectedIndex = 0;
@@ -117,7 +120,7 @@ namespace SistemaParqueo.Desktop
         {
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
                 string.IsNullOrWhiteSpace(txtApellido.Text) ||
-                string.IsNullOrWhiteSpace(txtDUI.Text))
+                string.IsNullOrWhiteSpace(mtxtDUI.Text))
             {
                 MessageBox.Show("El Nombre, Apellido y DUI son campos obligatorios");
                 return false;
@@ -138,9 +141,9 @@ namespace SistemaParqueo.Desktop
                 {
                     Nombre = txtNombre.Text.Trim(),
                     Apellido = txtApellido.Text.Trim(),
-                    Telefono = txtTelefono.Text.Trim(),
+                    Telefono = mtxtTelefono.Text.Trim(),
                     TipoDocumento = cbTipoDocumento.SelectedItem?.ToString(),
-                    DUI = txtDUI.Text.Trim(),
+                    DUI = mtxtDUI.Text.Trim(),
                     CarnetExtranjero = txtCarnetExtranjero.Text.Trim(),
                     TarjetaId = Convert.ToInt32(cbTarjetaId.SelectedValue),
                     TipoClienteId = Convert.ToInt32(cbTipoClienteId.SelectedValue),
@@ -180,9 +183,9 @@ namespace SistemaParqueo.Desktop
                     ClienteId = Convert.ToInt32(txtClienteId.Text),
                     Nombre = txtNombre.Text.Trim(),
                     Apellido = txtApellido.Text.Trim(),
-                    Telefono = txtTelefono.Text.Trim(),
+                    Telefono = mtxtTelefono.Text.Trim(),
                     TipoDocumento = cbTipoDocumento.SelectedItem?.ToString(),
-                    DUI = txtDUI.Text.Trim(),
+                    DUI = mtxtDUI.Text.Trim(),
                     CarnetExtranjero = txtCarnetExtranjero.Text.Trim(),
                     TarjetaId = Convert.ToInt32(cbTarjetaId.SelectedValue),
                     TipoClienteId = Convert.ToInt32(cbTipoClienteId.SelectedValue),
@@ -252,9 +255,9 @@ namespace SistemaParqueo.Desktop
                 txtClienteId.Text = row.Cells[0].Value?.ToString();
                 txtNombre.Text = row.Cells[1].Value?.ToString();
                 txtApellido.Text = row.Cells[2].Value?.ToString();
-                txtTelefono.Text = row.Cells[3].Value?.ToString();
+                mtxtTelefono.Text = row.Cells[3].Value?.ToString();
                 cbTipoDocumento.Text = row.Cells[4].Value?.ToString();
-                txtDUI.Text = row.Cells[4].Value?.ToString();
+                mtxtDUI.Text = row.Cells[4].Value?.ToString();
                 txtCarnetExtranjero.Text = row.Cells[5].Value?.ToString();
                 var item = row.DataBoundItem;
                 if (item != null)
@@ -279,9 +282,34 @@ namespace SistemaParqueo.Desktop
             }
         }
 
+
         private void panelCentral_Paint(object sender, PaintEventArgs e)
         {
+            if (!mtxtTelefono.MaskFull && mtxtTelefono.Text.Trim() == "-")
+            {
+                mtxtTelefono.SelectionStart = 0;
+            }
 
+            if (!mtxtDUI.MaskFull && mtxtDUI.Text.Trim() == "-")
+            {
+                mtxtDUI.SelectionStart = 0;
+            }
+        }
+
+        private void mtxtTelefono_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            if (!mtxtTelefono.MaskFull)
+            {
+                mtxtTelefono.Clear();
+            }
+        }
+
+        private void mtxtDUI_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            if (!mtxtDUI.MaskFull)
+            {
+                mtxtDUI.Clear();
+            }
         }
     }
 }

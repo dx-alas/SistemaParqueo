@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmpleado));
             this.panelCentral = new System.Windows.Forms.Panel();
+            this.mtxtDUI = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -59,7 +60,6 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtDUI = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.lblDUI = new System.Windows.Forms.Label();
             this.panelCentral.SuspendLayout();
@@ -69,6 +69,7 @@
             // panelCentral
             // 
             this.panelCentral.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelCentral.Controls.Add(this.mtxtDUI);
             this.panelCentral.Controls.Add(this.label5);
             this.panelCentral.Controls.Add(this.txtId);
             this.panelCentral.Controls.Add(this.btnEliminar);
@@ -90,13 +91,23 @@
             this.panelCentral.Controls.Add(this.txtTelefono);
             this.panelCentral.Controls.Add(this.btnGuardar);
             this.panelCentral.Controls.Add(this.label1);
-            this.panelCentral.Controls.Add(this.txtDUI);
             this.panelCentral.Controls.Add(this.txtCorreo);
             this.panelCentral.Controls.Add(this.lblDUI);
             this.panelCentral.Location = new System.Drawing.Point(0, 2);
             this.panelCentral.Name = "panelCentral";
             this.panelCentral.Size = new System.Drawing.Size(1047, 725);
             this.panelCentral.TabIndex = 101;
+            // 
+            // mtxtDUI
+            // 
+            this.mtxtDUI.HidePromptOnLeave = true;
+            this.mtxtDUI.Location = new System.Drawing.Point(180, 204);
+            this.mtxtDUI.Mask = "00000000-0";
+            this.mtxtDUI.Name = "mtxtDUI";
+            this.mtxtDUI.PromptChar = ' ';
+            this.mtxtDUI.Size = new System.Drawing.Size(243, 23);
+            this.mtxtDUI.TabIndex = 7;
+            this.mtxtDUI.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtDUI_MaskInputRejected);
             // 
             // label5
             // 
@@ -105,7 +116,7 @@
             this.label5.Location = new System.Drawing.Point(479, 300);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 28);
-            this.label5.TabIndex = 48;
+            this.label5.TabIndex = 16;
             this.label5.Text = "Id:";
             // 
             // txtId
@@ -116,7 +127,7 @@
             this.txtId.MaxLength = 50;
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(243, 29);
-            this.txtId.TabIndex = 49;
+            this.txtId.TabIndex = 17;
             // 
             // btnEliminar
             // 
@@ -127,7 +138,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(311, 357);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 37);
-            this.btnEliminar.TabIndex = 47;
+            this.btnEliminar.TabIndex = 20;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -139,7 +150,7 @@
             this.label4.Location = new System.Drawing.Point(44, 424);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(261, 32);
-            this.label4.TabIndex = 46;
+            this.label4.TabIndex = 22;
             this.label4.Text = "LISTADO EMPLEADOS";
             // 
             // label3
@@ -149,7 +160,7 @@
             this.label3.Location = new System.Drawing.Point(44, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(227, 32);
-            this.label3.TabIndex = 45;
+            this.label3.TabIndex = 1;
             this.label3.Text = "DATOS EMPLEADO";
             // 
             // btnActualizar
@@ -161,7 +172,7 @@
             this.btnActualizar.Location = new System.Drawing.Point(180, 357);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(112, 37);
-            this.btnActualizar.TabIndex = 44;
+            this.btnActualizar.TabIndex = 19;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -174,7 +185,7 @@
             this.cbEstado.Location = new System.Drawing.Point(180, 294);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(162, 29);
-            this.cbEstado.TabIndex = 43;
+            this.cbEstado.TabIndex = 15;
             // 
             // dgvEmpleado
             // 
@@ -202,7 +213,7 @@
             this.dgvEmpleado.RowHeadersWidth = 51;
             this.dgvEmpleado.RowTemplate.Height = 24;
             this.dgvEmpleado.Size = new System.Drawing.Size(952, 204);
-            this.dgvEmpleado.TabIndex = 27;
+            this.dgvEmpleado.TabIndex = 23;
             // 
             // EmpleadoId
             // 
@@ -275,7 +286,7 @@
             this.lblNombre.Location = new System.Drawing.Point(45, 152);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(109, 28);
-            this.lblNombre.TabIndex = 26;
+            this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "Nombres: ";
             // 
             // lblTitulo
@@ -284,7 +295,7 @@
             this.lblTitulo.Location = new System.Drawing.Point(276, 34);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(521, 51);
-            this.lblTitulo.TabIndex = 39;
+            this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "GESTIÓN DE EMPLEADOS";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -295,7 +306,7 @@
             this.lblApellido.Location = new System.Drawing.Point(478, 152);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(111, 28);
-            this.lblApellido.TabIndex = 28;
+            this.lblApellido.TabIndex = 4;
             this.lblApellido.Text = "Apellidos: ";
             // 
             // lblTelefono
@@ -305,7 +316,7 @@
             this.lblTelefono.Location = new System.Drawing.Point(45, 245);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(105, 28);
-            this.lblTelefono.TabIndex = 31;
+            this.lblTelefono.TabIndex = 10;
             this.lblTelefono.Text = "Teléfono: ";
             // 
             // txtDireccion
@@ -315,7 +326,7 @@
             this.txtDireccion.MaxLength = 255;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(243, 29);
-            this.txtDireccion.TabIndex = 41;
+            this.txtDireccion.TabIndex = 13;
             // 
             // txtNombre
             // 
@@ -324,7 +335,7 @@
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(243, 29);
-            this.txtNombre.TabIndex = 32;
+            this.txtNombre.TabIndex = 3;
             // 
             // lblCorreo
             // 
@@ -333,7 +344,7 @@
             this.lblCorreo.Location = new System.Drawing.Point(478, 202);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(86, 28);
-            this.lblCorreo.TabIndex = 30;
+            this.lblCorreo.TabIndex = 8;
             this.lblCorreo.Text = "Correo: ";
             // 
             // label2
@@ -343,7 +354,7 @@
             this.label2.Location = new System.Drawing.Point(45, 291);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 28);
-            this.label2.TabIndex = 42;
+            this.label2.TabIndex = 14;
             this.label2.Text = "Estado:";
             // 
             // btnLimpiar
@@ -355,7 +366,7 @@
             this.btnLimpiar.Location = new System.Drawing.Point(442, 357);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(112, 37);
-            this.btnLimpiar.TabIndex = 38;
+            this.btnLimpiar.TabIndex = 21;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -367,7 +378,7 @@
             this.txtApellido.MaxLength = 50;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(243, 29);
-            this.txtApellido.TabIndex = 35;
+            this.txtApellido.TabIndex = 5;
             // 
             // txtTelefono
             // 
@@ -376,7 +387,7 @@
             this.txtTelefono.MaxLength = 15;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(239, 29);
-            this.txtTelefono.TabIndex = 36;
+            this.txtTelefono.TabIndex = 11;
             // 
             // btnGuardar
             // 
@@ -388,7 +399,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(0);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(112, 37);
-            this.btnGuardar.TabIndex = 37;
+            this.btnGuardar.TabIndex = 18;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -400,17 +411,8 @@
             this.label1.Location = new System.Drawing.Point(478, 248);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 28);
-            this.label1.TabIndex = 40;
+            this.label1.TabIndex = 12;
             this.label1.Text = "Dirección:";
-            // 
-            // txtDUI
-            // 
-            this.txtDUI.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDUI.Location = new System.Drawing.Point(180, 201);
-            this.txtDUI.MaxLength = 9;
-            this.txtDUI.Name = "txtDUI";
-            this.txtDUI.Size = new System.Drawing.Size(243, 29);
-            this.txtDUI.TabIndex = 34;
             // 
             // txtCorreo
             // 
@@ -419,7 +421,7 @@
             this.txtCorreo.MaxLength = 50;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(243, 29);
-            this.txtCorreo.TabIndex = 33;
+            this.txtCorreo.TabIndex = 9;
             // 
             // lblDUI
             // 
@@ -428,7 +430,7 @@
             this.lblDUI.Location = new System.Drawing.Point(45, 199);
             this.lblDUI.Name = "lblDUI";
             this.lblDUI.Size = new System.Drawing.Size(58, 28);
-            this.lblDUI.TabIndex = 29;
+            this.lblDUI.TabIndex = 6;
             this.lblDUI.Text = "DUI: ";
             // 
             // FrmEmpleado
@@ -485,8 +487,8 @@
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtDUI;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label lblDUI;
+        private System.Windows.Forms.MaskedTextBox mtxtDUI;
     }
 }
