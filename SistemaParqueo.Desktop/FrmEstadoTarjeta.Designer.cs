@@ -74,6 +74,7 @@
             this.txtId.Enabled = false;
             this.txtId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtId.Location = new System.Drawing.Point(274, 200);
+            this.txtId.MaxLength = 50;
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(210, 29);
             this.txtId.TabIndex = 3;
@@ -205,6 +206,7 @@
             // 
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtNombre.Location = new System.Drawing.Point(274, 267);
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(210, 29);
             this.txtNombre.TabIndex = 5;

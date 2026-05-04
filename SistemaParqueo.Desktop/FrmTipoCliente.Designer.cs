@@ -76,7 +76,7 @@
             this.label2.Location = new System.Drawing.Point(81, 190);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 28);
-            this.label2.TabIndex = 79;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Id:";
             // 
             // txtId
@@ -84,9 +84,10 @@
             this.txtId.Enabled = false;
             this.txtId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtId.Location = new System.Drawing.Point(274, 193);
+            this.txtId.MaxLength = 50;
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(210, 29);
-            this.txtId.TabIndex = 78;
+            this.txtId.TabIndex = 3;
             // 
             // dgvTipoCliente
             // 
@@ -106,7 +107,7 @@
             this.dgvTipoCliente.RowHeadersWidth = 51;
             this.dgvTipoCliente.RowTemplate.Height = 24;
             this.dgvTipoCliente.Size = new System.Drawing.Size(884, 202);
-            this.dgvTipoCliente.TabIndex = 77;
+            this.dgvTipoCliente.TabIndex = 11;
             // 
             // TipoClienteId
             // 
@@ -131,7 +132,7 @@
             this.lblListaEstado.Location = new System.Drawing.Point(80, 422);
             this.lblListaEstado.Name = "lblListaEstado";
             this.lblListaEstado.Size = new System.Drawing.Size(275, 32);
-            this.lblListaEstado.TabIndex = 76;
+            this.lblListaEstado.TabIndex = 10;
             this.lblListaEstado.Text = "LISTADO TIPO CLIENTE";
             // 
             // label4
@@ -141,7 +142,7 @@
             this.label4.Location = new System.Drawing.Point(77, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(254, 32);
-            this.label4.TabIndex = 75;
+            this.label4.TabIndex = 1;
             this.label4.Text = "DATOS TIPO CLIENTE";
             // 
             // btnEliminar
@@ -153,7 +154,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(357, 326);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 39);
-            this.btnEliminar.TabIndex = 74;
+            this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -167,7 +168,7 @@
             this.btnActualizar.Location = new System.Drawing.Point(213, 326);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(125, 39);
-            this.btnActualizar.TabIndex = 73;
+            this.btnActualizar.TabIndex = 7;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -181,7 +182,7 @@
             this.btnLimpiar.Location = new System.Drawing.Point(493, 326);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(112, 39);
-            this.btnLimpiar.TabIndex = 72;
+            this.btnLimpiar.TabIndex = 9;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -196,7 +197,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(0);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(112, 39);
-            this.btnGuardar.TabIndex = 71;
+            this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -205,9 +206,10 @@
             // 
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtNombre.Location = new System.Drawing.Point(274, 260);
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(210, 29);
-            this.txtNombre.TabIndex = 70;
+            this.txtNombre.TabIndex = 5;
             // 
             // label3
             // 
@@ -216,7 +218,7 @@
             this.label3.Location = new System.Drawing.Point(81, 261);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 28);
-            this.label3.TabIndex = 69;
+            this.label3.TabIndex = 4;
             this.label3.Text = "Nombre:";
             // 
             // label1
@@ -226,7 +228,7 @@
             this.label1.Location = new System.Drawing.Point(286, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(487, 50);
-            this.label1.TabIndex = 68;
+            this.label1.TabIndex = 0;
             this.label1.Text = "GESTIÓN DE TIPO CLIENTE";
             // 
             // FrmTipoCliente

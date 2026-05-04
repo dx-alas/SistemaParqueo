@@ -181,6 +181,7 @@ namespace SistemaParqueo.Desktop
             Limpiar();
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
+            btnGuardar.Enabled = true;
         }
 
         private void dgvEstado_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -193,8 +194,9 @@ namespace SistemaParqueo.Desktop
                 txtNombre.Text = row.Cells[1].Value?.ToString();
             }
 
-            btnActualizar.Enabled = false;
-            btnEliminar.Enabled = false;
+            btnActualizar.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnGuardar.Enabled = false;
         }
 
         protected override CreateParams CreateParams

@@ -147,6 +147,7 @@
             this.cbEstadoClienteId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.cbEstadoClienteId.FormattingEnabled = true;
             this.cbEstadoClienteId.Location = new System.Drawing.Point(164, 339);
+            this.cbEstadoClienteId.MaxLength = 50;
             this.cbEstadoClienteId.Name = "cbEstadoClienteId";
             this.cbEstadoClienteId.Size = new System.Drawing.Size(243, 29);
             this.cbEstadoClienteId.TabIndex = 19;
@@ -175,7 +176,7 @@
             // 
             this.txtCarnetExtranjero.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCarnetExtranjero.Location = new System.Drawing.Point(648, 237);
-            this.txtCarnetExtranjero.MaxLength = 15;
+            this.txtCarnetExtranjero.MaxLength = 20;
             this.txtCarnetExtranjero.Name = "txtCarnetExtranjero";
             this.txtCarnetExtranjero.Size = new System.Drawing.Size(243, 29);
             this.txtCarnetExtranjero.TabIndex = 13;
@@ -196,6 +197,7 @@
             this.cbTipoClienteId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.cbTipoClienteId.FormattingEnabled = true;
             this.cbTipoClienteId.Location = new System.Drawing.Point(648, 286);
+            this.cbTipoClienteId.MaxLength = 50;
             this.cbTipoClienteId.Name = "cbTipoClienteId";
             this.cbTipoClienteId.Size = new System.Drawing.Size(243, 29);
             this.cbTipoClienteId.TabIndex = 17;
@@ -206,6 +208,7 @@
             this.cbTarjetaId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.cbTarjetaId.FormattingEnabled = true;
             this.cbTarjetaId.Location = new System.Drawing.Point(164, 290);
+            this.cbTarjetaId.MaxLength = 50;
             this.cbTarjetaId.Name = "cbTarjetaId";
             this.cbTarjetaId.Size = new System.Drawing.Size(243, 29);
             this.cbTarjetaId.TabIndex = 15;
@@ -345,7 +348,7 @@
             this.txtClienteId.Enabled = false;
             this.txtClienteId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClienteId.Location = new System.Drawing.Point(648, 335);
-            this.txtClienteId.MaxLength = 3890;
+            this.txtClienteId.MaxLength = 50;
             this.txtClienteId.Name = "txtClienteId";
             this.txtClienteId.Size = new System.Drawing.Size(243, 29);
             this.txtClienteId.TabIndex = 21;
@@ -387,6 +390,7 @@
             "DUI",
             "CR"});
             this.cbTipoDocumento.Location = new System.Drawing.Point(679, 188);
+            this.cbTipoDocumento.MaxLength = 20;
             this.cbTipoDocumento.Name = "cbTipoDocumento";
             this.cbTipoDocumento.Size = new System.Drawing.Size(212, 29);
             this.cbTipoDocumento.TabIndex = 9;

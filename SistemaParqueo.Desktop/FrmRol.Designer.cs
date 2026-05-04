@@ -76,7 +76,7 @@
             this.label2.Location = new System.Drawing.Point(81, 181);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 28);
-            this.label2.TabIndex = 79;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Id:";
             // 
             // txtId
@@ -84,9 +84,10 @@
             this.txtId.Enabled = false;
             this.txtId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtId.Location = new System.Drawing.Point(274, 184);
+            this.txtId.MaxLength = 50;
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(210, 29);
-            this.txtId.TabIndex = 78;
+            this.txtId.TabIndex = 3;
             // 
             // dgvRol
             // 
@@ -106,7 +107,7 @@
             this.dgvRol.RowHeadersWidth = 51;
             this.dgvRol.RowTemplate.Height = 24;
             this.dgvRol.Size = new System.Drawing.Size(884, 202);
-            this.dgvRol.TabIndex = 77;
+            this.dgvRol.TabIndex = 11;
             // 
             // RolId
             // 
@@ -131,7 +132,7 @@
             this.lblListaEstado.Location = new System.Drawing.Point(80, 413);
             this.lblListaEstado.Name = "lblListaEstado";
             this.lblListaEstado.Size = new System.Drawing.Size(191, 32);
-            this.lblListaEstado.TabIndex = 76;
+            this.lblListaEstado.TabIndex = 10;
             this.lblListaEstado.Text = "LISTADO ROLES";
             // 
             // label4
@@ -141,7 +142,7 @@
             this.label4.Location = new System.Drawing.Point(77, 126);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(144, 32);
-            this.label4.TabIndex = 75;
+            this.label4.TabIndex = 1;
             this.label4.Text = "DATOS ROL";
             // 
             // btnEliminar
@@ -153,7 +154,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(357, 317);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 39);
-            this.btnEliminar.TabIndex = 74;
+            this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -167,7 +168,7 @@
             this.btnActualizar.Location = new System.Drawing.Point(213, 317);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(125, 39);
-            this.btnActualizar.TabIndex = 73;
+            this.btnActualizar.TabIndex = 7;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -181,7 +182,7 @@
             this.btnLimpiar.Location = new System.Drawing.Point(493, 317);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(112, 39);
-            this.btnLimpiar.TabIndex = 72;
+            this.btnLimpiar.TabIndex = 9;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -196,7 +197,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(0);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(112, 39);
-            this.btnGuardar.TabIndex = 71;
+            this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -205,9 +206,10 @@
             // 
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtNombre.Location = new System.Drawing.Point(274, 251);
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(210, 29);
-            this.txtNombre.TabIndex = 70;
+            this.txtNombre.TabIndex = 5;
             // 
             // label3
             // 
@@ -216,7 +218,7 @@
             this.label3.Location = new System.Drawing.Point(81, 252);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 28);
-            this.label3.TabIndex = 69;
+            this.label3.TabIndex = 4;
             this.label3.Text = "Nombre:";
             // 
             // lblTitulo
@@ -225,7 +227,7 @@
             this.lblTitulo.Location = new System.Drawing.Point(276, 42);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(529, 54);
-            this.lblTitulo.TabIndex = 68;
+            this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "GESTIÓN DE ROL USUARIO";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 

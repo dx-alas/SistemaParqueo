@@ -82,16 +82,17 @@
             this.lblListadoTarjeta.Location = new System.Drawing.Point(80, 427);
             this.lblListadoTarjeta.Name = "lblListadoTarjeta";
             this.lblListadoTarjeta.Size = new System.Drawing.Size(310, 32);
-            this.lblListadoTarjeta.TabIndex = 129;
+            this.lblListadoTarjeta.TabIndex = 12;
             this.lblListadoTarjeta.Text = "LISTADO TIPO VEHICULOS";
             // 
             // txtPrecio
             // 
             this.txtPrecio.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtPrecio.Location = new System.Drawing.Point(274, 290);
+            this.txtPrecio.MaxLength = 13;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(210, 29);
-            this.txtPrecio.TabIndex = 128;
+            this.txtPrecio.TabIndex = 7;
             // 
             // label5
             // 
@@ -100,7 +101,7 @@
             this.label5.Location = new System.Drawing.Point(81, 291);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 28);
-            this.label5.TabIndex = 127;
+            this.label5.TabIndex = 6;
             this.label5.Text = "Precio:";
             // 
             // label2
@@ -110,7 +111,7 @@
             this.label2.Location = new System.Drawing.Point(81, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 28);
-            this.label2.TabIndex = 126;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Id:";
             // 
             // txtId
@@ -118,9 +119,10 @@
             this.txtId.Enabled = false;
             this.txtId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtId.Location = new System.Drawing.Point(274, 180);
+            this.txtId.MaxLength = 50;
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(210, 29);
-            this.txtId.TabIndex = 125;
+            this.txtId.TabIndex = 3;
             // 
             // dgvTipoVehiculo
             // 
@@ -141,7 +143,7 @@
             this.dgvTipoVehiculo.RowHeadersWidth = 51;
             this.dgvTipoVehiculo.RowTemplate.Height = 24;
             this.dgvTipoVehiculo.Size = new System.Drawing.Size(884, 202);
-            this.dgvTipoVehiculo.TabIndex = 124;
+            this.dgvTipoVehiculo.TabIndex = 13;
             // 
             // TipoVehiculoId
             // 
@@ -184,7 +186,7 @@
             this.label4.Location = new System.Drawing.Point(77, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(276, 32);
-            this.label4.TabIndex = 122;
+            this.label4.TabIndex = 1;
             this.label4.Text = "DATOS TIPO VEHÍCULO";
             // 
             // btnEliminar
@@ -196,7 +198,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(356, 343);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 39);
-            this.btnEliminar.TabIndex = 121;
+            this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -210,7 +212,7 @@
             this.btnActualizar.Location = new System.Drawing.Point(212, 343);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(125, 39);
-            this.btnActualizar.TabIndex = 120;
+            this.btnActualizar.TabIndex = 9;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -224,7 +226,7 @@
             this.btnLimpiar.Location = new System.Drawing.Point(492, 342);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(112, 39);
-            this.btnLimpiar.TabIndex = 119;
+            this.btnLimpiar.TabIndex = 11;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -239,7 +241,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(0);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(112, 39);
-            this.btnGuardar.TabIndex = 118;
+            this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -248,9 +250,10 @@
             // 
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtNombre.Location = new System.Drawing.Point(274, 235);
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(210, 29);
-            this.txtNombre.TabIndex = 117;
+            this.txtNombre.TabIndex = 5;
             // 
             // label3
             // 
@@ -259,7 +262,7 @@
             this.label3.Location = new System.Drawing.Point(81, 234);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 28);
-            this.label3.TabIndex = 116;
+            this.label3.TabIndex = 4;
             this.label3.Text = "Nombre:";
             // 
             // label1
@@ -269,7 +272,7 @@
             this.label1.Location = new System.Drawing.Point(283, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(523, 50);
-            this.label1.TabIndex = 115;
+            this.label1.TabIndex = 0;
             this.label1.Text = "GESTIÓN DE TIPO VEHÍCULO";
             // 
             // FrmTipoVehiculo

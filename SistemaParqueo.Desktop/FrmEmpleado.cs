@@ -21,6 +21,7 @@ namespace SistemaParqueo.Desktop
             dgvEmpleado.CellClick += dgvEmpleado_CellClick;
             panelCentral.Paint += panelCentral_Paint;
             mtxtDUI.MaskInputRejected += mtxtDUI_MaskInputRejected;
+            mtxtTelefono.MaskInputRejected += mtxtTelefono_MaskInputRejected;
         }
 
         private void FrmEmpleado_Load(object sender, EventArgs e)
@@ -93,7 +94,7 @@ namespace SistemaParqueo.Desktop
             txtApellido.Clear();
             mtxtDUI.Clear();
             txtCorreo.Clear();
-            txtTelefono.Clear();
+            mtxtTelefono.Clear();
             txtDireccion.Clear();
             if (cbEstado.Items.Count > 0) cbEstado.SelectedIndex = 0;
             txtNombre.Focus();
@@ -126,7 +127,7 @@ namespace SistemaParqueo.Desktop
                     Apellido = txtApellido.Text.Trim(),
                     DUI = mtxtDUI.Text.Trim(),
                     Correo = string.IsNullOrWhiteSpace(txtCorreo.Text) ? null : txtCorreo.Text.Trim(),
-                    Telefono = txtTelefono.Text.Trim(),
+                    Telefono = mtxtTelefono.Text.Trim(),
                     Direccion = txtDireccion.Text.Trim(),
                     EstadoEmpleadoId = Convert.ToInt32(cbEstado.SelectedValue)
                 };
@@ -166,7 +167,7 @@ namespace SistemaParqueo.Desktop
                     Apellido = txtApellido.Text.Trim(),
                     DUI = mtxtDUI.Text.Trim(),
                     Correo = string.IsNullOrWhiteSpace(txtCorreo.Text) ? null : txtCorreo.Text.Trim(),
-                    Telefono = txtTelefono.Text.Trim(),
+                    Telefono = mtxtTelefono.Text.Trim(),
                     Direccion = txtDireccion.Text.Trim(),
                     EstadoEmpleadoId = Convert.ToInt32(cbEstado.SelectedValue)
                 };
@@ -217,6 +218,7 @@ namespace SistemaParqueo.Desktop
             Limpiar();
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
+            btnGuardar.Enabled = true;
         }
 
         private void dgvEmpleado_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -230,7 +232,7 @@ namespace SistemaParqueo.Desktop
                 txtApellido.Text = row.Cells[2].Value?.ToString();
                 mtxtDUI.Text = row.Cells[3].Value?.ToString();
                 txtCorreo.Text = row.Cells[4].Value?.ToString();
-                txtTelefono.Text = row.Cells[5].Value?.ToString();
+                mtxtTelefono.Text = row.Cells[5].Value?.ToString();
                 txtDireccion.Text = row.Cells[6].Value?.ToString();
 
                 var item = row.DataBoundItem;
@@ -241,6 +243,7 @@ namespace SistemaParqueo.Desktop
 
                 btnActualizar.Enabled = true;
                 btnEliminar.Enabled = true;
+                btnGuardar.Enabled = false;
             }
         }
 
@@ -260,6 +263,11 @@ namespace SistemaParqueo.Desktop
             {
                 mtxtDUI.SelectionStart = 0;
             }
+
+            if (!mtxtTelefono.MaskFull && mtxtTelefono.Text.Trim() == "-")
+            {
+                mtxtTelefono.SelectionStart = 0;
+            }
         }
 
         private void mtxtDUI_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -267,6 +275,14 @@ namespace SistemaParqueo.Desktop
             if (!mtxtDUI.MaskFull)
             {
                 mtxtDUI.Clear();
+            }
+        }
+
+        private void mtxtTelefono_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            if (!mtxtTelefono.MaskFull)
+            {
+                mtxtTelefono.Clear();
             }
         }
     }

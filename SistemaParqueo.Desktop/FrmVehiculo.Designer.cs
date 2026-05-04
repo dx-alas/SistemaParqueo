@@ -89,29 +89,31 @@
             this.cbEstadoVehiculoId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEstadoVehiculoId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.cbEstadoVehiculoId.FormattingEnabled = true;
-            this.cbEstadoVehiculoId.Location = new System.Drawing.Point(709, 223);
+            this.cbEstadoVehiculoId.Location = new System.Drawing.Point(746, 224);
+            this.cbEstadoVehiculoId.MaxLength = 50;
             this.cbEstadoVehiculoId.Name = "cbEstadoVehiculoId";
             this.cbEstadoVehiculoId.Size = new System.Drawing.Size(218, 29);
-            this.cbEstadoVehiculoId.TabIndex = 117;
+            this.cbEstadoVehiculoId.TabIndex = 9;
             // 
             // cbTipoVehiculoId
             // 
             this.cbTipoVehiculoId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoVehiculoId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.cbTipoVehiculoId.FormattingEnabled = true;
-            this.cbTipoVehiculoId.Location = new System.Drawing.Point(709, 170);
+            this.cbTipoVehiculoId.Location = new System.Drawing.Point(746, 171);
+            this.cbTipoVehiculoId.MaxLength = 50;
             this.cbTipoVehiculoId.Name = "cbTipoVehiculoId";
             this.cbTipoVehiculoId.Size = new System.Drawing.Size(218, 29);
-            this.cbTipoVehiculoId.TabIndex = 116;
+            this.cbTipoVehiculoId.TabIndex = 5;
             // 
             // lblVehiculoId
             // 
             this.lblVehiculoId.AutoSize = true;
             this.lblVehiculoId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVehiculoId.Location = new System.Drawing.Point(45, 170);
+            this.lblVehiculoId.Location = new System.Drawing.Point(45, 277);
             this.lblVehiculoId.Name = "lblVehiculoId";
             this.lblVehiculoId.Size = new System.Drawing.Size(35, 28);
-            this.lblVehiculoId.TabIndex = 115;
+            this.lblVehiculoId.TabIndex = 10;
             this.lblVehiculoId.Text = "Id:";
             // 
             // btnEliminar
@@ -123,7 +125,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(321, 354);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 39);
-            this.btnEliminar.TabIndex = 114;
+            this.btnEliminar.TabIndex = 14;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -135,7 +137,7 @@
             this.lblListadoVehiculo.Location = new System.Drawing.Point(44, 435);
             this.lblListadoVehiculo.Name = "lblListadoVehiculo";
             this.lblListadoVehiculo.Size = new System.Drawing.Size(248, 32);
-            this.lblListadoVehiculo.TabIndex = 113;
+            this.lblListadoVehiculo.TabIndex = 16;
             this.lblListadoVehiculo.Text = "LISTADO VEHICULOS";
             // 
             // btnActualizar
@@ -147,7 +149,7 @@
             this.btnActualizar.Location = new System.Drawing.Point(179, 354);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(125, 39);
-            this.btnActualizar.TabIndex = 112;
+            this.btnActualizar.TabIndex = 13;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -157,10 +159,11 @@
             this.cbClienteId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbClienteId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.cbClienteId.FormattingEnabled = true;
-            this.cbClienteId.Location = new System.Drawing.Point(180, 286);
+            this.cbClienteId.Location = new System.Drawing.Point(179, 223);
+            this.cbClienteId.MaxLength = 50;
             this.cbClienteId.Name = "cbClienteId";
-            this.cbClienteId.Size = new System.Drawing.Size(288, 29);
-            this.cbClienteId.TabIndex = 111;
+            this.cbClienteId.Size = new System.Drawing.Size(243, 29);
+            this.cbClienteId.TabIndex = 7;
             // 
             // dgvVehiculo
             // 
@@ -185,7 +188,7 @@
             this.dgvVehiculo.RowHeadersWidth = 51;
             this.dgvVehiculo.RowTemplate.Height = 24;
             this.dgvVehiculo.Size = new System.Drawing.Size(952, 217);
-            this.dgvVehiculo.TabIndex = 102;
+            this.dgvVehiculo.TabIndex = 17;
             // 
             // VehiculoId
             // 
@@ -231,40 +234,40 @@
             // 
             this.lblTipoVehiculo.AutoSize = true;
             this.lblTipoVehiculo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoVehiculo.Location = new System.Drawing.Point(478, 171);
+            this.lblTipoVehiculo.Location = new System.Drawing.Point(532, 172);
             this.lblTipoVehiculo.Name = "lblTipoVehiculo";
             this.lblTipoVehiculo.Size = new System.Drawing.Size(181, 28);
-            this.lblTipoVehiculo.TabIndex = 103;
+            this.lblTipoVehiculo.TabIndex = 4;
             this.lblTipoVehiculo.Text = "Tipo de Vehículo: ";
             // 
             // lblClienteId
             // 
             this.lblClienteId.AutoSize = true;
             this.lblClienteId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClienteId.Location = new System.Drawing.Point(45, 286);
+            this.lblClienteId.Location = new System.Drawing.Point(45, 225);
             this.lblClienteId.Name = "lblClienteId";
             this.lblClienteId.Size = new System.Drawing.Size(83, 28);
-            this.lblClienteId.TabIndex = 106;
+            this.lblClienteId.TabIndex = 6;
             this.lblClienteId.Text = "Cliente:";
             // 
             // txtVehiculoId
             // 
             this.txtVehiculoId.Enabled = false;
             this.txtVehiculoId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVehiculoId.Location = new System.Drawing.Point(180, 174);
+            this.txtVehiculoId.Location = new System.Drawing.Point(179, 276);
             this.txtVehiculoId.MaxLength = 50;
             this.txtVehiculoId.Name = "txtVehiculoId";
             this.txtVehiculoId.Size = new System.Drawing.Size(243, 29);
-            this.txtVehiculoId.TabIndex = 107;
+            this.txtVehiculoId.TabIndex = 11;
             // 
             // lblEstadoVehiculoId
             // 
             this.lblEstadoVehiculoId.AutoSize = true;
             this.lblEstadoVehiculoId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoVehiculoId.Location = new System.Drawing.Point(478, 224);
+            this.lblEstadoVehiculoId.Location = new System.Drawing.Point(532, 225);
             this.lblEstadoVehiculoId.Name = "lblEstadoVehiculoId";
             this.lblEstadoVehiculoId.Size = new System.Drawing.Size(208, 28);
-            this.lblEstadoVehiculoId.TabIndex = 105;
+            this.lblEstadoVehiculoId.TabIndex = 8;
             this.lblEstadoVehiculoId.Text = "Estado del Vehículo: ";
             // 
             // btnLimpiar
@@ -276,7 +279,7 @@
             this.btnLimpiar.Location = new System.Drawing.Point(450, 354);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(112, 39);
-            this.btnLimpiar.TabIndex = 110;
+            this.btnLimpiar.TabIndex = 15;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -291,7 +294,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(0);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(112, 39);
-            this.btnGuardar.TabIndex = 109;
+            this.btnGuardar.TabIndex = 12;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -299,20 +302,20 @@
             // txtPlaca
             // 
             this.txtPlaca.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPlaca.Location = new System.Drawing.Point(180, 230);
-            this.txtPlaca.MaxLength = 9;
+            this.txtPlaca.Location = new System.Drawing.Point(179, 173);
+            this.txtPlaca.MaxLength = 20;
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(243, 29);
-            this.txtPlaca.TabIndex = 108;
+            this.txtPlaca.TabIndex = 3;
             // 
             // lblPlaca
             // 
             this.lblPlaca.AutoSize = true;
             this.lblPlaca.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlaca.Location = new System.Drawing.Point(45, 228);
+            this.lblPlaca.Location = new System.Drawing.Point(44, 171);
             this.lblPlaca.Name = "lblPlaca";
             this.lblPlaca.Size = new System.Drawing.Size(67, 28);
-            this.lblPlaca.TabIndex = 104;
+            this.lblPlaca.TabIndex = 2;
             this.lblPlaca.Text = "Placa:";
             // 
             // lblEmcabezado
@@ -322,7 +325,7 @@
             this.lblEmcabezado.Location = new System.Drawing.Point(44, 115);
             this.lblEmcabezado.Name = "lblEmcabezado";
             this.lblEmcabezado.Size = new System.Drawing.Size(214, 32);
-            this.lblEmcabezado.TabIndex = 101;
+            this.lblEmcabezado.TabIndex = 1;
             this.lblEmcabezado.Text = "DATOS VEHICULO";
             // 
             // lblTitulo
@@ -332,7 +335,7 @@
             this.lblTitulo.Location = new System.Drawing.Point(302, 39);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(449, 50);
-            this.lblTitulo.TabIndex = 100;
+            this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "GESTIÓN DE VEHÍCULOS";
             // 
             // FrmVehiculo
