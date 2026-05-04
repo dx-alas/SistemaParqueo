@@ -153,7 +153,7 @@
             // txtCarnetExtranjero
             // 
             this.txtCarnetExtranjero.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCarnetExtranjero.Location = new System.Drawing.Point(648, 237);
+            this.txtCarnetExtranjero.Location = new System.Drawing.Point(648, 241);
             this.txtCarnetExtranjero.MaxLength = 15;
             this.txtCarnetExtranjero.Name = "txtCarnetExtranjero";
             this.txtCarnetExtranjero.Size = new System.Drawing.Size(243, 29);

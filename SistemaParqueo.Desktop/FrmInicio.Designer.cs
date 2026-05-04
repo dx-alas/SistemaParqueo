@@ -59,6 +59,7 @@
             this.txtCajero = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
+            this.txtBarcode = new System.Windows.Forms.TextBox();
             this.panelCentral.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -71,6 +72,7 @@
             // 
             // panelCentral
             // 
+            this.panelCentral.Controls.Add(this.txtBarcode);
             this.panelCentral.Controls.Add(this.groupBox4);
             this.panelCentral.Controls.Add(this.groupBox3);
             this.panelCentral.Controls.Add(this.btnHistorial);
@@ -390,6 +392,14 @@
             this.lblEstado.TabIndex = 0;
             this.lblEstado.Text = "**Estado: Caja Abierta**";
             // 
+            // txtBarcode
+            // 
+            this.txtBarcode.Location = new System.Drawing.Point(1165, 177);
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.ReadOnly = true;
+            this.txtBarcode.Size = new System.Drawing.Size(140, 23);
+            this.txtBarcode.TabIndex = 6;
+            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -404,6 +414,7 @@
             this.Text = "Ventana principal";
             this.Load += new System.EventHandler(this.FrmInicio_Load);
             this.panelCentral.ResumeLayout(false);
+            this.panelCentral.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -450,5 +461,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtBarcode;
     }
 }
