@@ -17,6 +17,7 @@ namespace SistemaParqueo.Desktop
         private void FrmInicio_Load(object sender, EventArgs e)
         {
             CargarEstadoCorte();
+            txtBarcode.Focus();
         }
 
         private void CargarEstadoCorte()

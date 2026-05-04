@@ -97,6 +97,22 @@ namespace SistemaParqueo.BusinessLogic
 
             return result;
         }
+
+        public Tarjeta SelectByCodigo(string codigo)
+        {
+            Tarjeta result = null;
+
+            try
+            {
+                result = TarjetaDAL.Instance.SelectByCodigo(codigo);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return result;
+        }
     }
 }
 

@@ -97,6 +97,22 @@ namespace SistemaParqueo.BusinessLogic
 
             return result;
         }
+
+        public Ticket GetTicketActivoByTarjeta(int tarjetaId)
+        {
+            Ticket result = null;
+
+            try
+            {
+                result = TicketDAL.Instance.GetTicketActivoByTarjeta(tarjetaId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return result;
+        }
     }
 }
 

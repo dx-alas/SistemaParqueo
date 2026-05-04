@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmCierreCorteCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCierreCorteCaja.Designer.cs">
+      <DependentUpon>FrmCierreCorteCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHistorialSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHistorialSalidas.Designer.cs">
+      <DependentUpon>FrmHistorialSalidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInicioCorteCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInicioCorteCaja.Designer.cs">
+      <DependentUpon>FrmInicioCorteCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sesion.cs" />
     <Compile Include="FrmAutorizacion.cs">
       <SubType>Form</SubType>
@@ -178,6 +196,9 @@
     <EmbeddedResource Include="FrmAutorizacion.resx">
       <DependentUpon>FrmAutorizacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCierreCorteCaja.resx">
+      <DependentUpon>FrmCierreCorteCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,8 +229,14 @@
     <EmbeddedResource Include="FrmEstadoVehiculo.resx">
       <DependentUpon>FrmEstadoVehiculo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmHistorialSalidas.resx">
+      <DependentUpon>FrmHistorialSalidas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInicioCorteCaja.resx">
+      <DependentUpon>FrmInicioCorteCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

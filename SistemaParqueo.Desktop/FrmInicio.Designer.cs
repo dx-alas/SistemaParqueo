@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicio));
             this.panelCentral = new System.Windows.Forms.Panel();
+            this.txtBarcode = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -71,6 +72,7 @@
             // 
             // panelCentral
             // 
+            this.panelCentral.Controls.Add(this.txtBarcode);
             this.panelCentral.Controls.Add(this.groupBox4);
             this.panelCentral.Controls.Add(this.groupBox3);
             this.panelCentral.Controls.Add(this.btnHistorial);
@@ -82,6 +84,14 @@
             this.panelCentral.Name = "panelCentral";
             this.panelCentral.Size = new System.Drawing.Size(1373, 860);
             this.panelCentral.TabIndex = 101;
+            // 
+            // txtBarcode
+            // 
+            this.txtBarcode.Location = new System.Drawing.Point(1165, 177);
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.ReadOnly = true;
+            this.txtBarcode.Size = new System.Drawing.Size(140, 23);
+            this.txtBarcode.TabIndex = 6;
             // 
             // groupBox4
             // 
@@ -404,6 +414,7 @@
             this.Text = "Ventana principal";
             this.Load += new System.EventHandler(this.FrmInicio_Load);
             this.panelCentral.ResumeLayout(false);
+            this.panelCentral.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -450,5 +461,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtBarcode;
     }
 }

@@ -141,5 +141,36 @@ namespace SistemaParqueo.DataAccess
 
             return result;
         }
+
+        public Tarjeta SelectByCodigo(string codigo)
+        {
+            Tarjeta result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spSelectTarjetaByCodigo", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Codigo", codigo);
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    {
+                        if (dr.Read())
+                        {
+                            result = new Tarjeta
+                            {
+                                TarjetaId = dr.GetInt32(0),
+                                Codigo = dr.GetString(1),
+                                EstadoTarjetaId = dr.GetInt32(2)
+                            };
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }
