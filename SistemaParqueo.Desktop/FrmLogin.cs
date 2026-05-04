@@ -1,4 +1,5 @@
 ﻿using SistemaParqueo.BusinessLogic;
+using SistemaParqueo.Desktop.SistemaParqueo.Desktop;
 using SistemaParqueo.Entities;
 using System;
 using System.Windows.Forms;
@@ -61,6 +62,8 @@ namespace SistemaParqueo.Desktop
 
             if (usuario != null)
             {
+                CacheUsuario.UsuarioLogueado = usuario; //guardar usuario logueado
+
                 FrmMain frmMain = new FrmMain();
 
                 this.Hide();

@@ -206,9 +206,14 @@ namespace SistemaParqueo.Desktop
             }
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        protected override CreateParams CreateParams
         {
-
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000; // WS_EX_COMPOSITED
+                return cp;
+            }
         }
     }
 }

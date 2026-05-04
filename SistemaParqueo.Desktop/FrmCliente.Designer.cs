@@ -29,8 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCliente));
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.Emcabezado = new System.Windows.Forms.Label();
+            this.panelCentral = new System.Windows.Forms.Panel();
+            this.lblClienteId = new System.Windows.Forms.Label();
+            this.cbEstadoClienteId = new System.Windows.Forms.ComboBox();
+            this.lblEstadoCliente = new System.Windows.Forms.Label();
+            this.lblTarjeta = new System.Windows.Forms.Label();
+            this.txtCarnetExtranjero = new System.Windows.Forms.TextBox();
+            this.txtDUI = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.lblTipoDocumento = new System.Windows.Forms.Label();
             this.cbTipoClienteId = new System.Windows.Forms.ComboBox();
             this.cbTarjetaId = new System.Windows.Forms.ComboBox();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
@@ -59,58 +66,146 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.lblApellido = new System.Windows.Forms.Label();
-            this.lblTipoDocumento = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtDUI = new System.Windows.Forms.TextBox();
-            this.txtCarnetExtranjero = new System.Windows.Forms.TextBox();
-            this.lblTarjeta = new System.Windows.Forms.Label();
-            this.lblEstadoCliente = new System.Windows.Forms.Label();
-            this.cbEstadoClienteId = new System.Windows.Forms.ComboBox();
-            this.lblClienteId = new System.Windows.Forms.Label();
+            this.Emcabezado = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.panelCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblTitulo
+            // panelCentral
             // 
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(364, 48);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(491, 66);
-            this.lblTitulo.TabIndex = 15;
-            this.lblTitulo.Text = "GESTIÓN DE CLIENTES";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panelCentral.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelCentral.Controls.Add(this.lblClienteId);
+            this.panelCentral.Controls.Add(this.cbEstadoClienteId);
+            this.panelCentral.Controls.Add(this.lblEstadoCliente);
+            this.panelCentral.Controls.Add(this.lblTarjeta);
+            this.panelCentral.Controls.Add(this.txtCarnetExtranjero);
+            this.panelCentral.Controls.Add(this.txtDUI);
+            this.panelCentral.Controls.Add(this.txtTelefono);
+            this.panelCentral.Controls.Add(this.lblTipoDocumento);
+            this.panelCentral.Controls.Add(this.cbTipoClienteId);
+            this.panelCentral.Controls.Add(this.cbTarjetaId);
+            this.panelCentral.Controls.Add(this.dgvCliente);
+            this.panelCentral.Controls.Add(this.lblListaUsuarios);
+            this.panelCentral.Controls.Add(this.lblTipoCliente);
+            this.panelCentral.Controls.Add(this.txtClienteId);
+            this.panelCentral.Controls.Add(this.btnEliminar);
+            this.panelCentral.Controls.Add(this.btnActualizar);
+            this.panelCentral.Controls.Add(this.cbTipoDocumento);
+            this.panelCentral.Controls.Add(this.lblNombre);
+            this.panelCentral.Controls.Add(this.lblDUI);
+            this.panelCentral.Controls.Add(this.lblTelefono);
+            this.panelCentral.Controls.Add(this.txtNombre);
+            this.panelCentral.Controls.Add(this.lblCarnetExtranjero);
+            this.panelCentral.Controls.Add(this.btnLimpiar);
+            this.panelCentral.Controls.Add(this.btnGuardar);
+            this.panelCentral.Controls.Add(this.txtApellido);
+            this.panelCentral.Controls.Add(this.lblApellido);
+            this.panelCentral.Controls.Add(this.Emcabezado);
+            this.panelCentral.Controls.Add(this.lblTitulo);
+            this.panelCentral.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.panelCentral.Location = new System.Drawing.Point(0, 2);
+            this.panelCentral.Name = "panelCentral";
+            this.panelCentral.Size = new System.Drawing.Size(1047, 770);
+            this.panelCentral.TabIndex = 100;
+            this.panelCentral.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCentral_Paint);
             // 
-            // Emcabezado
+            // lblClienteId
             // 
-            this.Emcabezado.AutoSize = true;
-            this.Emcabezado.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.Emcabezado.Location = new System.Drawing.Point(96, 129);
-            this.Emcabezado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Emcabezado.Name = "Emcabezado";
-            this.Emcabezado.Size = new System.Drawing.Size(192, 32);
-            this.Emcabezado.TabIndex = 22;
-            this.Emcabezado.Text = "DATOS CLIENTE";
+            this.lblClienteId.AutoSize = true;
+            this.lblClienteId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClienteId.Location = new System.Drawing.Point(478, 336);
+            this.lblClienteId.Name = "lblClienteId";
+            this.lblClienteId.Size = new System.Drawing.Size(35, 28);
+            this.lblClienteId.TabIndex = 127;
+            this.lblClienteId.Text = "Id:";
+            // 
+            // cbEstadoClienteId
+            // 
+            this.cbEstadoClienteId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEstadoClienteId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.cbEstadoClienteId.FormattingEnabled = true;
+            this.cbEstadoClienteId.Location = new System.Drawing.Point(164, 339);
+            this.cbEstadoClienteId.Name = "cbEstadoClienteId";
+            this.cbEstadoClienteId.Size = new System.Drawing.Size(243, 29);
+            this.cbEstadoClienteId.TabIndex = 126;
+            // 
+            // lblEstadoCliente
+            // 
+            this.lblEstadoCliente.AutoSize = true;
+            this.lblEstadoCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoCliente.Location = new System.Drawing.Point(28, 340);
+            this.lblEstadoCliente.Name = "lblEstadoCliente";
+            this.lblEstadoCliente.Size = new System.Drawing.Size(80, 28);
+            this.lblEstadoCliente.TabIndex = 125;
+            this.lblEstadoCliente.Text = "Estado:";
+            // 
+            // lblTarjeta
+            // 
+            this.lblTarjeta.AutoSize = true;
+            this.lblTarjeta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTarjeta.Location = new System.Drawing.Point(28, 289);
+            this.lblTarjeta.Name = "lblTarjeta";
+            this.lblTarjeta.Size = new System.Drawing.Size(82, 28);
+            this.lblTarjeta.TabIndex = 124;
+            this.lblTarjeta.Text = "Tarjeta:";
+            // 
+            // txtCarnetExtranjero
+            // 
+            this.txtCarnetExtranjero.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCarnetExtranjero.Location = new System.Drawing.Point(648, 237);
+            this.txtCarnetExtranjero.MaxLength = 15;
+            this.txtCarnetExtranjero.Name = "txtCarnetExtranjero";
+            this.txtCarnetExtranjero.Size = new System.Drawing.Size(243, 29);
+            this.txtCarnetExtranjero.TabIndex = 123;
+            // 
+            // txtDUI
+            // 
+            this.txtDUI.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDUI.Location = new System.Drawing.Point(164, 241);
+            this.txtDUI.MaxLength = 9;
+            this.txtDUI.Name = "txtDUI";
+            this.txtDUI.Size = new System.Drawing.Size(243, 29);
+            this.txtDUI.TabIndex = 122;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(164, 192);
+            this.txtTelefono.MaxLength = 9;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(243, 29);
+            this.txtTelefono.TabIndex = 121;
+            // 
+            // lblTipoDocumento
+            // 
+            this.lblTipoDocumento.AutoSize = true;
+            this.lblTipoDocumento.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoDocumento.Location = new System.Drawing.Point(478, 186);
+            this.lblTipoDocumento.Name = "lblTipoDocumento";
+            this.lblTipoDocumento.Size = new System.Drawing.Size(181, 28);
+            this.lblTipoDocumento.TabIndex = 120;
+            this.lblTipoDocumento.Text = "Tipo Documento: ";
             // 
             // cbTipoClienteId
             // 
             this.cbTipoClienteId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoClienteId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.cbTipoClienteId.FormattingEnabled = true;
-            this.cbTipoClienteId.Location = new System.Drawing.Point(715, 275);
+            this.cbTipoClienteId.Location = new System.Drawing.Point(648, 286);
             this.cbTipoClienteId.Name = "cbTipoClienteId";
             this.cbTipoClienteId.Size = new System.Drawing.Size(243, 29);
-            this.cbTipoClienteId.TabIndex = 91;
+            this.cbTipoClienteId.TabIndex = 119;
             // 
             // cbTarjetaId
             // 
             this.cbTarjetaId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTarjetaId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.cbTarjetaId.FormattingEnabled = true;
-            this.cbTarjetaId.Location = new System.Drawing.Point(715, 225);
+            this.cbTarjetaId.Location = new System.Drawing.Point(164, 290);
             this.cbTarjetaId.Name = "cbTarjetaId";
             this.cbTarjetaId.Size = new System.Drawing.Size(243, 29);
-            this.cbTarjetaId.TabIndex = 90;
+            this.cbTarjetaId.TabIndex = 118;
             // 
             // dgvCliente
             // 
@@ -134,14 +229,13 @@
             this.TipoCliente,
             this.EstadoCliente});
             this.dgvCliente.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvCliente.Location = new System.Drawing.Point(102, 556);
+            this.dgvCliente.Location = new System.Drawing.Point(31, 498);
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.ReadOnly = true;
             this.dgvCliente.RowHeadersWidth = 51;
             this.dgvCliente.RowTemplate.Height = 24;
-            this.dgvCliente.Size = new System.Drawing.Size(952, 217);
-            this.dgvCliente.TabIndex = 89;
-            this.dgvCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellClick);
+            this.dgvCliente.Size = new System.Drawing.Size(988, 217);
+            this.dgvCliente.TabIndex = 117;
             // 
             // ClienteId
             // 
@@ -227,31 +321,31 @@
             // 
             this.lblListaUsuarios.AutoSize = true;
             this.lblListaUsuarios.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblListaUsuarios.Location = new System.Drawing.Point(96, 505);
+            this.lblListaUsuarios.Location = new System.Drawing.Point(27, 454);
             this.lblListaUsuarios.Name = "lblListaUsuarios";
             this.lblListaUsuarios.Size = new System.Drawing.Size(226, 32);
-            this.lblListaUsuarios.TabIndex = 88;
+            this.lblListaUsuarios.TabIndex = 116;
             this.lblListaUsuarios.Text = "LISTADO CLIENTES";
             // 
             // lblTipoCliente
             // 
             this.lblTipoCliente.AutoSize = true;
             this.lblTipoCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoCliente.Location = new System.Drawing.Point(545, 272);
+            this.lblTipoCliente.Location = new System.Drawing.Point(478, 286);
             this.lblTipoCliente.Name = "lblTipoCliente";
             this.lblTipoCliente.Size = new System.Drawing.Size(131, 28);
-            this.lblTipoCliente.TabIndex = 86;
+            this.lblTipoCliente.TabIndex = 114;
             this.lblTipoCliente.Text = "Tipo Cliente:";
             // 
             // txtClienteId
             // 
             this.txtClienteId.Enabled = false;
             this.txtClienteId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClienteId.Location = new System.Drawing.Point(715, 367);
+            this.txtClienteId.Location = new System.Drawing.Point(648, 335);
             this.txtClienteId.MaxLength = 3890;
             this.txtClienteId.Name = "txtClienteId";
             this.txtClienteId.Size = new System.Drawing.Size(243, 29);
-            this.txtClienteId.TabIndex = 87;
+            this.txtClienteId.TabIndex = 115;
             // 
             // btnEliminar
             // 
@@ -259,10 +353,10 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(364, 433);
+            this.btnEliminar.Location = new System.Drawing.Point(302, 393);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 39);
-            this.btnEliminar.TabIndex = 85;
+            this.btnEliminar.TabIndex = 113;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -273,10 +367,10 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(233, 433);
+            this.btnActualizar.Location = new System.Drawing.Point(165, 393);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(112, 39);
-            this.btnActualizar.TabIndex = 84;
+            this.btnActualizar.Size = new System.Drawing.Size(117, 39);
+            this.btnActualizar.TabIndex = 112;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -289,58 +383,58 @@
             this.cbTipoDocumento.Items.AddRange(new object[] {
             "DUI",
             "CR"});
-            this.cbTipoDocumento.Location = new System.Drawing.Point(298, 322);
+            this.cbTipoDocumento.Location = new System.Drawing.Point(679, 188);
             this.cbTipoDocumento.Name = "cbTipoDocumento";
-            this.cbTipoDocumento.Size = new System.Drawing.Size(177, 29);
-            this.cbTipoDocumento.TabIndex = 83;
+            this.cbTipoDocumento.Size = new System.Drawing.Size(212, 29);
+            this.cbTipoDocumento.TabIndex = 111;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(97, 174);
+            this.lblNombre.Location = new System.Drawing.Point(28, 136);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(100, 28);
-            this.lblNombre.TabIndex = 74;
-            this.lblNombre.Text = "Nombre: ";
+            this.lblNombre.Size = new System.Drawing.Size(109, 28);
+            this.lblNombre.TabIndex = 102;
+            this.lblNombre.Text = "Nombres: ";
             // 
             // lblDUI
             // 
             this.lblDUI.AutoSize = true;
             this.lblDUI.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDUI.Location = new System.Drawing.Point(100, 368);
+            this.lblDUI.Location = new System.Drawing.Point(28, 238);
             this.lblDUI.Name = "lblDUI";
             this.lblDUI.Size = new System.Drawing.Size(58, 28);
-            this.lblDUI.TabIndex = 75;
+            this.lblDUI.TabIndex = 103;
             this.lblDUI.Text = "DUI: ";
             // 
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono.Location = new System.Drawing.Point(97, 272);
+            this.lblTelefono.Location = new System.Drawing.Point(28, 187);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(105, 28);
-            this.lblTelefono.TabIndex = 78;
+            this.lblTelefono.TabIndex = 106;
             this.lblTelefono.Text = "Telefono: ";
             // 
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(232, 177);
+            this.txtNombre.Location = new System.Drawing.Point(164, 143);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(243, 29);
-            this.txtNombre.TabIndex = 79;
+            this.txtNombre.TabIndex = 107;
             // 
             // lblCarnetExtranjero
             // 
             this.lblCarnetExtranjero.AutoSize = true;
             this.lblCarnetExtranjero.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCarnetExtranjero.Location = new System.Drawing.Point(545, 177);
+            this.lblCarnetExtranjero.Location = new System.Drawing.Point(478, 236);
             this.lblCarnetExtranjero.Name = "lblCarnetExtranjero";
             this.lblCarnetExtranjero.Size = new System.Drawing.Size(144, 28);
-            this.lblCarnetExtranjero.TabIndex = 77;
+            this.lblCarnetExtranjero.TabIndex = 105;
             this.lblCarnetExtranjero.Text = "C. Extranjero: ";
             // 
             // btnLimpiar
@@ -349,10 +443,10 @@
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(495, 433);
+            this.btnLimpiar.Location = new System.Drawing.Point(434, 393);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(112, 39);
-            this.btnLimpiar.TabIndex = 82;
+            this.btnLimpiar.TabIndex = 110;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -363,11 +457,11 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(102, 433);
+            this.btnGuardar.Location = new System.Drawing.Point(33, 393);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(0);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(112, 39);
-            this.btnGuardar.TabIndex = 81;
+            this.btnGuardar.TabIndex = 109;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -375,152 +469,90 @@
             // txtApellido
             // 
             this.txtApellido.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(232, 226);
+            this.txtApellido.Location = new System.Drawing.Point(635, 139);
             this.txtApellido.MaxLength = 50;
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(243, 29);
-            this.txtApellido.TabIndex = 80;
+            this.txtApellido.Size = new System.Drawing.Size(256, 29);
+            this.txtApellido.TabIndex = 108;
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.Location = new System.Drawing.Point(97, 223);
+            this.lblApellido.Location = new System.Drawing.Point(478, 136);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(102, 28);
-            this.lblApellido.TabIndex = 76;
-            this.lblApellido.Text = "Apellido: ";
+            this.lblApellido.Size = new System.Drawing.Size(111, 28);
+            this.lblApellido.TabIndex = 104;
+            this.lblApellido.Text = "Apellidos: ";
             // 
-            // lblTipoDocumento
+            // Emcabezado
             // 
-            this.lblTipoDocumento.AutoSize = true;
-            this.lblTipoDocumento.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoDocumento.Location = new System.Drawing.Point(97, 323);
-            this.lblTipoDocumento.Name = "lblTipoDocumento";
-            this.lblTipoDocumento.Size = new System.Drawing.Size(181, 28);
-            this.lblTipoDocumento.TabIndex = 92;
-            this.lblTipoDocumento.Text = "Tipo Documento: ";
+            this.Emcabezado.AutoSize = true;
+            this.Emcabezado.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.Emcabezado.Location = new System.Drawing.Point(27, 91);
+            this.Emcabezado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Emcabezado.Name = "Emcabezado";
+            this.Emcabezado.Size = new System.Drawing.Size(192, 32);
+            this.Emcabezado.TabIndex = 101;
+            this.Emcabezado.Text = "DATOS CLIENTE";
             // 
-            // txtTelefono
+            // lblTitulo
             // 
-            this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(232, 271);
-            this.txtTelefono.MaxLength = 9;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(243, 29);
-            this.txtTelefono.TabIndex = 93;
-            // 
-            // txtDUI
-            // 
-            this.txtDUI.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDUI.Location = new System.Drawing.Point(233, 368);
-            this.txtDUI.MaxLength = 9;
-            this.txtDUI.Name = "txtDUI";
-            this.txtDUI.Size = new System.Drawing.Size(243, 29);
-            this.txtDUI.TabIndex = 94;
-            // 
-            // txtCarnetExtranjero
-            // 
-            this.txtCarnetExtranjero.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCarnetExtranjero.Location = new System.Drawing.Point(715, 176);
-            this.txtCarnetExtranjero.MaxLength = 15;
-            this.txtCarnetExtranjero.Name = "txtCarnetExtranjero";
-            this.txtCarnetExtranjero.Size = new System.Drawing.Size(243, 29);
-            this.txtCarnetExtranjero.TabIndex = 95;
-            // 
-            // lblTarjeta
-            // 
-            this.lblTarjeta.AutoSize = true;
-            this.lblTarjeta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTarjeta.Location = new System.Drawing.Point(545, 222);
-            this.lblTarjeta.Name = "lblTarjeta";
-            this.lblTarjeta.Size = new System.Drawing.Size(82, 28);
-            this.lblTarjeta.TabIndex = 96;
-            this.lblTarjeta.Text = "Tarjeta:";
-            // 
-            // lblEstadoCliente
-            // 
-            this.lblEstadoCliente.AutoSize = true;
-            this.lblEstadoCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoCliente.Location = new System.Drawing.Point(545, 323);
-            this.lblEstadoCliente.Name = "lblEstadoCliente";
-            this.lblEstadoCliente.Size = new System.Drawing.Size(152, 28);
-            this.lblEstadoCliente.TabIndex = 97;
-            this.lblEstadoCliente.Text = "Estado Cliente:";
-            // 
-            // cbEstadoClienteId
-            // 
-            this.cbEstadoClienteId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEstadoClienteId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.cbEstadoClienteId.FormattingEnabled = true;
-            this.cbEstadoClienteId.Location = new System.Drawing.Point(715, 323);
-            this.cbEstadoClienteId.Name = "cbEstadoClienteId";
-            this.cbEstadoClienteId.Size = new System.Drawing.Size(243, 29);
-            this.cbEstadoClienteId.TabIndex = 98;
-            // 
-            // lblClienteId
-            // 
-            this.lblClienteId.AutoSize = true;
-            this.lblClienteId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClienteId.Location = new System.Drawing.Point(545, 368);
-            this.lblClienteId.Name = "lblClienteId";
-            this.lblClienteId.Size = new System.Drawing.Size(35, 28);
-            this.lblClienteId.TabIndex = 99;
-            this.lblClienteId.Text = "Id:";
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.Location = new System.Drawing.Point(276, 34);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(491, 66);
+            this.lblTitulo.TabIndex = 100;
+            this.lblTitulo.Text = "GESTIÓN DE CLIENTES";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1176, 804);
-            this.Controls.Add(this.lblClienteId);
-            this.Controls.Add(this.cbEstadoClienteId);
-            this.Controls.Add(this.lblEstadoCliente);
-            this.Controls.Add(this.lblTarjeta);
-            this.Controls.Add(this.txtCarnetExtranjero);
-            this.Controls.Add(this.txtDUI);
-            this.Controls.Add(this.txtTelefono);
-            this.Controls.Add(this.lblTipoDocumento);
-            this.Controls.Add(this.cbTipoClienteId);
-            this.Controls.Add(this.cbTarjetaId);
-            this.Controls.Add(this.dgvCliente);
-            this.Controls.Add(this.lblListaUsuarios);
-            this.Controls.Add(this.lblTipoCliente);
-            this.Controls.Add(this.txtClienteId);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnActualizar);
-            this.Controls.Add(this.cbTipoDocumento);
-            this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.lblDUI);
-            this.Controls.Add(this.lblTelefono);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.lblCarnetExtranjero);
-            this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.txtApellido);
-            this.Controls.Add(this.lblApellido);
-            this.Controls.Add(this.Emcabezado);
-            this.Controls.Add(this.lblTitulo);
+            this.ClientSize = new System.Drawing.Size(1047, 770);
+            this.Controls.Add(this.panelCentral);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1194, 851);
+            this.MinimumSize = new System.Drawing.Size(900, 700);
             this.Name = "FrmCliente";
             this.Text = "Gestión Clientes";
             this.Load += new System.EventHandler(this.FrmCliente_Load);
+            this.panelCentral.ResumeLayout(false);
+            this.panelCentral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Label Emcabezado;
+        private System.Windows.Forms.Panel panelCentral;
+        private System.Windows.Forms.Label lblClienteId;
+        private System.Windows.Forms.ComboBox cbEstadoClienteId;
+        private System.Windows.Forms.Label lblEstadoCliente;
+        private System.Windows.Forms.Label lblTarjeta;
+        private System.Windows.Forms.TextBox txtCarnetExtranjero;
+        private System.Windows.Forms.TextBox txtDUI;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Label lblTipoDocumento;
         private System.Windows.Forms.ComboBox cbTipoClienteId;
         private System.Windows.Forms.ComboBox cbTarjetaId;
         private System.Windows.Forms.DataGridView dgvCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClienteId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DUI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CarnetExtranjero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tarjeta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCliente;
         private System.Windows.Forms.Label lblListaUsuarios;
         private System.Windows.Forms.Label lblTipoCliente;
         private System.Windows.Forms.TextBox txtClienteId;
@@ -536,24 +568,8 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label lblApellido;
-        private System.Windows.Forms.Label lblTipoDocumento;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.TextBox txtDUI;
-        private System.Windows.Forms.TextBox txtCarnetExtranjero;
-        private System.Windows.Forms.Label lblTarjeta;
-        private System.Windows.Forms.Label lblEstadoCliente;
-        private System.Windows.Forms.ComboBox cbEstadoClienteId;
-        private System.Windows.Forms.Label lblClienteId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClienteId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DUI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CarnetExtranjero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tarjeta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCliente;
+        private System.Windows.Forms.Label Emcabezado;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }
 
