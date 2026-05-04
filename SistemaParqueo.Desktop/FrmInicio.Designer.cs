@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicio));
             this.panelCentral = new System.Windows.Forms.Panel();
+            this.txtBarcode = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -59,7 +60,6 @@
             this.txtCajero = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
-            this.txtBarcode = new System.Windows.Forms.TextBox();
             this.panelCentral.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -84,6 +84,14 @@
             this.panelCentral.Name = "panelCentral";
             this.panelCentral.Size = new System.Drawing.Size(1373, 860);
             this.panelCentral.TabIndex = 101;
+            // 
+            // txtBarcode
+            // 
+            this.txtBarcode.Location = new System.Drawing.Point(1165, 177);
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.ReadOnly = true;
+            this.txtBarcode.Size = new System.Drawing.Size(140, 23);
+            this.txtBarcode.TabIndex = 6;
             // 
             // groupBox4
             // 
@@ -391,14 +399,6 @@
             this.lblEstado.Size = new System.Drawing.Size(225, 25);
             this.lblEstado.TabIndex = 0;
             this.lblEstado.Text = "**Estado: Caja Abierta**";
-            // 
-            // txtBarcode
-            // 
-            this.txtBarcode.Location = new System.Drawing.Point(1165, 177);
-            this.txtBarcode.Name = "txtBarcode";
-            this.txtBarcode.ReadOnly = true;
-            this.txtBarcode.Size = new System.Drawing.Size(140, 23);
-            this.txtBarcode.TabIndex = 6;
             // 
             // FrmInicio
             // 
