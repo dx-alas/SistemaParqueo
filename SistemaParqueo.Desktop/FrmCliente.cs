@@ -27,6 +27,9 @@ namespace SistemaParqueo.Desktop
             ConfigurarGrid();
             CargarCombos();
             CargarDatos();
+
+            btnActualizar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
 
         private void ConfigurarGrid()
@@ -235,6 +238,9 @@ namespace SistemaParqueo.Desktop
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
+
+            btnActualizar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
 
         private void dgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -257,6 +263,9 @@ namespace SistemaParqueo.Desktop
                     cbTipoClienteId.SelectedValue = ((dynamic)item).TipoClienteId;
                     cbEstadoClienteId.SelectedValue = ((dynamic)item).EstadoClienteId;
                 }
+
+                btnActualizar.Enabled = true;
+                btnEliminar.Enabled = true;
             }
         }
 
