@@ -132,26 +132,11 @@
   <metadata name="Estudiante.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Tarjeta.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Placa.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="HoraInicio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="TipoCliente.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Estudiante.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAmgAAAHXCAYAAAAIm6Z0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAA/7JJREFUeF7s/Ye7JUW1Po7fP+v3/VwlT84zJ58zZ2YIIpiQbM5Z9KpgFhVFRa/o
+        vgAADr4B6kKxwAAA/7JJREFUeF7s/Ye7JUW1Po7fP+v3/VwlT84zJ58zZ2YIIpiQbM5Z9KpgFhVFRa/o
         vQYUM6CIiAH1qgiikiRnmEj9nndVr+rVb6+q7n3OPnHOep61d1fVqrSquurtiv8RloBeeOGFolntlD37
         PuTJDeJ/tRO0cCzk9ZGzt9SlT3VjGTavZirllfXD//xsydM9+7cyLM9+j2fy9Gb/c+TJDaLnnJsXrprZ
         bunpWMWD0lz9NYn1MV8dzcfvQIRoFimqhaSSvrreg1w9Z7Jlys+rmf6DLQYlVVZJYZ5MiUHHjh3L+rFm

@@ -21,19 +21,16 @@ namespace SistemaParqueo.BusinessLogic
             }
         }
 
-        public bool Insert(CorteCaja entity)
+        public int Insert(CorteCaja entity)
         {
-            bool result = false;
-
             try
             {
-                result = CorteCajaDAL.Instance.Insert(entity);
+                return CorteCajaDAL.Instance.Insert(entity);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-            return result;
         }
 
         public bool Update(CorteCaja entity)
@@ -96,6 +93,18 @@ namespace SistemaParqueo.BusinessLogic
             }
 
             return result;
+        }
+
+        public CorteCaja GetCorteActivo()
+        {
+            try
+            {
+                return CorteCajaDAL.Instance.GetCorteCajaActivo();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener el corte activo: " + ex.Message);
+            }
         }
     }
 }
