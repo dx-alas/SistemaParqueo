@@ -130,8 +130,7 @@ namespace SistemaParqueo.DataAccess
 
                                 result.TicketId = dr.GetInt32(0);
                                 result.Fecha = dr.GetDateTime(1);
-                                result.HoraEntrada = dr.GetDateTime(2);
-                                result.HoraSalida = dr.IsDBNull(3) ? null : (DateTime?)dr.GetDateTime(3);
+                                result.HoraSalida = dr.IsDBNull(3) ? (TimeSpan?)null : dr.GetTimeSpan(3);
                                 result.Total = dr.IsDBNull(4) ? null : (decimal?)dr.GetDecimal(4);
                                 result.TarjetaId = dr.GetInt32(5);
                                 result.CorteId = dr.GetInt32(6);
@@ -169,17 +168,54 @@ namespace SistemaParqueo.DataAccess
 
                                 entity.TicketId = dr.GetInt32(0);
                                 entity.Fecha = dr.GetDateTime(1);
-                                entity.HoraEntrada = dr.GetDateTime(2);
-
-                                entity.HoraSalida = dr.IsDBNull(3) ? null : (DateTime?)dr.GetDateTime(3);
-                                entity.Total = dr.IsDBNull(4) ? null : (decimal?)dr.GetDecimal(4);
-
+                                entity.HoraEntrada = dr.GetTimeSpan(2);
+                                entity.HoraSalida = dr.IsDBNull(3) ? (TimeSpan?)null : dr.GetTimeSpan(3);
+                                entity.Total = dr.IsDBNull(4) ? null  : (decimal?)dr.GetDecimal(4);
                                 entity.TarjetaId = dr.GetInt32(5);
                                 entity.CorteId = dr.GetInt32(6);
                                 entity.MultaId = dr.IsDBNull(7) ? null : (int?)dr.GetInt32(7);
 
                                 result.Add(entity);
                             }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public Ticket GetTicketActivoByTarjeta(int tarjetaId)
+        {
+            Ticket result = null;
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("spGetTicketActivoByTarjeta", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@TarjetaId", tarjetaId);
+
+                    conn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            result = new Ticket
+                            {
+                                TicketId = dr.GetInt32(0),
+                                Fecha = dr.GetDateTime(1),
+                                HoraEntrada = dr.GetTimeSpan(2),
+                                HoraSalida = dr.IsDBNull(3) ? (TimeSpan?)null : dr.GetTimeSpan(3),
+                                Total = dr.IsDBNull(4) ? (decimal?)null : dr.GetDecimal(4),
+                                TarjetaId = dr.GetInt32(5),
+                                CorteId = dr.GetInt32(6),
+                                MultaId = dr.IsDBNull(7) ? (int?)null : dr.GetInt32(7),
+                                EstadoTicketId = dr.GetInt32(8),
+                                UsuarioId = dr.GetInt32(9),
+                                EstadoPermanenciaId = dr.GetInt32(10)
+                            };
                         }
                     }
                 }
