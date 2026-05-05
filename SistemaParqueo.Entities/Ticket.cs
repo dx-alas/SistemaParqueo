@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace SistemaParqueo.Entities
 {
     public class Ticket
@@ -17,15 +18,19 @@ namespace SistemaParqueo.Entities
         public int CorteId { get; set; }
         public int EstadoTicketId { get; set; }
         public int UsuarioId { get; set; }
-        public int? MultaId { get; set; }
         public int EstadoPermanenciaId { get; set; }
+        public int TipoVehiculoId { get; set; }
+        public decimal PrecioAplicado { get; set; }
+        public int? MultaId { get; set; }
 
         public Ticket()
         {
 
         }
 
-        public Ticket(DateTime fecha, TimeSpan horaEntrada, TimeSpan? horaSalida, decimal? total, int tarjetaId, int corteId, int estadoTicketId, int usuarioId, int? multaId, int estadoPermanenciaId)
+        public Ticket(DateTime fecha, TimeSpan horaEntrada, TimeSpan? horaSalida, decimal? total,
+            int tarjetaId, int corteId, int estadoTicketId, int usuarioId,
+            int estadoPermanenciaId, int tipoVehiculoId, decimal precioAplicado, int? multaId)
         {
             Fecha = fecha;
             HoraEntrada = horaEntrada;
@@ -35,11 +40,15 @@ namespace SistemaParqueo.Entities
             CorteId = corteId;
             EstadoTicketId = estadoTicketId;
             UsuarioId = usuarioId;
-            MultaId = multaId;
             EstadoPermanenciaId = estadoPermanenciaId;
+            TipoVehiculoId = tipoVehiculoId;
+            PrecioAplicado = precioAplicado;
+            MultaId = multaId;
         }
 
-        public Ticket(int ticketId, DateTime fecha, TimeSpan horaEntrada, TimeSpan? horaSalida, decimal? total, int tarjetaId, int corteId, int estadoTicketId, int usuarioId, int? multaId, int estadoPermanenciaId)
+        public Ticket(int ticketId, DateTime fecha, TimeSpan horaEntrada, TimeSpan? horaSalida, decimal? total,
+            int tarjetaId, int corteId, int estadoTicketId, int usuarioId,
+            int estadoPermanenciaId, int tipoVehiculoId, decimal precioAplicado, int? multaId)
         {
             TicketId = ticketId;
             Fecha = fecha;
@@ -50,8 +59,10 @@ namespace SistemaParqueo.Entities
             CorteId = corteId;
             EstadoTicketId = estadoTicketId;
             UsuarioId = usuarioId;
-            MultaId = multaId;
             EstadoPermanenciaId = estadoPermanenciaId;
+            TipoVehiculoId = tipoVehiculoId;
+            PrecioAplicado = precioAplicado;
+            MultaId = multaId;
         }
     }
 }
