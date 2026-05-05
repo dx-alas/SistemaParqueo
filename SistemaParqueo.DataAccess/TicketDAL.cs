@@ -45,6 +45,7 @@ namespace SistemaParqueo.DataAccess
                     cmd.Parameters.AddWithValue("@PrecioAplicado", entity.PrecioAplicado);
 
                     cmd.Parameters.AddWithValue("@MultaId", (object)entity.MultaId ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@VehiculoId", (object)entity.VehiculoId ?? DBNull.Value);
 
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
@@ -130,7 +131,8 @@ namespace SistemaParqueo.DataAccess
                                 EstadoPermanenciaId = dr.GetInt32(9),
                                 TipoVehiculoId = dr.GetInt32(10),
                                 PrecioAplicado = dr.GetDecimal(11),
-                                MultaId = dr.IsDBNull(12) ? null : (int?)dr.GetInt32(12)
+                                MultaId = dr.IsDBNull(12) ? null : (int?)dr.GetInt32(12),
+                                VehiculoId = dr.IsDBNull(13) ? (int?)null : dr.GetInt32(13)
                             };
                         }
                     }
@@ -170,7 +172,8 @@ namespace SistemaParqueo.DataAccess
                                 EstadoPermanenciaId = dr.GetInt32(9),
                                 TipoVehiculoId = dr.GetInt32(10),
                                 PrecioAplicado = dr.GetDecimal(11),
-                                MultaId = dr.IsDBNull(12) ? null : (int?)dr.GetInt32(12)
+                                MultaId = dr.IsDBNull(12) ? null : (int?)dr.GetInt32(12),
+                                VehiculoId = dr.IsDBNull(13) ? (int?)null : dr.GetInt32(13)
                             };
 
                             result.Add(entity);
