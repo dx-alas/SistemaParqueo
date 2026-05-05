@@ -34,17 +34,17 @@ namespace SistemaParqueo.DataAccess
 
                     cmd.Parameters.AddWithValue("@Fecha", entity.Fecha);
                     cmd.Parameters.AddWithValue("@HoraEntrada", entity.HoraEntrada);
-                    cmd.Parameters.AddWithValue("@HoraSalida", (object)entity.HoraSalida ?? DBNull.Value);
-                    cmd.Parameters.AddWithValue("@Total", (object)entity.Total ?? DBNull.Value);
 
                     cmd.Parameters.AddWithValue("@TarjetaId", entity.TarjetaId);
                     cmd.Parameters.AddWithValue("@CorteId", entity.CorteId);
-
-                    cmd.Parameters.AddWithValue("@EstadoTicketId", entity.EstadoTicketId);
                     cmd.Parameters.AddWithValue("@UsuarioId", entity.UsuarioId);
+                    cmd.Parameters.AddWithValue("@EstadoTicketId", entity.EstadoTicketId);
+                    cmd.Parameters.AddWithValue("@EstadoPermanenciaId", entity.EstadoPermanenciaId);
+
+                    cmd.Parameters.AddWithValue("@TipoVehiculoId", entity.TipoVehiculoId);
+                    cmd.Parameters.AddWithValue("@PrecioAplicado", entity.PrecioAplicado);
 
                     cmd.Parameters.AddWithValue("@MultaId", (object)entity.MultaId ?? DBNull.Value);
-                    cmd.Parameters.AddWithValue("@EstadoPermanenciaId", entity.EstadoPermanenciaId);
 
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
@@ -65,20 +65,12 @@ namespace SistemaParqueo.DataAccess
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@TicketId", entity.TicketId);
-
-                    cmd.Parameters.AddWithValue("@Fecha", entity.Fecha);
-                    cmd.Parameters.AddWithValue("@HoraEntrada", entity.HoraEntrada);
                     cmd.Parameters.AddWithValue("@HoraSalida", (object)entity.HoraSalida ?? DBNull.Value);
                     cmd.Parameters.AddWithValue("@Total", (object)entity.Total ?? DBNull.Value);
-
-                    cmd.Parameters.AddWithValue("@TarjetaId", entity.TarjetaId);
                     cmd.Parameters.AddWithValue("@CorteId", entity.CorteId);
-
                     cmd.Parameters.AddWithValue("@EstadoTicketId", entity.EstadoTicketId);
-                    cmd.Parameters.AddWithValue("@UsuarioId", entity.UsuarioId);
-
-                    cmd.Parameters.AddWithValue("@MultaId", (object)entity.MultaId ?? DBNull.Value);
                     cmd.Parameters.AddWithValue("@EstadoPermanenciaId", entity.EstadoPermanenciaId);
+                    cmd.Parameters.AddWithValue("@MultaId", (object)entity.MultaId ?? DBNull.Value);
 
                     conn.Open();
                     result = cmd.ExecuteNonQuery() > 0;
@@ -120,22 +112,26 @@ namespace SistemaParqueo.DataAccess
 
                     conn.Open();
 
-                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    using (SqlDataReader dr = cmd.ExecuteReader())
                     {
-                        if (dr != null)
+                        if (dr.Read())
                         {
-                            while (dr.Read())
+                            result = new Ticket
                             {
-                                result = new Ticket();
-
-                                result.TicketId = dr.GetInt32(0);
-                                result.Fecha = dr.GetDateTime(1);
-                                result.HoraSalida = dr.IsDBNull(3) ? (TimeSpan?)null : dr.GetTimeSpan(3);
-                                result.Total = dr.IsDBNull(4) ? null : (decimal?)dr.GetDecimal(4);
-                                result.TarjetaId = dr.GetInt32(5);
-                                result.CorteId = dr.GetInt32(6);
-                                result.MultaId = dr.IsDBNull(7) ? null : (int?)dr.GetInt32(7);
-                            }
+                                TicketId = dr.GetInt32(0),
+                                Fecha = dr.GetDateTime(1),
+                                HoraEntrada = dr.GetTimeSpan(2),
+                                HoraSalida = dr.IsDBNull(3) ? (TimeSpan?)null : dr.GetTimeSpan(3),
+                                Total = dr.IsDBNull(4) ? null : (decimal?)dr.GetDecimal(4),
+                                TarjetaId = dr.GetInt32(5),
+                                CorteId = dr.GetInt32(6),
+                                UsuarioId = dr.GetInt32(7),
+                                EstadoTicketId = dr.GetInt32(8),
+                                EstadoPermanenciaId = dr.GetInt32(9),
+                                TipoVehiculoId = dr.GetInt32(10),
+                                PrecioAplicado = dr.GetDecimal(11),
+                                MultaId = dr.IsDBNull(12) ? null : (int?)dr.GetInt32(12)
+                            };
                         }
                     }
                 }
@@ -146,7 +142,7 @@ namespace SistemaParqueo.DataAccess
 
         public List<Ticket> SelectAll()
         {
-            List<Ticket> result = null;
+            List<Ticket> result = new List<Ticket>();
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
@@ -156,27 +152,28 @@ namespace SistemaParqueo.DataAccess
 
                     conn.Open();
 
-                    using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+                    using (SqlDataReader dr = cmd.ExecuteReader())
                     {
-                        if (dr != null)
+                        while (dr.Read())
                         {
-                            result = new List<Ticket>();
-
-                            while (dr.Read())
+                            Ticket entity = new Ticket
                             {
-                                Ticket entity = new Ticket();
+                                TicketId = dr.GetInt32(0),
+                                Fecha = dr.GetDateTime(1),
+                                HoraEntrada = dr.GetTimeSpan(2),
+                                HoraSalida = dr.IsDBNull(3) ? (TimeSpan?)null : dr.GetTimeSpan(3),
+                                Total = dr.IsDBNull(4) ? null : (decimal?)dr.GetDecimal(4),
+                                TarjetaId = dr.GetInt32(5),
+                                CorteId = dr.GetInt32(6),
+                                UsuarioId = dr.GetInt32(7),
+                                EstadoTicketId = dr.GetInt32(8),
+                                EstadoPermanenciaId = dr.GetInt32(9),
+                                TipoVehiculoId = dr.GetInt32(10),
+                                PrecioAplicado = dr.GetDecimal(11),
+                                MultaId = dr.IsDBNull(12) ? null : (int?)dr.GetInt32(12)
+                            };
 
-                                entity.TicketId = dr.GetInt32(0);
-                                entity.Fecha = dr.GetDateTime(1);
-                                entity.HoraEntrada = dr.GetTimeSpan(2);
-                                entity.HoraSalida = dr.IsDBNull(3) ? (TimeSpan?)null : dr.GetTimeSpan(3);
-                                entity.Total = dr.IsDBNull(4) ? null  : (decimal?)dr.GetDecimal(4);
-                                entity.TarjetaId = dr.GetInt32(5);
-                                entity.CorteId = dr.GetInt32(6);
-                                entity.MultaId = dr.IsDBNull(7) ? null : (int?)dr.GetInt32(7);
-
-                                result.Add(entity);
-                            }
+                            result.Add(entity);
                         }
                     }
                 }
@@ -211,10 +208,12 @@ namespace SistemaParqueo.DataAccess
                                 Total = dr.IsDBNull(4) ? (decimal?)null : dr.GetDecimal(4),
                                 TarjetaId = dr.GetInt32(5),
                                 CorteId = dr.GetInt32(6),
-                                MultaId = dr.IsDBNull(7) ? (int?)null : dr.GetInt32(7),
+                                UsuarioId = dr.GetInt32(7),
                                 EstadoTicketId = dr.GetInt32(8),
-                                UsuarioId = dr.GetInt32(9),
-                                EstadoPermanenciaId = dr.GetInt32(10)
+                                EstadoPermanenciaId = dr.GetInt32(9),
+                                TipoVehiculoId = dr.GetInt32(10),
+                                PrecioAplicado = dr.GetDecimal(11),
+                                MultaId = dr.IsDBNull(12) ? (int?)null : dr.GetInt32(12)
                             };
                         }
                     }

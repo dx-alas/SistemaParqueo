@@ -205,27 +205,18 @@ namespace SistemaParqueo.DataAccess
                             {
                                 CorteId = Convert.ToInt32(dr["CorteId"]),
                                 Fecha = Convert.ToDateTime(dr["Fecha"]),
+
                                 HoraInicio = (TimeSpan)dr["HoraInicio"],
-                                HoraEntrega = dr["HoraEntrega"] == DBNull.Value
-                                    ? (TimeSpan?)null
-                                    : (TimeSpan)dr["HoraEntrega"],
-
-                                MontoInicial = dr["MontoInicial"] == DBNull.Value
-                                    ? 0
-                                    : Convert.ToDecimal(dr["MontoInicial"]),
-
-                                MontoTotal = dr["MontoTotal"] == DBNull.Value
-                                    ? 0
-                                    : Convert.ToDecimal(dr["MontoTotal"]),
+                                HoraEntrega = dr["HoraEntrega"] == DBNull.Value ? (TimeSpan?)null : (TimeSpan)dr["HoraEntrega"],
+                                MontoInicial = dr["MontoInicial"] == DBNull.Value ? 0 : Convert.ToDecimal(dr["MontoInicial"]),
+                                MontoTotal = dr["MontoTotal"] == DBNull.Value ? 0 : Convert.ToDecimal(dr["MontoTotal"]),
 
                                 ObservacionInicial = dr["ObservacionInicial"]?.ToString(),
                                 ObservacionFinal = dr["ObservacionFinal"]?.ToString(),
 
                                 UsuarioAperturaId = Convert.ToInt32(dr["UsuarioAperturaId"]),
 
-                                UsuarioCierreId = dr["UsuarioCierreId"] == DBNull.Value
-                                    ? (int?)null
-                                    : Convert.ToInt32(dr["UsuarioCierreId"]),
+                                UsuarioCierreId = dr["UsuarioCierreId"] == DBNull.Value ? (int?)null : Convert.ToInt32(dr["UsuarioCierreId"]),
 
                                 EstadoCorteId = Convert.ToInt32(dr["EstadoCorteId"])
                             };
