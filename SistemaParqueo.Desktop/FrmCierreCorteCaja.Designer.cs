@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCierreCorteCaja));
-            this.txtObservaciónFinal = new System.Windows.Forms.TextBox();
+            this.txtObservacionFinal = new System.Windows.Forms.TextBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnRegresar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.txtMontoFinal = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // txtObservaciónFinal
+            // txtObservacionFinal
             // 
-            this.txtObservaciónFinal.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.txtObservaciónFinal.Location = new System.Drawing.Point(44, 240);
-            this.txtObservaciónFinal.Margin = new System.Windows.Forms.Padding(4);
-            this.txtObservaciónFinal.Multiline = true;
-            this.txtObservaciónFinal.Name = "txtObservaciónFinal";
-            this.txtObservaciónFinal.Size = new System.Drawing.Size(394, 95);
-            this.txtObservaciónFinal.TabIndex = 34;
+            this.txtObservacionFinal.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtObservacionFinal.Location = new System.Drawing.Point(44, 240);
+            this.txtObservacionFinal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtObservacionFinal.Multiline = true;
+            this.txtObservacionFinal.Name = "txtObservacionFinal";
+            this.txtObservacionFinal.Size = new System.Drawing.Size(394, 95);
+            this.txtObservacionFinal.TabIndex = 34;
             // 
             // lblTitulo
             // 
@@ -81,33 +81,35 @@
             this.label2.TabIndex = 31;
             this.label2.Text = "Monto Final:";
             // 
-            // btnCerrar
+            // btnAceptar
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(250, 357);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(188, 38);
-            this.btnCerrar.TabIndex = 30;
-            this.btnCerrar.Text = "Cerrar Corte Caja";
-            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnAceptar.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.Location = new System.Drawing.Point(250, 357);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(188, 38);
+            this.btnAceptar.TabIndex = 30;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // btnRegresar
+            // btnCancelar
             // 
-            this.btnRegresar.BackColor = System.Drawing.Color.Red;
-            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.Location = new System.Drawing.Point(46, 357);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(123, 38);
-            this.btnRegresar.TabIndex = 29;
-            this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnCancelar.BackColor = System.Drawing.Color.Red;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(46, 357);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(123, 38);
+            this.btnCancelar.TabIndex = 29;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtMontoFinal
             // 
@@ -124,12 +126,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(517, 441);
-            this.Controls.Add(this.txtObservaciónFinal);
+            this.Controls.Add(this.txtObservacionFinal);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.btnRegresar);
+            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtMontoFinal);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -142,12 +144,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtObservaciónFinal;
+        private System.Windows.Forms.TextBox txtObservacionFinal;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtMontoFinal;
     }
 }

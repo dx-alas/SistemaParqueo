@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAutorizacion));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.chkMostrarContrasena = new System.Windows.Forms.CheckBox();
@@ -41,31 +42,33 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(95, 169);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(89, 184);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 16);
+            this.label1.Size = new System.Drawing.Size(74, 28);
             this.label1.TabIndex = 16;
             this.label1.Text = "Clave: ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(95, 122);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(89, 122);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 16);
+            this.label2.Size = new System.Drawing.Size(95, 28);
             this.label2.TabIndex = 15;
             this.label2.Text = "Usuario: ";
             // 
             // chkMostrarContrasena
             // 
             this.chkMostrarContrasena.AutoSize = true;
-            this.chkMostrarContrasena.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkMostrarContrasena.Location = new System.Drawing.Point(161, 224);
+            this.chkMostrarContrasena.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.chkMostrarContrasena.Location = new System.Drawing.Point(162, 238);
             this.chkMostrarContrasena.Margin = new System.Windows.Forms.Padding(4);
             this.chkMostrarContrasena.Name = "chkMostrarContrasena";
-            this.chkMostrarContrasena.Size = new System.Drawing.Size(158, 24);
+            this.chkMostrarContrasena.Size = new System.Drawing.Size(180, 27);
             this.chkMostrarContrasena.TabIndex = 14;
             this.chkMostrarContrasena.Text = "Mostrar contraseña";
             this.chkMostrarContrasena.UseVisualStyleBackColor = true;
@@ -77,7 +80,7 @@
             this.btnAutorizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAutorizar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAutorizar.ForeColor = System.Drawing.Color.White;
-            this.btnAutorizar.Location = new System.Drawing.Point(271, 283);
+            this.btnAutorizar.Location = new System.Drawing.Point(284, 295);
             this.btnAutorizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAutorizar.Name = "btnAutorizar";
             this.btnAutorizar.Size = new System.Drawing.Size(109, 38);
@@ -92,7 +95,7 @@
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(121, 283);
+            this.btnCerrar.Location = new System.Drawing.Point(94, 295);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(106, 38);
@@ -103,24 +106,26 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(180, 119);
+            this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtUsuario.Location = new System.Drawing.Point(200, 125);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(159, 22);
+            this.txtUsuario.Size = new System.Drawing.Size(193, 29);
             this.txtUsuario.TabIndex = 10;
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(180, 166);
+            this.txtClave.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtClave.Location = new System.Drawing.Point(200, 185);
             this.txtClave.Margin = new System.Windows.Forms.Padding(4);
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(159, 22);
+            this.txtClave.Size = new System.Drawing.Size(193, 29);
             this.txtClave.TabIndex = 11;
             // 
             // lblTitulo
             // 
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(63, 32);
+            this.lblTitulo.Location = new System.Drawing.Point(57, 33);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(396, 37);
@@ -142,9 +147,9 @@
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.txtClave);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAutorizacion";
             this.Text = "Autorización para cortes de caja";
-            this.Load += new System.EventHandler(this.FrmAutorizacion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

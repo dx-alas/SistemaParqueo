@@ -38,13 +38,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblSubtitulo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnLimpiar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitulo
             // 
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(56, 27);
+            this.lblTitulo.Location = new System.Drawing.Point(62, 28);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(396, 37);
@@ -54,18 +53,18 @@
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(189, 188);
-            this.txtClave.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClave.Location = new System.Drawing.Point(189, 199);
+            this.txtClave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(159, 29);
+            this.txtClave.Size = new System.Drawing.Size(160, 29);
             this.txtClave.TabIndex = 5;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(189, 129);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUsuario.Location = new System.Drawing.Point(189, 140);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(159, 29);
+            this.txtUsuario.Size = new System.Drawing.Size(160, 29);
             this.txtUsuario.TabIndex = 3;
             // 
             // btnSalir
@@ -74,10 +73,10 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(48, 283);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Location = new System.Drawing.Point(91, 300);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(106, 38);
+            this.btnSalir.Size = new System.Drawing.Size(105, 38);
             this.btnSalir.TabIndex = 7;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -89,8 +88,8 @@
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.Location = new System.Drawing.Point(190, 283);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIngresar.Location = new System.Drawing.Point(278, 300);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(109, 38);
             this.btnIngresar.TabIndex = 8;
@@ -102,8 +101,8 @@
             // 
             this.chkMostrarContrasena.AutoSize = true;
             this.chkMostrarContrasena.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkMostrarContrasena.Location = new System.Drawing.Point(189, 234);
-            this.chkMostrarContrasena.Margin = new System.Windows.Forms.Padding(4);
+            this.chkMostrarContrasena.Location = new System.Drawing.Point(189, 256);
+            this.chkMostrarContrasena.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkMostrarContrasena.Name = "chkMostrarContrasena";
             this.chkMostrarContrasena.Size = new System.Drawing.Size(158, 24);
             this.chkMostrarContrasena.TabIndex = 6;
@@ -114,55 +113,42 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(104, 132);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(86, 141);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 23);
+            this.label2.Size = new System.Drawing.Size(95, 28);
             this.label2.TabIndex = 2;
             this.label2.Text = "Usuario: ";
             // 
             // lblSubtitulo
             // 
-            this.lblSubtitulo.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtitulo.Location = new System.Drawing.Point(184, 75);
+            this.lblSubtitulo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lblSubtitulo.Location = new System.Drawing.Point(158, 82);
             this.lblSubtitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(147, 23);
+            this.lblSubtitulo.Size = new System.Drawing.Size(199, 30);
             this.lblSubtitulo.TabIndex = 1;
             this.lblSubtitulo.Text = "Inicio de sesión";
+            this.lblSubtitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(104, 191);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(86, 200);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 23);
+            this.label1.Size = new System.Drawing.Size(74, 28);
             this.label1.TabIndex = 4;
             this.label1.Text = "Clave: ";
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.Gold;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(335, 283);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(108, 38);
-            this.btnLimpiar.TabIndex = 9;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(484, 358);
-            this.Controls.Add(this.btnLimpiar);
+            this.ClientSize = new System.Drawing.Size(483, 372);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblSubtitulo);
             this.Controls.Add(this.label2);
@@ -175,7 +161,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -197,6 +183,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblSubtitulo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnLimpiar;
     }
 }

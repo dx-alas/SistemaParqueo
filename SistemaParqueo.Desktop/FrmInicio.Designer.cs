@@ -31,26 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicio));
             this.panelCentral = new System.Windows.Forms.Panel();
             this.txtBarcode = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.btnHistorial = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvVehiculosActivos = new System.Windows.Forms.DataGridView();
+            this.dgvVehiculos = new System.Windows.Forms.DataGridView();
             this.Tarjeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoraInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoraEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblInformacion = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblNumVehiculo = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.pbCapacidad = new System.Windows.Forms.ProgressBar();
             this.gbControlCorte = new System.Windows.Forms.GroupBox();
             this.btnCerrarCorte = new System.Windows.Forms.Button();
             this.txtMontoInicial = new System.Windows.Forms.TextBox();
@@ -61,10 +55,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
             this.panelCentral.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculosActivos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbControlCorte.SuspendLayout();
@@ -73,8 +65,6 @@
             // panelCentral
             // 
             this.panelCentral.Controls.Add(this.txtBarcode);
-            this.panelCentral.Controls.Add(this.groupBox4);
-            this.panelCentral.Controls.Add(this.groupBox3);
             this.panelCentral.Controls.Add(this.btnHistorial);
             this.panelCentral.Controls.Add(this.groupBox2);
             this.panelCentral.Controls.Add(this.groupBox1);
@@ -89,75 +79,9 @@
             // 
             this.txtBarcode.Location = new System.Drawing.Point(1165, 177);
             this.txtBarcode.Name = "txtBarcode";
-            this.txtBarcode.ReadOnly = true;
             this.txtBarcode.Size = new System.Drawing.Size(140, 23);
             this.txtBarcode.TabIndex = 6;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(1165, 442);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(140, 113);
-            this.groupBox4.TabIndex = 5;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Ultimo Escaneo de Salida";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 80);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 20);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Hora:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 53);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 20);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Placa:";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(1165, 313);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(140, 113);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Ultimo Escaneo de Entrada";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 80);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 20);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Hora:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(6, 53);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 20);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Placa:";
+            this.txtBarcode.TextChanged += new System.EventHandler(this.txtBarcode_TextChanged);
             // 
             // btnHistorial
             // 
@@ -173,40 +97,41 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.dgvVehiculosActivos);
+            this.groupBox2.Controls.Add(this.dgvVehiculos);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 301);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1147, 416);
+            this.groupBox2.Size = new System.Drawing.Size(1293, 416);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Vehículos Estacionados (Activos)";
             // 
-            // dgvVehiculosActivos
+            // dgvVehiculos
             // 
-            this.dgvVehiculosActivos.AllowUserToAddRows = false;
-            this.dgvVehiculosActivos.AllowUserToDeleteRows = false;
-            this.dgvVehiculosActivos.AllowUserToOrderColumns = true;
-            this.dgvVehiculosActivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvVehiculosActivos.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvVehiculosActivos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvVehiculosActivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVehiculosActivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvVehiculos.AllowUserToAddRows = false;
+            this.dgvVehiculos.AllowUserToDeleteRows = false;
+            this.dgvVehiculos.AllowUserToOrderColumns = true;
+            this.dgvVehiculos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVehiculos.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvVehiculos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVehiculos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Tarjeta,
             this.Placa,
-            this.HoraInicio,
+            this.HoraEntrada,
             this.TipoCliente,
-            this.Estudiante});
-            this.dgvVehiculosActivos.Location = new System.Drawing.Point(6, 29);
-            this.dgvVehiculosActivos.Name = "dgvVehiculosActivos";
-            this.dgvVehiculosActivos.ReadOnly = true;
-            this.dgvVehiculosActivos.RowHeadersWidth = 51;
-            this.dgvVehiculosActivos.RowTemplate.Height = 24;
-            this.dgvVehiculosActivos.Size = new System.Drawing.Size(1135, 380);
-            this.dgvVehiculosActivos.TabIndex = 0;
+            this.Cliente});
+            this.dgvVehiculos.Location = new System.Drawing.Point(6, 29);
+            this.dgvVehiculos.Name = "dgvVehiculos";
+            this.dgvVehiculos.ReadOnly = true;
+            this.dgvVehiculos.RowHeadersWidth = 51;
+            this.dgvVehiculos.RowTemplate.Height = 24;
+            this.dgvVehiculos.Size = new System.Drawing.Size(1287, 380);
+            this.dgvVehiculos.TabIndex = 0;
             // 
             // Tarjeta
             // 
+            this.Tarjeta.DataPropertyName = "Tarjeta";
             this.Tarjeta.HeaderText = "No. Tarjeta";
             this.Tarjeta.MinimumWidth = 6;
             this.Tarjeta.Name = "Tarjeta";
@@ -214,41 +139,45 @@
             // 
             // Placa
             // 
+            this.Placa.DataPropertyName = "Placa";
             this.Placa.HeaderText = "Placa";
             this.Placa.MinimumWidth = 6;
             this.Placa.Name = "Placa";
             this.Placa.ReadOnly = true;
             // 
-            // HoraInicio
+            // HoraEntrada
             // 
-            this.HoraInicio.HeaderText = "Hora Entrada";
-            this.HoraInicio.MinimumWidth = 6;
-            this.HoraInicio.Name = "HoraInicio";
-            this.HoraInicio.ReadOnly = true;
+            this.HoraEntrada.DataPropertyName = "HoraEntrada";
+            this.HoraEntrada.HeaderText = "Hora (Entrada)";
+            this.HoraEntrada.MinimumWidth = 6;
+            this.HoraEntrada.Name = "HoraEntrada";
+            this.HoraEntrada.ReadOnly = true;
             // 
             // TipoCliente
             // 
+            this.TipoCliente.DataPropertyName = "TipoCliente";
             this.TipoCliente.HeaderText = "Tipo Cliente";
             this.TipoCliente.MinimumWidth = 6;
             this.TipoCliente.Name = "TipoCliente";
             this.TipoCliente.ReadOnly = true;
             // 
-            // Estudiante
+            // Cliente
             // 
-            this.Estudiante.HeaderText = "Nombre Estudiante";
-            this.Estudiante.MinimumWidth = 6;
-            this.Estudiante.Name = "Estudiante";
-            this.Estudiante.ReadOnly = true;
+            this.Cliente.DataPropertyName = "Cliente";
+            this.Cliente.HeaderText = "Nombre Cliente";
+            this.Cliente.MinimumWidth = 6;
+            this.Cliente.Name = "Cliente";
+            this.Cliente.ReadOnly = true;
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.lblInformacion);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.lblNumVehiculo);
-            this.groupBox1.Controls.Add(this.progressBar1);
+            this.groupBox1.Controls.Add(this.pbCapacidad);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 138);
             this.groupBox1.Name = "groupBox1";
@@ -267,15 +196,15 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // label4
+            // lblInformacion
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(245, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(807, 38);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "En Parqueo: 30 / Cantidad Total: 50 / Espacios Disponibles: 5";
+            this.lblInformacion.AutoSize = true;
+            this.lblInformacion.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInformacion.Location = new System.Drawing.Point(245, 50);
+            this.lblInformacion.Name = "lblInformacion";
+            this.lblInformacion.Size = new System.Drawing.Size(807, 38);
+            this.lblInformacion.TabIndex = 3;
+            this.lblInformacion.Text = "En Parqueo: 30 / Cantidad Total: 50 / Espacios Disponibles: 5";
             // 
             // label5
             // 
@@ -298,12 +227,12 @@
             this.lblNumVehiculo.Text = "30";
             this.lblNumVehiculo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // progressBar1
+            // pbCapacidad
             // 
-            this.progressBar1.Location = new System.Drawing.Point(10, 111);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(1131, 23);
-            this.progressBar1.TabIndex = 0;
+            this.pbCapacidad.Location = new System.Drawing.Point(10, 111);
+            this.pbCapacidad.Name = "pbCapacidad";
+            this.pbCapacidad.Size = new System.Drawing.Size(1131, 23);
+            this.pbCapacidad.TabIndex = 0;
             // 
             // gbControlCorte
             // 
@@ -415,12 +344,8 @@
             this.Load += new System.EventHandler(this.FrmInicio_Load);
             this.panelCentral.ResumeLayout(false);
             this.panelCentral.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculosActivos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -443,24 +368,18 @@
         private System.Windows.Forms.Button btnCerrarCorte;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgvVehiculosActivos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tarjeta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Placa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoraInicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estudiante;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dgvVehiculos;
+        private System.Windows.Forms.ProgressBar pbCapacidad;
+        private System.Windows.Forms.Label lblInformacion;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblNumVehiculo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnHistorial;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtBarcode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tarjeta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Placa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoraEntrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
     }
 }

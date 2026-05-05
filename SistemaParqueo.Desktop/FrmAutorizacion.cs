@@ -37,7 +37,7 @@ namespace SistemaParqueo.Desktop
                     }
                     else
                     {
-                        MessageBox.Show("Este usuario no tiene permisos de Administrador para autorizar aperturas.", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        MessageBox.Show("Este usuario no tiene permisos de Administrador para autorizar aperturas o cierres.", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     }
                 }
                 else
@@ -62,11 +62,6 @@ namespace SistemaParqueo.Desktop
         private void chkMostrarContrasena_CheckedChanged(object sender, EventArgs e)
         {
             txtClave.UseSystemPasswordChar = !chkMostrarContrasena.Checked;
-        }
-
-        private void FrmAutorizacion_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
