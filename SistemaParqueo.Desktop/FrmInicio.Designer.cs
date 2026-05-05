@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicio));
             this.panelCentral = new System.Windows.Forms.Panel();
+            this.btnMulta = new System.Windows.Forms.Button();
             this.txtBarcode = new System.Windows.Forms.TextBox();
             this.btnHistorial = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -64,6 +65,7 @@
             // 
             // panelCentral
             // 
+            this.panelCentral.Controls.Add(this.btnMulta);
             this.panelCentral.Controls.Add(this.txtBarcode);
             this.panelCentral.Controls.Add(this.btnHistorial);
             this.panelCentral.Controls.Add(this.groupBox2);
@@ -72,14 +74,26 @@
             this.panelCentral.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.panelCentral.Location = new System.Drawing.Point(3, 0);
             this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(1373, 860);
+            this.panelCentral.Size = new System.Drawing.Size(1352, 860);
             this.panelCentral.TabIndex = 101;
+            // 
+            // btnMulta
+            // 
+            this.btnMulta.Enabled = false;
+            this.btnMulta.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnMulta.Location = new System.Drawing.Point(1165, 229);
+            this.btnMulta.Name = "btnMulta";
+            this.btnMulta.Size = new System.Drawing.Size(140, 58);
+            this.btnMulta.TabIndex = 7;
+            this.btnMulta.Text = "Aplicar Multa";
+            this.btnMulta.UseVisualStyleBackColor = true;
+            this.btnMulta.Click += new System.EventHandler(this.btnMulta_Click);
             // 
             // txtBarcode
             // 
-            this.txtBarcode.Location = new System.Drawing.Point(1165, 177);
+            this.txtBarcode.Location = new System.Drawing.Point(1156, 177);
             this.txtBarcode.Name = "txtBarcode";
-            this.txtBarcode.Size = new System.Drawing.Size(140, 23);
+            this.txtBarcode.Size = new System.Drawing.Size(149, 23);
             this.txtBarcode.TabIndex = 6;
             this.txtBarcode.TextChanged += new System.EventHandler(this.txtBarcode_TextChanged);
             // 
@@ -92,6 +106,7 @@
             this.btnHistorial.TabIndex = 3;
             this.btnHistorial.Text = "Ver Historial de Salidas";
             this.btnHistorial.UseVisualStyleBackColor = true;
+            this.btnHistorial.Click += new System.EventHandler(this.btnHistorial_Click);
             // 
             // groupBox2
             // 
@@ -126,8 +141,9 @@
             this.dgvVehiculos.ReadOnly = true;
             this.dgvVehiculos.RowHeadersWidth = 51;
             this.dgvVehiculos.RowTemplate.Height = 24;
-            this.dgvVehiculos.Size = new System.Drawing.Size(1287, 380);
+            this.dgvVehiculos.Size = new System.Drawing.Size(1281, 380);
             this.dgvVehiculos.TabIndex = 0;
+            this.dgvVehiculos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVehiculos_CellClick);
             // 
             // Tarjeta
             // 
@@ -181,7 +197,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 138);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1147, 149);
+            this.groupBox1.Size = new System.Drawing.Size(1126, 149);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ESTADO DE CAPACIDAD GENERAL  (50 TOTALES)";
@@ -204,7 +220,7 @@
             this.lblInformacion.Name = "lblInformacion";
             this.lblInformacion.Size = new System.Drawing.Size(807, 38);
             this.lblInformacion.TabIndex = 3;
-            this.lblInformacion.Text = "En Parqueo: 30 / Cantidad Total: 50 / Espacios Disponibles: 5";
+            this.lblInformacion.Text = "En Parqueo: 0 / Cantidad Total: 50 / Espacios Disponibles: 50";
             // 
             // label5
             // 
@@ -222,9 +238,9 @@
             this.lblNumVehiculo.ForeColor = System.Drawing.Color.Green;
             this.lblNumVehiculo.Location = new System.Drawing.Point(140, 23);
             this.lblNumVehiculo.Name = "lblNumVehiculo";
-            this.lblNumVehiculo.Size = new System.Drawing.Size(87, 67);
+            this.lblNumVehiculo.Size = new System.Drawing.Size(58, 67);
             this.lblNumVehiculo.TabIndex = 1;
-            this.lblNumVehiculo.Text = "30";
+            this.lblNumVehiculo.Text = "0";
             this.lblNumVehiculo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pbCapacidad
@@ -249,7 +265,7 @@
             this.gbControlCorte.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbControlCorte.Location = new System.Drawing.Point(12, 23);
             this.gbControlCorte.Name = "gbControlCorte";
-            this.gbControlCorte.Size = new System.Drawing.Size(1147, 100);
+            this.gbControlCorte.Size = new System.Drawing.Size(1126, 100);
             this.gbControlCorte.TabIndex = 0;
             this.gbControlCorte.TabStop = false;
             this.gbControlCorte.Text = "Control de Corte de Caja";
@@ -381,5 +397,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn HoraEntrada;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
+        private System.Windows.Forms.Button btnMulta;
     }
 }

@@ -8,7 +8,7 @@ namespace SistemaParqueo.Desktop
 {
     public partial class FrmInicio : Form
     {
-
+        private Ticket ticketSeleccionado;
         public FrmInicio()
         {
             InitializeComponent();
@@ -162,7 +162,6 @@ namespace SistemaParqueo.Desktop
             }
 
             var parqueo = parqueos.First();
-
             int total = parqueo.CapacidadTotal;
 
             int ocupados = TicketBL.Instance.SelectAll()
@@ -171,9 +170,7 @@ namespace SistemaParqueo.Desktop
             int disponibles = total - ocupados;
 
             lblNumVehiculo.Text = ocupados.ToString();
-
-            lblInformacion.Text =
-                $"En Parqueo: {ocupados} / Cantidad Total: {total} / Espacios Disponibles: {disponibles}";
+            lblInformacion.Text =  $"En Parqueo: {ocupados} / Cantidad Total: {total} / Espacios Disponibles: {disponibles}";
 
             pbCapacidad.Minimum = 0;
             pbCapacidad.Maximum = total;
@@ -243,19 +240,45 @@ namespace SistemaParqueo.Desktop
 
             if (cliente == null)
             {
-                MessageBox.Show("No hay cliente asociado a la tarjeta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No hay cliente asociado a la tarjeta", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var vehiculo = vehiculos.FirstOrDefault(v => v.ClienteId == cliente.ClienteId);
+            // Obtener TODOS los vehículos del cliente
+            var vehiculosCliente = vehiculos.Where(v => v.ClienteId == cliente.ClienteId).ToList();
 
-            if (vehiculo == null)
+            if (vehiculosCliente.Count == 0)
             {
                 MessageBox.Show("No hay vehículo asociado al cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var tipoVehiculo = TipoVehiculoBL.Instance.SelectById(vehiculo.TipoVehiculoId);
+            Vehiculo vehiculoSeleccionado;
+
+            if (vehiculosCliente.Count == 1)
+            {
+                vehiculoSeleccionado = vehiculosCliente.First();
+            }
+            else
+            {
+                using (FrmSeleccionVehiculo frm = new FrmSeleccionVehiculo(vehiculosCliente))
+                {
+                    if (frm.ShowDialog() != DialogResult.OK)
+                        return;
+
+                    vehiculoSeleccionado = frm.VehiculoSeleccionado;
+
+                    if (vehiculoSeleccionado == null)
+                    {
+                        MessageBox.Show("Debe seleccionar un vehículo", "Aviso",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+            }
+
+            var tipoVehiculo = TipoVehiculoBL.Instance.SelectById(vehiculoSeleccionado.TipoVehiculoId);
 
             if (tipoVehiculo == null)
             {
@@ -272,15 +295,16 @@ namespace SistemaParqueo.Desktop
                 EstadoTicketId = 1,
                 UsuarioId = Sesion.UsuarioActual.UsuarioId,
                 EstadoPermanenciaId = 1,
-                TipoVehiculoId = vehiculo.TipoVehiculoId,
+                TipoVehiculoId = vehiculoSeleccionado.TipoVehiculoId,
                 PrecioAplicado = tipoVehiculo.Precio,
-                MultaId = null
+                MultaId = null,
+                VehiculoId = vehiculoSeleccionado.VehiculoId
             };
 
             TicketBL.Instance.Insert(nuevo);
-
             MessageBox.Show("Entrada registrada correctamente", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            
+            CargarEstadoParqueo();
             CargarVehiculosActivos();
         }
 
@@ -288,24 +312,28 @@ namespace SistemaParqueo.Desktop
         {
             TimeSpan horaSalida = DateTime.Now.TimeOfDay;
 
-            TimeSpan tiempo = horaSalida - ticket.HoraEntrada;
-
-            if (tiempo.TotalMinutes <= 0)
-                tiempo = TimeSpan.FromMinutes(1);
-
-            decimal horas = (decimal)Math.Ceiling(tiempo.TotalHours);
-            decimal total = horas * ticket.PrecioAplicado;
-
             ticket.HoraSalida = horaSalida;
+
+            decimal total = ticket.PrecioAplicado;
+
+            if (ticket.MultaId != null)
+            {
+                var multa = MultaTicketBL.Instance.SelectById(ticket.MultaId.Value);
+                if (multa != null)
+                {
+                    total += multa.Precio;
+                }
+            }
+
             ticket.Total = total;
-            ticket.EstadoTicketId = 2; // Cerrado
+            ticket.EstadoTicketId = 2;
             ticket.CorteId = Sesion.CorteActivo.CorteId;
 
             TicketBL.Instance.Update(ticket);
-
-            MessageBox.Show($"Salida registrada\nTotal: ${total: 0.00}", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Salida registrada\nTotal: ${ticket.Total:0.00}", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             CargarVehiculosActivos();
+            CargarEstadoParqueo();
         }
 
         private void LimpiarBarcode()
@@ -323,10 +351,10 @@ namespace SistemaParqueo.Desktop
             var tiposCliente = TipoClienteBL.Instance.SelectAll();
 
             var query = (from t in tickets
-                         join c in clientes on t.TarjetaId equals c.TarjetaId
-                         join v in vehiculos on c.ClienteId equals v.ClienteId
                          join ta in tarjetas on t.TarjetaId equals ta.TarjetaId
+                         join c in clientes on ta.TarjetaId equals c.TarjetaId
                          join tc in tiposCliente on c.TipoClienteId equals tc.TipoClienteId
+                         join v in vehiculos on t.VehiculoId equals (int?)v.VehiculoId
                          where t.HoraSalida == null
                          select new
                          {
@@ -341,6 +369,75 @@ namespace SistemaParqueo.Desktop
             dgvVehiculos.DataSource = query;
         }
 
+        private void btnHistorial_Click(object sender, EventArgs e)
+        {
+            FrmHistorialSalidas frm = new FrmHistorialSalidas();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.Show();
+        }
+
         // ---- Sección Gestión BARCODE y DGV Finaliza -----
+
+        // LOGICA MULTAS
+        private void EvaluarMulta()
+        {
+            btnMulta.Enabled = ticketSeleccionado != null && ticketSeleccionado.MultaId == null;
+        }
+
+        private void dgvVehiculos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            var fila = dgvVehiculos.Rows[e.RowIndex];
+
+            string codigoTarjeta = fila.Cells["Tarjeta"].Value?.ToString();
+
+            if (string.IsNullOrEmpty(codigoTarjeta)) return;
+
+            var tarjeta = TarjetaBL.Instance.SelectAll().FirstOrDefault(t => t.Codigo == codigoTarjeta);
+
+            if (tarjeta == null) return;
+
+            ticketSeleccionado = TicketBL.Instance.SelectAll().FirstOrDefault(t => t.TarjetaId == tarjeta.TarjetaId && t.HoraSalida == null);
+
+            EvaluarMulta();
+        }
+
+        private void btnMulta_Click(object sender, EventArgs e)
+        {
+            if (ticketSeleccionado == null)
+                return;
+
+            if (ticketSeleccionado.MultaId != null)
+            {
+                MessageBox.Show("Este ticket ya tiene multa aplicada", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var multa = MultaTicketBL.Instance.SelectAll().FirstOrDefault(); //Aplicar primera y unica multa
+
+            if (multa == null)
+            {
+                MessageBox.Show("Multa no configurada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ticketSeleccionado.MultaId = multa.MultaId;
+
+            TicketBL.Instance.Update(ticketSeleccionado);
+
+            ticketSeleccionado = TicketBL.Instance.SelectAll()
+                .FirstOrDefault(t => t.TicketId == ticketSeleccionado.TicketId);
+
+            CargarVehiculosActivos();
+            CargarEstadoParqueo();
+
+            EvaluarMulta();
+
+            MessageBox.Show($"Multa de extravío aplicada: ${multa.Precio:0.00}\nSe cobrará al momento de la salida.", "Multa Aplicada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTarjeta));
             this.panelCentral = new System.Windows.Forms.Panel();
+            this.btnGenerarCodigo = new System.Windows.Forms.Button();
             this.cbEstadoTarjetaId = new System.Windows.Forms.ComboBox();
             this.lblTarjetaId = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblEmcabezado = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnGenerarCodigo = new System.Windows.Forms.Button();
             this.panelCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarjeta)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +75,20 @@
             this.panelCentral.Name = "panelCentral";
             this.panelCentral.Size = new System.Drawing.Size(1047, 770);
             this.panelCentral.TabIndex = 134;
+            // 
+            // btnGenerarCodigo
+            // 
+            this.btnGenerarCodigo.BackColor = System.Drawing.Color.Orange;
+            this.btnGenerarCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarCodigo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnGenerarCodigo.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarCodigo.Location = new System.Drawing.Point(722, 346);
+            this.btnGenerarCodigo.Name = "btnGenerarCodigo";
+            this.btnGenerarCodigo.Size = new System.Drawing.Size(174, 39);
+            this.btnGenerarCodigo.TabIndex = 14;
+            this.btnGenerarCodigo.Text = "Generar Codigo";
+            this.btnGenerarCodigo.UseVisualStyleBackColor = false;
+            this.btnGenerarCodigo.Click += new System.EventHandler(this.btnGenerarCodigo_Click);
             // 
             // cbEstadoTarjetaId
             // 
@@ -270,20 +284,6 @@
             this.lblTitulo.Size = new System.Drawing.Size(419, 50);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "GESTIÓN DE TARJETAS";
-            // 
-            // btnGenerarCodigo
-            // 
-            this.btnGenerarCodigo.BackColor = System.Drawing.Color.Orange;
-            this.btnGenerarCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerarCodigo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnGenerarCodigo.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarCodigo.Location = new System.Drawing.Point(722, 346);
-            this.btnGenerarCodigo.Name = "btnGenerarCodigo";
-            this.btnGenerarCodigo.Size = new System.Drawing.Size(174, 39);
-            this.btnGenerarCodigo.TabIndex = 14;
-            this.btnGenerarCodigo.Text = "Generar Codigo";
-            this.btnGenerarCodigo.UseVisualStyleBackColor = false;
-            this.btnGenerarCodigo.Click += new System.EventHandler(this.btnGenerarCodigo_Click);
             // 
             // FrmTarjeta
             // 

@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.6.2\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.5, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.5\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -63,6 +69,12 @@
     </Compile>
     <Compile Include="FrmInicioCorteCaja.Designer.cs">
       <DependentUpon>FrmInicioCorteCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSeleccionVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSeleccionVehiculo.Designer.cs">
+      <DependentUpon>FrmSeleccionVehiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="Sesion.cs" />
     <Compile Include="FrmAutorizacion.cs">
@@ -250,6 +262,9 @@
     <EmbeddedResource Include="FrmRol.resx">
       <DependentUpon>FrmRol.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmSeleccionVehiculo.resx">
+      <DependentUpon>FrmSeleccionVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmTarjeta.resx">
       <DependentUpon>FrmTarjeta.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +290,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
