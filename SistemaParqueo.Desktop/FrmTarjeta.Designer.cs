@@ -47,6 +47,7 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblEmcabezado = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnGenerarCodigo = new System.Windows.Forms.Button();
             this.panelCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarjeta)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +55,7 @@
             // panelCentral
             // 
             this.panelCentral.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelCentral.Controls.Add(this.btnGenerarCodigo);
             this.panelCentral.Controls.Add(this.cbEstadoTarjetaId);
             this.panelCentral.Controls.Add(this.lblTarjetaId);
             this.panelCentral.Controls.Add(this.btnEliminar);
@@ -231,6 +233,7 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.Enabled = false;
             this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(180, 248);
             this.txtCodigo.MaxLength = 50;
@@ -267,6 +270,20 @@
             this.lblTitulo.Size = new System.Drawing.Size(419, 50);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "GESTIÓN DE TARJETAS";
+            // 
+            // btnGenerarCodigo
+            // 
+            this.btnGenerarCodigo.BackColor = System.Drawing.Color.Orange;
+            this.btnGenerarCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarCodigo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnGenerarCodigo.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarCodigo.Location = new System.Drawing.Point(722, 346);
+            this.btnGenerarCodigo.Name = "btnGenerarCodigo";
+            this.btnGenerarCodigo.Size = new System.Drawing.Size(174, 39);
+            this.btnGenerarCodigo.TabIndex = 14;
+            this.btnGenerarCodigo.Text = "Generar Codigo";
+            this.btnGenerarCodigo.UseVisualStyleBackColor = false;
+            this.btnGenerarCodigo.Click += new System.EventHandler(this.btnGenerarCodigo_Click);
             // 
             // FrmTarjeta
             // 
@@ -307,5 +324,6 @@
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label lblEmcabezado;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Button btnGenerarCodigo;
     }
 }
