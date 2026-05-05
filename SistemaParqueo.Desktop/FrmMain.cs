@@ -181,11 +181,16 @@ namespace SistemaParqueo.Desktop
             if (Sesion.UsuarioActual != null)
             {
                 lblUsuario.Text = "Usuario: " + Sesion.UsuarioActual.Nombre;
+
+                if (Sesion.UsuarioActual.RolId == 2)
+                {
+                    btnMultaTicket.Visible = false;
+                }
             }
             else
             {
                 lblUsuario.Text = "Usuario: Desconocido";
-            }
+            } 
         }
     }
 }
