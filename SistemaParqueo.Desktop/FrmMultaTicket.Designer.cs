@@ -81,7 +81,7 @@
             this.txtPrecio.MaxLength = 0;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(243, 29);
-            this.txtPrecio.TabIndex = 7;
+            this.txtPrecio.TabIndex = 13;
             // 
             // lblMultaId
             // 
@@ -102,7 +102,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(315, 333);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 39);
-            this.btnEliminar.TabIndex = 143;
+            this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -114,7 +114,7 @@
             this.lblListadoMulta.Location = new System.Drawing.Point(48, 424);
             this.lblListadoMulta.Name = "lblListadoMulta";
             this.lblListadoMulta.Size = new System.Drawing.Size(211, 32);
-            this.lblListadoMulta.TabIndex = 142;
+            this.lblListadoMulta.TabIndex = 12;
             this.lblListadoMulta.Text = "LISTADO MULTAS";
             // 
             // btnActualizar
@@ -126,7 +126,7 @@
             this.btnActualizar.Location = new System.Drawing.Point(184, 333);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(112, 39);
-            this.btnActualizar.TabIndex = 141;
+            this.btnActualizar.TabIndex = 9;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -152,7 +152,7 @@
             this.dgvMulta.RowHeadersWidth = 51;
             this.dgvMulta.RowTemplate.Height = 24;
             this.dgvMulta.Size = new System.Drawing.Size(945, 202);
-            this.dgvMulta.TabIndex = 134;
+            this.dgvMulta.TabIndex = 13;
             // 
             // MultaId
             // 
@@ -186,7 +186,7 @@
             this.txtMultaId.MaxLength = 50;
             this.txtMultaId.Name = "txtMultaId";
             this.txtMultaId.Size = new System.Drawing.Size(243, 29);
-            this.txtMultaId.TabIndex = 3;
+            this.txtMultaId.TabIndex = 50;
             // 
             // lblPrecio
             // 
@@ -207,7 +207,7 @@
             this.btnLimpiar.Location = new System.Drawing.Point(446, 333);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(112, 39);
-            this.btnLimpiar.TabIndex = 140;
+            this.btnLimpiar.TabIndex = 11;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -222,7 +222,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(0);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(112, 39);
-            this.btnGuardar.TabIndex = 139;
+            this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -234,7 +234,7 @@
             this.txtConcepto.MaxLength = 0;
             this.txtConcepto.Name = "txtConcepto";
             this.txtConcepto.Size = new System.Drawing.Size(243, 29);
-            this.txtConcepto.TabIndex = 5;
+            this.txtConcepto.TabIndex = 100;
             // 
             // lblConcepto
             // 

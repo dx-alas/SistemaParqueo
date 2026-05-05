@@ -27,6 +27,9 @@ namespace SistemaParqueo.Desktop
             ConfigurarGrid();
             CargarCombos();
             CargarDatos();
+
+            btnActualizar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
 
         private void ConfigurarGrid()
@@ -187,6 +190,10 @@ namespace SistemaParqueo.Desktop
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
+            btnActualizar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnGuardar.Enabled = true;
+            btnGenerarCodigo.Enabled = true;
         }
 
         private void dgvTarjeta_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -203,6 +210,11 @@ namespace SistemaParqueo.Desktop
                 {
                     cbEstadoTarjetaId.SelectedValue = ((dynamic)item).EstadoTarjetaId;
                 }
+
+                btnActualizar.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnGuardar .Enabled = false;
+                btnGenerarCodigo.Enabled = false;
             }
         }
 
@@ -214,6 +226,33 @@ namespace SistemaParqueo.Desktop
                 cp.ExStyle |= 0x02000000; // WS_EX_COMPOSITED
                 return cp;
             }
+        }
+
+        private static Random generador = new Random();
+
+        private string GenerarCodigo()
+        {
+            string codigo = "";
+            int intentos = 0;
+
+            while (intentos < 10)
+            {
+                codigo = "TARJ-" + generador.Next(1000, 9999);
+
+                if (TarjetaBL.Instance.SelectByCodigo(codigo) == null)
+                {
+                    return codigo; 
+                }
+
+                intentos++;
+            }
+
+            throw new Exception("No se pudo generar un código único");
+        }
+
+        private void btnGenerarCodigo_Click(object sender, EventArgs e)
+        {
+            txtCodigo.Text = GenerarCodigo();
         }
     }
 }

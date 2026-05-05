@@ -26,6 +26,9 @@ namespace SistemaParqueo.Desktop
             txtId.ReadOnly = true;
             ConfigurarGrid();
             CargarDatos();
+
+            btnActualizar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
 
         private void ConfigurarGrid()
@@ -176,6 +179,9 @@ namespace SistemaParqueo.Desktop
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
+            btnActualizar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnGuardar.Enabled = true;
         }
 
         private void dgvRol_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -187,6 +193,10 @@ namespace SistemaParqueo.Desktop
                 txtId.Text = row.Cells[0].Value?.ToString();
                 txtNombre.Text = row.Cells[1].Value?.ToString();
             }
+
+            btnActualizar.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnGuardar.Enabled = false;
         }
 
         protected override CreateParams CreateParams

@@ -96,9 +96,10 @@
             this.cbEstadoUsuarioId.FormattingEnabled = true;
             this.cbEstadoUsuarioId.Location = new System.Drawing.Point(589, 221);
             this.cbEstadoUsuarioId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbEstadoUsuarioId.MaxLength = 50;
             this.cbEstadoUsuarioId.Name = "cbEstadoUsuarioId";
             this.cbEstadoUsuarioId.Size = new System.Drawing.Size(216, 29);
-            this.cbEstadoUsuarioId.TabIndex = 93;
+            this.cbEstadoUsuarioId.TabIndex = 9;
             // 
             // cbRolId
             // 
@@ -107,9 +108,10 @@
             this.cbRolId.FormattingEnabled = true;
             this.cbRolId.Location = new System.Drawing.Point(589, 159);
             this.cbRolId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbRolId.MaxLength = 50;
             this.cbRolId.Name = "cbRolId";
             this.cbRolId.Size = new System.Drawing.Size(216, 29);
-            this.cbRolId.TabIndex = 92;
+            this.cbRolId.TabIndex = 5;
             // 
             // dgvUsuario
             // 
@@ -135,7 +137,7 @@
             this.dgvUsuario.RowHeadersWidth = 51;
             this.dgvUsuario.RowTemplate.Height = 24;
             this.dgvUsuario.Size = new System.Drawing.Size(948, 200);
-            this.dgvUsuario.TabIndex = 91;
+            this.dgvUsuario.TabIndex = 19;
             // 
             // UsuarioId
             // 
@@ -184,7 +186,7 @@
             this.label3.Location = new System.Drawing.Point(39, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(203, 32);
-            this.label3.TabIndex = 90;
+            this.label3.TabIndex = 1;
             this.label3.Text = "DATOS USUARIO";
             // 
             // label4
@@ -194,7 +196,7 @@
             this.label4.Location = new System.Drawing.Point(39, 426);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(237, 32);
-            this.label4.TabIndex = 89;
+            this.label4.TabIndex = 18;
             this.label4.Text = "LISTADO USUARIOS";
             // 
             // lblUsuarioId
@@ -204,7 +206,7 @@
             this.lblUsuarioId.Location = new System.Drawing.Point(426, 280);
             this.lblUsuarioId.Name = "lblUsuarioId";
             this.lblUsuarioId.Size = new System.Drawing.Size(35, 28);
-            this.lblUsuarioId.TabIndex = 87;
+            this.lblUsuarioId.TabIndex = 12;
             this.lblUsuarioId.Text = "Id:";
             // 
             // txtUsuarioId
@@ -213,10 +215,10 @@
             this.txtUsuarioId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuarioId.Location = new System.Drawing.Point(589, 283);
             this.txtUsuarioId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUsuarioId.MaxLength = 3890;
+            this.txtUsuarioId.MaxLength = 50;
             this.txtUsuarioId.Name = "txtUsuarioId";
             this.txtUsuarioId.Size = new System.Drawing.Size(216, 29);
-            this.txtUsuarioId.TabIndex = 88;
+            this.txtUsuarioId.TabIndex = 13;
             // 
             // btnEliminar
             // 
@@ -228,7 +230,7 @@
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 39);
-            this.btnEliminar.TabIndex = 86;
+            this.btnEliminar.TabIndex = 16;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -243,7 +245,7 @@
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(112, 39);
-            this.btnActualizar.TabIndex = 85;
+            this.btnActualizar.TabIndex = 15;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -255,9 +257,10 @@
             this.cbEmpleadoId.FormattingEnabled = true;
             this.cbEmpleadoId.Location = new System.Drawing.Point(161, 279);
             this.cbEmpleadoId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbEmpleadoId.MaxLength = 50;
             this.cbEmpleadoId.Name = "cbEmpleadoId";
             this.cbEmpleadoId.Size = new System.Drawing.Size(216, 29);
-            this.cbEmpleadoId.TabIndex = 84;
+            this.cbEmpleadoId.TabIndex = 11;
             // 
             // lblNombre
             // 
@@ -266,7 +269,7 @@
             this.lblNombre.Location = new System.Drawing.Point(41, 159);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(100, 28);
-            this.lblNombre.TabIndex = 75;
+            this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "Nombre: ";
             // 
             // lblRol
@@ -276,7 +279,7 @@
             this.lblRol.Location = new System.Drawing.Point(426, 156);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(54, 28);
-            this.lblRol.TabIndex = 76;
+            this.lblRol.TabIndex = 4;
             this.lblRol.Text = "Rol: ";
             // 
             // lblEmpleado
@@ -286,7 +289,7 @@
             this.lblEmpleado.Location = new System.Drawing.Point(40, 281);
             this.lblEmpleado.Name = "lblEmpleado";
             this.lblEmpleado.Size = new System.Drawing.Size(86, 28);
-            this.lblEmpleado.TabIndex = 79;
+            this.lblEmpleado.TabIndex = 10;
             this.lblEmpleado.Text = "Estado: ";
             // 
             // txtNombre
@@ -297,7 +300,7 @@
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(216, 29);
-            this.txtNombre.TabIndex = 80;
+            this.txtNombre.TabIndex = 3;
             // 
             // lblEstadoUsuario
             // 
@@ -306,7 +309,7 @@
             this.lblEstadoUsuario.Location = new System.Drawing.Point(426, 218);
             this.lblEstadoUsuario.Name = "lblEstadoUsuario";
             this.lblEstadoUsuario.Size = new System.Drawing.Size(164, 28);
-            this.lblEstadoUsuario.TabIndex = 78;
+            this.lblEstadoUsuario.TabIndex = 8;
             this.lblEstadoUsuario.Text = "Estado Usuario: ";
             // 
             // btnLimpiar
@@ -319,7 +322,7 @@
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(112, 39);
-            this.btnLimpiar.TabIndex = 83;
+            this.btnLimpiar.TabIndex = 17;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -334,7 +337,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(0);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(112, 39);
-            this.btnGuardar.TabIndex = 82;
+            this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -347,7 +350,7 @@
             this.txtClave.MaxLength = 255;
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(216, 29);
-            this.txtClave.TabIndex = 81;
+            this.txtClave.TabIndex = 7;
             // 
             // lblClave
             // 
@@ -356,7 +359,7 @@
             this.lblClave.Location = new System.Drawing.Point(41, 220);
             this.lblClave.Name = "lblClave";
             this.lblClave.Size = new System.Drawing.Size(74, 28);
-            this.lblClave.TabIndex = 77;
+            this.lblClave.TabIndex = 6;
             this.lblClave.Text = "Clave: ";
             // 
             // lblTitulo
@@ -365,7 +368,7 @@
             this.lblTitulo.Location = new System.Drawing.Point(300, 34);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(463, 53);
-            this.lblTitulo.TabIndex = 74;
+            this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "GESTIÓN DE USUARIOS";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
