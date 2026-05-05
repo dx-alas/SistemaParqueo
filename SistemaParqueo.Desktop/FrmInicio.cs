@@ -174,6 +174,10 @@ namespace SistemaParqueo.Desktop
 
             lblInformacion.Text =
                 $"En Parqueo: {ocupados} / Cantidad Total: {total} / Espacios Disponibles: {disponibles}";
+
+            pbCapacidad.Minimum = 0;
+            pbCapacidad.Maximum = total;
+            pbCapacidad.Value = ocupados;
         }
         // ---- Sección Informacion Dinamica Finaliza ----
 
