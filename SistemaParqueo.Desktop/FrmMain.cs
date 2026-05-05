@@ -185,6 +185,19 @@ namespace SistemaParqueo.Desktop
                 if (Sesion.UsuarioActual.RolId == 2)
                 {
                     btnMultaTicket.Visible = false;
+                    btnTipoCliente.Visible = false;
+                    btnTipoVehiculo.Visible = false;
+                    btnEstadoUsuario.Visible = false;
+                    btnRol.Visible = false;
+                    btnEstadoTarjeta.Visible = false;
+                    btnEstadoTicket.Visible = false;
+                    btnEmpleado.Visible = false;
+                    btnEstadoEmpleado.Visible = false;
+                    btnEstadoPermanencia.Visible = false;
+                    btnEstadoVehiculo.Visible = false;
+                    btnMultaTicket.Visible = false;
+                    btnEstadoCliente.Visible = false;
+                    btnUsuario.Visible = false;
                 }
             }
             else
