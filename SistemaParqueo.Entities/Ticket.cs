@@ -22,6 +22,7 @@ namespace SistemaParqueo.Entities
         public int TipoVehiculoId { get; set; }
         public decimal PrecioAplicado { get; set; }
         public int? MultaId { get; set; }
+        public int? VehiculoId { get; set; }
 
         public Ticket()
         {
@@ -30,7 +31,8 @@ namespace SistemaParqueo.Entities
 
         public Ticket(DateTime fecha, TimeSpan horaEntrada, TimeSpan? horaSalida, decimal? total,
             int tarjetaId, int corteId, int estadoTicketId, int usuarioId,
-            int estadoPermanenciaId, int tipoVehiculoId, decimal precioAplicado, int? multaId)
+            int estadoPermanenciaId, int tipoVehiculoId, decimal precioAplicado,
+            int? multaId, int? vehiculoId)
         {
             Fecha = fecha;
             HoraEntrada = horaEntrada;
@@ -44,11 +46,13 @@ namespace SistemaParqueo.Entities
             TipoVehiculoId = tipoVehiculoId;
             PrecioAplicado = precioAplicado;
             MultaId = multaId;
+            VehiculoId = vehiculoId;
         }
 
         public Ticket(int ticketId, DateTime fecha, TimeSpan horaEntrada, TimeSpan? horaSalida, decimal? total,
             int tarjetaId, int corteId, int estadoTicketId, int usuarioId,
-            int estadoPermanenciaId, int tipoVehiculoId, decimal precioAplicado, int? multaId)
+            int estadoPermanenciaId, int tipoVehiculoId, decimal precioAplicado,
+            int? multaId, int? vehiculoId)
         {
             TicketId = ticketId;
             Fecha = fecha;
@@ -63,6 +67,7 @@ namespace SistemaParqueo.Entities
             TipoVehiculoId = tipoVehiculoId;
             PrecioAplicado = precioAplicado;
             MultaId = multaId;
+            VehiculoId = vehiculoId;
         }
     }
 }
