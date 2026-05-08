@@ -49,6 +49,7 @@
     <Compile Include="CorteCajaDAL.cs" />
     <Compile Include="EmpleadoDAL.cs" />
     <Compile Include="EstadoClienteDAL.cs" />
+    <Compile Include="EstadoCorteDAL.cs" />
     <Compile Include="EstadoEmpleadoDAL.cs" />
     <Compile Include="EstadoPermanenciaDAL.cs" />
     <Compile Include="EstadoTarjetaDAL.cs" />

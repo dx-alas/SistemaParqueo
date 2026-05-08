@@ -58,6 +58,12 @@
     <Compile Include="FrmCierreCorteCaja.Designer.cs">
       <DependentUpon>FrmCierreCorteCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEstadoCorte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEstadoCorte.Designer.cs">
+      <DependentUpon>FrmEstadoCorte.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHistorialSalidas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEstadoCliente.resx">
       <DependentUpon>FrmEstadoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEstadoCorte.resx">
+      <DependentUpon>FrmEstadoCorte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEstadoEmpleado.resx">
       <DependentUpon>FrmEstadoEmpleado.cs</DependentUpon>

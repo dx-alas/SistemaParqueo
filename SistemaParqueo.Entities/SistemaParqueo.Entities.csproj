@@ -45,6 +45,7 @@
     <Compile Include="CorteCaja.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="EstadoCliente.cs" />
+    <Compile Include="EstadoCorte.cs" />
     <Compile Include="EstadoEmpleado.cs" />
     <Compile Include="EstadoPermanencia.cs" />
     <Compile Include="EstadoTarjeta.cs" />
