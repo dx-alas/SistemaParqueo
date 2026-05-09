@@ -47,17 +47,43 @@ namespace SistemaParqueo.Desktop
         {
             try
             {
-                cbTarjetaId.DataSource = TarjetaBL.Instance.SelectAll();
+                var tarjetas = TarjetaBL.Instance.SelectAll();
+                tarjetas.Insert(0, new Tarjeta
+                {
+                    TarjetaId = 0,
+                    Codigo = "Seleccionar"
+                });
+                cbTarjetaId.DataSource = tarjetas;
                 cbTarjetaId.DisplayMember = "Codigo";
                 cbTarjetaId.ValueMember = "TarjetaId";
 
-                cbTipoClienteId.DataSource = TipoClienteBL.Instance.SelectAll();
+                var tipoCliente = TipoClienteBL.Instance.SelectAll();
+                tipoCliente.Insert(0, new TipoCliente
+                {
+                    TipoClienteId = 0,
+                    Nombre = "Seleccionar"
+                });
+                cbTipoClienteId.DataSource = tipoCliente;
                 cbTipoClienteId.DisplayMember = "Nombre";
                 cbTipoClienteId.ValueMember = "TipoClienteId";
 
-                cbEstadoClienteId.DataSource = EstadoClienteBL.Instance.SelectAll();
+                var estadoCliente = EstadoClienteBL.Instance.SelectAll();
+                estadoCliente.Insert(0, new EstadoCliente
+                {
+                    EstadoClienteId = 0,
+                    Nombre = "Seleccionar"
+                });
+
+                cbEstadoClienteId.DataSource = estadoCliente;
                 cbEstadoClienteId.DisplayMember = "Nombre";
                 cbEstadoClienteId.ValueMember = "EstadoClienteId";
+
+                cbTipoDocumento.Items.Clear();
+                cbTipoDocumento.Items.Add("Seleccionar");
+                cbTipoDocumento.Items.Add("DUI");
+                cbTipoDocumento.Items.Add("CR");
+
+                cbTipoDocumento.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -114,6 +140,7 @@ namespace SistemaParqueo.Desktop
             if (cbTarjetaId.Items.Count > 0) cbTarjetaId.SelectedIndex = 0;
             if (cbTipoClienteId.Items.Count > 0) cbTipoClienteId.SelectedIndex = 0;
             if (cbEstadoClienteId.Items.Count > 0) cbEstadoClienteId.SelectedIndex = 0;
+            cbTipoDocumento.SelectedIndex = 0;
         }
 
         private bool Validar()
@@ -123,6 +150,31 @@ namespace SistemaParqueo.Desktop
                 string.IsNullOrWhiteSpace(mtxtDUI.Text))
             {
                 MessageBox.Show("El Nombre, Apellido y DUI son campos obligatorios");
+                return false;
+
+            }
+
+            if (Convert.ToInt32(cbTarjetaId.SelectedValue) == 0)
+            {
+                MessageBox.Show("Seleccione una tarjeta");
+                return false;
+            }
+
+            if (Convert.ToInt32(cbTipoClienteId.SelectedValue) == 0)
+            {
+                MessageBox.Show("Seleccione un tipo de cliente");
+                return false;
+            }
+
+            if (Convert.ToInt32(cbEstadoClienteId.SelectedValue) == 0)
+            {
+                MessageBox.Show("Seleccione un estado");
+                return false;
+            }
+
+            if (cbTipoDocumento.SelectedIndex == 0)
+            {
+                MessageBox.Show("Seleccione un tipo de documento");
                 return false;
             }
             return true;

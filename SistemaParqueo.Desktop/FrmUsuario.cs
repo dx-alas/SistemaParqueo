@@ -44,15 +44,35 @@ namespace SistemaParqueo.Desktop
         {
             try
             {
-                cbEmpleadoId.DataSource = EmpleadoBL.Instance.SelectAll();
+                var empleado = EmpleadoBL.Instance.SelectAll();
+                empleado.Insert(0, new Empleado
+                {
+                    EmpleadoId = 0,
+                    Nombre = "Seleccionar"
+                });
+
+                cbEmpleadoId.DataSource = empleado;
                 cbEmpleadoId.DisplayMember = "Nombre";
                 cbEmpleadoId.ValueMember = "EmpleadoId";
 
-                cbRolId.DataSource = RolBL.Instance.SelectAll();
+                var rol = RolBL.Instance.SelectAll();
+                rol.Insert(0, new Rol
+                {
+                    RolId = 0,
+                    Nombre = "Seleccionar"
+                });
+
+                cbRolId.DataSource = rol;
                 cbRolId.DisplayMember = "Nombre";
                 cbRolId.ValueMember = "RolId";
 
-                cbEstadoUsuarioId.DataSource = EstadoUsuarioBL.Instance.SelectAll();
+                var estadoUsuario = EstadoUsuarioBL.Instance.SelectAll();
+                estadoUsuario.Insert(0, new EstadoUsuario
+                {
+                    EstadoUsuarioId = 0,
+                    Nombre = "Seleccionar"
+                });
+                cbEstadoUsuarioId.DataSource = estadoUsuario;
                 cbEstadoUsuarioId.DisplayMember = "Nombre";
                 cbEstadoUsuarioId.ValueMember = "EstadoUsuarioId";
             }
@@ -107,6 +127,24 @@ namespace SistemaParqueo.Desktop
                 string.IsNullOrWhiteSpace(txtClave.Text))
             {
                 MessageBox.Show("El Nombre y la Clave son campos obligatorios");
+                return false;
+            }
+
+            if (Convert.ToInt32(cbEmpleadoId.SelectedValue) == 0)
+            {
+                MessageBox.Show("Seleccione un empleado");
+                return false;
+            }
+
+            if (Convert.ToInt32(cbRolId.SelectedValue) == 0)
+            {
+                MessageBox.Show("Seleccione un rol");
+                return false;
+            }
+
+            if (Convert.ToInt32(cbEstadoUsuarioId.SelectedValue) == 0)
+            {
+                MessageBox.Show("Seleccione un estado");
                 return false;
             }
             return true;
