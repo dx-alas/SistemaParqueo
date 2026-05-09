@@ -161,6 +161,41 @@ namespace SistemaParqueo.DataAccess
         }
 
         // Metodo para LOGIN
+        //public Usuario Login(string nombre, string clave)
+        //{
+        //    Usuario result = null;
+
+        //    using (SqlConnection conn = new SqlConnection(_connectionString))
+        //    {
+        //        using (SqlCommand cmd = new SqlCommand("spUsuarioLogin", conn))
+        //        {
+        //            cmd.CommandType = CommandType.StoredProcedure;
+
+        //            cmd.Parameters.AddWithValue("@Nombre", nombre);
+        //            cmd.Parameters.AddWithValue("@Clave", clave);
+
+        //            conn.Open();
+
+        //            using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleResult))
+        //            {
+        //                if (dr.Read())
+        //                {
+        //                    result = new Usuario();
+
+        //                    result.UsuarioId = dr.GetInt32(0);
+        //                    result.Nombre = dr.GetString(1);
+        //                    result.Clave = dr.GetString(2);
+        //                    result.EmpleadoId = dr.GetInt32(3);
+        //                    result.RolId = dr.GetInt32(4);
+        //                    result.EstadoUsuarioId = dr.GetInt32(5);
+        //                }
+        //            }
+        //        }
+        //    }
+
+        //    return result;
+        //}
+
         public Usuario Login(string nombre, string clave)
         {
             Usuario result = null;
@@ -171,8 +206,8 @@ namespace SistemaParqueo.DataAccess
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
+                    // SOLO se manda el usuario
                     cmd.Parameters.AddWithValue("@Nombre", nombre);
-                    cmd.Parameters.AddWithValue("@Clave", clave);
 
                     conn.Open();
 
@@ -180,14 +215,22 @@ namespace SistemaParqueo.DataAccess
                     {
                         if (dr.Read())
                         {
-                            result = new Usuario();
+                            string hashGuardado = dr.GetString(2);
 
-                            result.UsuarioId = dr.GetInt32(0);
-                            result.Nombre = dr.GetString(1);
-                            result.Clave = dr.GetString(2);
-                            result.EmpleadoId = dr.GetInt32(3);
-                            result.RolId = dr.GetInt32(4);
-                            result.EstadoUsuarioId = dr.GetInt32(5);
+                            bool correcta = BCrypt.Net.BCrypt.Verify(clave, hashGuardado);
+
+                            if (correcta)
+                            {
+                                result = new Usuario
+                                {
+                                    UsuarioId = dr.GetInt32(0),
+                                    Nombre = dr.GetString(1),
+                                    Clave = hashGuardado,
+                                    EmpleadoId = dr.GetInt32(3),
+                                    RolId = dr.GetInt32(4),
+                                    EstadoUsuarioId = dr.GetInt32(5)
+                                };
+                            }
                         }
                     }
                 }

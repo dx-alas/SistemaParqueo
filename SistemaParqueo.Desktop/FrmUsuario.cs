@@ -30,6 +30,8 @@ namespace SistemaParqueo.Desktop
 
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
+
+            txtClave.UseSystemPasswordChar = true;
         }
 
         private void ConfigurarGrid()
@@ -162,7 +164,8 @@ namespace SistemaParqueo.Desktop
                 Usuario entity = new Usuario
                 {
                     Nombre = txtNombre.Text.Trim(),
-                    Clave = txtClave.Text.Trim(),
+                    //Clave = txtClave.Text.Trim(),
+                    Clave = Seguridad.HashPassword(txtClave.Text.Trim()),
                     EmpleadoId = Convert.ToInt32(cbEmpleadoId.SelectedValue),
                     RolId = Convert.ToInt32(cbRolId.SelectedValue),
                     EstadoUsuarioId = Convert.ToInt32(cbEstadoUsuarioId.SelectedValue)
@@ -200,7 +203,8 @@ namespace SistemaParqueo.Desktop
                 {
                     UsuarioId = Convert.ToInt32(txtUsuarioId.Text),
                     Nombre = txtNombre.Text.Trim(),
-                    Clave = txtClave.Text.Trim(),
+                    //Clave = txtClave.Text.Trim(),
+                    Clave = Seguridad.HashPassword(txtClave.Text.Trim()),
                     EmpleadoId = Convert.ToInt32(cbEmpleadoId.SelectedValue),
                     RolId = Convert.ToInt32(cbRolId.SelectedValue),
                     EstadoUsuarioId = Convert.ToInt32(cbEstadoUsuarioId.SelectedValue)
@@ -268,7 +272,8 @@ namespace SistemaParqueo.Desktop
 
                 txtUsuarioId.Text = row.Cells[0].Value?.ToString();
                 txtNombre.Text = row.Cells[1].Value?.ToString();
-                txtClave.Text = row.Cells[2].Value?.ToString();
+                //txtClave.Text = row.Cells[2].Value?.ToString();
+                txtClave.Clear();
                 cbEmpleadoId.Text = row.Cells[3].Value?.ToString();
                 cbRolId.Text = row.Cells[4].Value?.ToString();
                 cbEstadoUsuarioId.Text = row.Cells[5].Value?.ToString();
@@ -296,6 +301,10 @@ namespace SistemaParqueo.Desktop
                 return cp;
             }
         }
-        
+
+        private void lblEmpleado_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
