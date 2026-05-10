@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaParqueo.Desktop.Interfaces;
 
 namespace SistemaParqueo.Desktop
 {
@@ -51,6 +52,11 @@ namespace SistemaParqueo.Desktop
             if (!panelContenedor.Controls.Contains(formulario))
             {
                 panelContenedor.Controls.Add(formulario);
+            }
+
+            if (formulario is IFormularioActualizable actualizable)
+            {
+                actualizable.CargarDatos();
             }
 
             formulario.Show();
