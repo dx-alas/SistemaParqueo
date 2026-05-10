@@ -98,6 +98,7 @@
     <Compile Include="FrmSeleccionVehiculo.Designer.cs">
       <DependentUpon>FrmSeleccionVehiculo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IFormularioActualizable.cs" />
     <Compile Include="Seguridad.cs" />
     <Compile Include="Sesion.cs" />
     <Compile Include="FrmAutorizacion.cs">

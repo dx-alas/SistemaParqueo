@@ -104,9 +104,9 @@
             this.panelCentral.Controls.Add(this.Emcabezado);
             this.panelCentral.Controls.Add(this.lblTitulo);
             this.panelCentral.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.panelCentral.Location = new System.Drawing.Point(0, 2);
+            this.panelCentral.Location = new System.Drawing.Point(-1, 2);
             this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(1047, 770);
+            this.panelCentral.Size = new System.Drawing.Size(1085, 770);
             this.panelCentral.TabIndex = 100;
             this.panelCentral.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCentral_Paint);
             // 
@@ -130,6 +130,7 @@
             this.mtxtTelefono.PromptChar = ' ';
             this.mtxtTelefono.Size = new System.Drawing.Size(243, 20);
             this.mtxtTelefono.TabIndex = 7;
+            this.mtxtTelefono.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtTelefono_MaskInputRejected);
             // 
             // lblClienteId
             // 
@@ -240,8 +241,9 @@
             this.dgvCliente.ReadOnly = true;
             this.dgvCliente.RowHeadersWidth = 51;
             this.dgvCliente.RowTemplate.Height = 24;
-            this.dgvCliente.Size = new System.Drawing.Size(988, 217);
+            this.dgvCliente.Size = new System.Drawing.Size(1041, 217);
             this.dgvCliente.TabIndex = 27;
+            this.dgvCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellClick);
             // 
             // ClienteId
             // 
@@ -519,7 +521,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1047, 770);
+            this.ClientSize = new System.Drawing.Size(1083, 770);
             this.Controls.Add(this.panelCentral);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
