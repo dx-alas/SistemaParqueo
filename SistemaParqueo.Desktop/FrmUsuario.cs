@@ -301,10 +301,5 @@ namespace SistemaParqueo.Desktop
                 return cp;
             }
         }
-
-        private void lblEmpleado_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

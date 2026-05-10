@@ -51,7 +51,7 @@
             // 
             this.lblTarjetaId.AutoSize = true;
             this.lblTarjetaId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTarjetaId.Location = new System.Drawing.Point(122, 210);
+            this.lblTarjetaId.Location = new System.Drawing.Point(122, 222);
             this.lblTarjetaId.Name = "lblTarjetaId";
             this.lblTarjetaId.Size = new System.Drawing.Size(107, 28);
             this.lblTarjetaId.TabIndex = 3;
@@ -62,18 +62,18 @@
             this.cbVehiculos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVehiculos.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.cbVehiculos.FormattingEnabled = true;
-            this.cbVehiculos.Location = new System.Drawing.Point(251, 214);
+            this.cbVehiculos.Location = new System.Drawing.Point(252, 225);
             this.cbVehiculos.Name = "cbVehiculos";
-            this.cbVehiculos.Size = new System.Drawing.Size(227, 29);
+            this.cbVehiculos.Size = new System.Drawing.Size(260, 29);
             this.cbVehiculos.TabIndex = 4;
             // 
             // lblMensaje
             // 
             this.lblMensaje.AutoSize = true;
-            this.lblMensaje.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensaje.Location = new System.Drawing.Point(147, 116);
+            this.lblMensaje.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensaje.Location = new System.Drawing.Point(165, 128);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(347, 56);
+            this.lblMensaje.Size = new System.Drawing.Size(313, 56);
             this.lblMensaje.TabIndex = 5;
             this.lblMensaje.Text = "El cliente tiene más de un vehículo.\r\n¿Cuál va a ingresar hoy?";
             this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -84,10 +84,10 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(369, 287);
+            this.btnAceptar.Location = new System.Drawing.Point(386, 303);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(109, 38);
+            this.btnAceptar.Size = new System.Drawing.Size(126, 38);
             this.btnAceptar.TabIndex = 15;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -99,10 +99,10 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(131, 287);
+            this.btnCancelar.Location = new System.Drawing.Point(127, 303);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(106, 38);
+            this.btnCancelar.Size = new System.Drawing.Size(127, 38);
             this.btnCancelar.TabIndex = 14;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;

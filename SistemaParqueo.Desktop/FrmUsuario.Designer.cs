@@ -291,7 +291,6 @@
             this.lblEmpleado.Size = new System.Drawing.Size(95, 21);
             this.lblEmpleado.TabIndex = 10;
             this.lblEmpleado.Text = "Empleado: ";
-            this.lblEmpleado.Click += new System.EventHandler(this.lblEmpleado_Click);
             // 
             // txtNombre
             // 
