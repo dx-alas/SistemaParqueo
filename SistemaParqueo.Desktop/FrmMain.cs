@@ -126,7 +126,7 @@ namespace SistemaParqueo.Desktop
 
         private void btnCorteCaja_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("El formulario 'CorteCaja' será desarrollado luego.", "Información");
+            AbrirFormularioEnPanel<FrmCorteCaja>();
         }
 
         private void btnTarjeta_Click(object sender, EventArgs e)
