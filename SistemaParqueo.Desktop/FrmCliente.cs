@@ -3,6 +3,7 @@ using SistemaParqueo.Desktop.Interfaces;
 using SistemaParqueo.Entities;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -14,6 +15,12 @@ namespace SistemaParqueo.Desktop
         public FrmCliente()
         {
             InitializeComponent();
+            cbTipoDocumento.SelectedIndexChanged += cbTipoDocumento_SelectedIndexChanged;
+        }
+
+        private void CbTipoDocumento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void FrmCliente_Load(object sender, EventArgs e)
@@ -24,6 +31,7 @@ namespace SistemaParqueo.Desktop
             CargarDatos();
 
             CambiarEstadoBotones(false);
+            cbTipoDocumento_SelectedIndexChanged(null, EventArgs.Empty);
         }
 
         // -- Métodos de configuración --
@@ -115,9 +123,14 @@ namespace SistemaParqueo.Desktop
                 dgvCliente.DataSource = null;
                 dgvCliente.DataSource = query.ToList();
 
-                dgvCliente.Columns["TarjetaId"].Visible = false;
-                dgvCliente.Columns["TipoClienteId"].Visible = false;
-                dgvCliente.Columns["EstadoClienteId"].Visible = false;
+                if (dgvCliente.Columns["TarjetaId"] != null)
+                    dgvCliente.Columns["TarjetaId"].Visible = false;
+
+                if (dgvCliente.Columns["TipoClienteId"] != null)
+                    dgvCliente.Columns["TipoClienteId"].Visible = false;
+
+                if (dgvCliente.Columns["EstadoClienteId"] != null)
+                    dgvCliente.Columns["EstadoClienteId"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -294,6 +307,40 @@ namespace SistemaParqueo.Desktop
         }
 
         // -- Eventos de Controles -- 
+        private void cbTipoDocumento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string tipo = cbTipoDocumento.SelectedItem?.ToString();
+
+            if (tipo == "DUI")
+            {
+                mtxtDUI.Enabled = true;
+                mtxtDUI.BackColor = Color.White;
+
+                txtCarnetExtranjero.Enabled = false;
+                txtCarnetExtranjero.BackColor = Color.FromArgb(238, 238, 238);
+                txtCarnetExtranjero.Clear();
+            }
+            else if (tipo == "CR")
+            {
+                txtCarnetExtranjero.Enabled = true;
+                txtCarnetExtranjero.BackColor = Color.White;
+
+                mtxtDUI.Enabled = false;
+                mtxtDUI.BackColor = Color.FromArgb(238, 238, 238);
+                mtxtDUI.Clear();
+            }
+            else
+            {
+                mtxtDUI.Enabled = false;
+                mtxtDUI.BackColor = Color.FromArgb(238, 238, 238);
+                mtxtDUI.Clear();
+
+                txtCarnetExtranjero.Enabled = false;
+                txtCarnetExtranjero.BackColor = Color.FromArgb(238, 238, 238);
+                txtCarnetExtranjero.Clear();
+            }
+        }
+
         private void dgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
