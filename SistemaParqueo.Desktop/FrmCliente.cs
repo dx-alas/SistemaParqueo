@@ -26,6 +26,7 @@ namespace SistemaParqueo.Desktop
         private void FrmCliente_Load(object sender, EventArgs e)
         {
             txtClienteId.ReadOnly = true;
+
             ConfigurarGrid();
             CargarCombos();
             CargarDatos();
@@ -200,6 +201,7 @@ namespace SistemaParqueo.Desktop
                 MessageBox.Show("Seleccione un tipo de documento");
                 return false;
             }
+
             return true;
         }
 
