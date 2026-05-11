@@ -113,6 +113,95 @@ namespace SistemaParqueo.BusinessLogic
 
             return result;
         }
+
+        public bool RegistrarEntrada(int tarjetaId, int vehiculoId, int usuarioId, int corteId)
+        {
+            var vehiculo = VehiculoBL.Instance.SelectById(vehiculoId);
+
+            if (vehiculo == null)
+                throw new Exception("Vehículo no encontrado");
+
+            var tipoVehiculo = TipoVehiculoBL.Instance.SelectById(vehiculo.TipoVehiculoId);
+
+            if (tipoVehiculo == null)
+                throw new Exception("Tipo de vehículo no encontrado");
+
+            Ticket nuevo = new Ticket
+            {
+                Fecha = DateTime.Now.Date,
+                HoraEntrada = new TimeSpan(
+                    DateTime.Now.Hour,
+                    DateTime.Now.Minute,
+                    DateTime.Now.Second
+                ),
+                TarjetaId = tarjetaId,
+                CorteId = corteId,
+                EstadoTicketId = 1,
+                UsuarioId = usuarioId,
+                EstadoPermanenciaId = 1,
+                TipoVehiculoId = vehiculo.TipoVehiculoId,
+                PrecioAplicado = tipoVehiculo.Precio,
+                MultaId = null,
+                VehiculoId = vehiculoId
+            };
+
+            return Insert(nuevo);
+        }
+
+        public decimal RegistrarSalida(Ticket ticket, int corteId)
+        {
+            ticket.HoraSalida = new TimeSpan(
+                DateTime.Now.Hour,
+                DateTime.Now.Minute,
+                DateTime.Now.Second
+            );
+
+            decimal total = ticket.PrecioAplicado;
+
+            if (ticket.MultaId != null)
+            {
+                var multa = MultaTicketBL.Instance.SelectById(ticket.MultaId.Value);
+
+                if (multa != null)
+                {
+                    total += multa.Precio;
+                }
+            }
+
+            ticket.Total = total;
+            ticket.EstadoTicketId = 2;
+            ticket.CorteId = corteId;
+            Update(ticket);
+
+            return total;
+        }
+
+        public Ticket AplicarMulta(int ticketId)
+        {
+            var ticket = SelectAll().FirstOrDefault(t => t.TicketId == ticketId);
+
+            if (ticket == null)
+                throw new Exception("Ticket no encontrado");
+
+            if (ticket.MultaId != null)
+                throw new Exception("Este ticket ya tiene multa aplicada");
+
+            var multa = MultaTicketBL.Instance.SelectAll().FirstOrDefault();
+
+            if (multa == null)
+                throw new Exception("Multa no configurada");
+
+            ticket.MultaId = multa.MultaId;
+
+            Update(ticket);
+
+            return ticket;
+        }
+
+        public bool PuedeAplicarMulta(Ticket ticket)
+        {
+            return ticket != null && ticket.MultaId == null;
+        }
     }
 }
 

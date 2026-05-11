@@ -30,6 +30,8 @@ namespace SistemaParqueo.Desktop
 
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
+
+            txtClave.UseSystemPasswordChar = true;
         }
 
         private void ConfigurarGrid()
@@ -44,15 +46,35 @@ namespace SistemaParqueo.Desktop
         {
             try
             {
-                cbEmpleadoId.DataSource = EmpleadoBL.Instance.SelectAll();
+                var empleado = EmpleadoBL.Instance.SelectAll();
+                empleado.Insert(0, new Empleado
+                {
+                    EmpleadoId = 0,
+                    Nombre = "Seleccionar"
+                });
+
+                cbEmpleadoId.DataSource = empleado;
                 cbEmpleadoId.DisplayMember = "Nombre";
                 cbEmpleadoId.ValueMember = "EmpleadoId";
 
-                cbRolId.DataSource = RolBL.Instance.SelectAll();
+                var rol = RolBL.Instance.SelectAll();
+                rol.Insert(0, new Rol
+                {
+                    RolId = 0,
+                    Nombre = "Seleccionar"
+                });
+
+                cbRolId.DataSource = rol;
                 cbRolId.DisplayMember = "Nombre";
                 cbRolId.ValueMember = "RolId";
 
-                cbEstadoUsuarioId.DataSource = EstadoUsuarioBL.Instance.SelectAll();
+                var estadoUsuario = EstadoUsuarioBL.Instance.SelectAll();
+                estadoUsuario.Insert(0, new EstadoUsuario
+                {
+                    EstadoUsuarioId = 0,
+                    Nombre = "Seleccionar"
+                });
+                cbEstadoUsuarioId.DataSource = estadoUsuario;
                 cbEstadoUsuarioId.DisplayMember = "Nombre";
                 cbEstadoUsuarioId.ValueMember = "EstadoUsuarioId";
             }
@@ -109,6 +131,24 @@ namespace SistemaParqueo.Desktop
                 MessageBox.Show("El Nombre y la Clave son campos obligatorios");
                 return false;
             }
+
+            if (Convert.ToInt32(cbEmpleadoId.SelectedValue) == 0)
+            {
+                MessageBox.Show("Seleccione un empleado");
+                return false;
+            }
+
+            if (Convert.ToInt32(cbRolId.SelectedValue) == 0)
+            {
+                MessageBox.Show("Seleccione un rol");
+                return false;
+            }
+
+            if (Convert.ToInt32(cbEstadoUsuarioId.SelectedValue) == 0)
+            {
+                MessageBox.Show("Seleccione un estado");
+                return false;
+            }
             return true;
         }
 
@@ -124,7 +164,8 @@ namespace SistemaParqueo.Desktop
                 Usuario entity = new Usuario
                 {
                     Nombre = txtNombre.Text.Trim(),
-                    Clave = txtClave.Text.Trim(),
+                    //Clave = txtClave.Text.Trim(),
+                    Clave = Seguridad.HashPassword(txtClave.Text.Trim()),
                     EmpleadoId = Convert.ToInt32(cbEmpleadoId.SelectedValue),
                     RolId = Convert.ToInt32(cbRolId.SelectedValue),
                     EstadoUsuarioId = Convert.ToInt32(cbEstadoUsuarioId.SelectedValue)
@@ -162,7 +203,8 @@ namespace SistemaParqueo.Desktop
                 {
                     UsuarioId = Convert.ToInt32(txtUsuarioId.Text),
                     Nombre = txtNombre.Text.Trim(),
-                    Clave = txtClave.Text.Trim(),
+                    //Clave = txtClave.Text.Trim(),
+                    Clave = Seguridad.HashPassword(txtClave.Text.Trim()),
                     EmpleadoId = Convert.ToInt32(cbEmpleadoId.SelectedValue),
                     RolId = Convert.ToInt32(cbRolId.SelectedValue),
                     EstadoUsuarioId = Convert.ToInt32(cbEstadoUsuarioId.SelectedValue)
@@ -230,7 +272,8 @@ namespace SistemaParqueo.Desktop
 
                 txtUsuarioId.Text = row.Cells[0].Value?.ToString();
                 txtNombre.Text = row.Cells[1].Value?.ToString();
-                txtClave.Text = row.Cells[2].Value?.ToString();
+                //txtClave.Text = row.Cells[2].Value?.ToString();
+                txtClave.Clear();
                 cbEmpleadoId.Text = row.Cells[3].Value?.ToString();
                 cbRolId.Text = row.Cells[4].Value?.ToString();
                 cbEstadoUsuarioId.Text = row.Cells[5].Value?.ToString();
@@ -258,6 +301,5 @@ namespace SistemaParqueo.Desktop
                 return cp;
             }
         }
-        
     }
 }

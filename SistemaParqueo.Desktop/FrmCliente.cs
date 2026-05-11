@@ -1,27 +1,26 @@
 ﻿using SistemaParqueo.BusinessLogic;
+using SistemaParqueo.Desktop.Interfaces;
 using SistemaParqueo.Entities;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace SistemaParqueo.Desktop
 {
-    public partial class FrmCliente : Form
+    public partial class FrmCliente : Form, IFormularioActualizable
     {
         public FrmCliente()
         {
             InitializeComponent();
-            this.Load += FrmCliente_Load;
-            dgvCliente.CellClick += dgvCliente_CellClick;
-            panelCentral.Paint += panelCentral_Paint;
-            mtxtTelefono.MaskInputRejected += mtxtTelefono_MaskInputRejected;
-            mtxtDUI.MaskInputRejected += mtxtDUI_MaskInputRejected;
+            cbTipoDocumento.SelectedIndexChanged += cbTipoDocumento_SelectedIndexChanged;
+        }
+
+        private void CbTipoDocumento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void FrmCliente_Load(object sender, EventArgs e)
@@ -31,10 +30,11 @@ namespace SistemaParqueo.Desktop
             CargarCombos();
             CargarDatos();
 
-            btnActualizar.Enabled = false;
-            btnEliminar.Enabled = false;
+            CambiarEstadoBotones(false);
+            cbTipoDocumento_SelectedIndexChanged(null, EventArgs.Empty);
         }
 
+        // -- Métodos de configuración --
         private void ConfigurarGrid()
         {
             dgvCliente.AutoGenerateColumns = false;
@@ -47,17 +47,43 @@ namespace SistemaParqueo.Desktop
         {
             try
             {
-                cbTarjetaId.DataSource = TarjetaBL.Instance.SelectAll();
+                var tarjetas = TarjetaBL.Instance.SelectAll();
+                tarjetas.Insert(0, new Tarjeta
+                {
+                    TarjetaId = 0,
+                    Codigo = "Seleccionar"
+                });
+                cbTarjetaId.DataSource = tarjetas;
                 cbTarjetaId.DisplayMember = "Codigo";
                 cbTarjetaId.ValueMember = "TarjetaId";
 
-                cbTipoClienteId.DataSource = TipoClienteBL.Instance.SelectAll();
+                var tipoCliente = TipoClienteBL.Instance.SelectAll();
+                tipoCliente.Insert(0, new TipoCliente
+                {
+                    TipoClienteId = 0,
+                    Nombre = "Seleccionar"
+                });
+                cbTipoClienteId.DataSource = tipoCliente;
                 cbTipoClienteId.DisplayMember = "Nombre";
                 cbTipoClienteId.ValueMember = "TipoClienteId";
 
-                cbEstadoClienteId.DataSource = EstadoClienteBL.Instance.SelectAll();
+                var estadoCliente = EstadoClienteBL.Instance.SelectAll();
+                estadoCliente.Insert(0, new EstadoCliente
+                {
+                    EstadoClienteId = 0,
+                    Nombre = "Seleccionar"
+                });
+
+                cbEstadoClienteId.DataSource = estadoCliente;
                 cbEstadoClienteId.DisplayMember = "Nombre";
                 cbEstadoClienteId.ValueMember = "EstadoClienteId";
+
+                cbTipoDocumento.Items.Clear();
+                cbTipoDocumento.Items.Add("Seleccionar");
+                cbTipoDocumento.Items.Add("DUI");
+                cbTipoDocumento.Items.Add("CR");
+
+                cbTipoDocumento.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -65,7 +91,8 @@ namespace SistemaParqueo.Desktop
             }
         }
 
-        private void CargarDatos()
+        // -- Métodos de Datos --
+        public void CargarDatos()
         {
             try
             {
@@ -95,6 +122,15 @@ namespace SistemaParqueo.Desktop
 
                 dgvCliente.DataSource = null;
                 dgvCliente.DataSource = query.ToList();
+
+                if (dgvCliente.Columns["TarjetaId"] != null)
+                    dgvCliente.Columns["TarjetaId"].Visible = false;
+
+                if (dgvCliente.Columns["TipoClienteId"] != null)
+                    dgvCliente.Columns["TipoClienteId"].Visible = false;
+
+                if (dgvCliente.Columns["EstadoClienteId"] != null)
+                    dgvCliente.Columns["EstadoClienteId"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -102,32 +138,79 @@ namespace SistemaParqueo.Desktop
             }
         }
 
+        private Cliente ObtenerEntidad()
+        {
+            return new Cliente
+            {
+                Nombre = txtNombre.Text.Trim(),
+                Apellido = txtApellido.Text.Trim(),
+                Telefono = mtxtTelefono.Text.Trim(),
+                TipoDocumento = cbTipoDocumento.SelectedItem?.ToString(),
+                DUI = mtxtDUI.Text.Trim(),
+                CarnetExtranjero = txtCarnetExtranjero.Text.Trim(),
+                TarjetaId = Convert.ToInt32(cbTarjetaId.SelectedValue),
+                TipoClienteId = Convert.ToInt32(cbTipoClienteId.SelectedValue),
+                EstadoClienteId = Convert.ToInt32(cbEstadoClienteId.SelectedValue)
+            };
+        }
+
+        // -- Métodos Auxiliares -- 
         private void Limpiar()
         {
             txtClienteId.Clear();
             txtNombre.Clear();
             txtApellido.Clear();
             mtxtTelefono.Clear();
-            cbTipoDocumento.Items.Clear();
             mtxtDUI.Clear();
             txtCarnetExtranjero.Clear();
             if (cbTarjetaId.Items.Count > 0) cbTarjetaId.SelectedIndex = 0;
             if (cbTipoClienteId.Items.Count > 0) cbTipoClienteId.SelectedIndex = 0;
             if (cbEstadoClienteId.Items.Count > 0) cbEstadoClienteId.SelectedIndex = 0;
+            if (cbTipoDocumento.Items.Count > 0) cbTipoDocumento.SelectedIndex = 0;
         }
 
         private bool Validar()
         {
-            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
-                string.IsNullOrWhiteSpace(txtApellido.Text) ||
-                string.IsNullOrWhiteSpace(mtxtDUI.Text))
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtApellido.Text) || string.IsNullOrWhiteSpace(mtxtDUI.Text))
             {
                 MessageBox.Show("El Nombre, Apellido y DUI son campos obligatorios");
+                return false;
+            }
+
+            if (Convert.ToInt32(cbTarjetaId.SelectedValue) == 0)
+            {
+                MessageBox.Show("Seleccione una tarjeta");
+                return false;
+            }
+
+            if (Convert.ToInt32(cbTipoClienteId.SelectedValue) == 0)
+            {
+                MessageBox.Show("Seleccione un tipo de cliente");
+                return false;
+            }
+
+            if (Convert.ToInt32(cbEstadoClienteId.SelectedValue) == 0)
+            {
+                MessageBox.Show("Seleccione un estado");
+                return false;
+            }
+
+            if (cbTipoDocumento.SelectedIndex == 0)
+            {
+                MessageBox.Show("Seleccione un tipo de documento");
                 return false;
             }
             return true;
         }
 
+        private void CambiarEstadoBotones(bool editando)
+        {
+            btnGuardar.Enabled = !editando;
+            btnActualizar.Enabled = editando;
+            btnEliminar.Enabled = editando;
+        }
+
+        // -- Eventos de Botones --
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!Validar()) return;
@@ -137,18 +220,7 @@ namespace SistemaParqueo.Desktop
 
             try
             {
-                Cliente entity = new Cliente
-                {
-                    Nombre = txtNombre.Text.Trim(),
-                    Apellido = txtApellido.Text.Trim(),
-                    Telefono = mtxtTelefono.Text.Trim(),
-                    TipoDocumento = cbTipoDocumento.SelectedItem?.ToString(),
-                    DUI = mtxtDUI.Text.Trim(),
-                    CarnetExtranjero = txtCarnetExtranjero.Text.Trim(),
-                    TarjetaId = Convert.ToInt32(cbTarjetaId.SelectedValue),
-                    TipoClienteId = Convert.ToInt32(cbTipoClienteId.SelectedValue),
-                    EstadoClienteId = Convert.ToInt32(cbEstadoClienteId.SelectedValue)
-                };
+                Cliente entity = ObtenerEntidad();
 
                 bool ok = ClienteBL.Instance.Insert(entity);
                 if (ok)
@@ -178,19 +250,8 @@ namespace SistemaParqueo.Desktop
 
             try
             {
-                Cliente entity = new Cliente
-                {
-                    ClienteId = Convert.ToInt32(txtClienteId.Text),
-                    Nombre = txtNombre.Text.Trim(),
-                    Apellido = txtApellido.Text.Trim(),
-                    Telefono = mtxtTelefono.Text.Trim(),
-                    TipoDocumento = cbTipoDocumento.SelectedItem?.ToString(),
-                    DUI = mtxtDUI.Text.Trim(),
-                    CarnetExtranjero = txtCarnetExtranjero.Text.Trim(),
-                    TarjetaId = Convert.ToInt32(cbTarjetaId.SelectedValue),
-                    TipoClienteId = Convert.ToInt32(cbTipoClienteId.SelectedValue),
-                    EstadoClienteId = Convert.ToInt32(cbEstadoClienteId.SelectedValue)
-                };
+                Cliente entity = ObtenerEntidad();
+                entity.ClienteId = Convert.ToInt32(txtClienteId.Text);
 
                 bool ok = ClienteBL.Instance.Update(entity);
                 if (ok)
@@ -242,9 +303,42 @@ namespace SistemaParqueo.Desktop
         {
             Limpiar();
 
-            btnActualizar.Enabled = false;
-            btnEliminar.Enabled = false;
-            btnGuardar.Enabled = true;
+            CambiarEstadoBotones(false);
+        }
+
+        // -- Eventos de Controles -- 
+        private void cbTipoDocumento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string tipo = cbTipoDocumento.SelectedItem?.ToString();
+
+            if (tipo == "DUI")
+            {
+                mtxtDUI.Enabled = true;
+                mtxtDUI.BackColor = Color.White;
+
+                txtCarnetExtranjero.Enabled = false;
+                txtCarnetExtranjero.BackColor = Color.FromArgb(238, 238, 238);
+                txtCarnetExtranjero.Clear();
+            }
+            else if (tipo == "CR")
+            {
+                txtCarnetExtranjero.Enabled = true;
+                txtCarnetExtranjero.BackColor = Color.White;
+
+                mtxtDUI.Enabled = false;
+                mtxtDUI.BackColor = Color.FromArgb(238, 238, 238);
+                mtxtDUI.Clear();
+            }
+            else
+            {
+                mtxtDUI.Enabled = false;
+                mtxtDUI.BackColor = Color.FromArgb(238, 238, 238);
+                mtxtDUI.Clear();
+
+                txtCarnetExtranjero.Enabled = false;
+                txtCarnetExtranjero.BackColor = Color.FromArgb(238, 238, 238);
+                txtCarnetExtranjero.Clear();
+            }
         }
 
         private void dgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -258,8 +352,8 @@ namespace SistemaParqueo.Desktop
                 txtApellido.Text = row.Cells[2].Value?.ToString();
                 mtxtTelefono.Text = row.Cells[3].Value?.ToString();
                 cbTipoDocumento.Text = row.Cells[4].Value?.ToString();
-                mtxtDUI.Text = row.Cells[4].Value?.ToString();
-                txtCarnetExtranjero.Text = row.Cells[5].Value?.ToString();
+                mtxtDUI.Text = row.Cells[5].Value?.ToString();
+                txtCarnetExtranjero.Text = row.Cells[6].Value?.ToString();
                 var item = row.DataBoundItem;
                 if (item != null)
                 {
@@ -268,10 +362,27 @@ namespace SistemaParqueo.Desktop
                     cbEstadoClienteId.SelectedValue = ((dynamic)item).EstadoClienteId;
                 }
 
-                btnActualizar.Enabled = true;
-                btnEliminar.Enabled = true;
-                btnGuardar.Enabled = false;
+                CambiarEstadoBotones(true);
             }
+        }
+
+        private void panelCentral_Paint(object sender, PaintEventArgs e)
+        {
+            if (!mtxtTelefono.MaskFull && mtxtTelefono.Text.Trim() == "-")
+                mtxtTelefono.SelectionStart = 0;
+
+            if (!mtxtDUI.MaskFull && mtxtDUI.Text.Trim() == "-")
+                mtxtDUI.SelectionStart = 0;
+        }
+
+        private void mtxtTelefono_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            if (!mtxtTelefono.MaskFull) mtxtTelefono.Clear();
+        }
+
+        private void mtxtDUI_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            if (!mtxtDUI.MaskFull) mtxtDUI.Clear();
         }
 
         protected override CreateParams CreateParams
@@ -281,36 +392,6 @@ namespace SistemaParqueo.Desktop
                 CreateParams cp = base.CreateParams;
                 cp.ExStyle |= 0x02000000; // WS_EX_COMPOSITED
                 return cp;
-            }
-        }
-
-
-        private void panelCentral_Paint(object sender, PaintEventArgs e)
-        {
-            if (!mtxtTelefono.MaskFull && mtxtTelefono.Text.Trim() == "-")
-            {
-                mtxtTelefono.SelectionStart = 0;
-            }
-
-            if (!mtxtDUI.MaskFull && mtxtDUI.Text.Trim() == "-")
-            {
-                mtxtDUI.SelectionStart = 0;
-            }
-        }
-
-        private void mtxtTelefono_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-            if (!mtxtTelefono.MaskFull)
-            {
-                mtxtTelefono.Clear();
-            }
-        }
-
-        private void mtxtDUI_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-            if (!mtxtDUI.MaskFull)
-            {
-                mtxtDUI.Clear();
             }
         }
     }

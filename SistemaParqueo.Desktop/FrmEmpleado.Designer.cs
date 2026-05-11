@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmpleado));
             this.panelCentral = new System.Windows.Forms.Panel();
+            this.mtxtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.mtxtDUI = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -61,7 +62,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.lblDUI = new System.Windows.Forms.Label();
-            this.mtxtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.panelCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
             this.SuspendLayout();
@@ -97,6 +97,17 @@
             this.panelCentral.Name = "panelCentral";
             this.panelCentral.Size = new System.Drawing.Size(1047, 725);
             this.panelCentral.TabIndex = 101;
+            // 
+            // mtxtTelefono
+            // 
+            this.mtxtTelefono.HidePromptOnLeave = true;
+            this.mtxtTelefono.Location = new System.Drawing.Point(180, 248);
+            this.mtxtTelefono.Mask = "0000-0000";
+            this.mtxtTelefono.Name = "mtxtTelefono";
+            this.mtxtTelefono.PromptChar = ' ';
+            this.mtxtTelefono.Size = new System.Drawing.Size(243, 23);
+            this.mtxtTelefono.TabIndex = 24;
+            this.mtxtTelefono.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtTelefono_MaskInputRejected);
             // 
             // mtxtDUI
             // 
@@ -424,17 +435,6 @@
             this.lblDUI.Size = new System.Drawing.Size(58, 28);
             this.lblDUI.TabIndex = 6;
             this.lblDUI.Text = "DUI: ";
-            // 
-            // mtxtTelefono
-            // 
-            this.mtxtTelefono.HidePromptOnLeave = true;
-            this.mtxtTelefono.Location = new System.Drawing.Point(180, 248);
-            this.mtxtTelefono.Mask = "0000-0000";
-            this.mtxtTelefono.Name = "mtxtTelefono";
-            this.mtxtTelefono.PromptChar = ' ';
-            this.mtxtTelefono.Size = new System.Drawing.Size(243, 23);
-            this.mtxtTelefono.TabIndex = 24;
-            this.mtxtTelefono.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtTelefono_MaskInputRejected);
             // 
             // FrmEmpleado
             // 

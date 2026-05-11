@@ -35,16 +35,17 @@ namespace SistemaParqueo.Desktop
 
             var query = (from t in tickets
                          join c in clientes on t.TarjetaId equals c.TarjetaId
-                         join v in vehiculos on c.ClienteId equals v.ClienteId
+                         join v in vehiculos on t.VehiculoId equals v.VehiculoId
                          join ta in tarjetas on t.TarjetaId equals ta.TarjetaId
                          join tc in tiposCliente on c.TipoClienteId equals tc.TipoClienteId
-                         where t.HoraSalida != null
+                         where t.HoraSalida != null && t.CorteId == Sesion.CorteActivo.CorteId
+                         orderby t.HoraSalida descending
                          select new
                          {
                              Tarjeta = ta.Codigo,
                              Placa = v.Placa,
-                             HoraInicio = t.HoraEntrada,
-                             Salida = t.HoraSalida,
+                             HoraInicio = DateTime.Today.Add(t.HoraEntrada).ToString("hh:mm:ss tt"),
+                             Salida = DateTime.Today.Add(t.HoraSalida.Value).ToString("hh:mm:ss tt"),
                              TipoCliente = tc.Nombre,
                              Estudiante = c.Nombre + " " + c.Apellido,
                              Monto = t.Total
@@ -56,9 +57,15 @@ namespace SistemaParqueo.Desktop
 
         private void CargarResumen()
         {
+            if (Sesion.CorteActivo == null)
+            {
+                lblNumTickets.Text = "0";
+                return;
+            }
+
             var tickets = TicketBL.Instance.SelectAll();
 
-            int totalCerrados = tickets.Count(t => t.HoraSalida != null);
+            int totalCerrados = tickets.Count(t => t.HoraSalida != null && t.CorteId == Sesion.CorteActivo.CorteId);
 
             lblNumTickets.Text = totalCerrados.ToString();
         }

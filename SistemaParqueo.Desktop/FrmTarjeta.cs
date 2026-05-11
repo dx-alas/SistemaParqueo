@@ -44,7 +44,14 @@ namespace SistemaParqueo.Desktop
         {
             try
             {
-                cbEstadoTarjetaId.DataSource = EstadoTarjetaBL.Instance.SelectAll();
+
+                var estadoTarjeta = EstadoTarjetaBL.Instance.SelectAll();
+                estadoTarjeta.Insert(0, new EstadoTarjeta
+                {
+                    EstadoTarjetaId = 0,
+                    Nombre = "Seleccionar"
+                });
+                cbEstadoTarjetaId.DataSource = estadoTarjeta;
                 cbEstadoTarjetaId.DisplayMember = "Nombre";
                 cbEstadoTarjetaId.ValueMember = "EstadoTarjetaId";
             }
@@ -91,6 +98,11 @@ namespace SistemaParqueo.Desktop
             if (string.IsNullOrWhiteSpace(txtCodigo.Text))
             {
                 MessageBox.Show("El codigo es un campo obligatorio");
+                return false;
+            }
+            if (Convert.ToInt32(cbEstadoTarjetaId.SelectedValue) == 0)
+            {
+                MessageBox.Show("Seleccione un estado");
                 return false;
             }
             return true;

@@ -47,7 +47,13 @@ namespace SistemaParqueo.Desktop
         {
             try
             {
-                cbEstado.DataSource = EstadoEmpleadoBL.Instance.SelectAll();
+                var estadoEmpleado = EstadoEmpleadoBL.Instance.SelectAll();
+                estadoEmpleado.Insert(0, new EstadoEmpleado
+                {
+                    EstadoEmpleadoId = 0,
+                    Nombre = "Seleccionar"
+                });
+                cbEstado.DataSource = estadoEmpleado;
                 cbEstado.DisplayMember = "Nombre";
                 cbEstado.ValueMember = "EstadoEmpleadoId";
             }
@@ -107,6 +113,12 @@ namespace SistemaParqueo.Desktop
                 string.IsNullOrWhiteSpace(mtxtDUI.Text))
             {
                 MessageBox.Show("Nombre, Apellido y DUI son campos obligatorios");
+                return false;
+            }
+
+            if (Convert.ToInt32(cbEstado.SelectedValue) == 0)
+            {
+                MessageBox.Show("Seleccione un estado");
                 return false;
             }
             return true;

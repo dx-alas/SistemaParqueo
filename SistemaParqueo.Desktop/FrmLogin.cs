@@ -41,6 +41,14 @@ namespace SistemaParqueo.Desktop
             }
         }
 
+        private void txtClave_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnIngresar.PerformClick();
+            }
+        }
+
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtUsuario.Text))
@@ -76,6 +84,7 @@ namespace SistemaParqueo.Desktop
                 txtClave.Clear();
                 txtClave.Focus();
             }
+
         }
     }
 }

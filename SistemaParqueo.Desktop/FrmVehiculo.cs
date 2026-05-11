@@ -1,4 +1,5 @@
-﻿using SistemaParqueo.BusinessLogic;
+﻿using Org.BouncyCastle.Asn1.Ocsp;
+using SistemaParqueo.BusinessLogic;
 using SistemaParqueo.Entities;
 using System;
 using System.Collections.Generic;
@@ -45,14 +46,32 @@ namespace SistemaParqueo.Desktop
         {
             try
             {
-                cbClienteId.DataSource = ClienteBL.Instance.SelectAll();
+                var cliente = ClienteBL.Instance.SelectAll();
+                cliente.Insert(0, new Cliente
+                {
+                    ClienteId = 0,
+                    Nombre = "Seleccionar"
+                });
+                cbClienteId.DataSource = cliente;
                 cbClienteId.DisplayMember = "Nombre";
                 cbClienteId.ValueMember = "ClienteId";
 
-                cbTipoVehiculoId.DataSource = TipoVehiculoBL.Instance.SelectAll();
+                var tipoVehiculo = TipoVehiculoBL.Instance.SelectAll();
+                tipoVehiculo.Insert(0, new TipoVehiculo
+                {
+                    TipoVehiculoId = 0,
+                    Nombre = "Seleccionar"
+                });
+                cbTipoVehiculoId.DataSource = tipoVehiculo;
                 cbTipoVehiculoId.DisplayMember = "Nombre";
                 cbTipoVehiculoId.ValueMember = "TipoVehiculoId";
 
+                var estadoVehiculo = EstadoVehiculoBL.Instance.SelectAll();
+                estadoVehiculo.Insert(0, new EstadoVehiculo
+                {
+                    EstadoVehiculoId = 0,
+                    Nombre = "Seleccionar"
+                });
                 cbEstadoVehiculoId.DataSource = EstadoVehiculoBL.Instance.SelectAll();
                 cbEstadoVehiculoId.DisplayMember = "Nombre";
                 cbEstadoVehiculoId.ValueMember = "EstadoVehiculoId";
@@ -108,6 +127,24 @@ namespace SistemaParqueo.Desktop
             if (string.IsNullOrWhiteSpace(txtPlaca.Text))
             {
                 MessageBox.Show("La Placa es un campo obligatorio");
+                return false;
+            }
+
+            if (Convert.ToInt32(cbClienteId.SelectedValue) == 0)
+            {
+                MessageBox.Show("Seleccione un cliente");
+                return false;
+            }
+
+            if (Convert.ToInt32(cbTipoVehiculoId.SelectedValue) == 0)
+            {
+                MessageBox.Show("Seleccione un tipo de vehiculo");
+                return false;
+            }
+
+            if (Convert.ToInt32(cbEstadoVehiculoId.SelectedValue) == 0)
+            {
+                MessageBox.Show("Seleccione un estado");
                 return false;
             }
             return true;

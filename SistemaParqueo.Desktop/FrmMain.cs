@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaParqueo.Desktop.Interfaces;
 
 namespace SistemaParqueo.Desktop
 {
@@ -18,6 +19,38 @@ namespace SistemaParqueo.Desktop
         public FrmMain()
         {
             InitializeComponent();
+        }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            if (Sesion.UsuarioActual != null)
+            {
+                lblUsuario.Text = "Usuario: " + Sesion.UsuarioActual.Nombre;
+
+                if (Sesion.UsuarioActual.RolId == 2)
+                {
+                    btnMultaTicket.Visible = false;
+                    btnTipoCliente.Visible = false;
+                    btnTipoVehiculo.Visible = false;
+                    btnEstadoUsuario.Visible = false;
+                    btnRol.Visible = false;
+                    btnEstadoTarjeta.Visible = false;
+                    btnEstadoTicket.Visible = false;
+                    btnEmpleado.Visible = false;
+                    btnEstadoEmpleado.Visible = false;
+                    btnEstadoPermanencia.Visible = false;
+                    btnEstadoVehiculo.Visible = false;
+                    btnMultaTicket.Visible = false;
+                    btnEstadoCliente.Visible = false;
+                    btnUsuario.Visible = false;
+                }
+
+                AbrirFormularioEnPanel<FrmInicio>();
+            }
+            else
+            {
+                lblUsuario.Text = "Usuario: Desconocido";
+            }
         }
 
         private Dictionary<Type, Form> formularios = new Dictionary<Type, Form>();
@@ -51,6 +84,11 @@ namespace SistemaParqueo.Desktop
             if (!panelContenedor.Controls.Contains(formulario))
             {
                 panelContenedor.Controls.Add(formulario);
+            }
+
+            if (formulario is IFormularioActualizable actualizable)
+            {
+                actualizable.CargarDatos();
             }
 
             formulario.Show();
@@ -120,7 +158,7 @@ namespace SistemaParqueo.Desktop
 
         private void btnCorteCaja_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("El formulario 'CorteCaja' será desarrollado luego.", "Información");
+            AbrirFormularioEnPanel<FrmCorteCaja>();
         }
 
         private void btnTarjeta_Click(object sender, EventArgs e)
@@ -163,47 +201,12 @@ namespace SistemaParqueo.Desktop
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show(
-                "¿Desea salir del sistema?",
-                "Confirmación",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
+            DialogResult resultado = MessageBox.Show("¿Desea salir del sistema?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
                 Application.Exit();
             }
-        }
-
-        private void FrmMain_Load(object sender, EventArgs e)
-        {
-            if (Sesion.UsuarioActual != null)
-            {
-                lblUsuario.Text = "Usuario: " + Sesion.UsuarioActual.Nombre;
-
-                if (Sesion.UsuarioActual.RolId == 2)
-                {
-                    btnMultaTicket.Visible = false;
-                    btnTipoCliente.Visible = false;
-                    btnTipoVehiculo.Visible = false;
-                    btnEstadoUsuario.Visible = false;
-                    btnRol.Visible = false;
-                    btnEstadoTarjeta.Visible = false;
-                    btnEstadoTicket.Visible = false;
-                    btnEmpleado.Visible = false;
-                    btnEstadoEmpleado.Visible = false;
-                    btnEstadoPermanencia.Visible = false;
-                    btnEstadoVehiculo.Visible = false;
-                    btnMultaTicket.Visible = false;
-                    btnEstadoCliente.Visible = false;
-                    btnUsuario.Visible = false;
-                }
-            }
-            else
-            {
-                lblUsuario.Text = "Usuario: Desconocido";
-            } 
         }
     }
 }
