@@ -108,6 +108,7 @@
             this.dgvRol.RowTemplate.Height = 24;
             this.dgvRol.Size = new System.Drawing.Size(884, 202);
             this.dgvRol.TabIndex = 11;
+            this.dgvRol.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRol_CellClick);
             // 
             // RolId
             // 

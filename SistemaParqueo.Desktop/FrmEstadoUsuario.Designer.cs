@@ -108,6 +108,7 @@
             this.dgvEstado.RowTemplate.Height = 24;
             this.dgvEstado.Size = new System.Drawing.Size(884, 202);
             this.dgvEstado.TabIndex = 11;
+            this.dgvEstado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstado_CellClick);
             // 
             // EstadoUsuarioId
             // 

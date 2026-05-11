@@ -108,6 +108,7 @@
             this.dgvTipoCliente.RowTemplate.Height = 24;
             this.dgvTipoCliente.Size = new System.Drawing.Size(884, 202);
             this.dgvTipoCliente.TabIndex = 11;
+            this.dgvTipoCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipoCliente_CellClick);
             // 
             // TipoClienteId
             // 

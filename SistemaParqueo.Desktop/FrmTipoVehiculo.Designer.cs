@@ -144,6 +144,7 @@
             this.dgvTipoVehiculo.RowTemplate.Height = 24;
             this.dgvTipoVehiculo.Size = new System.Drawing.Size(884, 202);
             this.dgvTipoVehiculo.TabIndex = 13;
+            this.dgvTipoVehiculo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipoVehiculo_CellClick);
             // 
             // TipoVehiculoId
             // 

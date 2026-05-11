@@ -36,19 +36,22 @@ namespace SistemaParqueo.BusinessLogic
             return result;
         }
 
-        public bool Update(Usuario entity)
+        public bool Update(Usuario entity, bool actualizarClave = false)
         {
-            bool result = false;
-
             try
             {
-                result = UsuarioDAL.Instance.Update(entity);
+                if (!actualizarClave) //Validacion de contraseña
+                {
+                    var usuarioActual = UsuarioDAL.Instance.SelectById(entity.UsuarioId);
+                    entity.Clave = usuarioActual.Clave;
+                }
+
+                return UsuarioDAL.Instance.Update(entity);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-            return result;
         }
 
         public bool Delete(int usuarioId)

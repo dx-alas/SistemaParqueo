@@ -1,37 +1,34 @@
-﻿using Org.BouncyCastle.Asn1.Ocsp;
-using SistemaParqueo.BusinessLogic;
+﻿using SistemaParqueo.BusinessLogic;
 using SistemaParqueo.Entities;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaParqueo.Desktop.Interfaces;
 
 namespace SistemaParqueo.Desktop
 
 {
-    public partial class FrmVehiculo : Form
+    public partial class FrmVehiculo : Form, IFormularioActualizable
     {
         public FrmVehiculo()
         {
             InitializeComponent();
-            this.Load += FrmVehiculo_Load;
-            dgvVehiculo.CellClick += dgvVehiculo_CellClick;
         }
 
         private void FrmVehiculo_Load(object sender, EventArgs e)
         {
             txtVehiculoId.ReadOnly = true;
             ConfigurarGrid();
-            CargarCombos();
-            CargarDatos();
 
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
+        }
+
+        public void CargarDatos()
+        {
+            CargarCombos();
+            CargarDatosGrid();
         }
 
         private void ConfigurarGrid()
@@ -82,7 +79,7 @@ namespace SistemaParqueo.Desktop
             }
         }
 
-        private void CargarDatos()
+        private void CargarDatosGrid()
         {
             try
             {

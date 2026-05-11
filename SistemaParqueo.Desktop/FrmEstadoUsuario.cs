@@ -1,27 +1,30 @@
 ﻿using SistemaParqueo.BusinessLogic;
+using SistemaParqueo.Desktop.Interfaces;
 using SistemaParqueo.Entities;
 using System;
 using System.Windows.Forms;
 
 namespace SistemaParqueo.Desktop
 {
-    public partial class FrmEstadoUsuario : Form
+    public partial class FrmEstadoUsuario : Form, IFormularioActualizable
     {
         public FrmEstadoUsuario()
         {
             InitializeComponent();
-            this.Load += FrmEstadoUsuario_Load;
-            dgvEstado.CellClick += dgvEstado_CellClick;
         }
 
         private void FrmEstadoUsuario_Load(object sender, EventArgs e)
         {
             txtId.ReadOnly = true;
             ConfigurarGrid();
-            CargarDatos();
 
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
+        }
+
+        public void CargarDatos()
+        {
+            CargarDatosGrid();
         }
 
         private void ConfigurarGrid()
@@ -32,7 +35,7 @@ namespace SistemaParqueo.Desktop
             dgvEstado.ReadOnly = true;
         }
 
-        private void CargarDatos()
+        private void CargarDatosGrid()
         {
             try
             {

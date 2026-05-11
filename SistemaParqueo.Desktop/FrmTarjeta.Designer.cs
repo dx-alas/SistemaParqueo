@@ -171,6 +171,7 @@
             this.dgvTarjeta.RowTemplate.Height = 24;
             this.dgvTarjeta.Size = new System.Drawing.Size(952, 217);
             this.dgvTarjeta.TabIndex = 13;
+            this.dgvTarjeta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTarjeta_CellClick);
             // 
             // TarjetaId
             // 
