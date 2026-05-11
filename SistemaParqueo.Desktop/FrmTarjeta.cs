@@ -1,24 +1,18 @@
 ﻿using SistemaParqueo.BusinessLogic;
+using SistemaParqueo.Desktop.Interfaces;
 using SistemaParqueo.Entities;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaParqueo.Desktop
 {
-    public partial class FrmTarjeta : Form
+    public partial class FrmTarjeta : Form, IFormularioActualizable
     {
         public FrmTarjeta()
         {
             InitializeComponent();
-            this.Load += FrmTarjeta_Load;
-            dgvTarjeta.CellClick += dgvTarjeta_CellClick;
         }
 
         private void FrmTarjeta_Load(object sender, EventArgs e)
@@ -26,10 +20,14 @@ namespace SistemaParqueo.Desktop
             txtTarjetaId.ReadOnly = true;
             ConfigurarGrid();
             CargarCombos();
-            CargarDatos();
 
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
+        }
+
+        public void CargarDatos()
+        {
+            CargarDatosGrid();
         }
 
         private void ConfigurarGrid()
@@ -61,7 +59,7 @@ namespace SistemaParqueo.Desktop
             }
         }
 
-        private void CargarDatos()
+        private void CargarDatosGrid()
         {
             try
             {

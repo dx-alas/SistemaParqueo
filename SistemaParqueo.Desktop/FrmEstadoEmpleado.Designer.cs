@@ -108,6 +108,7 @@
             this.dgvEstado.RowTemplate.Height = 24;
             this.dgvEstado.Size = new System.Drawing.Size(884, 202);
             this.dgvEstado.TabIndex = 11;
+            this.dgvEstado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstado_CellClick);
             // 
             // EstadoEmpleadoId
             // 
@@ -242,6 +243,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmEstadoEmpleado";
             this.Text = "Gestión Estado Empleado";
+            this.Load += new System.EventHandler(this.FrmEstadoEmpleado_Load);
             this.Click += new System.EventHandler(this.FrmEstadoEmpleado_Load);
             this.panelCentral.ResumeLayout(false);
             this.panelCentral.PerformLayout();

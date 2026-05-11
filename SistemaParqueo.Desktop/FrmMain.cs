@@ -1,12 +1,5 @@
-﻿using SistemaParqueo.Desktop;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaParqueo.Desktop.Interfaces;
 
@@ -14,7 +7,7 @@ namespace SistemaParqueo.Desktop
 {
     public partial class FrmMain : Form
     {
-        private Form formularioActivo = null; 
+        private Form formularioActivo = null;
 
         public FrmMain()
         {
@@ -95,7 +88,7 @@ namespace SistemaParqueo.Desktop
             formulario.BringToFront();
         }
 
-        #region Botones que mostrarán mensaje
+        // -- Botones para formularios Inicia --
         private void btnInicio_Click(object sender, EventArgs e)
         {
             AbrirFormularioEnPanel<FrmInicio>();
@@ -130,10 +123,18 @@ namespace SistemaParqueo.Desktop
         {
             AbrirFormularioEnPanel<FrmEstadoTicket>();
         }
-
-        private void btnUsuario_Click(object sender, EventArgs e)
+        private void btnEmpleado_Click(object sender, EventArgs e)
         {
-            AbrirFormularioEnPanel<FrmUsuario>();
+            AbrirFormularioEnPanel<FrmEmpleado>();
+        }
+        private void btnEstadoEmpleado_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnPanel<FrmEstadoEmpleado>();
+        }
+
+        private void btnEstadoPermanencia_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnPanel<FrmEstadoPermanencia>();
         }
 
         private void btnVehiculo_Click(object sender, EventArgs e)
@@ -141,9 +142,9 @@ namespace SistemaParqueo.Desktop
             AbrirFormularioEnPanel<FrmVehiculo>();
         }
 
-        private void btnCliente_Click(object sender, EventArgs e)
+        private void btnEstadoVehiculo_Click(object sender, EventArgs e)
         {
-            AbrirFormularioEnPanel<FrmCliente>();
+            AbrirFormularioEnPanel<FrmEstadoVehiculo>();
         }
 
         private void btnMultaTicket_Click(object sender, EventArgs e)
@@ -156,9 +157,14 @@ namespace SistemaParqueo.Desktop
             AbrirFormularioEnPanel<FrmEstadoCliente>();
         }
 
-        private void btnCorteCaja_Click(object sender, EventArgs e)
+        private void btnCliente_Click(object sender, EventArgs e)
         {
-            AbrirFormularioEnPanel<FrmCorteCaja>();
+            AbrirFormularioEnPanel<FrmCliente>();
+        }
+
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnPanel<FrmUsuario>();
         }
 
         private void btnTarjeta_Click(object sender, EventArgs e)
@@ -166,37 +172,15 @@ namespace SistemaParqueo.Desktop
             AbrirFormularioEnPanel<FrmTarjeta>();
         }
 
-        private void btnEstadoEmpleado_Click(object sender, EventArgs e)
+        private void btnCorteCaja_Click(object sender, EventArgs e)
         {
-            AbrirFormularioEnPanel<FrmEstadoEmpleado>();
-        }
-
-        private void btnEstadoPermanencia_Click(object sender, EventArgs e)
-        {
-            AbrirFormularioEnPanel<FrmEstadoPermanencia>();
-        }
-
-        private void btnEstadoVehiculo_Click(object sender, EventArgs e)
-        {
-            AbrirFormularioEnPanel<FrmEstadoVehiculo>();
-        }
-
-        private void btnTicket_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("El formulario 'Ticket' será desarrollado luego.", "Información");
-        }
-        #endregion
-
-       
-        private void btnEmpleado_Click(object sender, EventArgs e)
-        {
-            AbrirFormularioEnPanel<FrmEmpleado>();
+            AbrirFormularioEnPanel<FrmCorteCaja>();
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             MessageBox.Show("La acción 'Cerrar Sesión' sera desarrollada pronto", "Información");
-           
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -208,5 +192,6 @@ namespace SistemaParqueo.Desktop
                 Application.Exit();
             }
         }
+        // -- Botones para formularios Finaliza --
     }
 }

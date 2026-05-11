@@ -1,40 +1,29 @@
 ﻿using SistemaParqueo.BusinessLogic;
+using SistemaParqueo.Desktop.Interfaces;
 using SistemaParqueo.Entities;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaParqueo.Desktop
 {
-    public partial class FrmEstadoCliente : Form
+    public partial class FrmEstadoCliente : Form, IFormularioActualizable
     {
         public FrmEstadoCliente()
         {
             InitializeComponent();
-            this.Load += FrmEstadoCliente_Load;
-            dgvEstado.CellClick += dgvEstado_CellClick;
         }
 
         private void FrmEstadoCliente_Load(object sender, EventArgs e)
         {
-
-            //// Esto centra el panel respecto al formulario
-            //panelCentral.Location = new Point(
-            //    (this.ClientSize.Width - panelCentral.Width) / 2,
-            //    (this.ClientSize.Height - panelCentral.Height) / 2);
-
             txtId.ReadOnly = true;
             ConfigurarGrid();
-            CargarDatos();
 
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false; 
+        }
+        public void CargarDatos()
+        {
+            CargarDatosGrid();
         }
 
         private void ConfigurarGrid()
@@ -45,7 +34,7 @@ namespace SistemaParqueo.Desktop
             dgvEstado.ReadOnly = true;
         }
 
-        private void CargarDatos()
+        private void CargarDatosGrid()
         {
             try
             {

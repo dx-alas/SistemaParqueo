@@ -97,6 +97,7 @@
             this.panelCentral.Name = "panelCentral";
             this.panelCentral.Size = new System.Drawing.Size(1203, 769);
             this.panelCentral.TabIndex = 101;
+            this.panelCentral.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCentral_Paint);
             // 
             // mtxtTelefono
             // 
@@ -228,6 +229,7 @@
             this.dgvEmpleado.RowTemplate.Height = 24;
             this.dgvEmpleado.Size = new System.Drawing.Size(1101, 204);
             this.dgvEmpleado.TabIndex = 23;
+            this.dgvEmpleado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleado_CellClick);
             // 
             // EmpleadoId
             // 

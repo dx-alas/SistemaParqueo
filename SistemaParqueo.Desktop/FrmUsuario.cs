@@ -1,24 +1,18 @@
 ﻿using SistemaParqueo.BusinessLogic;
 using SistemaParqueo.Entities;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaParqueo.Desktop.Interfaces;
 
 namespace SistemaParqueo.Desktop
 {
-    public partial class FrmUsuario : Form
+    public partial class FrmUsuario : Form, IFormularioActualizable
     {
         public FrmUsuario()
         {
             InitializeComponent();
-            this.Load += FrmUsuario_Load;
-            dgvUsuario.CellClick += dgvUsuario_CellClick;
         }
 
         private void FrmUsuario_Load(object sender, EventArgs e)
@@ -26,12 +20,16 @@ namespace SistemaParqueo.Desktop
             txtUsuarioId.ReadOnly = true;
             ConfigurarGrid();
             CargarCombos();
-            CargarDatos();
 
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
 
             txtClave.UseSystemPasswordChar = true;
+        }
+
+        public void CargarDatos()
+        {
+            CargarDatosGrid();
         }
 
         private void ConfigurarGrid()
@@ -84,7 +82,7 @@ namespace SistemaParqueo.Desktop
             }
         }
 
-        private void CargarDatos()
+        private void CargarDatosGrid()
         {
             try
             {

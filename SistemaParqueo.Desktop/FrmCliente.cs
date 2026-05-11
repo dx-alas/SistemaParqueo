@@ -28,10 +28,13 @@ namespace SistemaParqueo.Desktop
             txtClienteId.ReadOnly = true;
             ConfigurarGrid();
             CargarCombos();
-            CargarDatos();
 
             CambiarEstadoBotones(false);
             cbTipoDocumento_SelectedIndexChanged(null, EventArgs.Empty);
+        }
+        public void CargarDatos()
+        {
+            CargarDatosGrid();
         }
 
         // -- Métodos de configuración --
@@ -92,7 +95,7 @@ namespace SistemaParqueo.Desktop
         }
 
         // -- Métodos de Datos --
-        public void CargarDatos()
+        private void CargarDatosGrid()
         {
             try
             {
