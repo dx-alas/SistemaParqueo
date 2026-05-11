@@ -253,7 +253,7 @@ namespace SistemaParqueo.Desktop
 
                 if (TarjetaBL.Instance.SelectByCodigo(codigo) == null)
                 {
-                    return codigo; 
+                    return codigo;
                 }
 
                 intentos++;
