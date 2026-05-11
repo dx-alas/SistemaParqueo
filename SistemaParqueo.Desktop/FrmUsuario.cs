@@ -19,16 +19,15 @@ namespace SistemaParqueo.Desktop
         {
             txtUsuarioId.ReadOnly = true;
             ConfigurarGrid();
-            CargarCombos();
 
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
-
             txtClave.UseSystemPasswordChar = true;
         }
 
         public void CargarDatos()
         {
+            CargarCombos();
             CargarDatosGrid();
         }
 
@@ -106,6 +105,10 @@ namespace SistemaParqueo.Desktop
 
                 dgvUsuario.DataSource = null;
                 dgvUsuario.DataSource = query.ToList();
+
+                dgvUsuario.Columns["EmpleadoId"].Visible = false;
+                dgvUsuario.Columns["RolId"].Visible = false;
+                dgvUsuario.Columns["EstadoUsuarioId"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -116,43 +119,79 @@ namespace SistemaParqueo.Desktop
         private void Limpiar()
         {
             txtUsuarioId.Clear();
+            txtNombre.Clear();
+            txtClave.Clear();
             if (cbEmpleadoId.Items.Count > 0) cbEmpleadoId.SelectedIndex = 0;
             if (cbRolId.Items.Count > 0) cbRolId.SelectedIndex = 0;
             if (cbEstadoUsuarioId.Items.Count > 0) cbEstadoUsuarioId.SelectedIndex = 0;
         }
-
-        private bool Validar()
+        private bool ValidarInsert()
         {
-            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
-                string.IsNullOrWhiteSpace(txtClave.Text))
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
             {
-                MessageBox.Show("El Nombre y la Clave son campos obligatorios");
+                MessageBox.Show("El Nombre es obligatorio");
                 return false;
             }
 
-            if (Convert.ToInt32(cbEmpleadoId.SelectedValue) == 0)
+            if (string.IsNullOrWhiteSpace(txtClave.Text))
+            {
+                MessageBox.Show("La Clave es obligatoria");
+                return false;
+            }
+
+            if (cbEmpleadoId.SelectedValue == null || (int)cbEmpleadoId.SelectedValue == 0)
             {
                 MessageBox.Show("Seleccione un empleado");
                 return false;
             }
 
-            if (Convert.ToInt32(cbRolId.SelectedValue) == 0)
+            if (cbRolId.SelectedValue == null || (int)cbRolId.SelectedValue == 0)
             {
                 MessageBox.Show("Seleccione un rol");
                 return false;
             }
 
-            if (Convert.ToInt32(cbEstadoUsuarioId.SelectedValue) == 0)
+            if (cbEstadoUsuarioId.SelectedValue == null || (int)cbEstadoUsuarioId.SelectedValue == 0)
             {
                 MessageBox.Show("Seleccione un estado");
                 return false;
             }
+
+            return true;
+        }
+
+        private bool ValidarUpdate()
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show("El Nombre es obligatorio");
+                return false;
+            }
+
+            if (cbEmpleadoId.SelectedValue == null || (int)cbEmpleadoId.SelectedValue == 0)
+            {
+                MessageBox.Show("Seleccione un empleado");
+                return false;
+            }
+
+            if (cbRolId.SelectedValue == null || (int)cbRolId.SelectedValue == 0)
+            {
+                MessageBox.Show("Seleccione un rol");
+                return false;
+            }
+
+            if (cbEstadoUsuarioId.SelectedValue == null || (int)cbEstadoUsuarioId.SelectedValue == 0)
+            {
+                MessageBox.Show("Seleccione un estado");
+                return false;
+            }
+
             return true;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (!Validar()) return;
+            if (!ValidarInsert()) return;
 
             DialogResult confirm = MessageBox.Show("¿Desea guardar este usuario?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm != DialogResult.Yes) return;
@@ -162,7 +201,6 @@ namespace SistemaParqueo.Desktop
                 Usuario entity = new Usuario
                 {
                     Nombre = txtNombre.Text.Trim(),
-                    //Clave = txtClave.Text.Trim(),
                     Clave = Seguridad.HashPassword(txtClave.Text.Trim()),
                     EmpleadoId = Convert.ToInt32(cbEmpleadoId.SelectedValue),
                     RolId = Convert.ToInt32(cbRolId.SelectedValue),
@@ -185,7 +223,8 @@ namespace SistemaParqueo.Desktop
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (!Validar()) return;
+            if (!ValidarUpdate()) return;
+
             if (string.IsNullOrEmpty(txtUsuarioId.Text))
             {
                 MessageBox.Show("Seleccione un usuario de la lista");
@@ -193,22 +232,25 @@ namespace SistemaParqueo.Desktop
             }
 
             DialogResult confirm = MessageBox.Show("¿Desea actualizar este registro?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
             if (confirm != DialogResult.Yes) return;
 
             try
             {
+                bool actualizarClave = !string.IsNullOrWhiteSpace(txtClave.Text);
+
                 Usuario entity = new Usuario
                 {
                     UsuarioId = Convert.ToInt32(txtUsuarioId.Text),
                     Nombre = txtNombre.Text.Trim(),
-                    //Clave = txtClave.Text.Trim(),
-                    Clave = Seguridad.HashPassword(txtClave.Text.Trim()),
                     EmpleadoId = Convert.ToInt32(cbEmpleadoId.SelectedValue),
                     RolId = Convert.ToInt32(cbRolId.SelectedValue),
-                    EstadoUsuarioId = Convert.ToInt32(cbEstadoUsuarioId.SelectedValue)
+                    EstadoUsuarioId = Convert.ToInt32(cbEstadoUsuarioId.SelectedValue),
+                    Clave = actualizarClave ? Seguridad.HashPassword(txtClave.Text.Trim()) : null
                 };
 
-                bool ok = UsuarioBL.Instance.Update(entity);
+                bool ok = UsuarioBL.Instance.Update(entity, actualizarClave);
+
                 if (ok)
                 {
                     MessageBox.Show("Actualizado correctamente");
@@ -270,7 +312,6 @@ namespace SistemaParqueo.Desktop
 
                 txtUsuarioId.Text = row.Cells[0].Value?.ToString();
                 txtNombre.Text = row.Cells[1].Value?.ToString();
-                //txtClave.Text = row.Cells[2].Value?.ToString();
                 txtClave.Clear();
                 cbEmpleadoId.Text = row.Cells[3].Value?.ToString();
                 cbRolId.Text = row.Cells[4].Value?.ToString();
