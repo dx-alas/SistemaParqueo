@@ -41,6 +41,16 @@
             this.cbTipoClienteId = new System.Windows.Forms.ComboBox();
             this.cbTarjetaId = new System.Windows.Forms.ComboBox();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.ClienteId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DUI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CarnetExtranjero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tarjeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblListaUsuarios = new System.Windows.Forms.Label();
             this.lblTipoCliente = new System.Windows.Forms.Label();
             this.txtClienteId = new System.Windows.Forms.TextBox();
@@ -58,16 +68,6 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.Emcabezado = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.ClienteId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DUI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CarnetExtranjero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tarjeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
@@ -247,6 +247,86 @@
             this.dgvCliente.TabIndex = 27;
             this.dgvCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellClick);
             // 
+            // ClienteId
+            // 
+            this.ClienteId.DataPropertyName = "ClienteId";
+            this.ClienteId.HeaderText = "Id Cliente";
+            this.ClienteId.MinimumWidth = 6;
+            this.ClienteId.Name = "ClienteId";
+            this.ClienteId.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Apellido
+            // 
+            this.Apellido.DataPropertyName = "Apellido";
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.MinimumWidth = 6;
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "Telefono";
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.MinimumWidth = 6;
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // TipoDocumento
+            // 
+            this.TipoDocumento.DataPropertyName = "TipoDocumento";
+            this.TipoDocumento.HeaderText = "Tipo Documento";
+            this.TipoDocumento.MinimumWidth = 6;
+            this.TipoDocumento.Name = "TipoDocumento";
+            this.TipoDocumento.ReadOnly = true;
+            // 
+            // DUI
+            // 
+            this.DUI.DataPropertyName = "DUI";
+            this.DUI.HeaderText = "DUI";
+            this.DUI.MinimumWidth = 6;
+            this.DUI.Name = "DUI";
+            this.DUI.ReadOnly = true;
+            // 
+            // CarnetExtranjero
+            // 
+            this.CarnetExtranjero.DataPropertyName = "CarnetExtranjero";
+            this.CarnetExtranjero.HeaderText = "C. Residente";
+            this.CarnetExtranjero.MinimumWidth = 6;
+            this.CarnetExtranjero.Name = "CarnetExtranjero";
+            this.CarnetExtranjero.ReadOnly = true;
+            // 
+            // Tarjeta
+            // 
+            this.Tarjeta.DataPropertyName = "Tarjeta";
+            this.Tarjeta.HeaderText = "Tarjeta";
+            this.Tarjeta.MinimumWidth = 6;
+            this.Tarjeta.Name = "Tarjeta";
+            this.Tarjeta.ReadOnly = true;
+            // 
+            // TipoCliente
+            // 
+            this.TipoCliente.DataPropertyName = "TipoCliente";
+            this.TipoCliente.HeaderText = "Tipo Cliente";
+            this.TipoCliente.MinimumWidth = 6;
+            this.TipoCliente.Name = "TipoCliente";
+            this.TipoCliente.ReadOnly = true;
+            // 
+            // EstadoCliente
+            // 
+            this.EstadoCliente.DataPropertyName = "EstadoCliente";
+            this.EstadoCliente.HeaderText = "Estado Cliente";
+            this.EstadoCliente.MinimumWidth = 6;
+            this.EstadoCliente.Name = "EstadoCliente";
+            this.EstadoCliente.ReadOnly = true;
+            // 
             // lblListaUsuarios
             // 
             this.lblListaUsuarios.AutoSize = true;
@@ -318,6 +398,7 @@
             this.cbTipoDocumento.Name = "cbTipoDocumento";
             this.cbTipoDocumento.Size = new System.Drawing.Size(212, 29);
             this.cbTipoDocumento.TabIndex = 9;
+            this.cbTipoDocumento.SelectedIndexChanged += new System.EventHandler(this.cbTipoDocumento_SelectedIndexChanged);
             // 
             // lblNombre
             // 
@@ -437,86 +518,6 @@
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "GESTIÓN DE CLIENTES";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ClienteId
-            // 
-            this.ClienteId.DataPropertyName = "ClienteId";
-            this.ClienteId.HeaderText = "Id Cliente";
-            this.ClienteId.MinimumWidth = 6;
-            this.ClienteId.Name = "ClienteId";
-            this.ClienteId.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Apellido
-            // 
-            this.Apellido.DataPropertyName = "Apellido";
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.MinimumWidth = 6;
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            // 
-            // Telefono
-            // 
-            this.Telefono.DataPropertyName = "Telefono";
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.MinimumWidth = 6;
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            // 
-            // TipoDocumento
-            // 
-            this.TipoDocumento.DataPropertyName = "TipoDocumento";
-            this.TipoDocumento.HeaderText = "Tipo Documento";
-            this.TipoDocumento.MinimumWidth = 6;
-            this.TipoDocumento.Name = "TipoDocumento";
-            this.TipoDocumento.ReadOnly = true;
-            // 
-            // DUI
-            // 
-            this.DUI.DataPropertyName = "DUI";
-            this.DUI.HeaderText = "DUI";
-            this.DUI.MinimumWidth = 6;
-            this.DUI.Name = "DUI";
-            this.DUI.ReadOnly = true;
-            // 
-            // CarnetExtranjero
-            // 
-            this.CarnetExtranjero.DataPropertyName = "CarnetExtranjero";
-            this.CarnetExtranjero.HeaderText = "C. Residente";
-            this.CarnetExtranjero.MinimumWidth = 6;
-            this.CarnetExtranjero.Name = "CarnetExtranjero";
-            this.CarnetExtranjero.ReadOnly = true;
-            // 
-            // Tarjeta
-            // 
-            this.Tarjeta.DataPropertyName = "Tarjeta";
-            this.Tarjeta.HeaderText = "Tarjeta";
-            this.Tarjeta.MinimumWidth = 6;
-            this.Tarjeta.Name = "Tarjeta";
-            this.Tarjeta.ReadOnly = true;
-            // 
-            // TipoCliente
-            // 
-            this.TipoCliente.DataPropertyName = "TipoCliente";
-            this.TipoCliente.HeaderText = "Tipo Cliente";
-            this.TipoCliente.MinimumWidth = 6;
-            this.TipoCliente.Name = "TipoCliente";
-            this.TipoCliente.ReadOnly = true;
-            // 
-            // EstadoCliente
-            // 
-            this.EstadoCliente.DataPropertyName = "EstadoCliente";
-            this.EstadoCliente.HeaderText = "Estado Cliente";
-            this.EstadoCliente.MinimumWidth = 6;
-            this.EstadoCliente.Name = "EstadoCliente";
-            this.EstadoCliente.ReadOnly = true;
             // 
             // FrmCliente
             // 

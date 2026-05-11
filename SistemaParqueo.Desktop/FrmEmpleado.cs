@@ -19,7 +19,6 @@ namespace SistemaParqueo.Desktop
         {
             txtId.ReadOnly = true;
             ConfigurarGrid();
-            CargarCombos();
 
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
@@ -27,6 +26,7 @@ namespace SistemaParqueo.Desktop
 
         public void CargarDatos()
         {
+            CargarCombos();
             CargarDatosGrid();
         }
 

@@ -15,25 +15,20 @@ namespace SistemaParqueo.Desktop
         public FrmCliente()
         {
             InitializeComponent();
-            cbTipoDocumento.SelectedIndexChanged += cbTipoDocumento_SelectedIndexChanged;
-        }
-
-        private void CbTipoDocumento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         private void FrmCliente_Load(object sender, EventArgs e)
         {
             txtClienteId.ReadOnly = true;
             ConfigurarGrid();
-            CargarCombos();
 
             CambiarEstadoBotones(false);
             cbTipoDocumento_SelectedIndexChanged(null, EventArgs.Empty);
         }
+
         public void CargarDatos()
         {
+            CargarCombos();
             CargarDatosGrid();
         }
 
@@ -218,7 +213,7 @@ namespace SistemaParqueo.Desktop
         {
             if (!Validar()) return;
 
-            DialogResult confirm = MessageBox.Show("¿Desea guardar este vehiculo?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult confirm = MessageBox.Show("¿Desea guardar este cliente?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm != DialogResult.Yes) return;
 
             try
