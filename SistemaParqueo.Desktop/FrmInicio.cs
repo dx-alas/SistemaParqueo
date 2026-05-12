@@ -3,6 +3,7 @@ using SistemaParqueo.Entities;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using SistemaParqueo.Desktop;
 
 namespace SistemaParqueo.Desktop
 {
@@ -240,25 +241,85 @@ namespace SistemaParqueo.Desktop
                 }
             }
 
-            TicketBL.Instance.RegistrarEntrada(tarjetaId, vehiculoSeleccionado.VehiculoId,
+            TicketBL.Instance.RegistrarEntrada(
+                tarjetaId,
+                vehiculoSeleccionado.VehiculoId,
                 Sesion.UsuarioActual.UsuarioId,
                 Sesion.CorteActivo.CorteId
             );
 
-            MessageBox.Show("Entrada registrada correctamente", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var tarjeta = TarjetaBL.Instance.SelectById(tarjetaId);
+
+            var tipoVehiculo = TipoVehiculoBL.Instance
+                .SelectAll()
+                .FirstOrDefault(tv => tv.TipoVehiculoId == vehiculoSeleccionado.TipoVehiculoId);
+
+            TicketPrinter.ImprimirEntrada(
+                tarjeta.Codigo,
+                vehiculoSeleccionado.Placa,
+                cliente.Nombre + " " + cliente.Apellido,
+                tipoVehiculo.Precio
+            );
+
+            MessageBox.Show(
+                "Entrada registrada correctamente",
+                "OK",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
+
             CargarEstadoParqueo();
             CargarVehiculosActivos();
         }
+
+        //private void RegistrarSalida(Ticket ticket)
+        //{
+        //    decimal total = TicketBL.Instance.RegistrarSalida(ticket, Sesion.CorteActivo.CorteId);
+
+        //    MessageBox.Show($"Salida registrada\nTotal: ${total:0.00}", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    CargarVehiculosActivos();
+        //    CargarEstadoParqueo();
+        //}
+
 
         private void RegistrarSalida(Ticket ticket)
         {
-            decimal total = TicketBL.Instance.RegistrarSalida(ticket, Sesion.CorteActivo.CorteId);
+            decimal total = TicketBL.Instance.RegistrarSalida(
+                ticket,
+                Sesion.CorteActivo.CorteId
+            );
 
-            MessageBox.Show($"Salida registrada\nTotal: ${total:0.00}", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DateTime fechaEntrada = DateTime.Today.Add(ticket.HoraEntrada);
+
+            var tarjeta = TarjetaBL.Instance
+                .SelectById(ticket.TarjetaId);
+
+            var cliente = ClienteBL.Instance
+                .SelectAll()
+                .FirstOrDefault(c => c.TarjetaId == ticket.TarjetaId);
+
+            var vehiculo = VehiculoBL.Instance
+                .SelectAll()
+                .FirstOrDefault(v => v.ClienteId == cliente.ClienteId);
+
+            TicketPrinter.ImprimirSalida(
+                tarjeta.Codigo,
+                vehiculo.Placa,
+                cliente.Nombre + " " + cliente.Apellido,
+                total,
+                fechaEntrada
+            );
+
+            MessageBox.Show(
+                $"Salida registrada\nTotal: ${total:0.00}",
+                "OK",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
+
             CargarVehiculosActivos();
             CargarEstadoParqueo();
         }
-
         private void LimpiarBarcode()
         {
             txtBarcode.Clear();

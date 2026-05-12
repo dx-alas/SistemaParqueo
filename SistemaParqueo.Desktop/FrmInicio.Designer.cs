@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicio));
             this.panelCentral = new System.Windows.Forms.Panel();
             this.btnMulta = new System.Windows.Forms.Button();
-            this.txtBarcode = new System.Windows.Forms.TextBox();
             this.btnHistorial = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvVehiculos = new System.Windows.Forms.DataGridView();
@@ -42,6 +41,7 @@
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtBarcode = new System.Windows.Forms.TextBox();
             this.lblInformacion = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblNumVehiculo = new System.Windows.Forms.Label();
@@ -65,8 +65,6 @@
             // 
             // panelCentral
             // 
-            this.panelCentral.Controls.Add(this.btnMulta);
-            this.panelCentral.Controls.Add(this.txtBarcode);
             this.panelCentral.Controls.Add(this.btnHistorial);
             this.panelCentral.Controls.Add(this.groupBox2);
             this.panelCentral.Controls.Add(this.groupBox1);
@@ -81,21 +79,13 @@
             // 
             this.btnMulta.Enabled = false;
             this.btnMulta.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnMulta.Location = new System.Drawing.Point(1165, 229);
+            this.btnMulta.Location = new System.Drawing.Point(891, 31);
             this.btnMulta.Name = "btnMulta";
             this.btnMulta.Size = new System.Drawing.Size(140, 58);
             this.btnMulta.TabIndex = 7;
             this.btnMulta.Text = "Aplicar Multa";
             this.btnMulta.UseVisualStyleBackColor = true;
             this.btnMulta.Click += new System.EventHandler(this.btnMulta_Click);
-            // 
-            // txtBarcode
-            // 
-            this.txtBarcode.Location = new System.Drawing.Point(1156, 177);
-            this.txtBarcode.Name = "txtBarcode";
-            this.txtBarcode.Size = new System.Drawing.Size(149, 23);
-            this.txtBarcode.TabIndex = 6;
-            this.txtBarcode.TextChanged += new System.EventHandler(this.txtBarcode_TextChanged);
             // 
             // btnHistorial
             // 
@@ -189,7 +179,9 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnMulta);
             this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.txtBarcode);
             this.groupBox1.Controls.Add(this.lblInformacion);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.lblNumVehiculo);
@@ -212,13 +204,21 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // txtBarcode
+            // 
+            this.txtBarcode.Location = new System.Drawing.Point(566, 12);
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.Size = new System.Drawing.Size(149, 26);
+            this.txtBarcode.TabIndex = 6;
+            this.txtBarcode.TextChanged += new System.EventHandler(this.txtBarcode_TextChanged);
+            // 
             // lblInformacion
             // 
             this.lblInformacion.AutoSize = true;
             this.lblInformacion.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInformacion.Location = new System.Drawing.Point(245, 50);
             this.lblInformacion.Name = "lblInformacion";
-            this.lblInformacion.Size = new System.Drawing.Size(807, 38);
+            this.lblInformacion.Size = new System.Drawing.Size(640, 30);
             this.lblInformacion.TabIndex = 3;
             this.lblInformacion.Text = "En Parqueo: 0 / Cantidad Total: 50 / Espacios Disponibles: 50";
             // 
@@ -227,7 +227,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(136, 85);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 23);
+            this.label5.Size = new System.Drawing.Size(81, 19);
             this.label5.TabIndex = 2;
             this.label5.Text = "(Vehículos)";
             // 
@@ -238,7 +238,7 @@
             this.lblNumVehiculo.ForeColor = System.Drawing.Color.Green;
             this.lblNumVehiculo.Location = new System.Drawing.Point(140, 23);
             this.lblNumVehiculo.Name = "lblNumVehiculo";
-            this.lblNumVehiculo.Size = new System.Drawing.Size(58, 67);
+            this.lblNumVehiculo.Size = new System.Drawing.Size(46, 54);
             this.lblNumVehiculo.TabIndex = 1;
             this.lblNumVehiculo.Text = "0";
             this.lblNumVehiculo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -286,7 +286,7 @@
             this.txtMontoInicial.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtMontoInicial.Location = new System.Drawing.Point(729, 47);
             this.txtMontoInicial.Name = "txtMontoInicial";
-            this.txtMontoInicial.Size = new System.Drawing.Size(165, 29);
+            this.txtMontoInicial.Size = new System.Drawing.Size(165, 25);
             this.txtMontoInicial.TabIndex = 6;
             // 
             // txtTurnoIniciado
@@ -295,7 +295,7 @@
             this.txtTurnoIniciado.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtTurnoIniciado.Location = new System.Drawing.Point(526, 47);
             this.txtTurnoIniciado.Name = "txtTurnoIniciado";
-            this.txtTurnoIniciado.Size = new System.Drawing.Size(172, 29);
+            this.txtTurnoIniciado.Size = new System.Drawing.Size(172, 25);
             this.txtTurnoIniciado.TabIndex = 5;
             // 
             // label3
@@ -303,7 +303,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(726, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 23);
+            this.label3.Size = new System.Drawing.Size(100, 19);
             this.label3.TabIndex = 4;
             this.label3.Text = "Monto Inicial:";
             // 
@@ -312,7 +312,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(522, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 23);
+            this.label1.Size = new System.Drawing.Size(108, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "Turno Iniciado:";
             // 
@@ -322,7 +322,7 @@
             this.txtCajero.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtCajero.Location = new System.Drawing.Point(305, 46);
             this.txtCajero.Name = "txtCajero";
-            this.txtCajero.Size = new System.Drawing.Size(190, 29);
+            this.txtCajero.Size = new System.Drawing.Size(190, 25);
             this.txtCajero.TabIndex = 2;
             // 
             // label2
@@ -331,7 +331,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(300, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 23);
+            this.label2.Size = new System.Drawing.Size(57, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Cajero:";
             // 
@@ -341,16 +341,16 @@
             this.lblEstado.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lblEstado.Location = new System.Drawing.Point(16, 42);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(225, 25);
+            this.lblEstado.Size = new System.Drawing.Size(177, 20);
             this.lblEstado.TabIndex = 0;
             this.lblEstado.Text = "**Estado: Caja Abierta**";
             // 
             // FrmInicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1355, 813);
+            this.ClientSize = new System.Drawing.Size(1355, 749);
             this.Controls.Add(this.panelCentral);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -359,7 +359,6 @@
             this.Text = "Ventana principal";
             this.Load += new System.EventHandler(this.FrmInicio_Load);
             this.panelCentral.ResumeLayout(false);
-            this.panelCentral.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).EndInit();
             this.groupBox1.ResumeLayout(false);
