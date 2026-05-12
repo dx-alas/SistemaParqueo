@@ -98,7 +98,7 @@
             this.cbEstadoUsuarioId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbEstadoUsuarioId.MaxLength = 50;
             this.cbEstadoUsuarioId.Name = "cbEstadoUsuarioId";
-            this.cbEstadoUsuarioId.Size = new System.Drawing.Size(216, 25);
+            this.cbEstadoUsuarioId.Size = new System.Drawing.Size(216, 29);
             this.cbEstadoUsuarioId.TabIndex = 9;
             // 
             // cbRolId
@@ -110,7 +110,7 @@
             this.cbRolId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbRolId.MaxLength = 50;
             this.cbRolId.Name = "cbRolId";
-            this.cbRolId.Size = new System.Drawing.Size(216, 25);
+            this.cbRolId.Size = new System.Drawing.Size(216, 29);
             this.cbRolId.TabIndex = 5;
             // 
             // dgvUsuario
@@ -138,6 +138,7 @@
             this.dgvUsuario.RowTemplate.Height = 24;
             this.dgvUsuario.Size = new System.Drawing.Size(948, 200);
             this.dgvUsuario.TabIndex = 19;
+            this.dgvUsuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuario_CellClick);
             // 
             // UsuarioId
             // 
@@ -185,7 +186,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(39, 103);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(162, 25);
+            this.label3.Size = new System.Drawing.Size(203, 32);
             this.label3.TabIndex = 1;
             this.label3.Text = "DATOS USUARIO";
             // 
@@ -195,7 +196,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(39, 426);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(190, 25);
+            this.label4.Size = new System.Drawing.Size(237, 32);
             this.label4.TabIndex = 18;
             this.label4.Text = "LISTADO USUARIOS";
             // 
@@ -205,7 +206,7 @@
             this.lblUsuarioId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuarioId.Location = new System.Drawing.Point(426, 280);
             this.lblUsuarioId.Name = "lblUsuarioId";
-            this.lblUsuarioId.Size = new System.Drawing.Size(29, 21);
+            this.lblUsuarioId.Size = new System.Drawing.Size(35, 28);
             this.lblUsuarioId.TabIndex = 12;
             this.lblUsuarioId.Text = "Id:";
             // 
@@ -217,7 +218,7 @@
             this.txtUsuarioId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsuarioId.MaxLength = 50;
             this.txtUsuarioId.Name = "txtUsuarioId";
-            this.txtUsuarioId.Size = new System.Drawing.Size(216, 25);
+            this.txtUsuarioId.Size = new System.Drawing.Size(216, 29);
             this.txtUsuarioId.TabIndex = 13;
             // 
             // btnEliminar
@@ -259,7 +260,7 @@
             this.cbEmpleadoId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbEmpleadoId.MaxLength = 50;
             this.cbEmpleadoId.Name = "cbEmpleadoId";
-            this.cbEmpleadoId.Size = new System.Drawing.Size(216, 25);
+            this.cbEmpleadoId.Size = new System.Drawing.Size(216, 29);
             this.cbEmpleadoId.TabIndex = 11;
             // 
             // lblNombre
@@ -268,7 +269,7 @@
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(41, 159);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(81, 21);
+            this.lblNombre.Size = new System.Drawing.Size(100, 28);
             this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "Nombre: ";
             // 
@@ -278,7 +279,7 @@
             this.lblRol.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRol.Location = new System.Drawing.Point(426, 156);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(43, 21);
+            this.lblRol.Size = new System.Drawing.Size(54, 28);
             this.lblRol.TabIndex = 4;
             this.lblRol.Text = "Rol: ";
             // 
@@ -288,7 +289,7 @@
             this.lblEmpleado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmpleado.Location = new System.Drawing.Point(40, 281);
             this.lblEmpleado.Name = "lblEmpleado";
-            this.lblEmpleado.Size = new System.Drawing.Size(95, 21);
+            this.lblEmpleado.Size = new System.Drawing.Size(116, 28);
             this.lblEmpleado.TabIndex = 10;
             this.lblEmpleado.Text = "Empleado: ";
             // 
@@ -299,7 +300,7 @@
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(216, 25);
+            this.txtNombre.Size = new System.Drawing.Size(216, 29);
             this.txtNombre.TabIndex = 3;
             // 
             // lblEstadoUsuario
@@ -308,7 +309,7 @@
             this.lblEstadoUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstadoUsuario.Location = new System.Drawing.Point(426, 218);
             this.lblEstadoUsuario.Name = "lblEstadoUsuario";
-            this.lblEstadoUsuario.Size = new System.Drawing.Size(132, 21);
+            this.lblEstadoUsuario.Size = new System.Drawing.Size(164, 28);
             this.lblEstadoUsuario.TabIndex = 8;
             this.lblEstadoUsuario.Text = "Estado Usuario: ";
             // 
@@ -349,7 +350,7 @@
             this.txtClave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtClave.MaxLength = 255;
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(216, 25);
+            this.txtClave.Size = new System.Drawing.Size(216, 29);
             this.txtClave.TabIndex = 7;
             // 
             // lblClave
@@ -358,7 +359,7 @@
             this.lblClave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClave.Location = new System.Drawing.Point(41, 220);
             this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(60, 21);
+            this.lblClave.Size = new System.Drawing.Size(74, 28);
             this.lblClave.TabIndex = 6;
             this.lblClave.Text = "Clave: ";
             // 
@@ -374,7 +375,7 @@
             // 
             // FrmUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1047, 749);

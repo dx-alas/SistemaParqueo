@@ -1,13 +1,12 @@
 ﻿using SistemaParqueo.BusinessLogic;
-using SistemaParqueo.Entities;
+using SistemaParqueo.Desktop.Interfaces;
 using System;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace SistemaParqueo.Desktop
 {
-    public partial class FrmCorteCaja : Form
+    public partial class FrmCorteCaja : Form, IFormularioActualizable
     {
         public FrmCorteCaja()
         {
@@ -17,7 +16,11 @@ namespace SistemaParqueo.Desktop
         private void FrmCorteCaja_Load(object sender, EventArgs e)
         {
             ConfigurarGrid();
-            CargarDatos();
+        }
+
+        public void CargarDatos()
+        {
+            CargarDatosGrid();
         }
 
         private void ConfigurarGrid()
@@ -31,7 +34,7 @@ namespace SistemaParqueo.Desktop
             dgvCorteCaja.AllowUserToDeleteRows = false;
         }
 
-        private void CargarDatos()
+        private void CargarDatosGrid()
         {
             try
             {

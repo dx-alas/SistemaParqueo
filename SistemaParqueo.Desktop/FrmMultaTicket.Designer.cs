@@ -153,6 +153,7 @@
             this.dgvMulta.RowTemplate.Height = 24;
             this.dgvMulta.Size = new System.Drawing.Size(945, 202);
             this.dgvMulta.TabIndex = 13;
+            this.dgvMulta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMulta_CellClick);
             // 
             // MultaId
             // 
