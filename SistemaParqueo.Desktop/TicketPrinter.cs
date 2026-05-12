@@ -2,6 +2,7 @@
 using System;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.Windows.Forms;
 
 namespace SistemaParqueo.Desktop
 {
@@ -73,6 +74,24 @@ ${monto:0.00}
             Imprimir();
         }
 
+        //private static void Imprimir()
+        //{
+        //    PrintDocument pd = new PrintDocument();
+
+        //    pd.PrintPage += (sender, e) =>
+        //    {
+        //        Font font = new Font("Consolas", 12);
+
+        //        e.Graphics.DrawString(
+        //            contenido,
+        //            font,
+        //            Brushes.Black,
+        //            new RectangleF(0, 0, 300, 800)
+        //        );
+        //    };
+
+        //    pd.Print();
+        //}
         private static void Imprimir()
         {
             PrintDocument pd = new PrintDocument();
@@ -89,7 +108,23 @@ ${monto:0.00}
                 );
             };
 
-            pd.Print();
+            try
+            {
+                if (!pd.PrinterSettings.IsValid)
+                {
+                    MessageBox.Show("No hay impresora instalada o configurada.");
+                    return;
+                }
+
+                pd.Print();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error al imprimir: " + ex.Message
+                );
+            }
         }
+
     }
 }
