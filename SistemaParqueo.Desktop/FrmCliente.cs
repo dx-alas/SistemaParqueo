@@ -259,6 +259,7 @@ namespace SistemaParqueo.Desktop
                     MessageBox.Show("Actualizado correctamente");
                     Limpiar();
                     CargarDatos();
+                    CambiarEstadoBotones(false);
                 }
             }
             catch (Exception ex)
@@ -286,6 +287,7 @@ namespace SistemaParqueo.Desktop
                     MessageBox.Show("Eliminado correctamente");
                     Limpiar();
                     CargarDatos();
+                    CambiarEstadoBotones(false);
                 }
 
                 else

@@ -16,10 +16,10 @@ namespace SistemaParqueo.Desktop
         private void FrmEstadoEmpleado_Load(object sender, EventArgs e)
         {
             txtId.ReadOnly = true;
+
             ConfigurarGrid();
 
-            btnActualizar.Enabled = false;
-            btnEliminar.Enabled = false;
+            CambiarEstadoBotones(false);
         }
 
         public void CargarDatos()
@@ -66,6 +66,12 @@ namespace SistemaParqueo.Desktop
             return true;
         }
 
+        private void CambiarEstadoBotones(bool editando)
+        {
+            btnGuardar.Enabled = !editando;
+            btnActualizar.Enabled = editando;
+            btnEliminar.Enabled = editando;
+        }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!Validar())
@@ -129,6 +135,7 @@ namespace SistemaParqueo.Desktop
                     MessageBox.Show("Actualizado correctamente");
                     Limpiar();
                     CargarDatos();
+                    CambiarEstadoBotones(false);
                 }
             }
             catch (Exception ex)
@@ -164,6 +171,7 @@ namespace SistemaParqueo.Desktop
                     MessageBox.Show("Eliminado correctamente");
                     Limpiar();
                     CargarDatos();
+                    CambiarEstadoBotones(false);
                 }
             }
             catch (Exception ex)
@@ -175,9 +183,8 @@ namespace SistemaParqueo.Desktop
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
-            btnActualizar.Enabled = false;
-            btnEliminar.Enabled = false;
-            btnGuardar.Enabled = true;
+
+            CambiarEstadoBotones(false);
         }
 
         private void dgvEstado_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -190,9 +197,7 @@ namespace SistemaParqueo.Desktop
                 txtNombre.Text = row.Cells[1].Value?.ToString();
             }
 
-            btnActualizar.Enabled = true;
-            btnEliminar.Enabled = true;
-            btnGuardar.Enabled = false;
+            CambiarEstadoBotones(true);
         }
 
         protected override CreateParams CreateParams
