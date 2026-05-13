@@ -18,9 +18,10 @@ namespace SistemaParqueo.Desktop
 )
         {
             contenido =
-        $@"
-
-           ENTRADA
+        $@"-----------------------------
+UNIVERSIDAD DR. ANDRES BELLO
+        PARQUEO
+        ENTRADA
 
 Tarjeta : {tarjeta}
 
@@ -35,7 +36,7 @@ Hora Entrada:
 Precio:
 ${precio:0.00}
 
-";
+----------------------------";
 
             Imprimir();
         }
@@ -49,9 +50,10 @@ ${precio:0.00}
 )
         {
             contenido =
-        $@"
-
-            SALIDA
+        $@"-----------------------------
+UNIVERSIDAD DR. ANDRES BELLO
+        PARQUEO
+        SALIDA
 
 Tarjeta : {tarjeta}
 
@@ -69,7 +71,7 @@ Hora Salida:
 Monto:
 ${monto:0.00}
 
-";
+------------------------------";
 
             Imprimir();
         }
