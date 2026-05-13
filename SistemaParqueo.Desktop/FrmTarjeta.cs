@@ -22,6 +22,7 @@ namespace SistemaParqueo.Desktop
             ConfigurarGrid();
 
             CambiarEstadoBotones(false);
+            btnGenerarCodigo.Enabled = true;
         }
 
         public void CargarDatos()
@@ -170,6 +171,7 @@ namespace SistemaParqueo.Desktop
                     Limpiar();
                     CargarDatos();
                     CambiarEstadoBotones(false);
+                    btnGenerarCodigo.Enabled = true;
                 }
             }
             catch (Exception ex)
@@ -198,6 +200,7 @@ namespace SistemaParqueo.Desktop
                     Limpiar();
                     CargarDatos();
                     CambiarEstadoBotones(false);
+                    btnGenerarCodigo.Enabled = true;
                 }
             }
             catch (Exception ex)
@@ -211,6 +214,7 @@ namespace SistemaParqueo.Desktop
             Limpiar();
 
             CambiarEstadoBotones(false);
+            btnGenerarCodigo.Enabled = true;
         }
 
         private void dgvTarjeta_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -229,6 +233,7 @@ namespace SistemaParqueo.Desktop
                 }
 
                 CambiarEstadoBotones(true);
+                btnGenerarCodigo.Enabled = false;
 
             }
         }
