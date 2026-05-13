@@ -22,7 +22,7 @@ namespace SistemaParqueo.Desktop
             ConfigurarGrid();
 
             CambiarEstadoBotones(false);
-            btnGenerarCodigo.Enabled = true;
+            btnGenerarCodigo.Enabled = true; 
         }
 
         public void CargarDatos()

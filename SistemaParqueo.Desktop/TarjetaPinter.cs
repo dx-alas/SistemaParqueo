@@ -69,13 +69,13 @@ namespace SistemaParqueo.Desktop
                 // FONDO
                 g.FillRectangle(
                     Brushes.White,
-                    new Rectangle(20, 20, 500, 300)
+                    new Rectangle(0, 0, 300, 800)
                 );
 
                 // BORDE
                 g.DrawRectangle(
                     Pens.Black,
-                    new Rectangle(20, 20, 500, 300)
+                    new Rectangle(0, 0, 300, 350)
                 );
 
                 // LOGO PRINCIPAL
@@ -129,9 +129,9 @@ namespace SistemaParqueo.Desktop
                 // CODIGO BARRA
                 g.DrawImage(
                     barcode,
-                    110,
+                    25,
                     210,
-                    280,
+                    260,
                     70
                 );
 
