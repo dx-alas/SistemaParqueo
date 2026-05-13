@@ -19,16 +19,15 @@ namespace SistemaParqueo.Desktop
         {
             contenido =
         $@"-----------------------------
-UNIVERSIDAD DR. ANDRES BELLO
-        PARQUEO
-        ENTRADA
+ UNIVERSIDAD DR. ANDRES BELLO
+            PARQUEO
+            ENTRADA
 
 Tarjeta : {tarjeta}
 
 Placa   : {placa}
 
-Cliente :
-{cliente}
+Cliente : {cliente}
 
 Hora Entrada:
 {DateTime.Now:dd/MM/yyyy hh:mm tt}
@@ -36,7 +35,7 @@ Hora Entrada:
 Precio:
 ${precio:0.00}
 
-----------------------------";
+------------------------------";
 
             Imprimir();
         }
@@ -52,15 +51,14 @@ ${precio:0.00}
             contenido =
         $@"-----------------------------
 UNIVERSIDAD DR. ANDRES BELLO
-        PARQUEO
-        SALIDA
+            PARQUEO
+            SALIDA
 
 Tarjeta : {tarjeta}
 
 Placa   : {placa}
 
-Cliente :
-{cliente}
+Cliente : {cliente}
 
 Hora Entrada:
 {fechaEntrada:dd/MM/yyyy hh:mm tt}
@@ -71,7 +69,7 @@ Hora Salida:
 Monto:
 ${monto:0.00}
 
-------------------------------";
+-------------------------------";
 
             Imprimir();
         }
