@@ -68,6 +68,7 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.Emcabezado = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnImprimirTarjeta = new System.Windows.Forms.Button();
             this.panelCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +76,7 @@
             // panelCentral
             // 
             this.panelCentral.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelCentral.Controls.Add(this.btnImprimirTarjeta);
             this.panelCentral.Controls.Add(this.mtxtDUI);
             this.panelCentral.Controls.Add(this.mtxtTelefono);
             this.panelCentral.Controls.Add(this.lblClienteId);
@@ -519,6 +521,20 @@
             this.lblTitulo.Text = "GESTIÓN DE CLIENTES";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnImprimirTarjeta
+            // 
+            this.btnImprimirTarjeta.BackColor = System.Drawing.Color.Orange;
+            this.btnImprimirTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimirTarjeta.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnImprimirTarjeta.ForeColor = System.Drawing.Color.White;
+            this.btnImprimirTarjeta.Location = new System.Drawing.Point(826, 393);
+            this.btnImprimirTarjeta.Name = "btnImprimirTarjeta";
+            this.btnImprimirTarjeta.Size = new System.Drawing.Size(198, 39);
+            this.btnImprimirTarjeta.TabIndex = 28;
+            this.btnImprimirTarjeta.Text = "Imprimir Tarjeta";
+            this.btnImprimirTarjeta.UseVisualStyleBackColor = false;
+            this.btnImprimirTarjeta.Click += new System.EventHandler(this.btnImprimirTarjeta_Click);
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -582,6 +598,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Tarjeta;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCliente;
+        private System.Windows.Forms.Button btnImprimirTarjeta;
     }
 }
 

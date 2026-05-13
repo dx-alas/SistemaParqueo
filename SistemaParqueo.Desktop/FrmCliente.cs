@@ -208,6 +208,7 @@ namespace SistemaParqueo.Desktop
             btnGuardar.Enabled = !editando;
             btnActualizar.Enabled = editando;
             btnEliminar.Enabled = editando;
+            btnImprimirTarjeta.Enabled = editando;
         }
 
         // -- Eventos de Botones --
@@ -395,6 +396,46 @@ namespace SistemaParqueo.Desktop
                 cp.ExStyle |= 0x02000000; // WS_EX_COMPOSITED
                 return cp;
             }
+        }
+
+        private void btnImprimirTarjeta_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show("Seleccione un cliente");
+                return;
+            }
+
+            DialogResult confirm = MessageBox.Show(
+                "¿Desea imprimir esta tarjeta?",
+                "Confirmar impresión",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (confirm != DialogResult.Yes)
+                return;
+
+            string documento = "";
+
+            if (cbTipoDocumento.Text == "DUI")
+            {
+                documento = mtxtDUI.Text;
+            }
+            else if (cbTipoDocumento.Text == "CR")
+            {
+                documento = txtCarnetExtranjero.Text;
+            }
+
+            TarjetaPrinter.ImprimirTarjeta(
+                cbTarjetaId.Text,
+                txtNombre.Text + " " + txtApellido.Text,
+                cbTipoDocumento.Text,
+                documento
+            );
+
+            Limpiar();
+            CambiarEstadoBotones(false);
         }
     }
 }
