@@ -83,9 +83,9 @@ namespace SistemaParqueo.Desktop
                 {
                     g.DrawImage(
                         logo,
+                        20,
                         35,
-                        35,
-                        150,
+                        250,
                         70
                     );
                 }
@@ -95,41 +95,41 @@ namespace SistemaParqueo.Desktop
                     "SISTEMA PARQUEO",
                     new Font("Arial", 18, FontStyle.Bold),
                     Brushes.Black,
-                    190,
-                    40
+                    15,
+                    15
                 );
 
                 // NOMBRE
                 g.DrawString(
                     cliente,
-                    new Font("Arial", 16, FontStyle.Bold),
+                    new Font("Arial", 10, FontStyle.Bold),
                     Brushes.Black,
-                    40,
+                    10,
                     120
                 );
 
                 // TIPO DOCUMENTO
                 g.DrawString(
                     tipoDocumento,
-                    new Font("Arial", 11, FontStyle.Bold),
+                    new Font("Arial", 10, FontStyle.Bold),
                     Brushes.Black,
-                    40,
+                    10,
                     155
                 );
 
                 // DOCUMENTO
                 g.DrawString(
                     documento,
-                    new Font("Arial", 12),
+                    new Font("Arial", 10),
                     Brushes.Black,
-                    40,
+                    10,
                     180
                 );
 
                 // CODIGO BARRA
                 g.DrawImage(
                     barcode,
-                    25,
+                    20,
                     210,
                     260,
                     70
@@ -138,23 +138,11 @@ namespace SistemaParqueo.Desktop
                 // SONSONATE
                 g.DrawString(
                     "Sonsonate",
-                    new Font("Arial", 9),
+                    new Font("Arial", 10),
                     Brushes.Black,
                     35,
                     295
                 );
-
-                // LOGO PEQUEÑO
-                if (logo2 != null)
-                {
-                    g.DrawImage(
-                        logo2,
-                        455,
-                        260,
-                        40,
-                        40
-                    );
-                }
             };
 
             try
