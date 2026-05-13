@@ -18,10 +18,10 @@ namespace SistemaParqueo.Desktop
         private void FrmTarjeta_Load(object sender, EventArgs e)
         {
             txtTarjetaId.ReadOnly = true;
+
             ConfigurarGrid();
 
-            btnActualizar.Enabled = false;
-            btnEliminar.Enabled = false;
+            CambiarEstadoBotones(false);
         }
 
         public void CargarDatos()
@@ -106,6 +106,13 @@ namespace SistemaParqueo.Desktop
             return true;
         }
 
+        private void CambiarEstadoBotones(bool editando)
+        {
+            btnGuardar.Enabled = !editando;
+            btnActualizar.Enabled = editando;
+            btnEliminar.Enabled = editando;
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!Validar()) return;
@@ -162,6 +169,7 @@ namespace SistemaParqueo.Desktop
                     MessageBox.Show("Actualizado correctamente");
                     Limpiar();
                     CargarDatos();
+                    CambiarEstadoBotones(false);
                 }
             }
             catch (Exception ex)
@@ -189,6 +197,7 @@ namespace SistemaParqueo.Desktop
                     MessageBox.Show("Eliminado correctamente");
                     Limpiar();
                     CargarDatos();
+                    CambiarEstadoBotones(false);
                 }
             }
             catch (Exception ex)
@@ -200,10 +209,8 @@ namespace SistemaParqueo.Desktop
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
-            btnActualizar.Enabled = false;
-            btnEliminar.Enabled = false;
-            btnGuardar.Enabled = true;
-            btnGenerarCodigo.Enabled = true;
+
+            CambiarEstadoBotones(false);
         }
 
         private void dgvTarjeta_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -221,10 +228,8 @@ namespace SistemaParqueo.Desktop
                     cbEstadoTarjetaId.SelectedValue = ((dynamic)item).EstadoTarjetaId;
                 }
 
-                btnActualizar.Enabled = true;
-                btnEliminar.Enabled = true;
-                btnGuardar .Enabled = false;
-                btnGenerarCodigo.Enabled = false;
+                CambiarEstadoBotones(true);
+
             }
         }
 
