@@ -12,6 +12,7 @@ namespace SistemaParqueo.Desktop
     {
         public FrmTarjeta()
         {
+
             InitializeComponent();
         }
 
@@ -276,6 +277,32 @@ namespace SistemaParqueo.Desktop
         private void btnGenerarCodigo_Click(object sender, EventArgs e)
         {
             txtCodigo.Text = GenerarCodigo();
+        }
+
+        //Buscador Tarjeta
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            TextBox txtBuscar = sender as TextBox;
+            if (txtBuscar == null) return;
+
+            var tarjetas = TarjetaBL.Instance.SelectAll();
+            var estados = EstadoTarjetaBL.Instance.SelectAll();
+
+            var query = (from i in tarjetas
+                         where i.Codigo != null && i.Codigo.ToString().ToLower().Contains(txtBuscar.Text.ToLower())
+                         select new
+                         {
+                             TarjetaId = i.TarjetaId,
+                             Codigo = i.Codigo,
+                             EstadoTarjetaId = i.EstadoTarjetaId,
+                             EstadoTarjeta = estados.FirstOrDefault(x => x.EstadoTarjetaId.Equals(i.EstadoTarjetaId))?.Nombre
+                         });
+
+            dgvTarjeta.DataSource = null;
+            dgvTarjeta.DataSource = query.ToList();
+
+            if (dgvTarjeta.Columns["EstadoTarjetaId"] != null)
+                dgvTarjeta.Columns["EstadoTarjetaId"].Visible = false;
         }
     }
 }
