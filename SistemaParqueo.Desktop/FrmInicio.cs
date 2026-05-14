@@ -261,26 +261,9 @@ namespace SistemaParqueo.Desktop
                 tipoVehiculo.Precio
             );
 
-            MessageBox.Show(
-                "Entrada registrada correctamente",
-                "OK",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
-
             CargarEstadoParqueo();
             CargarVehiculosActivos();
         }
-
-        //private void RegistrarSalida(Ticket ticket)
-        //{
-        //    decimal total = TicketBL.Instance.RegistrarSalida(ticket, Sesion.CorteActivo.CorteId);
-
-        //    MessageBox.Show($"Salida registrada\nTotal: ${total:0.00}", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //    CargarVehiculosActivos();
-        //    CargarEstadoParqueo();
-        //}
-
 
         private void RegistrarSalida(Ticket ticket)
         {
@@ -308,13 +291,6 @@ namespace SistemaParqueo.Desktop
                 cliente.Nombre + " " + cliente.Apellido,
                 total,
                 fechaEntrada
-            );
-
-            MessageBox.Show(
-                $"Salida registrada\nTotal: ${total:0.00}",
-                "OK",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
             );
 
             CargarVehiculosActivos();
@@ -373,7 +349,7 @@ namespace SistemaParqueo.Desktop
             if (e.RowIndex < 0) return;
 
             var fila = dgvVehiculos.Rows[e.RowIndex];
-            string codigoTarjeta = fila.Cells["Tarjeta"].Value?.ToString();
+            string codigoTarjeta = fila.Cells[0].Value?.ToString();
 
             if (string.IsNullOrEmpty(codigoTarjeta)) return;
 
