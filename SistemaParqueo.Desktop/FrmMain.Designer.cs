@@ -42,7 +42,6 @@ namespace SistemaParqueo.Desktop
             this.btnEstadoTicket = new System.Windows.Forms.Button();
             this.btnEmpleado = new System.Windows.Forms.Button();
             this.btnEstadoEmpleado = new System.Windows.Forms.Button();
-            this.btnEstadoPermanencia = new System.Windows.Forms.Button();
             this.btnVehiculo = new System.Windows.Forms.Button();
             this.btnEstadoVehiculo = new System.Windows.Forms.Button();
             this.btnMultaTicket = new System.Windows.Forms.Button();
@@ -50,12 +49,13 @@ namespace SistemaParqueo.Desktop
             this.btnCliente = new System.Windows.Forms.Button();
             this.btnUsuario = new System.Windows.Forms.Button();
             this.btnTarjeta = new System.Windows.Forms.Button();
+            this.btnCorteCaja = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.panelTop = new System.Windows.Forms.Panel();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblTituloSistema = new System.Windows.Forms.Label();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.btnCorteCaja = new System.Windows.Forms.Button();
+            this.btnEstadoPermanencia = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelTop.SuspendLayout();
@@ -68,9 +68,8 @@ namespace SistemaParqueo.Desktop
             this.panelMenu.Controls.Add(this.btnSalir);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(283, 750);
+            this.panelMenu.Size = new System.Drawing.Size(212, 609);
             this.panelMenu.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -97,9 +96,9 @@ namespace SistemaParqueo.Desktop
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(283, 713);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(212, 579);
             this.flowLayoutPanel1.TabIndex = 17;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -110,10 +109,10 @@ namespace SistemaParqueo.Desktop
             this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInicio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInicio.ForeColor = System.Drawing.Color.White;
-            this.btnInicio.Location = new System.Drawing.Point(11, 20);
-            this.btnInicio.Margin = new System.Windows.Forms.Padding(11, 20, 5, 5);
+            this.btnInicio.Location = new System.Drawing.Point(8, 16);
+            this.btnInicio.Margin = new System.Windows.Forms.Padding(8, 16, 4, 4);
             this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Size = new System.Drawing.Size(259, 37);
+            this.btnInicio.Size = new System.Drawing.Size(194, 30);
             this.btnInicio.TabIndex = 0;
             this.btnInicio.Text = "Inicio";
             this.btnInicio.UseVisualStyleBackColor = false;
@@ -126,10 +125,10 @@ namespace SistemaParqueo.Desktop
             this.btnTipoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTipoCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTipoCliente.ForeColor = System.Drawing.Color.White;
-            this.btnTipoCliente.Location = new System.Drawing.Point(11, 67);
-            this.btnTipoCliente.Margin = new System.Windows.Forms.Padding(11, 5, 5, 5);
+            this.btnTipoCliente.Location = new System.Drawing.Point(8, 54);
+            this.btnTipoCliente.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.btnTipoCliente.Name = "btnTipoCliente";
-            this.btnTipoCliente.Size = new System.Drawing.Size(259, 37);
+            this.btnTipoCliente.Size = new System.Drawing.Size(194, 30);
             this.btnTipoCliente.TabIndex = 1;
             this.btnTipoCliente.Text = "TipoCliente";
             this.btnTipoCliente.UseVisualStyleBackColor = false;
@@ -142,10 +141,10 @@ namespace SistemaParqueo.Desktop
             this.btnTipoVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTipoVehiculo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTipoVehiculo.ForeColor = System.Drawing.Color.White;
-            this.btnTipoVehiculo.Location = new System.Drawing.Point(11, 114);
-            this.btnTipoVehiculo.Margin = new System.Windows.Forms.Padding(11, 5, 5, 5);
+            this.btnTipoVehiculo.Location = new System.Drawing.Point(8, 92);
+            this.btnTipoVehiculo.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.btnTipoVehiculo.Name = "btnTipoVehiculo";
-            this.btnTipoVehiculo.Size = new System.Drawing.Size(259, 37);
+            this.btnTipoVehiculo.Size = new System.Drawing.Size(194, 30);
             this.btnTipoVehiculo.TabIndex = 2;
             this.btnTipoVehiculo.Text = "TipoVehiculo";
             this.btnTipoVehiculo.UseVisualStyleBackColor = false;
@@ -158,10 +157,10 @@ namespace SistemaParqueo.Desktop
             this.btnEstadoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstadoUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstadoUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnEstadoUsuario.Location = new System.Drawing.Point(11, 161);
-            this.btnEstadoUsuario.Margin = new System.Windows.Forms.Padding(11, 5, 5, 5);
+            this.btnEstadoUsuario.Location = new System.Drawing.Point(8, 130);
+            this.btnEstadoUsuario.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.btnEstadoUsuario.Name = "btnEstadoUsuario";
-            this.btnEstadoUsuario.Size = new System.Drawing.Size(259, 37);
+            this.btnEstadoUsuario.Size = new System.Drawing.Size(194, 30);
             this.btnEstadoUsuario.TabIndex = 3;
             this.btnEstadoUsuario.Text = "EstadoUsuario";
             this.btnEstadoUsuario.UseVisualStyleBackColor = false;
@@ -174,10 +173,10 @@ namespace SistemaParqueo.Desktop
             this.btnRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRol.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRol.ForeColor = System.Drawing.Color.White;
-            this.btnRol.Location = new System.Drawing.Point(11, 208);
-            this.btnRol.Margin = new System.Windows.Forms.Padding(11, 5, 5, 5);
+            this.btnRol.Location = new System.Drawing.Point(8, 168);
+            this.btnRol.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.btnRol.Name = "btnRol";
-            this.btnRol.Size = new System.Drawing.Size(259, 37);
+            this.btnRol.Size = new System.Drawing.Size(194, 30);
             this.btnRol.TabIndex = 4;
             this.btnRol.Text = "Rol";
             this.btnRol.UseVisualStyleBackColor = false;
@@ -190,10 +189,10 @@ namespace SistemaParqueo.Desktop
             this.btnEstadoTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstadoTarjeta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstadoTarjeta.ForeColor = System.Drawing.Color.White;
-            this.btnEstadoTarjeta.Location = new System.Drawing.Point(11, 255);
-            this.btnEstadoTarjeta.Margin = new System.Windows.Forms.Padding(11, 5, 5, 5);
+            this.btnEstadoTarjeta.Location = new System.Drawing.Point(8, 206);
+            this.btnEstadoTarjeta.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.btnEstadoTarjeta.Name = "btnEstadoTarjeta";
-            this.btnEstadoTarjeta.Size = new System.Drawing.Size(259, 37);
+            this.btnEstadoTarjeta.Size = new System.Drawing.Size(194, 30);
             this.btnEstadoTarjeta.TabIndex = 5;
             this.btnEstadoTarjeta.Text = "EstadoTarjeta";
             this.btnEstadoTarjeta.UseVisualStyleBackColor = false;
@@ -206,10 +205,10 @@ namespace SistemaParqueo.Desktop
             this.btnEstadoTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstadoTicket.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstadoTicket.ForeColor = System.Drawing.Color.White;
-            this.btnEstadoTicket.Location = new System.Drawing.Point(11, 302);
-            this.btnEstadoTicket.Margin = new System.Windows.Forms.Padding(11, 5, 5, 5);
+            this.btnEstadoTicket.Location = new System.Drawing.Point(8, 244);
+            this.btnEstadoTicket.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.btnEstadoTicket.Name = "btnEstadoTicket";
-            this.btnEstadoTicket.Size = new System.Drawing.Size(259, 37);
+            this.btnEstadoTicket.Size = new System.Drawing.Size(194, 30);
             this.btnEstadoTicket.TabIndex = 6;
             this.btnEstadoTicket.Text = "EstadoTicket";
             this.btnEstadoTicket.UseVisualStyleBackColor = false;
@@ -222,10 +221,10 @@ namespace SistemaParqueo.Desktop
             this.btnEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmpleado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmpleado.ForeColor = System.Drawing.Color.White;
-            this.btnEmpleado.Location = new System.Drawing.Point(11, 349);
-            this.btnEmpleado.Margin = new System.Windows.Forms.Padding(11, 5, 5, 5);
+            this.btnEmpleado.Location = new System.Drawing.Point(8, 282);
+            this.btnEmpleado.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.btnEmpleado.Name = "btnEmpleado";
-            this.btnEmpleado.Size = new System.Drawing.Size(259, 37);
+            this.btnEmpleado.Size = new System.Drawing.Size(194, 30);
             this.btnEmpleado.TabIndex = 7;
             this.btnEmpleado.Text = "Empleado";
             this.btnEmpleado.UseVisualStyleBackColor = false;
@@ -238,30 +237,14 @@ namespace SistemaParqueo.Desktop
             this.btnEstadoEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstadoEmpleado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstadoEmpleado.ForeColor = System.Drawing.Color.White;
-            this.btnEstadoEmpleado.Location = new System.Drawing.Point(11, 396);
-            this.btnEstadoEmpleado.Margin = new System.Windows.Forms.Padding(11, 5, 5, 5);
+            this.btnEstadoEmpleado.Location = new System.Drawing.Point(8, 320);
+            this.btnEstadoEmpleado.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.btnEstadoEmpleado.Name = "btnEstadoEmpleado";
-            this.btnEstadoEmpleado.Size = new System.Drawing.Size(259, 37);
+            this.btnEstadoEmpleado.Size = new System.Drawing.Size(194, 30);
             this.btnEstadoEmpleado.TabIndex = 8;
             this.btnEstadoEmpleado.Text = "EstadoEmpleado";
             this.btnEstadoEmpleado.UseVisualStyleBackColor = false;
             this.btnEstadoEmpleado.Click += new System.EventHandler(this.btnEstadoEmpleado_Click);
-            // 
-            // btnEstadoPermanencia
-            // 
-            this.btnEstadoPermanencia.BackColor = System.Drawing.Color.Gray;
-            this.btnEstadoPermanencia.FlatAppearance.BorderSize = 0;
-            this.btnEstadoPermanencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstadoPermanencia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadoPermanencia.ForeColor = System.Drawing.Color.White;
-            this.btnEstadoPermanencia.Location = new System.Drawing.Point(11, 443);
-            this.btnEstadoPermanencia.Margin = new System.Windows.Forms.Padding(11, 5, 5, 5);
-            this.btnEstadoPermanencia.Name = "btnEstadoPermanencia";
-            this.btnEstadoPermanencia.Size = new System.Drawing.Size(259, 37);
-            this.btnEstadoPermanencia.TabIndex = 10;
-            this.btnEstadoPermanencia.Text = "EstadoPermanencia";
-            this.btnEstadoPermanencia.UseVisualStyleBackColor = false;
-            this.btnEstadoPermanencia.Click += new System.EventHandler(this.btnEstadoPermanencia_Click);
             // 
             // btnVehiculo
             // 
@@ -270,10 +253,10 @@ namespace SistemaParqueo.Desktop
             this.btnVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVehiculo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVehiculo.ForeColor = System.Drawing.Color.White;
-            this.btnVehiculo.Location = new System.Drawing.Point(11, 490);
-            this.btnVehiculo.Margin = new System.Windows.Forms.Padding(11, 5, 5, 5);
+            this.btnVehiculo.Location = new System.Drawing.Point(8, 396);
+            this.btnVehiculo.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.btnVehiculo.Name = "btnVehiculo";
-            this.btnVehiculo.Size = new System.Drawing.Size(259, 37);
+            this.btnVehiculo.Size = new System.Drawing.Size(194, 30);
             this.btnVehiculo.TabIndex = 9;
             this.btnVehiculo.Text = "Vehículo";
             this.btnVehiculo.UseVisualStyleBackColor = false;
@@ -286,10 +269,10 @@ namespace SistemaParqueo.Desktop
             this.btnEstadoVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstadoVehiculo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstadoVehiculo.ForeColor = System.Drawing.Color.White;
-            this.btnEstadoVehiculo.Location = new System.Drawing.Point(11, 537);
-            this.btnEstadoVehiculo.Margin = new System.Windows.Forms.Padding(11, 5, 5, 5);
+            this.btnEstadoVehiculo.Location = new System.Drawing.Point(8, 434);
+            this.btnEstadoVehiculo.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.btnEstadoVehiculo.Name = "btnEstadoVehiculo";
-            this.btnEstadoVehiculo.Size = new System.Drawing.Size(259, 37);
+            this.btnEstadoVehiculo.Size = new System.Drawing.Size(194, 30);
             this.btnEstadoVehiculo.TabIndex = 12;
             this.btnEstadoVehiculo.Text = "EstadoVehiculo";
             this.btnEstadoVehiculo.UseVisualStyleBackColor = false;
@@ -302,10 +285,10 @@ namespace SistemaParqueo.Desktop
             this.btnMultaTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMultaTicket.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMultaTicket.ForeColor = System.Drawing.Color.White;
-            this.btnMultaTicket.Location = new System.Drawing.Point(11, 584);
-            this.btnMultaTicket.Margin = new System.Windows.Forms.Padding(11, 5, 5, 5);
+            this.btnMultaTicket.Location = new System.Drawing.Point(8, 472);
+            this.btnMultaTicket.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.btnMultaTicket.Name = "btnMultaTicket";
-            this.btnMultaTicket.Size = new System.Drawing.Size(259, 37);
+            this.btnMultaTicket.Size = new System.Drawing.Size(194, 30);
             this.btnMultaTicket.TabIndex = 11;
             this.btnMultaTicket.Text = "MultaTicket";
             this.btnMultaTicket.UseVisualStyleBackColor = false;
@@ -318,10 +301,10 @@ namespace SistemaParqueo.Desktop
             this.btnEstadoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstadoCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstadoCliente.ForeColor = System.Drawing.Color.White;
-            this.btnEstadoCliente.Location = new System.Drawing.Point(11, 631);
-            this.btnEstadoCliente.Margin = new System.Windows.Forms.Padding(11, 5, 5, 5);
+            this.btnEstadoCliente.Location = new System.Drawing.Point(8, 510);
+            this.btnEstadoCliente.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.btnEstadoCliente.Name = "btnEstadoCliente";
-            this.btnEstadoCliente.Size = new System.Drawing.Size(259, 37);
+            this.btnEstadoCliente.Size = new System.Drawing.Size(194, 30);
             this.btnEstadoCliente.TabIndex = 13;
             this.btnEstadoCliente.Text = "EstadoCliente";
             this.btnEstadoCliente.UseVisualStyleBackColor = false;
@@ -334,10 +317,10 @@ namespace SistemaParqueo.Desktop
             this.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCliente.ForeColor = System.Drawing.Color.White;
-            this.btnCliente.Location = new System.Drawing.Point(11, 678);
-            this.btnCliente.Margin = new System.Windows.Forms.Padding(11, 5, 5, 5);
+            this.btnCliente.Location = new System.Drawing.Point(8, 548);
+            this.btnCliente.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Size = new System.Drawing.Size(259, 37);
+            this.btnCliente.Size = new System.Drawing.Size(194, 30);
             this.btnCliente.TabIndex = 7;
             this.btnCliente.Text = "Cliente";
             this.btnCliente.UseVisualStyleBackColor = false;
@@ -350,10 +333,10 @@ namespace SistemaParqueo.Desktop
             this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnUsuario.Location = new System.Drawing.Point(11, 725);
-            this.btnUsuario.Margin = new System.Windows.Forms.Padding(11, 5, 5, 5);
+            this.btnUsuario.Location = new System.Drawing.Point(8, 586);
+            this.btnUsuario.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(259, 37);
+            this.btnUsuario.Size = new System.Drawing.Size(194, 30);
             this.btnUsuario.TabIndex = 15;
             this.btnUsuario.Text = "Usuario";
             this.btnUsuario.UseVisualStyleBackColor = false;
@@ -366,14 +349,30 @@ namespace SistemaParqueo.Desktop
             this.btnTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTarjeta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTarjeta.ForeColor = System.Drawing.Color.White;
-            this.btnTarjeta.Location = new System.Drawing.Point(11, 772);
-            this.btnTarjeta.Margin = new System.Windows.Forms.Padding(11, 5, 5, 5);
+            this.btnTarjeta.Location = new System.Drawing.Point(8, 624);
+            this.btnTarjeta.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.btnTarjeta.Name = "btnTarjeta";
-            this.btnTarjeta.Size = new System.Drawing.Size(259, 37);
+            this.btnTarjeta.Size = new System.Drawing.Size(194, 30);
             this.btnTarjeta.TabIndex = 16;
             this.btnTarjeta.Text = "Tarjeta";
             this.btnTarjeta.UseVisualStyleBackColor = false;
             this.btnTarjeta.Click += new System.EventHandler(this.btnTarjeta_Click);
+            // 
+            // btnCorteCaja
+            // 
+            this.btnCorteCaja.BackColor = System.Drawing.Color.Gray;
+            this.btnCorteCaja.FlatAppearance.BorderSize = 0;
+            this.btnCorteCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCorteCaja.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCorteCaja.ForeColor = System.Drawing.Color.White;
+            this.btnCorteCaja.Location = new System.Drawing.Point(8, 662);
+            this.btnCorteCaja.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
+            this.btnCorteCaja.Name = "btnCorteCaja";
+            this.btnCorteCaja.Size = new System.Drawing.Size(194, 30);
+            this.btnCorteCaja.TabIndex = 17;
+            this.btnCorteCaja.Text = "CorteCaja";
+            this.btnCorteCaja.UseVisualStyleBackColor = false;
+            this.btnCorteCaja.Click += new System.EventHandler(this.btnCorteCaja_Click);
             // 
             // btnSalir
             // 
@@ -383,10 +382,9 @@ namespace SistemaParqueo.Desktop
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(0, 713);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Location = new System.Drawing.Point(0, 579);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(283, 37);
+            this.btnSalir.Size = new System.Drawing.Size(212, 30);
             this.btnSalir.TabIndex = 6;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -398,10 +396,9 @@ namespace SistemaParqueo.Desktop
             this.panelTop.Controls.Add(this.lblUsuario);
             this.panelTop.Controls.Add(this.lblTituloSistema);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(283, 0);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTop.Location = new System.Drawing.Point(212, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1088, 86);
+            this.panelTop.Size = new System.Drawing.Size(816, 70);
             this.panelTop.TabIndex = 1;
             // 
             // lblUsuario
@@ -410,10 +407,9 @@ namespace SistemaParqueo.Desktop
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblUsuario.Location = new System.Drawing.Point(876, 28);
-            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsuario.Location = new System.Drawing.Point(657, 23);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(134, 23);
+            this.lblUsuario.Size = new System.Drawing.Size(104, 17);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario: Admin";
             // 
@@ -422,10 +418,9 @@ namespace SistemaParqueo.Desktop
             this.lblTituloSistema.AutoSize = true;
             this.lblTituloSistema.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloSistema.ForeColor = System.Drawing.Color.White;
-            this.lblTituloSistema.Location = new System.Drawing.Point(20, 22);
-            this.lblTituloSistema.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTituloSistema.Location = new System.Drawing.Point(15, 18);
             this.lblTituloSistema.Name = "lblTituloSistema";
-            this.lblTituloSistema.Size = new System.Drawing.Size(435, 41);
+            this.lblTituloSistema.Size = new System.Drawing.Size(348, 32);
             this.lblTituloSistema.TabIndex = 0;
             this.lblTituloSistema.Text = "SISTEMA DE PARQUEO UNAB";
             // 
@@ -434,39 +429,37 @@ namespace SistemaParqueo.Desktop
             this.panelContenedor.AutoScroll = true;
             this.panelContenedor.BackColor = System.Drawing.Color.White;
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(283, 86);
-            this.panelContenedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelContenedor.Location = new System.Drawing.Point(212, 70);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1088, 664);
+            this.panelContenedor.Size = new System.Drawing.Size(816, 539);
             this.panelContenedor.TabIndex = 2;
             // 
-            // btnCorteCaja
+            // btnEstadoPermanencia
             // 
-            this.btnCorteCaja.BackColor = System.Drawing.Color.Gray;
-            this.btnCorteCaja.FlatAppearance.BorderSize = 0;
-            this.btnCorteCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCorteCaja.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCorteCaja.ForeColor = System.Drawing.Color.White;
-            this.btnCorteCaja.Location = new System.Drawing.Point(11, 819);
-            this.btnCorteCaja.Margin = new System.Windows.Forms.Padding(11, 5, 5, 5);
-            this.btnCorteCaja.Name = "btnCorteCaja";
-            this.btnCorteCaja.Size = new System.Drawing.Size(259, 37);
-            this.btnCorteCaja.TabIndex = 17;
-            this.btnCorteCaja.Text = "CorteCaja";
-            this.btnCorteCaja.UseVisualStyleBackColor = false;
-            this.btnCorteCaja.Click += new System.EventHandler(this.btnCorteCaja_Click);
+            this.btnEstadoPermanencia.BackColor = System.Drawing.Color.Gray;
+            this.btnEstadoPermanencia.FlatAppearance.BorderSize = 0;
+            this.btnEstadoPermanencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEstadoPermanencia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadoPermanencia.ForeColor = System.Drawing.Color.White;
+            this.btnEstadoPermanencia.Location = new System.Drawing.Point(8, 358);
+            this.btnEstadoPermanencia.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
+            this.btnEstadoPermanencia.Name = "btnEstadoPermanencia";
+            this.btnEstadoPermanencia.Size = new System.Drawing.Size(194, 30);
+            this.btnEstadoPermanencia.TabIndex = 10;
+            this.btnEstadoPermanencia.Text = "EstadoPermanencia";
+            this.btnEstadoPermanencia.UseVisualStyleBackColor = false;
+            this.btnEstadoPermanencia.Click += new System.EventHandler(this.btnEstadoPermanencia_Click);
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1371, 750);
+            this.ClientSize = new System.Drawing.Size(1028, 609);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de parqueo - Menú principal";
@@ -500,12 +493,12 @@ namespace SistemaParqueo.Desktop
         private System.Windows.Forms.Button btnVehiculo;
         private System.Windows.Forms.Button btnEstadoVehiculo;
         private System.Windows.Forms.Button btnMultaTicket;
-        private System.Windows.Forms.Button btnEstadoPermanencia;
         private System.Windows.Forms.Button btnEstadoEmpleado;
         private System.Windows.Forms.Button btnEstadoCliente;
         private System.Windows.Forms.Button btnUsuario;
         private System.Windows.Forms.Button btnTarjeta;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Button btnCorteCaja;
+        private Button btnEstadoPermanencia;
     }
 }
