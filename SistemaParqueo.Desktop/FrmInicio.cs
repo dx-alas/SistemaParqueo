@@ -198,6 +198,8 @@ namespace SistemaParqueo.Desktop
             LimpiarBarcode();
         }
 
+
+
         private void RegistrarEntrada(int tarjetaId)
         {
             var vehiculos = VehiculoBL.Instance.SelectAll();
@@ -254,11 +256,26 @@ namespace SistemaParqueo.Desktop
                 .SelectAll()
                 .FirstOrDefault(tv => tv.TipoVehiculoId == vehiculoSeleccionado.TipoVehiculoId);
 
+            // OBTENER TIPO CLIENTE
+            var tipoCliente = TipoClienteBL.Instance
+                .SelectAll()
+                .FirstOrDefault(tc => tc.TipoClienteId == cliente.TipoClienteId);
+
+            // PRECIO NORMAL
+            decimal precioEntrada = tipoVehiculo.Precio;
+
+            // SI ES DOCENTE NO PAGA
+            if (tipoCliente != null &&
+                tipoCliente.Nombre.ToUpper() == "DOCENTE")
+            {
+                precioEntrada = 0;
+            }
+
             TicketPrinter.ImprimirEntrada(
                 tarjeta.Codigo,
                 vehiculoSeleccionado.Placa,
                 cliente.Nombre + " " + cliente.Apellido,
-                tipoVehiculo.Precio
+                precioEntrada
             );
 
             MessageBox.Show(
@@ -272,6 +289,82 @@ namespace SistemaParqueo.Desktop
             CargarVehiculosActivos();
         }
 
+        //private void RegistrarEntrada(int tarjetaId)
+        //{
+        //    var vehiculos = VehiculoBL.Instance.SelectAll();
+        //    var clientes = ClienteBL.Instance.SelectAll();
+
+        //    var cliente = clientes.FirstOrDefault(c => c.TarjetaId == tarjetaId);
+
+        //    if (cliente == null)
+        //    {
+        //        MessageBox.Show("No hay cliente asociado a la tarjeta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        return;
+        //    }
+
+        //    var vehiculosCliente = vehiculos.Where(v => v.ClienteId == cliente.ClienteId).ToList();
+
+        //    if (vehiculosCliente.Count == 0)
+        //    {
+        //        MessageBox.Show("No hay vehículo asociado al cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        return;
+        //    }
+
+        //    Vehiculo vehiculoSeleccionado;
+
+        //    if (vehiculosCliente.Count == 1)
+        //    {
+        //        vehiculoSeleccionado = vehiculosCliente.First();
+        //    }
+        //    else
+        //    {
+        //        using (FrmSeleccionVehiculo frm = new FrmSeleccionVehiculo(vehiculosCliente))
+        //        {
+        //            if (frm.ShowDialog() != DialogResult.OK) return;
+
+        //            vehiculoSeleccionado = frm.VehiculoSeleccionado;
+
+        //            if (vehiculoSeleccionado == null)
+        //            {
+        //                MessageBox.Show("Debe seleccionar un vehículo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //                return;
+        //            }
+        //        }
+        //    }
+
+        //    TicketBL.Instance.RegistrarEntrada(
+        //        tarjetaId,
+        //        vehiculoSeleccionado.VehiculoId,
+        //        Sesion.UsuarioActual.UsuarioId,
+        //        Sesion.CorteActivo.CorteId
+        //    );
+
+        //    var tarjeta = TarjetaBL.Instance.SelectById(tarjetaId);
+
+        //    var tipoVehiculo = TipoVehiculoBL.Instance
+        //        .SelectAll()
+        //        .FirstOrDefault(tv => tv.TipoVehiculoId == vehiculoSeleccionado.TipoVehiculoId);
+
+
+
+        //    TicketPrinter.ImprimirEntrada(
+        //        tarjeta.Codigo,
+        //        vehiculoSeleccionado.Placa,
+        //        cliente.Nombre + " " + cliente.Apellido,
+        //        tipoVehiculo.Precio
+        //    );
+
+        //    MessageBox.Show(
+        //        "Entrada registrada correctamente",
+        //        "OK",
+        //        MessageBoxButtons.OK,
+        //        MessageBoxIcon.Information
+        //    );
+
+        //    CargarEstadoParqueo();
+        //    CargarVehiculosActivos();
+        //}
+
         //private void RegistrarSalida(Ticket ticket)
         //{
         //    decimal total = TicketBL.Instance.RegistrarSalida(ticket, Sesion.CorteActivo.CorteId);
@@ -280,6 +373,7 @@ namespace SistemaParqueo.Desktop
         //    CargarVehiculosActivos();
         //    CargarEstadoParqueo();
         //}
+
 
 
         private void RegistrarSalida(Ticket ticket)
@@ -302,6 +396,18 @@ namespace SistemaParqueo.Desktop
                 .SelectAll()
                 .FirstOrDefault(v => v.ClienteId == cliente.ClienteId);
 
+            // OBTENER TIPO CLIENTE
+            var tipoCliente = TipoClienteBL.Instance
+                .SelectAll()
+                .FirstOrDefault(tc => tc.TipoClienteId == cliente.TipoClienteId);
+
+            // SI ES DOCENTE NO PAGA
+            if (tipoCliente != null &&
+                tipoCliente.Nombre.ToUpper() == "DOCENTE")
+            {
+                total = 0;
+            }
+
             TicketPrinter.ImprimirSalida(
                 tarjeta.Codigo,
                 vehiculo.Placa,
@@ -320,6 +426,44 @@ namespace SistemaParqueo.Desktop
             CargarVehiculosActivos();
             CargarEstadoParqueo();
         }
+        //private void RegistrarSalida(Ticket ticket)
+        //{
+        //    decimal total = TicketBL.Instance.RegistrarSalida(
+        //        ticket,
+        //        Sesion.CorteActivo.CorteId
+        //    );
+
+        //    DateTime fechaEntrada = DateTime.Today.Add(ticket.HoraEntrada);
+
+        //    var tarjeta = TarjetaBL.Instance
+        //        .SelectById(ticket.TarjetaId);
+
+        //    var cliente = ClienteBL.Instance
+        //        .SelectAll()
+        //        .FirstOrDefault(c => c.TarjetaId == ticket.TarjetaId);
+
+        //    var vehiculo = VehiculoBL.Instance
+        //        .SelectAll()
+        //        .FirstOrDefault(v => v.ClienteId == cliente.ClienteId);
+
+        //    TicketPrinter.ImprimirSalida(
+        //        tarjeta.Codigo,
+        //        vehiculo.Placa,
+        //        cliente.Nombre + " " + cliente.Apellido,
+        //        total,
+        //        fechaEntrada
+        //    );
+
+        //    MessageBox.Show(
+        //        $"Salida registrada\nTotal: ${total:0.00}",
+        //        "OK",
+        //        MessageBoxButtons.OK,
+        //        MessageBoxIcon.Information
+        //    );
+
+        //    CargarVehiculosActivos();
+        //    CargarEstadoParqueo();
+        //}
         private void LimpiarBarcode()
         {
             txtBarcode.Clear();
