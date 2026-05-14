@@ -301,5 +301,17 @@ namespace SistemaParqueo.Desktop
                 mtxtTelefono.Clear();
             }
         }
+
+        //Buscador Empleado
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            var empleados = EmpleadoBL.Instance.SelectAll();
+
+            var query = empleados.Where(x =>
+                x.Nombre.ToLower().Contains(txtBuscar.Text.ToLower())
+            );
+
+            dgvEmpleado.DataSource = query.ToList();
+        }
     }
 }
