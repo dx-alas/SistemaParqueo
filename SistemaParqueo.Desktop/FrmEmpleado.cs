@@ -81,6 +81,9 @@ namespace SistemaParqueo.Desktop
 
                 dgvEmpleado.DataSource = null;
                 dgvEmpleado.DataSource = query.ToList();
+
+                if (dgvEmpleado.Columns["EstadoId"] != null)
+                    dgvEmpleado.Columns["EstadoId"].Visible = false;
             }
             catch (Exception ex)
             {

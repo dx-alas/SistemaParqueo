@@ -107,9 +107,14 @@ namespace SistemaParqueo.Desktop
                 dgvUsuario.DataSource = null;
                 dgvUsuario.DataSource = query.ToList();
 
-                dgvUsuario.Columns["EmpleadoId"].Visible = false;
-                dgvUsuario.Columns["RolId"].Visible = false;
-                dgvUsuario.Columns["EstadoUsuarioId"].Visible = false;
+                if (dgvUsuario.Columns["EmpleadoId"] != null)
+                    dgvUsuario.Columns["EmpleadoId"].Visible = false;
+
+                if (dgvUsuario.Columns["RolId"] != null)
+                    dgvUsuario.Columns["RolId"].Visible = false;
+
+                if (dgvUsuario.Columns["EstadoUsuarioId"] != null)
+                    dgvUsuario.Columns["EstadoUsuarioId"].Visible = false;
             }
             catch (Exception ex)
             {
