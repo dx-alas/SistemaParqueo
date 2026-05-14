@@ -69,7 +69,22 @@ namespace SistemaParqueo.Desktop
 
             if (usuario != null)
             {
-                Sesion.UsuarioActual = usuario; //guardar usuario logueado
+                // Validamos que este acitvo
+                if (usuario.EstadoUsuarioId != 1)
+                {
+                    MessageBox.Show(
+                        "Usuario inactivo.",
+                        "Acceso denegado",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+
+                    txtClave.Clear();
+                    txtClave.Focus();
+                    return;
+                }
+
+                Sesion.UsuarioActual = usuario;
 
                 FrmMain frmMain = new FrmMain();
 
@@ -79,11 +94,34 @@ namespace SistemaParqueo.Desktop
             }
             else
             {
-                MessageBox.Show("Usuario o clave incorrectos.", "Error de autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "Usuario o clave incorrectos.",
+                    "Error de autenticación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
 
                 txtClave.Clear();
                 txtClave.Focus();
             }
+
+            //if (usuario != null)
+            //{
+            //    Sesion.UsuarioActual = usuario; //guardar usuario logueado
+
+            //    FrmMain frmMain = new FrmMain();
+
+            //    this.Hide();
+            //    frmMain.ShowDialog();
+            //    this.Close();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Usuario o clave incorrectos.", "Error de autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            //    txtClave.Clear();
+            //    txtClave.Focus();
+            //}
 
         }
     }
