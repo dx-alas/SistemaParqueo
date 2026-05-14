@@ -306,12 +306,31 @@ namespace SistemaParqueo.Desktop
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             var empleados = EmpleadoBL.Instance.SelectAll();
+            var estados = EstadoEmpleadoBL.Instance.SelectAll();
 
-            var query = empleados.Where(x =>
-                x.Nombre.ToLower().Contains(txtBuscar.Text.ToLower())
-            );
+            var query = (from i in empleados
+                         where i.Nombre.ToLower().Contains(txtBuscar.Text.ToLower()) ||
+                               i.Apellido.ToLower().Contains(txtBuscar.Text.ToLower()) ||
+                               i.DUI.ToLower().Contains(txtBuscar.Text.ToLower())
 
+                         select new
+                         {
+                             EmpleadoId = i.EmpleadoId,
+                             Nombre = i.Nombre,
+                             Apellido = i.Apellido,
+                             DUI = i.DUI,
+                             Correo = i.Correo,
+                             Telefono = i.Telefono,
+                             Direccion = i.Direccion,
+                             EstadoId = i.EstadoEmpleadoId,
+                             Estado = estados.FirstOrDefault(x => x.EstadoEmpleadoId.Equals(i.EstadoEmpleadoId))?.Nombre
+                         });
+
+            dgvEmpleado.DataSource = null;
             dgvEmpleado.DataSource = query.ToList();
+
+            if (dgvEmpleado.Columns["EstadoId"] != null)
+                dgvEmpleado.Columns["EstadoId"].Visible = false;
         }
     }
 }

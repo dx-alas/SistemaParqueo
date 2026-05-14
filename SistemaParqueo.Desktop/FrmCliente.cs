@@ -437,5 +437,49 @@ namespace SistemaParqueo.Desktop
             Limpiar();
             CambiarEstadoBotones(false);
         }
+
+        //Buscador Empleado
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            var clientes = ClienteBL.Instance.SelectAll();
+            var tarjetas = TarjetaBL.Instance.SelectAll();
+            var tipoCliente = TipoClienteBL.Instance.SelectAll();
+            var estadoCliente = EstadoClienteBL.Instance.SelectAll();
+
+            var query = (from i in clientes
+                         where i.Nombre.ToLower().Contains(txtBuscar.Text.ToLower()) ||
+                               i.Apellido.ToLower().Contains(txtBuscar.Text.ToLower()) ||
+                               i.DUI.ToLower().Contains(txtBuscar.Text.ToLower()) ||
+                               i.CarnetExtranjero.ToLower().Contains(txtBuscar.Text.ToLower())
+
+                         select new
+                         {
+                             ClienteId = i.ClienteId,
+                             Nombre = i.Nombre,
+                             Apellido = i.Apellido,
+                             Telefono = i.Telefono,
+                             TipoDocumento = i.TipoDocumento,
+                             DUI = i.DUI,
+                             CarnetExtranjero = i.CarnetExtranjero,
+                             TarjetaId = i.TarjetaId,
+                             TipoClienteId = i.TipoClienteId,
+                             EstadoClienteId = i.EstadoClienteId,
+                             Tarjeta = tarjetas.FirstOrDefault(x => x.TarjetaId.Equals(i.TarjetaId))?.Codigo,
+                             TipoCliente = tipoCliente.FirstOrDefault(x => x.TipoClienteId.Equals(i.TipoClienteId))?.Nombre,
+                             EstadoCliente = estadoCliente.FirstOrDefault(x => x.EstadoClienteId.Equals(i.EstadoClienteId))?.Nombre
+                         });
+
+            dgvCliente.DataSource = null;
+            dgvCliente.DataSource = query.ToList();
+
+            if (dgvCliente.Columns["TarjetaId"] != null)
+                dgvCliente.Columns["TarjetaId"].Visible = false;
+
+            if (dgvCliente.Columns["TipoClienteId"] != null)
+                dgvCliente.Columns["TipoClienteId"].Visible = false;
+
+            if (dgvCliente.Columns["EstadoClienteId"] != null)
+                dgvCliente.Columns["EstadoClienteId"].Visible = false;
+        }
     }
 }
