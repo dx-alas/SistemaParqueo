@@ -353,5 +353,46 @@ namespace SistemaParqueo.Desktop
                 return cp;
             }
         }
+
+        //Buscador Usuario
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            var _usuario = UsuarioBL.Instance.SelectAll();
+            var _empleado = EmpleadoBL.Instance.SelectAll();
+            var _rol = RolBL.Instance.SelectAll();
+            var _estadoUsuario = EstadoUsuarioBL.Instance.SelectAll();
+
+            var query = (from u in _usuario
+                         select new
+                         {
+                             UsuarioId = u.UsuarioId,
+                             Nombre = u.Nombre,
+                             EmpleadoId = u.EmpleadoId,
+                             RolId = u.RolId,
+                             EstadoUsuarioId = u.EstadoUsuarioId,
+                             Empleado = _empleado.FirstOrDefault(x => x.EmpleadoId.Equals(u.EmpleadoId))?.Nombre,
+                             Rol = _rol.FirstOrDefault(x => x.RolId.Equals(u.RolId))?.Nombre,
+                             EstadoUsuario = _estadoUsuario.FirstOrDefault(x => x.EstadoUsuarioId.Equals(u.EstadoUsuarioId))?.Nombre
+                         });
+
+            var resultado = query.Where(x =>
+                x.Nombre.ToLower().Contains(txtBuscar.Text.ToLower()) ||
+                x.Empleado.ToLower().Contains(txtBuscar.Text.ToLower()) ||
+                x.Rol.ToLower().Contains(txtBuscar.Text.ToLower()) ||
+                x.EstadoUsuario.ToLower().Contains(txtBuscar.Text.ToLower())
+            );
+
+            dgvUsuario.DataSource = null;
+            dgvUsuario.DataSource = resultado.ToList();
+
+            if (dgvUsuario.Columns["EmpleadoId"] != null)
+                dgvUsuario.Columns["EmpleadoId"].Visible = false;
+
+            if (dgvUsuario.Columns["RolId"] != null)
+                dgvUsuario.Columns["RolId"].Visible = false;
+
+            if (dgvUsuario.Columns["EstadoUsuarioId"] != null)
+                dgvUsuario.Columns["EstadoUsuarioId"].Visible = false;
+        }
     }
 }
