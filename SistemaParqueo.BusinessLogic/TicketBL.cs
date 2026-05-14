@@ -171,6 +171,7 @@ namespace SistemaParqueo.BusinessLogic
             ticket.Total = total;
             ticket.EstadoTicketId = 2;
             ticket.CorteId = corteId;
+            ticket.EstadoPermanenciaId = 2;
             Update(ticket);
 
             return total;
