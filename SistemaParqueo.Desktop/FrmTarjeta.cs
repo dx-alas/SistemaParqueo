@@ -78,6 +78,9 @@ namespace SistemaParqueo.Desktop
 
                 dgvTarjeta.DataSource = null;
                 dgvTarjeta.DataSource = query.ToList();
+
+                if (dgvTarjeta.Columns["EstadoTarjetaId"] != null)
+                    dgvTarjeta.Columns["EstadoTarjetaId"].Visible = false;
             }
             catch (Exception ex)
             {

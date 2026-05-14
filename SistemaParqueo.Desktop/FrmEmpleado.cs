@@ -81,6 +81,9 @@ namespace SistemaParqueo.Desktop
 
                 dgvEmpleado.DataSource = null;
                 dgvEmpleado.DataSource = query.ToList();
+
+                if (dgvEmpleado.Columns["EstadoId"] != null)
+                    dgvEmpleado.Columns["EstadoId"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -297,6 +300,18 @@ namespace SistemaParqueo.Desktop
             {
                 mtxtTelefono.Clear();
             }
+        }
+
+        //Buscador Empleado
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            var empleados = EmpleadoBL.Instance.SelectAll();
+
+            var query = empleados.Where(x =>
+                x.Nombre.ToLower().Contains(txtBuscar.Text.ToLower())
+            );
+
+            dgvEmpleado.DataSource = query.ToList();
         }
     }
 }

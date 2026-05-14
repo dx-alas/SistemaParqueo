@@ -66,6 +66,15 @@ namespace SistemaParqueo.Desktop
 
                 dgvCorteCaja.DataSource = null;
                 dgvCorteCaja.DataSource = query;
+
+                if (dgvCorteCaja.Columns["UsuarioAperturaId"] != null)
+                    dgvCorteCaja.Columns["UsuarioAperturaId"].Visible = false;
+
+                if (dgvCorteCaja.Columns["UsuarioCierreId"] != null)
+                    dgvCorteCaja.Columns["UsuarioCierreId"].Visible = false;
+
+                if (dgvCorteCaja.Columns["EstadoCorteId"] != null)
+                    dgvCorteCaja.Columns["EstadoCorteId"].Visible = false;
             }
             catch (Exception ex)
             {

@@ -102,6 +102,15 @@ namespace SistemaParqueo.Desktop
 
                 dgvVehiculo.DataSource = null;
                 dgvVehiculo.DataSource = query.ToList();
+
+                if (dgvVehiculo.Columns["ClienteId"] != null)
+                    dgvVehiculo.Columns["ClienteId"].Visible = false;
+
+                if (dgvVehiculo.Columns["TipoVehiculoId"] != null)
+                    dgvVehiculo.Columns["TipoVehiculoId"].Visible = false;
+
+                if (dgvVehiculo.Columns["EstadoVehiculoId"] != null)
+                    dgvVehiculo.Columns["EstadoVehiculoId"].Visible = false;
             }
             catch (Exception ex)
             {
