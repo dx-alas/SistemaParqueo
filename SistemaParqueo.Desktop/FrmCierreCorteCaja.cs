@@ -15,6 +15,14 @@ namespace SistemaParqueo.Desktop
         public decimal MontoTotal { get; private set; }
         public string ObservacionFinal { get; private set; }
 
+        public decimal MontoCalculado
+        {
+            set
+            {
+                txtMontoFinal.Text = value.ToString("0.00");
+            }
+        }
+
         public FrmCierreCorteCaja()
         {
             InitializeComponent();
@@ -46,6 +54,5 @@ namespace SistemaParqueo.Desktop
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
-
     }
 }

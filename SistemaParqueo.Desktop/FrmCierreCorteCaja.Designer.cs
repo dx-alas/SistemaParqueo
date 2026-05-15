@@ -117,6 +117,7 @@
             this.txtMontoFinal.Location = new System.Drawing.Point(44, 144);
             this.txtMontoFinal.Margin = new System.Windows.Forms.Padding(4);
             this.txtMontoFinal.Name = "txtMontoFinal";
+            this.txtMontoFinal.ReadOnly = true;
             this.txtMontoFinal.Size = new System.Drawing.Size(182, 29);
             this.txtMontoFinal.TabIndex = 28;
             // 
