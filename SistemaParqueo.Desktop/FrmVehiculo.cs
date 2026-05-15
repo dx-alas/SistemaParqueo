@@ -305,5 +305,50 @@ namespace SistemaParqueo.Desktop
                 return cp;
             }
         }
+
+        //Buscador Vehiculo
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            var vehiculos = VehiculoBL.Instance.SelectAll();
+            var clientes = ClienteBL.Instance.SelectAll();
+            var tiposVehiculo = TipoVehiculoBL.Instance.SelectAll();
+            var estadosVehiculo = EstadoVehiculoBL.Instance.SelectAll();
+
+            var query = (from v in vehiculos
+                         select new
+                         {
+                             VehiculoId = v.VehiculoId,
+                             Placa = v.Placa,
+                             ClienteId = v.ClienteId,
+                             TipoVehiculoId = v.TipoVehiculoId,
+                             EstadoVehiculoId = v.EstadoVehiculoId,
+
+                             Cliente = clientes
+                                 .FirstOrDefault(x => x.ClienteId == v.ClienteId)?.Nombre,
+
+                             TipoVehiculo = tiposVehiculo
+                                 .FirstOrDefault(x => x.TipoVehiculoId == v.TipoVehiculoId)?.Nombre,
+
+                             EstadoVehiculo = estadosVehiculo
+                                 .FirstOrDefault(x => x.EstadoVehiculoId == v.EstadoVehiculoId)?.Nombre
+                         })
+
+                         .Where(x =>
+                             x.Placa.ToLower().Contains(txtBuscar.Text.ToLower()) ||
+                             x.Cliente.ToLower().Contains(txtBuscar.Text.ToLower())
+                         );
+
+            dgvVehiculo.DataSource = null;
+            dgvVehiculo.DataSource = query.ToList();
+
+            if (dgvVehiculo.Columns["ClienteId"] != null)
+                dgvVehiculo.Columns["ClienteId"].Visible = false;
+
+            if (dgvVehiculo.Columns["TipoVehiculoId"] != null)
+                dgvVehiculo.Columns["TipoVehiculoId"].Visible = false;
+
+            if (dgvVehiculo.Columns["EstadoVehiculoId"] != null)
+                dgvVehiculo.Columns["EstadoVehiculoId"].Visible = false;
+        }
     }
 }

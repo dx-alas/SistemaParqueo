@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCliente));
             this.panelCentral = new System.Windows.Forms.Panel();
+            this.btnImprimirTarjeta = new System.Windows.Forms.Button();
             this.mtxtDUI = new System.Windows.Forms.MaskedTextBox();
             this.mtxtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.lblClienteId = new System.Windows.Forms.Label();
@@ -68,7 +69,8 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.Emcabezado = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnImprimirTarjeta = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panelCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
@@ -76,6 +78,8 @@
             // panelCentral
             // 
             this.panelCentral.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelCentral.Controls.Add(this.txtBuscar);
+            this.panelCentral.Controls.Add(this.label6);
             this.panelCentral.Controls.Add(this.btnImprimirTarjeta);
             this.panelCentral.Controls.Add(this.mtxtDUI);
             this.panelCentral.Controls.Add(this.mtxtTelefono);
@@ -111,6 +115,20 @@
             this.panelCentral.Size = new System.Drawing.Size(1204, 770);
             this.panelCentral.TabIndex = 100;
             this.panelCentral.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCentral_Paint);
+            // 
+            // btnImprimirTarjeta
+            // 
+            this.btnImprimirTarjeta.BackColor = System.Drawing.Color.Orange;
+            this.btnImprimirTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimirTarjeta.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnImprimirTarjeta.ForeColor = System.Drawing.Color.White;
+            this.btnImprimirTarjeta.Location = new System.Drawing.Point(826, 393);
+            this.btnImprimirTarjeta.Name = "btnImprimirTarjeta";
+            this.btnImprimirTarjeta.Size = new System.Drawing.Size(198, 39);
+            this.btnImprimirTarjeta.TabIndex = 28;
+            this.btnImprimirTarjeta.Text = "Imprimir Tarjeta";
+            this.btnImprimirTarjeta.UseVisualStyleBackColor = false;
+            this.btnImprimirTarjeta.Click += new System.EventHandler(this.btnImprimirTarjeta_Click);
             // 
             // mtxtDUI
             // 
@@ -240,7 +258,7 @@
             this.TipoCliente,
             this.EstadoCliente});
             this.dgvCliente.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvCliente.Location = new System.Drawing.Point(31, 498);
+            this.dgvCliente.Location = new System.Drawing.Point(33, 550);
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.ReadOnly = true;
             this.dgvCliente.RowHeadersWidth = 51;
@@ -521,19 +539,24 @@
             this.lblTitulo.Text = "GESTIÓN DE CLIENTES";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnImprimirTarjeta
+            // txtBuscar
             // 
-            this.btnImprimirTarjeta.BackColor = System.Drawing.Color.Orange;
-            this.btnImprimirTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimirTarjeta.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnImprimirTarjeta.ForeColor = System.Drawing.Color.White;
-            this.btnImprimirTarjeta.Location = new System.Drawing.Point(826, 393);
-            this.btnImprimirTarjeta.Name = "btnImprimirTarjeta";
-            this.btnImprimirTarjeta.Size = new System.Drawing.Size(198, 39);
-            this.btnImprimirTarjeta.TabIndex = 28;
-            this.btnImprimirTarjeta.Text = "Imprimir Tarjeta";
-            this.btnImprimirTarjeta.UseVisualStyleBackColor = false;
-            this.btnImprimirTarjeta.Click += new System.EventHandler(this.btnImprimirTarjeta_Click);
+            this.txtBuscar.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtBuscar.Location = new System.Drawing.Point(150, 501);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(388, 29);
+            this.txtBuscar.TabIndex = 30;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(28, 501);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 28);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Buscador:";
             // 
             // FrmCliente
             // 
@@ -599,6 +622,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCliente;
         private System.Windows.Forms.Button btnImprimirTarjeta;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label6;
     }
 }
 

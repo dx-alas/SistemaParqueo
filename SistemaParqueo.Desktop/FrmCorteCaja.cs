@@ -47,8 +47,11 @@ namespace SistemaParqueo.Desktop
                              {
                                  CorteId = c.CorteId,
                                  Fecha = c.Fecha,
-                                 HoraInicio = c.HoraInicio,
-                                 HoraEntrega = c.HoraEntrega,
+                                 HoraInicio = c.HoraInicio.ToString(@"hh\:mm\:ss"),
+
+                                 HoraEntrega = c.HoraEntrega.HasValue
+                                    ? c.HoraEntrega.Value.ToString(@"hh\:mm\:ss")
+                                    : "",
                                  MontoInicial = c.MontoInicial,
                                  MontoTotal = c.MontoTotal,
 
@@ -75,6 +78,7 @@ namespace SistemaParqueo.Desktop
 
                 if (dgvCorteCaja.Columns["EstadoCorteId"] != null)
                     dgvCorteCaja.Columns["EstadoCorteId"].Visible = false;
+
             }
             catch (Exception ex)
             {
@@ -139,6 +143,53 @@ namespace SistemaParqueo.Desktop
                 cp.ExStyle |= 0x02000000; // WS_EX_COMPOSITED
                 return cp;
             }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            var corteCaja = CorteCajaBL.Instance.SelectAll();
+            var usuarios = UsuarioBL.Instance.SelectAll();
+            var estadoCorte = EstadoCorteBL.Instance.SelectAll();
+
+            var query = (from c in corteCaja
+                         where c.Fecha.ToString().Contains(txtBuscar.Text.ToLower())
+
+                         select new
+                         {
+                             CorteId = c.CorteId,
+                             Fecha = c.Fecha,
+                             HoraInicio = c.HoraInicio.ToString(@"hh\:mm\:ss"),
+
+                             HoraEntrega = c.HoraEntrega.HasValue
+                                    ? c.HoraEntrega.Value.ToString(@"hh\:mm\:ss")
+                                    : "",
+
+                             MontoInicial = c.MontoInicial,
+                             MontoTotal = c.MontoTotal,
+
+                             UsuarioAperturaId = c.UsuarioAperturaId,
+                             UsuarioCierreId = c.UsuarioCierreId,
+                             EstadoCorteId = c.EstadoCorteId,
+
+                             Apertura = usuarios.FirstOrDefault(x => x.UsuarioId.Equals(c.UsuarioAperturaId))?.Nombre,
+                             Cierre = usuarios.FirstOrDefault(x => x.UsuarioId.Equals(c.UsuarioCierreId))?.Nombre,
+                             Estado = estadoCorte.FirstOrDefault(x => x.EstadoCorteId.Equals(c.EstadoCorteId))?.Nombre,
+
+                             ObservacionInicial = c.ObservacionInicial,
+                             ObservacionFinal = c.ObservacionFinal
+                         }).ToList();
+
+            dgvCorteCaja.DataSource = null;
+            dgvCorteCaja.DataSource = query;
+
+            if (dgvCorteCaja.Columns["UsuarioAperturaId"] != null)
+                dgvCorteCaja.Columns["UsuarioAperturaId"].Visible = false;
+
+            if (dgvCorteCaja.Columns["UsuarioCierreId"] != null)
+                dgvCorteCaja.Columns["UsuarioCierreId"].Visible = false;
+
+            if (dgvCorteCaja.Columns["EstadoCorteId"] != null)
+                dgvCorteCaja.Columns["EstadoCorteId"].Visible = false;
         }
     }
 }

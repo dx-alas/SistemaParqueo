@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVehiculo));
             this.panelCentral = new System.Windows.Forms.Panel();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.cbEstadoVehiculoId = new System.Windows.Forms.ComboBox();
             this.cbTipoVehiculoId = new System.Windows.Forms.ComboBox();
             this.lblVehiculoId = new System.Windows.Forms.Label();
@@ -60,6 +62,8 @@
             // panelCentral
             // 
             this.panelCentral.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelCentral.Controls.Add(this.txtBuscar);
+            this.panelCentral.Controls.Add(this.label6);
             this.panelCentral.Controls.Add(this.cbEstadoVehiculoId);
             this.panelCentral.Controls.Add(this.cbTipoVehiculoId);
             this.panelCentral.Controls.Add(this.lblVehiculoId);
@@ -83,6 +87,25 @@
             this.panelCentral.Name = "panelCentral";
             this.panelCentral.Size = new System.Drawing.Size(1047, 770);
             this.panelCentral.TabIndex = 100;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtBuscar.Location = new System.Drawing.Point(166, 428);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(388, 29);
+            this.txtBuscar.TabIndex = 28;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(44, 428);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 28);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Buscador:";
             // 
             // cbEstadoVehiculoId
             // 
@@ -122,7 +145,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(321, 354);
+            this.btnEliminar.Location = new System.Drawing.Point(322, 325);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 39);
             this.btnEliminar.TabIndex = 14;
@@ -134,7 +157,7 @@
             // 
             this.lblListadoVehiculo.AutoSize = true;
             this.lblListadoVehiculo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblListadoVehiculo.Location = new System.Drawing.Point(44, 435);
+            this.lblListadoVehiculo.Location = new System.Drawing.Point(45, 383);
             this.lblListadoVehiculo.Name = "lblListadoVehiculo";
             this.lblListadoVehiculo.Size = new System.Drawing.Size(248, 32);
             this.lblListadoVehiculo.TabIndex = 16;
@@ -146,7 +169,7 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(179, 354);
+            this.btnActualizar.Location = new System.Drawing.Point(180, 325);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(125, 39);
             this.btnActualizar.TabIndex = 13;
@@ -277,7 +300,7 @@
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(450, 354);
+            this.btnLimpiar.Location = new System.Drawing.Point(451, 325);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(112, 39);
             this.btnLimpiar.TabIndex = 15;
@@ -291,7 +314,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(50, 354);
+            this.btnGuardar.Location = new System.Drawing.Point(51, 325);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(0);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(112, 39);
@@ -384,5 +407,7 @@
         private System.Windows.Forms.Label lblPlaca;
         private System.Windows.Forms.Label lblEmcabezado;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label6;
     }
 }
