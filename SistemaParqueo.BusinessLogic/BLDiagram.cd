@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SistemaParqueo.BusinessLogic.ClienteBL">
+    <Position X="13.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
+      <FileName>ClienteBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaParqueo.BusinessLogic.CorteCajaBL">
+    <Position X="1" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAEAEACAAACAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
+      <FileName>CorteCajaBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaParqueo.BusinessLogic.EmpleadoBL">
+    <Position X="6.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
+      <FileName>EmpleadoBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaParqueo.BusinessLogic.EstadoClienteBL">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
+      <FileName>EstadoClienteBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaParqueo.BusinessLogic.EstadoCorteBL">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
+      <FileName>EstadoCorteBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaParqueo.BusinessLogic.EstadoEmpleadoBL">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
+      <FileName>EstadoEmpleadoBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaParqueo.BusinessLogic.EstadoPermanenciaBL">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
+      <FileName>EstadoPermanenciaBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaParqueo.BusinessLogic.EstadoTarjetaBL">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
+      <FileName>EstadoTarjetaBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaParqueo.BusinessLogic.EstadoTicketBL">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
+      <FileName>EstadoTicketBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaParqueo.BusinessLogic.EstadoUsuarioBL">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
+      <FileName>EstadoUsuarioBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaParqueo.BusinessLogic.EstadoVehiculoBL">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
+      <FileName>EstadoVehiculoBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaParqueo.BusinessLogic.MultaTicketBL">
+    <Position X="9.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
+      <FileName>MultaTicketBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaParqueo.BusinessLogic.ParqueoBL">
+    <Position X="8" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
+      <FileName>ParqueoBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaParqueo.BusinessLogic.RolBL">
+    <Position X="11.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
+      <FileName>RolBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaParqueo.BusinessLogic.TarjetaBL">
+    <Position X="2.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAABCAAA=</HashCode>
+      <FileName>TarjetaBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaParqueo.BusinessLogic.TicketBL">
+    <Position X="16.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQEAEAAAGAAAAAAAACAAAAAAAEACAAAQACAAAACAAA=</HashCode>
+      <FileName>TicketBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaParqueo.BusinessLogic.TipoClienteBL">
+    <Position X="9.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
+      <FileName>TipoClienteBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaParqueo.BusinessLogic.TipoVehiculoBL">
+    <Position X="8" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
+      <FileName>TipoVehiculoBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaParqueo.BusinessLogic.UsuarioBL">
+    <Position X="15" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAQAAACAAA=</HashCode>
+      <FileName>UsuarioBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaParqueo.BusinessLogic.VehiculoBL">
+    <Position X="4.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
+      <FileName>VehiculoBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
