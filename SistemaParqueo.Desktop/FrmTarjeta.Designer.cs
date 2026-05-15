@@ -48,6 +48,8 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblEmcabezado = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panelCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarjeta)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +57,8 @@
             // panelCentral
             // 
             this.panelCentral.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelCentral.Controls.Add(this.txtBuscar);
+            this.panelCentral.Controls.Add(this.label6);
             this.panelCentral.Controls.Add(this.btnGenerarCodigo);
             this.panelCentral.Controls.Add(this.cbEstadoTarjetaId);
             this.panelCentral.Controls.Add(this.lblTarjetaId);
@@ -82,7 +86,7 @@
             this.btnGenerarCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarCodigo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnGenerarCodigo.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarCodigo.Location = new System.Drawing.Point(722, 346);
+            this.btnGenerarCodigo.Location = new System.Drawing.Point(722, 306);
             this.btnGenerarCodigo.Name = "btnGenerarCodigo";
             this.btnGenerarCodigo.Size = new System.Drawing.Size(174, 39);
             this.btnGenerarCodigo.TabIndex = 14;
@@ -95,7 +99,7 @@
             this.cbEstadoTarjetaId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEstadoTarjetaId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.cbEstadoTarjetaId.FormattingEnabled = true;
-            this.cbEstadoTarjetaId.Location = new System.Drawing.Point(653, 248);
+            this.cbEstadoTarjetaId.Location = new System.Drawing.Point(653, 233);
             this.cbEstadoTarjetaId.MaxLength = 50;
             this.cbEstadoTarjetaId.Name = "cbEstadoTarjetaId";
             this.cbEstadoTarjetaId.Size = new System.Drawing.Size(243, 29);
@@ -105,7 +109,7 @@
             // 
             this.lblTarjetaId.AutoSize = true;
             this.lblTarjetaId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTarjetaId.Location = new System.Drawing.Point(45, 184);
+            this.lblTarjetaId.Location = new System.Drawing.Point(45, 169);
             this.lblTarjetaId.Name = "lblTarjetaId";
             this.lblTarjetaId.Size = new System.Drawing.Size(35, 28);
             this.lblTarjetaId.TabIndex = 2;
@@ -117,7 +121,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(321, 346);
+            this.btnEliminar.Location = new System.Drawing.Point(321, 306);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 39);
             this.btnEliminar.TabIndex = 10;
@@ -129,7 +133,7 @@
             // 
             this.lblListadoTarjeta.AutoSize = true;
             this.lblListadoTarjeta.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblListadoTarjeta.Location = new System.Drawing.Point(44, 429);
+            this.lblListadoTarjeta.Location = new System.Drawing.Point(44, 384);
             this.lblListadoTarjeta.Name = "lblListadoTarjeta";
             this.lblListadoTarjeta.Size = new System.Drawing.Size(231, 32);
             this.lblListadoTarjeta.TabIndex = 12;
@@ -141,7 +145,7 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(179, 346);
+            this.btnActualizar.Location = new System.Drawing.Point(179, 306);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(125, 39);
             this.btnActualizar.TabIndex = 9;
@@ -164,7 +168,7 @@
             this.Codigo,
             this.EstadoTarjeta});
             this.dgvTarjeta.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvTarjeta.Location = new System.Drawing.Point(50, 480);
+            this.dgvTarjeta.Location = new System.Drawing.Point(50, 484);
             this.dgvTarjeta.Name = "dgvTarjeta";
             this.dgvTarjeta.ReadOnly = true;
             this.dgvTarjeta.RowHeadersWidth = 51;
@@ -201,7 +205,7 @@
             // 
             this.txtTarjetaId.Enabled = false;
             this.txtTarjetaId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTarjetaId.Location = new System.Drawing.Point(180, 183);
+            this.txtTarjetaId.Location = new System.Drawing.Point(180, 168);
             this.txtTarjetaId.MaxLength = 50;
             this.txtTarjetaId.Name = "txtTarjetaId";
             this.txtTarjetaId.Size = new System.Drawing.Size(243, 29);
@@ -211,7 +215,7 @@
             // 
             this.lblEstadoTarjetaId.AutoSize = true;
             this.lblEstadoTarjetaId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoTarjetaId.Location = new System.Drawing.Point(478, 249);
+            this.lblEstadoTarjetaId.Location = new System.Drawing.Point(478, 234);
             this.lblEstadoTarjetaId.Name = "lblEstadoTarjetaId";
             this.lblEstadoTarjetaId.Size = new System.Drawing.Size(157, 28);
             this.lblEstadoTarjetaId.TabIndex = 6;
@@ -223,7 +227,7 @@
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(450, 346);
+            this.btnLimpiar.Location = new System.Drawing.Point(450, 306);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(112, 39);
             this.btnLimpiar.TabIndex = 11;
@@ -237,7 +241,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(50, 346);
+            this.btnGuardar.Location = new System.Drawing.Point(50, 306);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(0);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(112, 39);
@@ -250,7 +254,7 @@
             // 
             this.txtCodigo.Enabled = false;
             this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(180, 248);
+            this.txtCodigo.Location = new System.Drawing.Point(180, 233);
             this.txtCodigo.MaxLength = 50;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(243, 29);
@@ -260,7 +264,7 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(45, 245);
+            this.lblCodigo.Location = new System.Drawing.Point(45, 230);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(83, 28);
             this.lblCodigo.TabIndex = 4;
@@ -270,7 +274,7 @@
             // 
             this.lblEmcabezado.AutoSize = true;
             this.lblEmcabezado.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblEmcabezado.Location = new System.Drawing.Point(44, 135);
+            this.lblEmcabezado.Location = new System.Drawing.Point(44, 120);
             this.lblEmcabezado.Name = "lblEmcabezado";
             this.lblEmcabezado.Size = new System.Drawing.Size(197, 32);
             this.lblEmcabezado.TabIndex = 1;
@@ -285,6 +289,25 @@
             this.lblTitulo.Size = new System.Drawing.Size(419, 50);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "GESTIÓN DE TARJETAS";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtBuscar.Location = new System.Drawing.Point(174, 432);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(388, 29);
+            this.txtBuscar.TabIndex = 32;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(52, 432);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 28);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "Buscador:";
             // 
             // FrmTarjeta
             // 
@@ -326,5 +349,7 @@
         private System.Windows.Forms.Label lblEmcabezado;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnGenerarCodigo;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label6;
     }
 }
