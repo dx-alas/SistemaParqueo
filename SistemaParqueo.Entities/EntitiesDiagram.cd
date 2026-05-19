@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="SistemaParqueo.Entities.Cliente">
-    <Position X="5.5" Y="8" Width="2" />
+    <Position X="5.5" Y="8.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAABAAAAACAAEABAAgAAAAgAABACAAAAAAgQAAAA=</HashCode>
       <FileName>Cliente.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaParqueo.Entities.CorteCaja">
-    <Position X="7.75" Y="8" Width="2.25" />
+    <Position X="8" Y="8.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AEgAAAAAAAACABEAABRAEAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CorteCaja.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaParqueo.Entities.Empleado">
-    <Position X="3" Y="8" Width="2.25" />
+    <Position X="3" Y="8.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgAAAAAEACBAgAAAAoAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>Empleado.cs</FileName>
@@ -29,7 +29,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaParqueo.Entities.EstadoCorte">
-    <Position X="3.25" Y="0.5" Width="2.25" />
+    <Position X="3.25" Y="0.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAQAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>EstadoCorte.cs</FileName>
@@ -50,91 +50,91 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaParqueo.Entities.EstadoTarjeta">
-    <Position X="5.75" Y="0.5" Width="2.5" />
+    <Position X="6.5" Y="0.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>EstadoTarjeta.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaParqueo.Entities.EstadoTicket">
-    <Position X="11.5" Y="2.5" Width="2.5" />
+    <Position X="12" Y="2.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>EstadoTicket.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaParqueo.Entities.EstadoUsuario">
-    <Position X="11" Y="0.5" Width="2.5" />
+    <Position X="12" Y="0.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>EstadoUsuario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaParqueo.Entities.EstadoVehiculo">
-    <Position X="8.5" Y="0.5" Width="2.25" />
+    <Position X="9.25" Y="0.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>EstadoVehiculo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaParqueo.Entities.MultaTicket">
-    <Position X="4.75" Y="5.5" Width="2.25" />
+    <Position X="5.5" Y="5.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAoAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MultaTicket.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaParqueo.Entities.Parqueo">
-    <Position X="0.5" Y="8" Width="2.25" />
+    <Position X="0.5" Y="8.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Parqueo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaParqueo.Entities.Rol">
-    <Position X="2.75" Y="5.5" Width="1.75" />
+    <Position X="3" Y="5.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Rol.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaParqueo.Entities.Tarjeta">
-    <Position X="0.5" Y="5.5" Width="2" />
+    <Position X="0.5" Y="5.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAACAAAAAAQAAAA=</HashCode>
       <FileName>Tarjeta.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaParqueo.Entities.Ticket">
-    <Position X="10.25" Y="8.25" Width="2" />
+    <Position X="10.75" Y="8.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAEAEAAAAAACYAMAAIAAAAAAAIIAQBIAAAAAAAQAAAA=</HashCode>
       <FileName>Ticket.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaParqueo.Entities.TipoCliente">
-    <Position X="6.25" Y="2.5" Width="2.25" />
+    <Position X="6.5" Y="2.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAABAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TipoCliente.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaParqueo.Entities.TipoVehiculo">
-    <Position X="8.75" Y="2.5" Width="2.5" />
+    <Position X="9.25" Y="2.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAIAAAAAgAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TipoVehiculo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaParqueo.Entities.Usuario">
-    <Position X="10.25" Y="5.5" Width="2" />
+    <Position X="10.75" Y="5.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAQAAAAAABAgAAAAIAAAAAAAAAAAAAAEBA=</HashCode>
       <FileName>Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SistemaParqueo.Entities.Vehiculo">
-    <Position X="7.25" Y="5.5" Width="2.25" />
+    <Position X="8" Y="5.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAQAIAABAAAAAAAEAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>Vehiculo.cs</FileName>

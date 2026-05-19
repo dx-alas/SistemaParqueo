@@ -1,147 +1,147 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="SistemaParqueo.DataAccess.ClienteDAL" Collapsed="true">
-    <Position X="12.25" Y="4.25" Width="1.5" />
+  <Class Name="SistemaParqueo.DataAccess.ClienteDAL">
+    <Position X="10.25" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
       <FileName>ClienteDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.Connection" Collapsed="true">
-    <Position X="6" Y="0.5" Width="1.5" />
+  <Class Name="SistemaParqueo.DataAccess.Connection">
+    <Position X="7.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>Connection.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.CorteCajaDAL" Collapsed="true">
-    <Position X="1" Y="4.25" Width="1.5" />
+  <Class Name="SistemaParqueo.DataAccess.CorteCajaDAL">
+    <Position X="0.5" Y="8.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAkAAAAAQAAAAAACAAA=</HashCode>
       <FileName>CorteCajaDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.EmpleadoDAL" Collapsed="true">
-    <Position X="2.75" Y="4.25" Width="1.5" />
+  <Class Name="SistemaParqueo.DataAccess.EmpleadoDAL">
+    <Position X="2.5" Y="8.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
       <FileName>EmpleadoDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.EstadoClienteDAL" Collapsed="true">
+  <Class Name="SistemaParqueo.DataAccess.EstadoClienteDAL">
     <Position X="10.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
       <FileName>EstadoClienteDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.EstadoCorteDAL" Collapsed="true">
+  <Class Name="SistemaParqueo.DataAccess.EstadoCorteDAL">
     <Position X="4.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
       <FileName>EstadoCorteDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.EstadoEmpleadoDAL" Collapsed="true">
+  <Class Name="SistemaParqueo.DataAccess.EstadoEmpleadoDAL">
     <Position X="0.5" Y="1.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
       <FileName>EstadoEmpleadoDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.EstadoPermanenciaDAL" Collapsed="true">
+  <Class Name="SistemaParqueo.DataAccess.EstadoPermanenciaDAL">
     <Position X="2.5" Y="1.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
       <FileName>EstadoPermanenciaDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.EstadoTarjetaDAL" Collapsed="true">
+  <Class Name="SistemaParqueo.DataAccess.EstadoTarjetaDAL">
     <Position X="6.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
       <FileName>EstadoTarjetaDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.EstadoTicketDAL" Collapsed="true">
+  <Class Name="SistemaParqueo.DataAccess.EstadoTicketDAL">
     <Position X="12" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
       <FileName>EstadoTicketDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.EstadoUsuarioDAL" Collapsed="true">
+  <Class Name="SistemaParqueo.DataAccess.EstadoUsuarioDAL">
     <Position X="13.75" Y="1.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
       <FileName>EstadoUsuarioDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.EstadoVehiculoDAL" Collapsed="true">
+  <Class Name="SistemaParqueo.DataAccess.EstadoVehiculoDAL">
     <Position X="8.25" Y="1.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
       <FileName>EstadoVehiculoDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.MultaTicketDAL" Collapsed="true">
-    <Position X="4.75" Y="5.25" Width="1.5" />
+  <Class Name="SistemaParqueo.DataAccess.MultaTicketDAL">
+    <Position X="8.25" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
       <FileName>MultaTicketDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.ParqueoDAL" Collapsed="true">
-    <Position X="7.75" Y="4.25" Width="1.5" />
+  <Class Name="SistemaParqueo.DataAccess.ParqueoDAL">
+    <Position X="6.5" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
       <FileName>ParqueoDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.RolDAL" Collapsed="true">
-    <Position X="4.5" Y="4.25" Width="1.5" />
+  <Class Name="SistemaParqueo.DataAccess.RolDAL">
+    <Position X="4.75" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
       <FileName>RolDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.TarjetaDAL" Collapsed="true">
-    <Position X="7.75" Y="5.25" Width="1.5" />
+  <Class Name="SistemaParqueo.DataAccess.TarjetaDAL">
+    <Position X="13.75" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAABCAAA=</HashCode>
       <FileName>TarjetaDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.TicketDAL" Collapsed="true">
-    <Position X="2.75" Y="5.25" Width="1.5" />
+  <Class Name="SistemaParqueo.DataAccess.TicketDAL">
+    <Position X="6.5" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
       <FileName>TicketDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.TipoClienteDAL" Collapsed="true">
-    <Position X="2.75" Y="2.75" Width="1.5" />
+  <Class Name="SistemaParqueo.DataAccess.TipoClienteDAL">
+    <Position X="6.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
       <FileName>TipoClienteDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.TipoVehiculoDAL" Collapsed="true">
-    <Position X="4.5" Y="2.75" Width="1.5" />
+  <Class Name="SistemaParqueo.DataAccess.TipoVehiculoDAL">
+    <Position X="8.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
       <FileName>TipoVehiculoDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.UsuarioDAL" Collapsed="true">
-    <Position X="10.25" Y="4.25" Width="1.5" />
+  <Class Name="SistemaParqueo.DataAccess.UsuarioDAL">
+    <Position X="8.25" Y="8.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAQAAACAAA=</HashCode>
       <FileName>UsuarioDAL.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SistemaParqueo.DataAccess.VehiculoDAL" Collapsed="true">
-    <Position X="10.25" Y="5.25" Width="1.5" />
+  <Class Name="SistemaParqueo.DataAccess.VehiculoDAL">
+    <Position X="12" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQEAEAAACAAAAAAAAAAAAAAAAEAAAAAQAAAAAACAAA=</HashCode>
       <FileName>VehiculoDAL.cs</FileName>
