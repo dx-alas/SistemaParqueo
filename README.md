@@ -11,9 +11,9 @@ Para clonar y ejecutar el proyecto en su entorno local:
 1. Abrir **Visual Studio Community**.
 2. Seleccionar **Clonar un repositorio**.
 3. Ingresar la URL:
-   ```
-   https://github.com/dx-alas/SistemaParqueo.git
-   ```
+```
+https://github.com/dx-alas/SistemaParqueo.git
+```
 4. Elegir la carpeta local y presionar **Clonar**.
 
 ---
@@ -26,9 +26,9 @@ El sistema puede trabajar con **dos modalidades de base de datos**:
 
 1. Abrir **SQL Server Management Studio (SSMS)**.
 2. Ejecutar el script `Sistema_Parqueo_Script_Completo.sql` ubicado en:
-   ```
-   https://github.com/dx-alas/SistemaParqueoBD
-   ```
+```
+https://github.com/dx-alas/SistemaParqueoBD
+```
 
 Este script crea la base de datos, tablas, datos de prueba y procedimientos almacenados.
 
